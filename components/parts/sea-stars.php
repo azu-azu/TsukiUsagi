@@ -1,0 +1,1 @@
+<div class="p-sea-stars" id="js-sea-stars"></div>
