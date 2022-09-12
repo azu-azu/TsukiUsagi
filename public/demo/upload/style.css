@@ -1,0 +1,298 @@
+.p-load-box {
+    position: relative;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .c-upload-area {
+    position: relative;
+    width: 90%;
+    height: 300px;
+    margin: 0 auto 20px auto;
+    background: rgba(86, 200, 255, 0.1);
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  .c-upload-area i {
+    width: 100%;
+    left: 0;
+    font-size: 120px;
+    opacity: 0.1;
+  }
+  .c-upload-area .before-msg {
+    left: 5%;
+    text-align: left;
+    line-height: 1.7;
+    opacity: 0.8;
+  }
+  .c-upload-area .after-msg {
+    display: none;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 3;
+    color: #fff;
+  }
+  .c-upload-area i, .c-upload-area p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .c-upload-area.drag-effect {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.5);
+  }
+  .c-upload-area.drag-effect i {
+    color: #fff;
+    opacity: 1;
+    -webkit-animation: drag-icon 1s infinite alternate;
+            animation: drag-icon 1s infinite alternate;
+  }
+  .c-upload-area.drag-effect .after-msg {
+    display: block;
+  }
+  
+  @-webkit-keyframes drag-icon {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1.7);
+    }
+  }
+  
+  @keyframes drag-icon {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1.7);
+    }
+  }
+  .c-button, .c-button--submit, .c-button--open-win, .c-button--rounded {
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .c-button:hover, .c-button--submit:hover, .c-button--open-win:hover, .c-button--rounded:hover {
+    transform: translateY(-2px);
+  }
+  .c-button .inner-box, .c-button--submit .inner-box, .c-button--open-win .inner-box, .c-button--rounded .inner-box {
+    padding: 10px;
+  }
+  .c-button p, .c-button--submit p, .c-button--open-win p, .c-button--rounded p {
+    line-height: 1.5;
+  }
+  .c-button span, .c-button--submit span, .c-button--open-win span, .c-button--rounded span {
+    display: block;
+  }
+  
+  .c-button--rounded {
+    border-radius: 20px;
+  }
+  .c-button--rounded a {
+    border-radius: 20px;
+  }
+  .c-button--open-win {
+    border: 1px solid blue;
+  }
+  .c-button--open-win:hover {
+    transform: translateY(-5px);
+  }
+  .c-button--submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background: lightgray;
+  }
+  
+  @-webkit-keyframes btn_submit {
+    0% {
+      transform: scale(1.8);
+      background: lightpink;
+    }
+    100% {
+      transform: scale(2);
+      background: lightpink;
+    }
+  }
+  
+  @keyframes btn_submit {
+    0% {
+      transform: scale(1.8);
+      background: lightpink;
+    }
+    100% {
+      transform: scale(2);
+      background: lightpink;
+    }
+  }
+  .c-text-box {
+    display: block;
+    line-height: 1.7;
+    padding: 10px;
+  }
+  .c-text-box .necessary-file-name {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    vertical-align: top;
+    transition: 0.5s;
+  }
+  .c-text-box .necessary-file-name::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(255, 255, 0, 0.5);
+    top: 0;
+    left: -100%;
+  }
+  .c-text-box .necessary-file-name.found::before {
+    left: 0;
+  }
+  
+  .p-form__inner {
+    height: 100%;
+    padding: 20px;
+  }
+  .p-form--dd {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .p-form--dd > .text-box {
+    padding: 20px;
+  }
+  .p-form--dd .dd-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+  .p-form--dd .c-button--submit {
+    position: absolute;
+    display: block;
+    left: 0;
+  }
+  .p-form--dd .c-button--submit.submit-ok {
+    top: -10%;
+    left: 40%;
+    -webkit-animation: btn_submit 1s infinite ease-in alternate;
+            animation: btn_submit 1s infinite ease-in alternate;
+  }
+  .p-form--dd textarea {
+    width: 40%;
+    height: 150px;
+    border: 1px solid #888;
+    padding: 20px;
+  }
+  .p-form--dd textarea {
+    margin: 0 auto 20px auto;
+  }
+  
+  .c-tooltip, .c-tooltip--right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: inline;
+  }
+  .c-tooltip__text, .c-tooltip--right__text {
+    opacity: 0;
+    position: absolute;
+    padding: 10px 20px;
+    width: 140%;
+    height: auto;
+    top: calc(-50% - 10px);
+    left: 120%;
+    background: #111;
+    border-radius: 10px;
+    color: #fff;
+    line-height: 1.5;
+    box-shadow: 2px 2px 15px -6px yellow;
+    transition: 0.5s ease;
+  }
+  .c-tooltip__text::before, .c-tooltip--right__text::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -20px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #111;
+    transform: rotate(-90deg);
+  }
+  .c-tooltip--right__text {
+    left: inherit;
+    right: 120%;
+  }
+  .c-tooltip--right__text::before {
+    left: inherit;
+    right: -20px;
+    transform: rotate(90deg);
+  }
+  
+  .p-cancel-container {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+  }
+  .p-cancel-container .c-tooltip--right__text {
+    width: 250%;
+  }
+  .p-cancel-container .cancel-btn {
+    padding: 10px;
+    background: #fff6;
+    color: #666;
+    z-index: 1;
+  }
+  .p-cancel-container .cancel-btn:hover + .c-tooltip--right__text {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  
+  .p-msg-box {
+    font-weight: normal;
+  }
+  .p-msg-box .c-text-box {
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  .p-msg-box .back-to-button {
+    font-weight: bold;
+    padding: 20px 60px;
+    margin-bottom: 80px;
+  }
+  .p-msg-box .result p {
+    margin-bottom: 40px;
+  }
+  .p-msg-box .result span {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .c-bg-color--sub {
+    background: rgba(64, 224, 208, 0.2);
+  }
+  
+  .c-shadow--blur {
+    box-shadow: 7px 12px 20px -7px rgba(119, 119, 119, 0.5);
+  }
+  
+  .p-preview-area {
+    text-align: center;
+  }
+  /*# sourceMappingURL=style.css.map */

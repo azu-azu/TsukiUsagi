@@ -1,181 +1,179 @@
 .c-anim-box {
-  display: block;
-  opacity: 0;
-  transition: 2s;
-  
-  &--up {
-    @extend .c-anim-box;
-    transform: translate(0, 50px);
-  }
-  
-  &--lr {
-    @extend .c-anim-box;
-    transform: translate(-200px, 0);
-  }
-  &--rl {
-    @extend .c-anim-box;
-    transform: translate(200px, 0);
-  }
-  &--down {
-    @extend .c-anim-box;
-    transform: translate(0, -200px);
-  }
-  &--scaleup {
-    @extend .c-anim-box;
-    transform: scale(.5);
-  }
-  &--scaledown {
-    @extend .c-anim-box;
-    transform: scale(1.5);
-  }
-  &--rotate-l {
-    @extend .c-anim-box;
-    transform: rotate(180deg);
-  }
-  &--rotate-r {
-    @extend .c-anim-box;
-    transform: rotate(-180deg);
-  }
+    display: block;
+    opacity: 0;
+    transition: 2s;
+
+    &--up,
+    &--lr,
+    &--rl,
+    &--down,
+    &--scaleup,
+    &--scaledown,
+    &--rotate-l,
+    &--rotate-r {
+        @extend .c-anim-box;
+    }
+
+    &--up {
+        transform: translate(0, 50px);
+    }
+    &--lr {
+        transform: translate(-200px, 0);
+    }
+    &--rl {
+        transform: translate(200px, 0);
+    }
+    &--down {
+        transform: translate(0, -200px);
+    }
+    &--scaleup {
+        transform: scale(0.5);
+    }
+    &--scaledown {
+        transform: scale(1.5);
+    }
+    &--rotate-l {
+        transform: rotate(180deg);
+    }
+    &--rotate-r {
+        transform: rotate(-180deg);
+    }
 }
 
 // テキストアニメ
 .c-anim-box--up.txt.is-show {
-  animation: move-up 2s both;
+    animation: move-up 2s both;
 
-  &:nth-child(2) {
-    animation-delay: .6s;
-  }
+    &:nth-child(2) {
+        animation-delay: 0.6s;
+    }
 }
 
 .c-anim-box--lr.txt.show {
-  animation: move-lr 1s both;
-  
-  &:nth-child(2) {
-    animation-delay: .6s;
-  }
-}
+    animation: move-lr 1s both;
 
+    &:nth-child(2) {
+        animation-delay: 0.6s;
+    }
+}
 
 // ボックスアニメ
 .c-anim-box--up.show {
-  animation: move-up 2s both;
+    animation: move-up 2s both;
 }
 
 .c-anim-box--lr.show {
-  animation: move-lr 1s both;
+    animation: move-lr 1s both;
 }
 
 .c-anim-box--rl.show {
-  animation: move-rl 1s both;
+    animation: move-rl 1s both;
 }
 
 .c-anim-box--down.show {
-  animation: move-down 1s both;
+    animation: move-down 1s both;
 }
 
 .c-anim-box--scaleup.show {
-  animation: move-scaleup 1s both;
+    animation: move-scaleup 1s both;
 }
 
 .c-anim-box--scaledown.show {
-  animation: move-scaledown 1s both;
+    animation: move-scaledown 1s both;
 }
 
 .c-anim-box--rotate-l.show {
-  animation: move-rotate-l 1s both;
+    animation: move-rotate-l 1s both;
 }
 
 .c-anim-box--rotate-r.show {
-  animation: move-rotate-r 1s both;
+    animation: move-rotate-r 1s both;
 }
 
-
 @keyframes move-up {
-  0% {
-    opacity: 0;
-    transform: translate(0, 50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+    0% {
+        opacity: 0;
+        transform: translate(0, 50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 
 @keyframes move-lr {
-  0% {
-    opacity: 0;
-    transform: translate(-200px, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+    0% {
+        opacity: 0;
+        transform: translate(-200px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 
 @keyframes move-rl {
-  0% {
-    opacity: 0;
-    transform: translate(200px, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: translate(200px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes move-down {
-  0% {
-    opacity: 0;
-    transform: translate(0, -100px);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: translate(0, -100px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes move-scaleup {
-  0% {
-    opacity: 0;
-    transform: scale(.5);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes move-scaledown {
-  0% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes move-rotate-l {
-  0% {
-    opacity: 0;
-    transform: rotate(180deg);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: rotate(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes move-rotate-r {
-  0% {
-    opacity: 0;
-    transform: rotate(-180deg);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+    0% {
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
 }
-
-

@@ -1,0 +1,15 @@
+.u-split-gap {
+  &--title {
+    .char {
+      &:nth-child(5) {
+        margin-left: 3px;
+      }
+      &:nth-child(6) {
+        margin-left: -2px;
+      }
+      &:nth-child(7) {
+        margin-left: -7px;
+      }
+    }
+  }
+}

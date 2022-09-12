@@ -5,10 +5,140 @@
 	padding-top: v.$gap--sec-top;
 	padding-bottom: v.$gap--sec-bottom;
   background-color: transparent;
-  // background: linear-gradient(to bottom, rgba(55, 50, 133, 0), #373285);
-  background: linear-gradient(to bottom, rgba(61, 136, 175, 0), #3d88af);
 
   @include m.breakpoint(moon-mini) {
     margin-top: -150px;
+  }
+
+  .c-card--works {
+    &::before,
+    &::after {
+      width: 15%;
+      height: 30%;
+    }
+  
+    &::before {
+      bottom: 40%;
+      animation: rabbit1 4s infinite;
+    }
+    &::after {
+      bottom: 0;
+      right: -10%;
+      animation: rabbit3 4s infinite;
+    }
+  
+    .text {
+      top: 55%;
+      left: 55%;
+      @include m.breakpoint( moon-mini ) {
+        left: 50%;
+      }
+  
+      &::before {
+        top: -130%;
+        left: -80%;
+        width: 80%;
+        height: 80%;
+        animation: rabbit2 4s infinite;
+      }
+  
+      span {
+        display: block;
+      }
+    }
+
+    .c-finger::after {
+      top: 60%;
+      left: -100%;
+      font-size: 4vw;
+  
+      @include m.breakpoint( iphone-normal ) {
+        top: 30%;
+      }
+      @include m.breakpoint( moon-mini ) {
+        font-size: 2rem;
+      }
+    }
+
+    .c-ball {
+      width: 100px;
+      height: 100px;
+      top: 10%;
+      left: 10%;
+      animation: works-ball 5s infinite alternate;
+      @include m.breakpoint( moon-mini ) {
+        left: 16%;
+      }
+  
+      .c-circle-text {
+        &:first-child {
+          left: 30%;
+        }
+        &:last-child {
+          left: 60%;
+          // bottom: 0;
+          // transform: rotate(180deg);
+        }
+        span {
+          height: 60px;
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes rabbit1 {
+  0% {
+    transform: translateY(0) rotate(-120deg) scale(1.1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(100px) scale(1.1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(80px) translateY(-20px) scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes rabbit2 {
+  0% {
+    transform: rotate(0) translateX(0) scaleX(-1);
+    opacity: 0;
+  }
+  45% {
+    transform: rotate(0) translateX(0) scaleX(-1);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(17deg) translateX(150px) scaleX(-1);
+    opacity: 0;
+  }
+}
+
+
+@keyframes rabbit3 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

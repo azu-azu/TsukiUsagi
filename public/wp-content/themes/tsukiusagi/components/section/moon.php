@@ -1,12 +1,10 @@
 <section class="p-sec-moon">
-  <article class="p-moon-circle">
-    <article class="c-moon">
-      <div class="c-moon__waning">
-        <img src="<?php echo do_shortcode('[uri]'); ?>/img/common/rabbit.png" alt="">
-      </div>
-    </article>
-    <article class="p-crater">
-      <h2 data-splitting class="c-rotate-text c-moon-txt">WordPress</h2>
+  <div class="p-moon-circle">
+    <div class="c-moon">
+      <div class="c-moon__waning"></div>
+    </div>
+    <div class="p-crater c-rabbit--1a">
+      <h1 data-splitting class="c-glitter-text c-moon-txt u-split-gap--title">月うさぎＢｉｚ</h1>
       <div class="c-crater c1"></div>
       <div class="c-crater c2"></div>
       <div class="c-crater c3"></div>
@@ -14,7 +12,7 @@
       <div class="c-crater c5"></div>
       <div class="c-crater c6"></div>
       <div class="c-crater c7"></div>
-    </article>
-  </article>
+    </div>
+  </div>
 </section>
-<?php get_template_part('components/parts/milky-way');?>
+<?php get_template_part('components/parts/milky-way'); ?>

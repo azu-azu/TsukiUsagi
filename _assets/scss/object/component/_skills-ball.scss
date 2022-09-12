@@ -9,48 +9,47 @@
     @extend .c-skills-ball;
 
     .c-ball {
+      &:not(:first-child) {
+        animation: scale 10s linear infinite;
+        animation-delay: calc(-1s * var(--i));
+      }
+
       &.skill-css {
         top: 0;
-        left: 23vmin;
+        left: 25vmin;
         width: min(17vmin, 100px);
         height: min(17vmin, 100px);
-        animation: css 15s linear infinite;
       }
       &.skill-php {
         top: 0;
-        left: 41vmin;
+        left: 48vmin;
         width: min(17vmin, 100px);
         height: min(17vmin, 100px);
-        animation: php 15s linear infinite;
       }
       &.skill-react {
         top: 115px;
-        right: 8vmin;
+        right: 16vmin;
         width: min(12vmin, 50px);
         height: min(12vmin, 50px);
-        animation: react 10s linear infinite;
       }
       &.skill-js {
-        top: 60px;
+        top: 115px;
         right: 0;
         width: min(12vmin, 60px);
         height: min(12vmin, 60px);
-        animation: js 20s linear infinite;
       }
       &.skill-gulp {
         top: 160px;
-        left: 9vmin;
+        left: 4vmin;
         width: min(10vmin, 40px);
         height: min(10vmin, 40px);
         z-index: 2;
-        animation: gulp 15s linear infinite;
       }
       &.skill-git {
         top: 116px;
         left: 14vmin;
         width: min(10vmin, 50px);
         height: min(10vmin, 50px);
-        animation: git 15s linear infinite;
       }
     }
   }
@@ -59,141 +58,49 @@
     @extend .c-skills-ball;
 
     .c-ball {
+      &:not(:first-child) {
+        animation: scale 10s linear infinite;
+        animation-delay: calc(-1s * var(--i));
+      }
+
       &.skill-theme {
         top: 0;
-        left: 28vmin;
+        left: 30vmin;
         width: min(17vmin, 100px);
         height: min(17vmin, 100px);
-        animation: php 30s linear infinite;
       }
       &.skill-custom {
         top: 0;
         right: 2vmin;
         width: min(17vmin, 90px);
         height: min(17vmin, 90px);
-        animation: css 30s linear infinite;
       }
       &.skill-plugin {
         top: 155px;
         right: 0;
         width: min(13vmin, 60px);
         height: min(13vmin, 60px);
-        animation: php 10s linear infinite;
       }
       &.skill-block {
         top: 120px;
-        left: 12vmin;
+        left: 19vmin;
         width: min(13vmin, 60px);
         height: min(13vmin, 60px);
         z-index: 2;
-        animation: php 10s linear infinite;
       }
     }
   }
 }
 
 
-
-
-
-
-
-@keyframes css {
+@keyframes scale {
   0% {
-    transform: rotateZ(0deg);
-  }
-  10% {
-    transform: rotateZ(-360deg);
-  }
-  20% {
-    transform: rotateZ(0deg);
-  }
-  30% {
-    transform: rotateZ(360deg);
-  }
-  100% {
-    transform: rotateZ(0deg);
-  }
-}
-
-
-@keyframes php {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  70% {
-    transform: rotateZ(360deg);
-  }
-  80% {
-    transform: rotateZ(0deg);
-  }
-  82% {
-    transform: rotateZ(360deg);
-  }
-  84% {
-    transform: rotateZ(-360deg);
-  }
-  100% {
-    transform: rotateZ(0deg);
-  }
-}
-
-@keyframes js {
-  10% {
-    transform: rotateZ(20deg);
-  }
-  12% {
-    transform: rotateZ(-80deg);
-  }
-  20% {
-    transform: rotateZ(360deg);
-  }
-  25% {
-    transform: rotateZ(-360deg);
-  }
-  100% {
-    transform: rotateZ(-720deg);
-  }
-}
-
-
-@keyframes react {
-  0% {
-    transform: rotateZ(0);
-  }
-  80% {
-    transform: rotateZ(360deg);
-  }
-  85% {
-    transform: rotateZ(-360deg);
-  }
-  100% {
-    transform: rotateZ(720deg);
-  }
-}
-
-
-@keyframes gulp {
-  0% {
-    transform: translateY(-40px) rotateZ(0deg);
+    transform: scale(1) translateY(-40px) rotateY(0);
   }
   50% {
-    transform: translateY(40px) rotateZ(360deg);
-  }  
+    transform: scale(1.4) translateY(0) rotateY(0);
+  }
   100% {
-    transform: translateY(-40px) rotateZ(0deg);
+    transform: scale(1) translateY(-40px) rotateY(0);
   }
 }
-
-@keyframes git {
-  0% {
-    transform: translateY(-40px) rotateZ(0deg);
-  }
-  50% {
-    transform: translateY(40px) rotateZ(-360deg);
-  }  
-  100% {
-    transform: translateY(-40px) rotateZ(0deg);
-  }
-}
-

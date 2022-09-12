@@ -1,17 +1,47 @@
-@mixin breakpoint( $point ) {
+@mixin breakpoint($point) {
+	@if $point == iphone-normal {
+		@media (min-width: 374px) {
+			@content;
+		}
+	}
+	@if $point == ipad-mini {
+		@media (min-width: 438px) {
+			@content;
+		}
+	}
 	@if $point == moon-mini {
-		@media ( min-width: 570px ) {
-			@content ;
+		@media (min-width: 570px) {
+			@content;
 		}
 	}
 	@if $point == tablet {
-		@media ( min-width: 600px ) {
-			@content ;
+		@media (min-width: 600px) {
+			@content;
+		}
+	}
+	@if $point == header-large {
+		@media (min-width: 740px) {
+			@content;
+		}
+	}
+	@if $point == back-to-moon-large {
+		@media (min-width: 751px) {
+			@content;
 		}
 	}
 	@if $point == contact-col {
-		@media ( min-width: 800px ) {
-			@content ;
+		@media (min-width: 800px) {
+			@content;
+		}
+	}
+	@if $point == topic-inner {
+		@media (min-width: 960px) {
+			@content;
+		}
+	}
+	@if $point == wide {
+		@media (min-width: 1120px) {
+			@content;
 		}
 	}
 }
@@ -20,53 +50,20 @@
 // line-heightの余白を取り除く
 // **
 @mixin lineHeightCrop-before($line-height) {
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    margin-top: calc((1 - #{$line-height}) * .5em);
-    content: "";
-  }
+	&::before {
+		display: block;
+		width: 0;
+		height: 0;
+		margin-top: calc((1 - #{$line-height}) * 0.5em);
+		content: '';
+	}
 }
 @mixin lineHeightCrop-after($line-height) {
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    margin-bottom: calc((1 - #{$line-height}) * .5em);
-    content: "";
-  }
-}
-
-
-
-
-
-
-
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-
-@mixin animation($animation-name) {
-  -webkit-animation: $animation-name;
-  -moz-animation: $animation-name;
-  animation: $animation-name;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@mixin prefixes($property, $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
-    #{$prefix}#{$property}: $value;
-  }
+	&::after {
+		display: block;
+		width: 0;
+		height: 0;
+		margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+		content: '';
+	}
 }

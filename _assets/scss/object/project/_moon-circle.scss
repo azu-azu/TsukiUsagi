@@ -16,9 +16,6 @@
 
   @include m.breakpoint(moon-mini) {
     margin-top: 200px;
-  }
-
-  @media screen and (min-width: 570px) {
     width: 80vmin;
     height: 80vmin;
   }
@@ -26,5 +23,10 @@
   .c-moon {
     position: absolute;
     top: v.$position--moon-big-top;
+  }
+
+  .c-rabbit--1a::after {
+    opacity: .5;
+    filter: blur(3px);
   }
 }

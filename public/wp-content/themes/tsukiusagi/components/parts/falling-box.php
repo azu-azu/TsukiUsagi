@@ -1,1 +1,1 @@
-<div class="p-falling-box" id="js-sector"></div>
+<div class="c-falling-box" id="js-sector"></div>

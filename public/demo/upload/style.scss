@@ -1,0 +1,335 @@
+.p-load-box {
+	position: relative;
+	padding: 20px;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+
+.c-upload-area {
+	position: relative;
+	width: 90%;
+	height: 300px;
+	margin: 0 auto 20px auto;
+	background: rgba(86, 200, 255, 0.1);
+	border-radius: 10px;
+	transition: 0.3s;
+
+	i {
+		width: 100%;
+		left: 0;
+		font-size: 120px;
+		opacity: 0.1;
+	}
+
+	.before-msg {
+		left: 5%;
+		text-align: left;
+		line-height: 1.7;
+		opacity: 0.8;
+	}
+
+	.after-msg {
+		display: none;
+		top: 20%;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 1.5rem;
+		font-weight: 100;
+		line-height: 3;
+		color: #fff;
+	}
+
+	i,
+	p {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	// ドラッグ中のスタイル
+	&.drag-effect {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background: rgba(#000, 0.9);
+		transform: scale(1.5);
+
+		i {
+			color: #fff;
+			opacity: 1;
+			animation: drag-icon 1s infinite alternate;
+		}
+
+		.after-msg {
+			display: block;
+		}
+	}
+}
+
+.c-button {
+	text-align: center;
+	transition: 0.5s;
+	cursor: pointer;
+
+	&:hover {
+		transform: translateY(-2px);
+	}
+
+	.inner-box {
+		padding: 10px;
+	}
+
+	p {
+		line-height: 1.5;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+.c-button {
+	&--rounded {
+		@extend .c-button;
+		border-radius: 20px;
+
+		a {
+			border-radius: 20px;
+		}
+	}
+
+	&--open-win {
+		@extend .c-button;
+		border: 1px solid blue;
+
+		&:hover {
+			transform: translateY(-5px);
+		}
+	}
+
+	&--submit {
+		@extend .c-button;
+		display: inline-block;
+		padding: 10px 20px;
+		background: lightgray;
+	}
+}
+
+.c-text-box {
+	display: block;
+	line-height: 1.7;
+	padding: 10px;
+
+	.necessary-file-name {
+		position: relative;
+		display: inline-block;
+		padding: 0 10px;
+		border-radius: 5px;
+		overflow: hidden;
+		vertical-align: top;
+		transition: 0.5s;
+
+		&::before {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			border-radius: 5px;
+			background: rgba(yellow, 0.5);
+			top: 0;
+			left: -100%;
+		}
+
+		&.found {
+			&::before {
+				left: 0;
+			}
+		}
+	}
+}
+
+.p-form {
+	&__inner {
+		height: 100%;
+		padding: 20px;
+	}
+
+	&--dd {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+
+		> .text-box {
+			padding: 20px;
+		}
+
+		.dd-input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+		}
+
+		.c-button--submit {
+			position: absolute;
+			display: block;
+			left: 0;
+
+			&.submit-ok {
+				top: -10%;
+				left: 40%;
+				// transform: translateX(-50%);
+				animation: btn_submit 1s infinite ease-in alternate;
+			}
+		}
+
+		textarea {
+			width: 40%;
+			height: 150px;
+			border: 1px solid #888;
+			padding: 20px;
+		}
+
+		textarea {
+			margin: 0 auto 20px auto;
+		}
+	}
+}
+
+.c-tooltip {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: inline;
+
+	&__text {
+		opacity: 0;
+		position: absolute;
+		padding: 10px 20px;
+		width: 140%;
+		height: auto;
+		top: calc(-50% - 10px);
+		left: 120%;
+		background: #111;
+		border-radius: 10px;
+		color: #fff;
+		line-height: 1.5;
+		box-shadow: 2px 2px 15px -6px yellow;
+		// box-shadow: 0 1em 3em -0.5em rgba(255,255,0,0.4);
+		transition: 0.5s ease;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 15px;
+			left: -20px;
+			border: 10px solid transparent;
+			border-bottom: 10px solid #111;
+			transform: rotate(-90deg);
+		}
+	}
+
+	&--right {
+		@extend .c-tooltip;
+		&__text {
+			@extend .c-tooltip__text;
+			left: inherit;
+			right: 120%;
+
+			&::before {
+				left: inherit;
+				right: -20px;
+				transform: rotate(90deg);
+			}
+		}
+	}
+}
+
+.p-cancel-container {
+	position: absolute;
+	top: 5%;
+	right: 10%;
+
+	.c-tooltip--right__text {
+		width: 250%;
+	}
+
+	.cancel-btn {
+		padding: 10px;
+		background: #fff6;
+		color: #666;
+		z-index: 1;
+
+		&:hover {
+			+ .c-tooltip--right__text {
+				opacity: 1;
+				transform: translateX(5px);
+			}
+		}
+	}
+}
+
+.p-msg-box {
+	font-weight: 300;
+	.c-text-box {
+		font-weight: 700;
+		margin-bottom: 40px;
+	}
+
+	.back-to-button {
+		font-weight: 700;
+		padding: 20px 60px;
+		margin-bottom: 80px;
+	}
+
+	.result {
+		p {
+			margin-bottom: 40px;
+		}
+		span {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.c-bg-color--sub {
+	background: rgba(turquoise, 0.2);
+}
+
+.c-shadow {
+	&--blur {
+		box-shadow: 7px 12px 20px -7px rgba(#777, 0.5);
+	}
+}
+
+.p-preview-area {
+	text-align: center;
+}
+
+@keyframes drag-icon {
+	0% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1.7);
+	}
+}
+
+@keyframes btn_submit {
+	0% {
+		transform: scale(1.8);
+		background: lightpink;
+	}
+
+	100% {
+		transform: scale(2);
+		background: lightpink;
+	}
+}

@@ -3,9 +3,9 @@
 
 .c-moon-txt {
   color: v.$font-color--moon-text;
-  font-family: "Gluten", cursive;
+  // font-family: "Gluten", cursive;
   font-size: v.$font-size--moon--sp;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
 
   @include m.breakpoint( moon-mini ) {
     font-size: v.$font-size--moon--pc;

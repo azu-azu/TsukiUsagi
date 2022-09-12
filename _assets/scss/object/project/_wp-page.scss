@@ -1,0 +1,45 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+
+.page-thanks {
+	.p-svg-cosmos {
+		min-height: 100vh;
+	}
+
+	.l-topic__container {
+		display: block;
+		margin-bottom: 40px;
+
+		.p-title {
+			padding-top: 150px;
+			margin-bottom: 40px;
+
+			.c-title--section {
+				width: auto;
+			}
+		}
+	}
+}
+
+.privacy-policy {
+	.canvas-shooting-star__wrapper {
+		position: absolute;
+		width: 100vw;
+		overflow: hidden;
+		opacity: 0.5;
+	}
+}
+
+.error404 {
+	background: #000;
+	.special-contents {
+		.l-topic__container {
+			height: 70vh;
+			gap: 0;
+
+			.c-back-to-moon {
+				position: relative;
+			}
+		}
+	}
+}

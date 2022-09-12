@@ -1,0 +1,118 @@
+@use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
+
+
+// .c-works-card::before,
+// .c-works-card::after,
+// .c-works-card .text::before {
+//   position: absolute;
+//   content: '';
+//   display: block;
+// }
+
+// .c-works-card,
+// .c-works-card .text {
+//   overflow: inherit;
+// }
+
+
+// .c-works-card {
+	// background: linear-gradient(121.83739606363838deg, 
+  // rgba(123, 190, 219, .9) 17.743055555555557%,
+  // rgba(123, 189, 218, .9) 17.743055555555557%,
+  // rgba(167, 124, 180, .9) 77.46527777777777%);
+
+  // border-radius: 30px;
+  // transition: .5s ease;
+  // cursor: pointer;
+
+//   &::before,
+//   &::after {
+//     width: 15%;
+//     height: 30%;
+//   }
+
+//   &::before {
+//     bottom: 40%;
+//     animation: rabbit1 4s infinite;
+//   }
+//   &::after {
+//     bottom: 0;
+//     right: -10%;
+//     animation: rabbit3 4s infinite;
+//   }
+
+//   .text {
+//     text-align: center;
+//     color: #3a5562;
+//     font-weight: 400;
+
+//     &::before {
+//       top: -130%;
+//       left: -80%;
+//       width: 80%;
+//       height: 80%;
+//       animation: rabbit2 4s infinite;
+//     }
+
+//     span {
+//       display: block;
+//     }
+//   }
+// }
+
+
+// @keyframes rabbit1 {
+// 	0% {
+// 		transform: translateY(0) rotate(-120deg) scale(1.1);
+// 		opacity: 1;
+// 	}
+// 	30% {
+// 		transform: translateY(100px) scale(1.1);
+// 		opacity: 1;
+// 	}
+// 	60% {
+// 		transform: translateX(80px) translateY(-20px) scale(1.1);
+// 		opacity: 0;
+// 	}
+// 	100% {
+// 		opacity: 0;
+// 	}
+// }
+
+
+// @keyframes rabbit2 {
+// 	0% {
+// 		transform: rotate(0) translateX(0) scaleX(-1);
+// 		opacity: 0;
+// 	}
+// 	45% {
+// 		transform: rotate(0) translateX(0) scaleX(-1);
+// 		opacity: 0;
+// 	}
+// 	60% {
+// 		opacity: 1;
+// 	}
+// 	95% {
+// 		opacity: 0;
+// 	}
+// 	100% {
+// 		transform: rotate(17deg) translateX(150px) scaleX(-1);
+// 		opacity: 0;
+// 	}
+// }
+
+
+// @keyframes rabbit3 {
+// 	0% {
+// 		opacity: 0;
+// 	}
+// 	60% {
+// 		transform: translateY(-40px);
+// 		opacity: 0;
+// 	}
+// 	100% {
+// 		transform: translateY(0);
+// 		opacity: 1;
+// 	}
+// }

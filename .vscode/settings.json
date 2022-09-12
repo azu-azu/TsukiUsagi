@@ -1,0 +1,35 @@
+{
+	"editor.formatOnSave": true,
+
+	// // css出力場所と出力形式
+	// "dartsass.outputFormat": "cssonly",
+	"dartsass.targetDirectory": "dartsass_css/",
+	"dartsass.nodeExePath": "dartsass_css/",
+
+	// prettierを使う
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// eslintを使う
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"eslint.alwaysShowStatus": true,
+
+	// jsフォーマットを無効にする
+	"javascript.format.enable": false,
+
+	// phpのフォーマット
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+	"javascript.format.insertSpaceAfterCommaDelimiter": false,
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+	"javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+	"javascript.format.insertSpaceBeforeAndAfterBinaryOperators": false
+}

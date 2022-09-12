@@ -1,0 +1,185 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+
+.p-svg-cosmos,
+.p-svg-cosmos--circle,
+.p-svg-cosmos--ornament,
+.p-svg-cosmos--earth,
+.p-svg-cosmos--earth__container {
+	position: absolute;
+}
+
+.p-svg-cosmos {
+	top: 0;
+	width: 100%;
+
+	&--circle {
+		top: 0;
+	}
+
+	&--ornament {
+		left: 30%;
+		animation: ornament 5s linear infinite alternate;
+		transform-box: fill-box;
+		transform-origin: center;
+	}
+
+	&--earth {
+		top: 50%;
+		right: -10%;
+
+		&__container {
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+	}
+}
+
+.g-star {
+	&--tiny {
+		fill: v.$color--g-star--tiny;
+		animation: star-opacity 1.5s infinite alternate-reverse;
+		animation-delay: calc(-1s * var(--i));
+	}
+	&--twinkle {
+		fill: v.$color--g-star--twinkle;
+		animation: twinkle 2s infinite alternate-reverse;
+		animation-delay: calc(-1.5s * var(--i));
+	}
+}
+
+.g-saturn__container {
+	animation: saturn 4s infinite alternate-reverse;
+	.g-saturn {
+		fill: v.$color--g-saturn;
+	}
+	.g-ring {
+		fill: v.$color--g-saturn--ring;
+	}
+}
+
+.g-crystal__container {
+	&.crystal-anim1 {
+		animation: crystal 2s infinite alternate-reverse;
+	}
+	&.crystal-anim2 {
+		animation: crystal2 3s infinite alternate-reverse;
+	}
+
+	.g-crystal,
+	.g-crystal__line {
+		stroke-miterlimit: 10;
+		stroke: v.$color--g-crystal;
+		opacity: 0.5;
+		&__parts {
+			fill: v.$color--g-crystal--parts;
+		}
+	}
+
+	.g-crystal {
+		stroke-width: 2;
+	}
+	.g-crystal__line {
+		stroke-width: 0.1;
+	}
+}
+
+$circle-count: 7;
+.g-circle {
+	&__container {
+		transform: rotate(52deg) translate(100px, -2000px);
+
+		@media (min-width: 455px) {
+			transform: rotate(42deg) translate(150px, -1500px);
+		}
+		@media (min-width: 840px) {
+			transform: rotate(25deg) translate(700px, -800px);
+		}
+		@media (min-width: 1070px) {
+			transform: rotate(20deg) translate(500px, -500px);
+		}
+	}
+
+	transform: scale(0);
+	transform-origin: center;
+	transform-box: fill-box;
+	// fill:#fff7d5;
+	fill: v.$color--g-circle;
+	transition: 1s ease-in-out;
+	opacity: 0;
+
+	@for $i from 1 to $circle-count + 1 {
+		&:nth-of-type(#{$i}) {
+			animation: 7s $i * 0.5s circle-loader infinite forwards;
+		}
+	}
+}
+
+@keyframes star-opacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes twinkle {
+	100% {
+		filter: blur(5px);
+		opacity: 0.5;
+	}
+}
+
+@keyframes crystal {
+	100% {
+		filter: blur(2px);
+		opacity: 0.5;
+	}
+}
+
+@keyframes crystal2 {
+	100% {
+		filter: blur(2px);
+		opacity: 0.5;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes saturn {
+	0% {
+		transform: translateY(-20px);
+		opacity: 0.8;
+	}
+	100% {
+		transform: translateY(20px);
+		opacity: 0.5;
+	}
+}
+
+@keyframes circle-loader {
+	50% {
+		transform: scale(2) rotate(0.001deg);
+		filter: blur(10px);
+		opacity: 0.1;
+	}
+	100% {
+		filter: blur(100px);
+		opacity: 0;
+	}
+}
+
+@keyframes ornament {
+	0% {
+		transform: rotate(0) scale(1);
+	}
+	50% {
+		transform: rotate(360deg) scale(5);
+		filter: blur(0.3px);
+	}
+	100% {
+		transform: rotate(720deg) scale(1);
+	}
+}

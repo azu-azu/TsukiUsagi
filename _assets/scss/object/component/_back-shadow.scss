@@ -1,0 +1,46 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-back-shadow {
+	position: relative;
+	display: block;
+
+	&::after {
+		position: absolute;
+		content: '';
+		// display: inline-block;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		border-radius: 50%;
+		filter: blur(10px);
+		z-index: 1;
+	}
+
+	@include m.breakpoint(moon-mini) {
+		&:hover {
+			&::after {
+				opacity: 1;
+				transform: scale(2);
+				filter: blur(100px);
+			}
+		}
+	}
+
+	&--yellow {
+		@extend .c-back-shadow;
+		&::after {
+			background: v.$color--g-circle;
+			transition: 3s ease;
+		}
+	}
+
+	&--white {
+		@extend .c-back-shadow;
+		&::after {
+			background: #fff;
+			transition: 2s ease;
+			opacity: 0.1;
+		}
+	}
+}

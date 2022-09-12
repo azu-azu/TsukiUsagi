@@ -1,0 +1,127 @@
+@use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
+@use "sass:math";
+
+.c-falling-box {
+	margin: auto;
+	transform: translateX(-50%) translate3d(0,0,0);
+	transition: transform .5s;
+	-webkit-perspective: 500px;
+	perspective: 500px;
+
+	div {
+		position: absolute;
+	}
+
+	$dur: 4s;
+	$last-sector: 340deg;
+	.sector {
+		top: 50%;
+		left: 50%;
+
+		$sectors: 7;
+		@for $s from 1 through $sectors {
+			&:nth-of-type(#{$s}) {
+				transform: rotate(math.div(-360deg, $sectors) * ($s - 1))
+					translateY(7.5em) translate3d(0,0,0);
+
+				.rotate {
+					transform: rotate(math.div(360deg, $sectors) * ($s - 1)) translate3d(0,0,0);
+				}
+
+				.line-box {
+					transform: translateY(-50%)
+						rotate(math.div(-360deg, $sectors) * ($s - 1)) translate3d(0,0,0);
+				}
+
+				.falling,
+				.line-box__line {
+					animation-delay: math.div(-$dur, $sectors) * ($s - 1);
+				}
+			}
+		}
+		&:last-of-type {
+			transform: rotate(-$last-sector) translateY(-17.5em) translate3d(0,0,0);
+			.rotate {
+				transform: rotate($last-sector) translate3d(0,0,0);
+			}
+		}
+
+		&:last-child {
+      .line-box__line {
+        overflow: hidden;
+				&::after {
+					content: '';
+					display: block;
+					width: 60%;
+					height: 100%;
+					background: url("../img/common/rabbit/1.svg");
+					background-repeat: no-repeat;
+          background-position: right;
+				}
+			}
+    }
+
+		&:nth-of-type(3n) {
+			.line-box__line {
+				box-shadow: 25px 0 45px rgba(255,255,0, 0.2);
+			}
+		}
+	}
+
+	.falling {
+		animation-name: fall;
+		animation-timing-function: ease-in;
+	}
+
+	.line-box {
+		width: min(18vmin, 80px);
+		height: min(18vmin, 80px);
+	}
+
+	.falling,
+	.line-box__line {
+		animation-duration: $dur;
+		animation-iteration-count: infinite;
+	}
+
+	.line-box__line {
+		animation-name: fadeRotate;
+		animation-timing-function: linear;
+		border-radius: 100%;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+	}
+}
+
+
+
+@keyframes fadeRotate {
+	0% {
+		opacity: 0;
+		transform: rotateX(90deg) rotateY(90deg) scale(0);
+	}
+	50% {
+		opacity: 0.9;
+		transform: rotateX(0deg);
+	}
+	60% {
+		opacity: 0.3;
+		transform: rotateX(0deg);
+	}
+	100% {
+		opacity: 0;
+		transform: rotateX(0deg) scale(1);
+	}
+}
+
+@keyframes fall {
+	0%,
+	50% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(30em);
+	}
+}

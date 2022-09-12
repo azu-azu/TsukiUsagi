@@ -26,8 +26,9 @@
   }
 }
 
-
+// **
 // ホバー時
+// **
 .p-card:hover {
   transform: scale(1.10, 1.10);
 
@@ -40,6 +41,6 @@
   }
   .p-card__inner {
     position: relative;
-    opacity: 0;
+    background: rgba(#fff, .8);
   }
 }

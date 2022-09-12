@@ -1,18 +1,23 @@
 @use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
 
 .p-sec-profile {
 	padding-top: v.$gap--sec-top;
 	padding-bottom: v.$gap--sec-bottom;
 	min-height: 100vh;
 	background-color: transparent;
-	background-image: linear-gradient(
-		to bottom,
-		#3d88af,
-		rgba(108, 177, 211, 0.5)
-	);
 
 	&__cards {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.c-falling-box {
+		position: relative;
+		left: 35%;
+
+		@include m.breakpoint(moon-mini) {
+			left: 45%;
+		}
 	}
 }

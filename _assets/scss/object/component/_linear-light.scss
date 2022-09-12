@@ -1,54 +1,39 @@
 @use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
 
-$position-bottom--line: -50px;
-$width--linear-light: 300px;
 $anim-time: 7s;
-
 
 .c-linear-light {
   position: relative;
-  width: $width--linear-light;
-  height: 3px;
+  width: 100%;
+  height: 100%;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
+    bottom: -2%;
   }
   
   // 走る線
   &:before {
     display: block;
     width: 100%;
-    height: 100%;
-    bottom: $position-bottom--line;
+    height: 3px;
     transform-origin: 0 0;
-    background: linear-gradient(to right, 
-    v.$color--white--opacity10 10%, 
-    v.$color--white--opacity40 80%, 
-    v.$color--white);
+    background: v.$bg-linear-light-before;
     border-radius: 50%;
     animation: line $anim-time infinite;
   }
-  
-  // 光
-  // &:after {
-  //   width: 30px;
-  //   height: 21px;
-  //   bottom: $position-bottom--line - 10px;
-  //   transform-origin: 90% 50%;
-  //   border-radius: 2px;
-  //   background: rgba(v.$color--light-purple, .55);
-  //   box-shadow: 0 0 10px 6px rgba(v.$color--light-purple, .4),
-  //   -20px 0 15px 4px rgba(v.$color--light-purple, .3),
-  //   -40px 0 15px 2px rgba(v.$color--light-purple, .2),
-  //   -60px 0 10px 1px rgba(v.$color--light-purple, .1),
-  //   -80px 0 10px 1px rgba(v.$color--light-purple, .05);
-  //   filter: blur(8px);
-  //   animation: light $anim-time infinite 3s;
-  // }
 }
 
+
+.home {
+  .c-linear-light,
+  .c-linear-light::before {
+    width: v.$width--linear-light--home;
+  }
+}
 
 
 @keyframes line {

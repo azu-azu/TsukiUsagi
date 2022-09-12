@@ -1,44 +1,15 @@
-<section class="p-sec-works" id="works">
-  <article class="c-sec-ttl__wrapper">
-    <h2 class="c-sec-ttl c-anim-box--down txt c-linear-light js-scroll-show">
-      <span>Works</span>
-    </h2>
+<section class="p-sec-works c-bg--gradient-f1" id="works">
+  <?php echo usa_set_heading_linear_show('h2', 'works', 'sec'); ?>
+
+  <article class="c-card--works c-read-more c-rabbit--1b c-rabbit--3a c-anim-box--scaleup js-scroll-show">
+    <a href="<?php echo get_post_type_archive_link('works'); ?>">
+      <?php
+      $text = 'クリックで<span>実績ページへ</span>';
+      $finger = true;
+      echo usa_set_jump_btn_contents($text, $finger);
+      ?>
+
+    </a>
   </article>
-
-  <ul class="p-cards">
-    <li class="p-card c-shutter-anim js-scroll-show" data-js_delay="0">
-      <article class="p-card__container js-scroll-show" data-js_delay="0">
-        <article class="c-card-header">
-          <h3 class="c-card-ttl">WordPress</h3>
-        </article>
-        <div class="c-card-img card1"></div>
-        <a href="https://wish-design-sk.com/" target="_blank" rel="noopener noreferrer">
-          <div class="c-card-img--hover card1"></div>
-        </a>
-        <section class="p-card__inner c-card-info">
-          <p class="c-card-info--01">事業サイト</p>
-          <p class="c-card-info--02">チーム制作</p>
-          <p class="c-card-info--03">サイト名：<a href="#" class="c-card-info--name" title="author">Wish Design様</a></p>
-        </section>
-      </article>
-    </li>
-
-    <li class="p-card c-shutter-anim js-scroll-show" data-js_delay="300">
-      <article class="p-card__container js-scroll-show" data-js_delay="300">
-        <article class="c-card-header">
-          <h3 class="c-card-ttl">WordPress</h3>
-        </article>
-        <div class="c-card-img card2"></div>
-        <a href="https://italiadesign.jp/" target="_blank" rel="noopener noreferrer">
-          <div class="c-card-img--hover card2"></div>
-        </a>
-        <section class="p-card__inner c-card-info">
-          <p class="c-card-info--01">ショッピングサイト</p>
-          <p class="c-card-info--02">EC機能：WooCommerce</p>
-          <p class="c-card-info--03">サイト名：<a href="#" class="c-card-info--name" title="author">Italia Design様</a></p>
-        </section>
-      </article>
-    </li>
-  </ul>
-  <?php get_template_part('components/parts/playing-box');?>
+  <?php get_template_part('components/parts/playing-box'); ?>
 </section>

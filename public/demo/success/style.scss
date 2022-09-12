@@ -1,0 +1,209 @@
+a{color: red;}
+
+p {
+	display: block;
+	font-size: 3rem;
+	color: #fff;
+	text-shadow: 0 0 20px #fff, 0 0 20px rgb(10 175 230 / 0%);
+	box-shadow: 0 0 0 rgb(10 175 230 / 0%), inset 0 0 0 rgb(10 175 230 / 0%);
+}
+
+
+.c-button {
+	position: relative;
+	padding: 10px 20px;
+	background: rgb(200, 241, 255);
+	box-shadow: 7px 12px 20px -7px rgba(#777, .5);
+	border-radius: 20px;
+	transition: .5s;
+
+	&::after {
+		position: absolute;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 20px;
+		bottom: -5px;
+		left: 50%;
+		background: linear-gradient(to right, #44ea76 0%, #39fad7 80%, #39fad7 100%);
+		filter: blur(20px) brightness(0.95);
+		transform: translateX(-50%);
+	}
+
+	&:hover {
+		transform: translateY(-5px);
+	}
+
+	&.opacity {
+		animation: my-opacity .2s forwards;
+
+		&::after {
+			opacity: 1;
+			transform: scale(5);
+		}
+	}
+}
+
+.before-box {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background: rgb(255, 239, 239);
+}
+
+.result-box {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #111;
+
+	.text--main {
+		opacity: 0;
+	}
+
+	&.success {
+		display: block;
+
+		.text {
+			&--main {
+				animation: my-opacity-2 1s forwards .8s;
+			}
+		}
+
+		.container::after {
+			animation: container 1.5s forwards;
+		}
+	}
+}
+
+
+
+.text--sub {
+	overflow: hidden;
+	opacity: 1;
+	padding: 20px;
+	font-size: 2rem;
+	transform: translate(-300%, 0);
+	transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+	color: rgb(255, 255, 180);
+	animation: text-anim 1s forwards;
+}
+
+
+.container {
+	display: none;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to right, #44ea76 0%, #39fad7 80%, #39fad7 100%);
+	}
+}
+
+
+.confetti {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	span {
+		position: absolute;
+		border-radius: 10% 30%;
+		$d: 1vw;
+		width: $d;
+		height: $d;
+		animation: shoot 3s ease-out infinite;
+		animation-name: shoot, fade;
+
+		&::after {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 100%;
+			bottom: -10px;
+			left: 0;
+			background: #fff;
+			filter: blur(10px) brightness(2);
+			animation: my-shadow .5s infinite alternate;
+		}
+	
+		@for $i from 0 to 400 {
+			$t: (1 + .05*random(200))*1s;
+	
+			&:nth-child(#{$i + 1}) {
+				animation-delay: -.01*random(100)*$t;
+				background-color: hsl(random(360), 100%, 70%);
+				transform: translate(random(100)*1vw, random(100)*1vh) rotate(45deg);
+			}
+		}
+	}
+}
+
+
+
+@keyframes my-opacity {
+	100% {
+		transform: scale(5);
+		opacity: 0;
+	}
+}
+@keyframes my-opacity-2 {
+	100% {
+		transform: scale(2);
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes container {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, 100%);
+	}
+}
+
+
+@keyframes text-anim {
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes shoot {
+	0% {
+		transform: translate(50vw, -5vh);
+	}
+}
+
+@keyframes fade {
+	to {
+		opacity: 0;
+	}
+}
+
+.text-box {
+	text-align: center;
+}
+
+
+
+
+
+

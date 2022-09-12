@@ -1,8 +1,38 @@
+@use "../foundation/mixin" as m;
+@use "../foundation/variable" as v;
+
 .l-main {
-  margin-top: -100px;
-  width: 100vw;
-  // 背景色はグラデーション
-  background: radial-gradient(ellipse at center, #1b2735 40%, #090a0f 100%);
-  color: #fff;
-  overflow: hidden;
+    margin-top: -100px;
+    width: 100vw;
+    color: #fff;
+    overflow: hidden;
+
+    .text {
+        transform: translateX(-50%, -50%);
+        font-size: v.$font-size--profile-slide--txt--sp;
+        line-height: 1.5;
+        @include m.breakpoint(moon-mini) {
+            font-size: v.$font-size--profile-slide--txt--pc;
+        }
+    }
+
+    // 背景で静止している星
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+    }
+    &::before {
+        box-shadow: v.$box-shadow--star-purple;
+    }
+
+    &::after {
+        box-shadow: v.$box-shadow--star-green;
+    }
 }

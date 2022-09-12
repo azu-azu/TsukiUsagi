@@ -29,9 +29,10 @@
       }
 
 			.c-nav {
+        overflow: inherit;
         li {
           animation: list-mini v.$time--hamburger-anim linear forwards;
-          @media screen and (min-width: 375px) {
+          @include m.breakpoint( iphone-normal ) {
             animation: list v.$time--hamburger-anim linear forwards;
           }
 
@@ -44,9 +45,33 @@
 	}
 }
 
+
+.archive,
+.single-post,
+.single-works {
+  .c-ham-trigger {
+    &:checked {
+      & ~ .p-header {
+        .c-nav {
+          li {
+            animation: list-mini-topic v.$time--hamburger-anim linear forwards;
+            @include m.breakpoint( iphone-normal ) {
+              animation: list-topic v.$time--hamburger-anim linear forwards;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 body.is-fix {
   position: fixed;
 }
+
+
+
 
 
 
@@ -84,6 +109,30 @@ body.is-fix {
     opacity: 1;
   }
 }
+
+
+@keyframes list-mini-topic {
+  0% {
+    transform: translateX(-115vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-85vw) translateY(250%);
+    opacity: 1;
+  }
+}
+@keyframes list-topic {
+  0% {
+    transform: translateX(-70vw);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-90vw) translateY(250%);
+    opacity: 1;
+  }
+}
+
+
 
 @keyframes line-top {
   40% {

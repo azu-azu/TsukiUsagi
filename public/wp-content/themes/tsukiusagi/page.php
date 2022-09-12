@@ -1,27 +1,13 @@
 <?php
-/*
-Template Name: default
-*/
-?>
-<?php get_header(); ?>
-<?php get_template_part('components/header/topic-header');?>
+// is_page(ページのスラッグ)
 
-<main class="l-topic">
-  <?php get_template_part('components/parts/floating-stars');?>
+get_header();
+get_template_part('components/common/to-top');
 
-  <section class="l-topic__container">
-    <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+if (is_page('policy')) {
+  get_template_part('components/page/policy');
+} elseif (is_page('thanks')) {
+  get_template_part('components/page/thanks');
+}
 
-    <article class="c-sec-ttl__wrapper">
-      <h2 class="c-sec-ttl c-linear-light"><?php the_title(); ?></h2>
-    </article>
-
-    <?php the_content(); ?>
-    <?php get_template_part('components/common/offset-title');?>
-
-    <?php endwhile; ?>
-    <?php endif; ?>
-  </section>
-</main>
-
-<?php get_footer(); ?>
+get_footer();

@@ -1,0 +1,213 @@
+@use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
+@use "sass:math";
+
+.c-playing-box {
+	margin: auto;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%) translate3d(0,0,0);
+  transition: transform .5s;
+  -webkit-perspective: 500px;
+	perspective: 500px;
+
+	div {
+		position: absolute;
+	}
+
+  $play-duration: 4s;
+  .sector2 {
+    top: 50%;
+    left: 50%;
+
+    $sectors: 7;
+    @for $s from 1 through $sectors {
+      &:nth-of-type(#{$s}) {
+        transform: rotate(math.div(360deg, $sectors) * ($s - .5))
+          translateY(7.5em) translate3d(0,0,0);
+
+        .falling2,
+        .line-box__line2 {
+          animation-delay: math.div($play-duration, $sectors) * ($s - .5);
+        }
+      }
+    }
+
+    &:last-child {
+      .line-box__line2 {
+        overflow: hidden;
+        &::after {
+          content: '';
+          display: block;
+          width: 60%;
+          height: 100%;
+          background: url("../img/common/rabbit/1.svg");
+          background-repeat: no-repeat;
+          background-position: right;
+        }
+      }
+    }
+  }
+
+  .falling2 {
+    animation-name: fall2;
+    animation-timing-function: ease-in;
+  }
+
+  .line-box2 {
+    width: min(18vmin, 80px);
+    height: min(18vmin, 80px);
+  }
+
+  .falling2,
+  .line-box__line2 {
+    animation-duration: $play-duration;
+    animation-iteration-count: infinite;
+  }
+
+  .line-box__line2 {
+    animation-name: fadeRotate2;
+    animation-timing-function: linear;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 45px rgba(255,255,255, 0.6);
+    backface-visibility: hidden;
+  }
+}
+
+
+@keyframes fadeRotate2 {
+	0% {
+    transform: rotateX(360deg) scale(0);
+		opacity: 0;
+	}
+	50% {
+    transform: rotateX(0deg);
+		opacity: 0.9;
+	}
+	60% {
+    transform: rotateX(0deg);
+		opacity: 1;
+	}
+	100% {
+    transform: rotateX(0deg) scale(1.5);
+		opacity: 0;
+	}
+}
+
+
+@keyframes fall2 {
+	0%,
+	50% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(30em);
+	}
+}
+
+
+
+
+
+
+
+
+// $circle-width: 80px;
+// $play-anim-time: 4s;
+
+// .p-playing-box {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: $circle-width + 10px;
+// 	display: flex;
+//   justify-content: center;
+// 	gap: 40px;
+//   list-style-type: none;
+
+// 	li {
+// 		position: relative;
+// 		&:nth-child(2) div {
+// 			animation-delay: 3s;
+// 		}
+		
+// 		&:nth-child(3) div {
+// 			animation-delay: 6s;
+// 		}
+// 	}
+// }
+
+
+// .circle {
+//   width: 200px;
+//   height: $circle-width;
+//   border-radius: 0 0 50% 50%;
+//   border: 4px solid rgba(#fff, .2);
+//   border-top: 0;
+//   border-left: 0;
+//   border-right: 0;
+
+//   animation: circle $play-anim-time cubic-bezier(0.45, 0, 1, 1) infinite;
+// }
+
+
+
+// .ball {
+//   position: absolute;
+//   content: "";
+//   width: math.div($circle-width, 2);
+//   height: math.div($circle-width, 2);
+//   top: 50%;
+//   left: 50%;
+//   margin-top: -10px;
+//   margin-left: -10px;
+// 	opacity: 0;
+
+// 	animation: ball $play-anim-time cubic-bezier(0.95, 0, 1, 1) infinite;
+// }
+
+
+// @keyframes circle {
+//   0%, 20% {
+//     transform: rotate(0);
+//   }
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+
+
+// @keyframes ball {
+//   0% {
+//     transform: translateY(-400px);
+//     opacity: 0;
+// 	}
+// 	20% {
+//     transform: translateY(-400px);
+//     opacity: .1;
+//   }
+//   30% {
+//     transform: translateY(10px) translateX(360deg);
+//     opacity: .5;
+// 	}
+//   40% {
+//     transform: translateY(-90px);
+//     opacity: .5;
+// 	}
+//   60% {
+//     transform: translateY(-140px);
+//     opacity: .5;
+// 	}
+//   75% {
+//     transform: translateY(-90px);
+//     opacity: 1;
+//   }
+//   75%,
+//   100% {
+//     transform: translateY(200px);
+//     opacity: 0;
+//   }
+// }

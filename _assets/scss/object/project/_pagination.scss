@@ -1,0 +1,25 @@
+@use '../../object/component/bubbly-button';
+
+.p-pagination {
+	position: relative;
+	display: flex;
+	justify-content: center;
+
+	&__container {
+		display: flex;
+		align-items: baseline;
+		gap: 20px;
+
+		.screen-reader-text {
+			padding: 0;
+		}
+
+		a {
+			@extend .c-bubbly-button--yellow;
+			width: 20px;
+			font-size: 2rem;
+			color: #fff;
+			text-align: center;
+		}
+	}
+}

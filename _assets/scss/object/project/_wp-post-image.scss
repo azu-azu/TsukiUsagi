@@ -1,0 +1,81 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
+
+
+.wp-post-image,
+.wp-post-image__container,
+.wp-post-image__container img,
+.wp-post-image__container::after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+.wp-post-image {
+  &__container {
+    position: relative;
+    transition: .5s ease;
+    cursor: pointer;
+    box-shadow: inset 20px 20px 70px #dbc9dd;
+
+    @include m.breakpoint( moon-mini ) {
+      &:hover {
+        transform: scale(1.1);
+        &::after {
+          transform: scale(1.1);
+          opacity: 0;
+        }
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      background: #fff;
+      filter: blur(20px);
+      transition: .7s ease;
+      opacity: .1;
+    }
+
+    .eye-catch-text {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 500;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      color: #564e34;
+      text-align: center;
+
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.single-post {
+  .l-topic {
+    &__container {
+      .wp-post-image {
+        &__container {
+          cursor: none;
+
+          &::after {
+            display: none;
+          }
+
+          img {
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+          }
+        }
+      }
+    }
+  }
+}

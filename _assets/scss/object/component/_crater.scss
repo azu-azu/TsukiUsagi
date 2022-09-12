@@ -23,12 +23,12 @@
 .c7 {
   pointer-events: none;
   background: v.$color--crater-waning;
-  animation: twinkle .8s alternate infinite;
+  animation: crater-twinkle .8s alternate infinite;
 }
 
 
 
-@keyframes twinkle {
+@keyframes crater-twinkle {
   0% {
     opacity: .45;
   }

@@ -28,7 +28,7 @@
       width: calc(100% - v.$gap--header--pc * 2);
       left: v.$gap--header--pc;
     }
-    @media screen and (min-width:740px) {
+    @include m.breakpoint( header-large ) {
       width: calc(100% - v.$gap--header--wide * 2);
       left: v.$gap--header--wide;
     }
@@ -99,18 +99,3 @@
     color: #fff;
   }
 }
-
-
-// **
-// デフォルト固定ページ
-// **
-body.page-template-page-php {
-  .p-header--top {
-    .c-header-ttl {
-      display: block;
-    }
-  }
-}
-
-
-

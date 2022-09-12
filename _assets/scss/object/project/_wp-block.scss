@@ -1,0 +1,16 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
+
+.wp-block {
+  &-separator {
+    margin-bottom: 40px;
+    border-bottom: 1px solid;
+  }
+
+  &-image {
+    img {
+      display: block;
+      height: auto;
+    }
+  }
+}

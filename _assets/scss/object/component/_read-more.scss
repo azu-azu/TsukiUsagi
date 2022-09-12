@@ -1,0 +1,100 @@
+@use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
+
+
+.c-read-more {
+  position: relative;
+  margin: auto;
+  background: linear-gradient(121.83739606363838deg, 
+  rgba(123, 190, 219, .9) 17.743055555555557%,
+  rgba(123, 189, 218, .9) 17.743055555555557%,
+  rgba(167, 124, 180, .9) 77.46527777777777%);
+  
+  border-radius: 30px;
+  box-shadow: 1px 1px 14px -5px #fff;
+  transition: .5s ease;
+  cursor: pointer;
+  z-index: 100;
+
+  &:hover {
+    transform: scale(1.5);
+    .c-ball {
+      &::before {
+        transform: scale(1.4);
+      }
+    }
+    .jump {
+      transform: rotate(20deg);
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before,
+  &::after,
+  .text,
+  .text::before,
+  .c-ball,
+  .c-circle-text {
+    position: absolute;
+  }
+
+  &::before,
+  &::after,
+  .text::before {
+    content: '';
+    display: block;
+  }
+
+  .c-ball {
+    animation: works-ball 5s infinite alternate;
+    &::before {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: solid 1px #fff;
+    }
+  }
+
+  &,
+  .text {
+    overflow: inherit;
+  }
+
+  .text {
+    text-align: center;
+    color: #3a5562;
+    font-weight: 400;
+
+    &::before {
+      top: -120%;
+      left: 0;
+      transform: scaleX(-1.5) scaleY(1.5);
+      animation: jump-rabbit 3s infinite;
+    }
+  }
+
+  .c-finger::after {
+    color: #506b78;
+  }
+}
+
+
+@keyframes works-ball {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes jump-rabbit {
+  100% {
+    transform: translateX(200px) scaleX(-1.5) scaleY(1.5);
+  }
+}

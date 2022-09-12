@@ -7,7 +7,7 @@
   height: v.$size--moon-big;
   top: v.$position--moon-mini-top;
 
-  @media screen and (min-width: 570px) {
+  @include m.breakpoint( moon-mini ) {
     width: v.$size--moon-mini;
     height: v.$size--moon-mini;
   }

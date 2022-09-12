@@ -2,7 +2,7 @@
 
 .c-card-info {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
 
   &--01 {
@@ -13,17 +13,13 @@
   }
   
   &--02 {
-    font-family: 'Roboto Slab', serif;
-    color: #333;
-  }
-  
-  &--03 {
     font-family: 'Raleway', sans-serif;
-    font-size: v.$font-size--c-card-info--03;
+    font-size: v.$font-size--c-card-info--02;
     color: #333;
   }
   
   &--name {
+    font-size: v.$font-size--c-card-info--03;
     color: v.$color--accent;
   }
 }

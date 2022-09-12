@@ -21,9 +21,6 @@
 
 .p-header--back {
   .p-gmenu {
-    
-    $first-width: 84px;
-    $list-width: 77.75px;
     @include m.breakpoint( moon-mini ) {
       li {
         &:first-child:hover ~ .c-marker::before {
@@ -31,11 +28,15 @@
           opacity: 1;
         }
         &:nth-child(2):hover ~ .c-marker::before {
-          transform: translateX($list-width + v.$gap--c-nav) scale(1);
+          transform: translateX(v.$width--nav-li + v.$gap--c-nav) scale(1);
           opacity: 1;
         }
         &:nth-child(3):hover ~ .c-marker::before {
-          transform: translateX($list-width *2 + v.$gap--c-nav *2) scale(1);
+          transform: translateX(v.$width--nav-li *2 + v.$gap--c-nav *2) scale(1);
+          opacity: 1;
+        }
+        &:nth-child(4):hover ~ .c-marker::before {
+          transform: translateX(v.$width--nav-li *3 + v.$gap--c-nav *3) scale(1);
           opacity: 1;
         }
       }
@@ -46,7 +47,7 @@
         z-index: 1;
 
         &::before {
-          width: $list-width;
+          width: v.$width--nav-li;
           transform: scale(0);
         }
       }
@@ -56,7 +57,7 @@
 
 
 
-
+// $first-width: 84px;
   // $middle-gap: 100vw - (v.$gap--header--wide *2) - (v.$gap--p-header-side--pc *2) - $first-width - ($list-width *2) - (v.$gap--c-nav *2);
   // $middle-gap: calc(100% - $first-width - ($list-width *2) - (v.$gap--c-nav *2)); //100%から各リスト幅とgap幅を引いた数値
 

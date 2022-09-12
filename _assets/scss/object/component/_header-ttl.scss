@@ -8,23 +8,43 @@
   user-select: none;
 }
 
-// タイトル付けるとき
-.page-template-page-php {
-  .c-header-ttl {
-    user-select: none;
-    animation: text-animation 5s linear infinite alternate;
-
-    a {
+// タイトル付ける場合
+.page-template-default,
+.error404 {
+  .p-header--top {
+    .c-header-ttl {
       display: block;
-      padding: 10px;
-    }
-    
-    @keyframes text-animation {
-      from {
-        color: white; text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+      font-weight: v.$font-weight--h1;
+      user-select: none;
+      animation: text-animation 5s linear infinite alternate;
+
+      a {
+        display: block;
+        padding: 10px;
       }
-      to {
-        color: white; text-shadow:0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+      
+      @keyframes text-animation {
+        from {
+          color: white; 
+          text-shadow: 0 0 10px #fff,
+          0 0 20px #fff,
+          0 0 30px #fff,
+          0 0 40px #FFDD1B,
+          0 0 70px #FFDD1B,
+          0 0 80px #FFDD1B,
+          0 0 100px #FFDD1B,
+          0 0 150px #FFDD1B;
+        }
+        to {
+          color: white;
+          text-shadow:0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 20px #ff0080,
+          0 0 30px #ff0080, 
+          0 0 40px #ff0080,
+          0 0 55px #ff0080,
+          0 0 75px #ff0080;
+        }
       }
     }
   }

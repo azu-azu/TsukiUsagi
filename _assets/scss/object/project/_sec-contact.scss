@@ -6,7 +6,6 @@
 	padding-bottom: 100px;
   min-height: 100vh;
   background-color: transparent;
-  background: linear-gradient(to bottom, rgba(108, 177, 211, 0.5), #f3bf7c);
   overflow: hidden;
 
   &__container {
@@ -22,71 +21,9 @@
     @include m.breakpoint(contact-col) {
       width: 400px;
     }
-
-    .c-ball {
-      position: absolute;
-      background: v.$color--white--opacity20;
-      box-shadow: v.$shadow--bg-square-main;
-      border-right: 1px solid v.$color--white--opacity20;
-      border-bottom: 1px solid v.$color--white--opacity20;
-
-      &:nth-child(2) {
-        top: 0;
-        left: -30%;
-        width: 60px;
-        height: 60px;
-        @include m.breakpoint(contact-col) {
-          left: -10%;
-        }
-      }
-      &:nth-child(3) {
-        top: 0;
-        right: -40%;
-        width: 80px;
-        height: 80px;
-        z-index: 2;
-        @include m.breakpoint(contact-col) {
-          right: -15%;
-        }
-      }
-      &:nth-child(4) {
-        bottom: 50%;
-        left: -50%;
-        width: 120px;
-        height: 120px;
-        z-index: 2;
-        @include m.breakpoint(contact-col) {
-          left: -30%;
-        }
-      }
-      &:nth-child(5) {
-        bottom: 20%;
-        right: -50%;
-        width: 120px;
-        height: 120px;
-        z-index: 2;
-        @include m.breakpoint(contact-col) {
-          right: -30%;
-        }
-      }
-      &:nth-child(6) {
-        bottom: -10%;
-        left: -40%;
-        width: 60px;
-        height: 60px;
-        @include m.breakpoint(contact-col) {
-          left: 20%;
-        }
-      }
-    }
   }
 
   .c-offset-title {
     margin-top: 100px;
   }
 }
-
-
-
-
-
