@@ -8,7 +8,7 @@
       <p class="c-gravity-text--main c-gradient-text">Sorry</p>
     </article>
 
-    <?php get_template_part('components/common/to-top');?>
-    <?php get_template_part('components/text/click-text');?>
+    <?php get_template_part('components/common/to-top'); ?>
+    <?php get_template_part('components/text/click-text'); ?>
   </section>
 </main>

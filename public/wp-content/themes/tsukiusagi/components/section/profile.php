@@ -16,8 +16,8 @@
 
         <li class="swiper-slide c-rabbit--3a">
           <article class="swiper-slide__content right">
-          <h3>月うさぎWeb</h3>
-          <p class="text">
+            <h3>月うさぎWeb</h3>
+            <p class="text">
               管理人：月うさぎ<br>
               所在地：東京
             </p>
@@ -26,7 +26,7 @@
 
         <li class="swiper-slide c-rabbit--1a">
           <article class="swiper-slide__content">
-          <h3>WordPress</h3>
+            <h3>WordPress</h3>
             <p class="text">
               ・テーマ開発<br>
               ・プラグイン開発<br>
@@ -64,6 +64,6 @@
     </article>
   </article>
 
-  <?php get_template_part('components/parts/skills');?>
-  <?php get_template_part('components/parts/falling-box');?>
+  <?php get_template_part('components/parts/skills'); ?>
+  <?php get_template_part('components/parts/falling-box'); ?>
 </section>

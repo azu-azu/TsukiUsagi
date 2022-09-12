@@ -7,4 +7,3 @@
     $title = "WordPressテーマ開発";
     echo usa_set_heading_linear_show('h2', $title, 'sec');
   }
-?>
