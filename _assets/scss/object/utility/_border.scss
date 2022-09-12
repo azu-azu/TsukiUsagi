@@ -1,8 +1,8 @@
-@use "../../foundation/mixin" as m;
-@use "../../foundation/variable" as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
 
 .u-border {
-  &--sec-bottom {
-    border-bottom: 3px solid v.$color--accent;
-  }
+	&--sec-bottom {
+		border-bottom: 3px solid v.$color--accent;
+	}
 }

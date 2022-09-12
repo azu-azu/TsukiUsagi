@@ -1,13 +1,13 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-moon-txt {
-  color: v.$font-color--moon-text;
-  // font-family: "Gluten", cursive;
-  font-size: v.$font-size--moon--sp;
-  letter-spacing: 1px;
+	color: v.$font-color--moon-text;
+	// font-family: "Gluten", cursive;
+	font-size: v.$font-size--moon--sp;
+	letter-spacing: 1px;
 
-  @include m.breakpoint( moon-mini ) {
-    font-size: v.$font-size--moon--pc;
-  }
+	@include m.breakpoint(moon-mini) {
+		font-size: v.$font-size--moon--pc;
+	}
 }

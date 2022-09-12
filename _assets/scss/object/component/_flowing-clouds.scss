@@ -1,19 +1,19 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-flowing-clouds {
 	height: 50%;
 	width: 100%;
 	position: absolute;
 	top: 40%;
-	@include m.breakpoint( moon-mini ) {
+	@include m.breakpoint(moon-mini) {
 		top: 5%;
 	}
 
 	&,
 	&::before,
 	&::after {
-		background: url("../img/common/cloud.svg");
+		background: url('../img/common/cloud.svg');
 		background-repeat: repeat-x;
 		background-position: 0 100%;
 	}
@@ -30,33 +30,33 @@
 	& {
 		filter: blur(30px);
 		animation: parallax_fg3-sp linear 20s infinite both;
-		@include m.breakpoint( moon-mini ) {
+		@include m.breakpoint(moon-mini) {
 			animation: parallax_fg3 linear 20s infinite both;
 		}
-		@include m.breakpoint( wide ) {
+		@include m.breakpoint(wide) {
 			animation: parallax_fg3-wide linear 20s infinite both;
 		}
 	}
 
 	&::before {
 		filter: blur(25px);
-		opacity: .8;
+		opacity: 0.8;
 		animation: parallax_fg2-sp linear 30s infinite both;
-		@include m.breakpoint( moon-mini ) {
+		@include m.breakpoint(moon-mini) {
 			animation: parallax_fg2 linear 30s infinite both;
 		}
-		@include m.breakpoint( wide ) {
+		@include m.breakpoint(wide) {
 			animation: parallax_fg2-wide linear 30s infinite both;
 		}
 	}
 	&::after {
 		filter: blur(35px);
-		opacity: .3;
+		opacity: 0.3;
 		animation: parallax_fg1-sp linear 40s infinite both;
-		@include m.breakpoint( moon-mini ) {
+		@include m.breakpoint(moon-mini) {
 			animation: parallax_fg1 linear 40s infinite both;
 		}
-		@include m.breakpoint( wide ) {
+		@include m.breakpoint(wide) {
 			animation: parallax_fg1-wide linear 40s infinite both;
 		}
 	}
@@ -72,13 +72,13 @@
 		height: 150px;
 		top: 30%;
 		left: 100%;
-		background: url("../img/common/cloud.svg");
+		background: url('../img/common/cloud.svg');
 		background-repeat: no-repeat;
 		filter: blur(10px);
 		transform: scale(3);
 		animation: parallax_loading-sp linear 4s forwards;
-			
-		@include m.breakpoint( moon-mini ) {
+
+		@include m.breakpoint(moon-mini) {
 			width: 100%;
 			filter: blur(20px);
 			animation: parallax_loading linear 8s forwards;
@@ -86,29 +86,27 @@
 	}
 }
 
-
-
 $sp-start: -100vw;
 $sp-end: 210vw;
 $pc-start: -50vw;
 $pc-end: 300vw;
 @keyframes parallax_loading-sp {
-  0% {
+	0% {
 		transform: translateX($sp-start) scale(2);
 	}
-  100% {
+	100% {
 		transform: translateX($sp-end) scale(3);
 	}
 }
 @keyframes parallax_loading {
-  0% {
+	0% {
 		transform: translateX($pc-start) scale(2);
 		opacity: 1;
 	}
 	10% {
 		opacity: 1;
 	}
-  100% {
+	100% {
 		transform: translateX($pc-end) scale(4);
 		opacity: 0;
 	}
@@ -117,78 +115,76 @@ $pc-end: 300vw;
 $fg-start: 550px;
 $fg-end: 2765px;
 @keyframes parallax_fg1-sp {
-  0% { 
+	0% {
 		background-position: $fg-start 10%;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 10%;
 	}
 }
 @keyframes parallax_fg2-sp {
-  0% { 
+	0% {
 		background-position: $fg-start 20%;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 20%;
 	}
 }
 @keyframes parallax_fg3-sp {
-  0% { 
+	0% {
 		background-position: $fg-start 30%;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 30%;
 	}
 }
 
-
 @keyframes parallax_fg1 {
-  0% { 
+	0% {
 		background-position: $fg-start 180px;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 180px;
 	}
 }
 @keyframes parallax_fg2 {
-  0% { 
+	0% {
 		background-position: $fg-start 250px;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 250px;
 	}
 }
 @keyframes parallax_fg3 {
-  0% { 
+	0% {
 		background-position: $fg-start 300px;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 300px;
 	}
 }
 
-
 @keyframes parallax_fg1-wide {
-  0% { 
+	0% {
 		background-position: $fg-start 100px;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 100px;
 	}
 }
 @keyframes parallax_fg2-wide {
-  0% { 
+	0% {
 		background-position: $fg-start 150px;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 150px;
 	}
 }
 @keyframes parallax_fg3-wide {
-  0% { 
+	0% {
 		background-position: $fg-start 200px;
 	}
-  100% {
+	100% {
 		background-position: $fg-end 200px;
 	}
 }

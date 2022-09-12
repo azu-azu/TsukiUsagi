@@ -10,7 +10,6 @@
 // background: radial-gradient(at 50% 70%, rgb(248, 174, 255), rgb(255, 139, 245), rgb(255, 42, 237), rgb(39, 223, 255));
 // background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
 
-
 .c-cloud {
 	&__container {
 		position: absolute;
@@ -23,7 +22,7 @@
 	width: 100px;
 	height: 30px;
 	border-radius: 50px 35px 35px 15px;
-	background: rgb(145,133,132);
+	background: rgb(145, 133, 132);
 	filter: blur(10px);
 
 	&::before,
@@ -33,7 +32,7 @@
 		display: block;
 		width: 40px;
 		border-radius: 35px;
-		background: rgb(145,133,132);
+		background: rgb(145, 133, 132);
 	}
 
 	&::before {

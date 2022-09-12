@@ -1,5 +1,5 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-separator-cloud {
 	position: relative;
@@ -14,7 +14,7 @@
 	}
 
 	.cloud-ball {
-		transition: animation .5s;
+		transition: animation 0.5s;
 
 		$count: 74;
 		$delay: 0;
@@ -22,7 +22,7 @@
 			&:nth-child(#{$i}) {
 				animation-delay: -5s + $delay;
 			}
-			$delay: $delay + .1;
+			$delay: $delay + 0.1;
 		}
 	}
 
@@ -65,7 +65,7 @@
 	}
 	90% {
 		transform: translateY(-5px);
-	}	
+	}
 	100% {
 		transform: translateY(5px);
 		opacity: 0;

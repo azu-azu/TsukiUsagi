@@ -1,14 +1,14 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-copyright {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-family: 'xmas', cursive;
-  font-size: 5vw;
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-family: 'xmas', cursive;
+	font-size: 5vw;
 
-  @include m.breakpoint( moon-mini ) {
-    font-size: 2rem;
-  }
+	@include m.breakpoint(moon-mini) {
+		font-size: 2rem;
+	}
 }

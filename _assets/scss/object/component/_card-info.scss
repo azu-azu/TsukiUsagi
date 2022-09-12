@@ -1,25 +1,25 @@
-@use "../../foundation/variable" as v;
+@use '../../foundation/variable' as v;
 
 .c-card-info {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  align-items: center;
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	align-items: center;
 
-  &--01 {
-    font-family: 'Raleway', sans-serif;
-    font-size: v.$font-size--c-card-info--01;
-    letter-spacing: 1px;
-    color: #666;
-  }
-  
-  &--02 {
-    font-family: 'Raleway', sans-serif;
-    font-size: v.$font-size--c-card-info--02;
-    color: #333;
-  }
-  
-  &--name {
-    font-size: v.$font-size--c-card-info--03;
-    color: v.$color--accent;
-  }
+	&--01 {
+		font-family: 'Raleway', sans-serif;
+		font-size: v.$font-size--c-card-info--01;
+		letter-spacing: 1px;
+		color: #666;
+	}
+
+	&--02 {
+		font-family: 'Raleway', sans-serif;
+		font-size: v.$font-size--c-card-info--02;
+		color: #333;
+	}
+
+	&--name {
+		font-size: v.$font-size--c-card-info--03;
+		color: v.$color--accent;
+	}
 }

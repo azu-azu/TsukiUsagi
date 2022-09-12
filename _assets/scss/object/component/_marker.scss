@@ -1,21 +1,21 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-marker {
-  @include m.breakpoint( moon-mini ) {
-    display: none;
-    width: 100%;
+	@include m.breakpoint(moon-mini) {
+		display: none;
+		width: 100%;
 
-    &::before {
-      position: absolute;
-      content: "";
-      height: 40px;
-      top: -10px;
-      left: 0;
-      background: rgba(255,255,255, 0.3);
-      filter: blur(10px);
-      transition: .5s ease-in-out;
-      opacity: 0;
-    }
-  }
+		&::before {
+			position: absolute;
+			content: '';
+			height: 40px;
+			top: -10px;
+			left: 0;
+			background: rgba(255, 255, 255, 0.3);
+			filter: blur(10px);
+			transition: 0.5s ease-in-out;
+			opacity: 0;
+		}
+	}
 }

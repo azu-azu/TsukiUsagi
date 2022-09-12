@@ -15,13 +15,10 @@
 			width: 100%;
 			height: 100%;
 			color: #fff;
-			text-shadow: 0 0 20px rgba(#fff, .5),
-			0 0 30px rgba(#fff, .5),
-			0 0 40px rgba(#1a3142, 0.9),
-			0 0 70px rgba(#1a3142, 0.9),
-			0 0 80px rgba(#1a3142, 0.9),
-			0 0 100px rgba(#1a3142, 0.9),
-			0 0 150px rgba(#1a3142, 0.9);
+			text-shadow: 0 0 20px rgba(#fff, 0.5), 0 0 30px rgba(#fff, 0.5),
+				0 0 40px rgba(#1a3142, 0.9), 0 0 70px rgba(#1a3142, 0.9),
+				0 0 80px rgba(#1a3142, 0.9), 0 0 100px rgba(#1a3142, 0.9),
+				0 0 150px rgba(#1a3142, 0.9);
 		}
 		&:nth-child(1) {
 			&::after {
@@ -38,34 +35,32 @@
 	}
 }
 
-
-
 @keyframes anim-glow {
 	0% {
 		opacity: 1;
 	}
 	20% {
-			opacity: 0;
+		opacity: 0;
 	}
 	40% {
-			opacity: 1;
+		opacity: 1;
 	}
 	100% {
-			opacity: 1;
+		opacity: 1;
 	}
 }
 
 @keyframes anim-blink {
 	0% {
-			opacity: 1;
+		opacity: 1;
 	}
 	60% {
-			opacity: 1;
+		opacity: 1;
 	}
 	80% {
-			opacity: 0;
+		opacity: 0;
 	}
 	100% {
-			opacity: 1;
+		opacity: 1;
 	}
 }

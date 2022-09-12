@@ -1,77 +1,76 @@
-@use "../../foundation/mixin" as m;
-@use "../../foundation/variable" as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
 
 .c-nav {
-  display: flex;
-  flex-direction: column;
-  gap: v.$gap--c-nav;
-  height: 0;
-  transform: translateX(100vw);
-  z-index: 90;
-  overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: v.$gap--c-nav;
+	height: 0;
+	transform: translateX(100vw);
+	z-index: 90;
+	overflow-x: hidden;
 
-  @include m.breakpoint( moon-mini ) {
-    position: static;
-    width: auto;
-    height: auto;
-    flex-direction: row;
-    transform: inherit;
-  }
-  
-  li {
-    width: 250px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 50px;
-    filter: drop-shadow(2px 4px 6px);
-    cursor: pointer;
-    user-select: none;
+	@include m.breakpoint(moon-mini) {
+		position: static;
+		width: auto;
+		height: auto;
+		flex-direction: row;
+		transform: inherit;
+	}
 
-    animation: list-back-mini .2s linear forwards;
+	li {
+		width: 250px;
+		background: rgba(0, 0, 0, 0.6);
+		border-radius: 50px;
+		filter: drop-shadow(2px 4px 6px);
+		cursor: pointer;
+		user-select: none;
 
-    @media screen and (min-width:374px) and (max-width:569px) {
-      animation: list-back .2s linear forwards;
-    }
+		animation: list-back-mini 0.2s linear forwards;
 
-    @include m.breakpoint( moon-mini ) {
-      padding: 0;
-      width: v.$width--nav-li;
-      background: none;
-      filter: none;
-      border-radius: 0;
-      transform: inherit;
-      animation: none;
-    }
+		@media screen and (min-width: 374px) and (max-width: 569px) {
+			animation: list-back 0.2s linear forwards;
+		}
 
-    a {
-      display: block;
-      padding: 10px;
-      font-size: v.$font-size--hamburger-nav;
+		@include m.breakpoint(moon-mini) {
+			padding: 0;
+			width: v.$width--nav-li;
+			background: none;
+			filter: none;
+			border-radius: 0;
+			transform: inherit;
+			animation: none;
+		}
 
-      @include m.breakpoint( moon-mini ) {
-        font-size: v.$font-size--header-nav;
-      }
-    }
-  }
+		a {
+			display: block;
+			padding: 10px;
+			font-size: v.$font-size--hamburger-nav;
+
+			@include m.breakpoint(moon-mini) {
+				font-size: v.$font-size--header-nav;
+			}
+		}
+	}
 }
-
 
 @keyframes list-back-mini {
-  0% {
-    transform: translateX(-120vw) translateY(150%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
+	0% {
+		transform: translateX(-120vw) translateY(150%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 0;
+	}
 }
 @keyframes list-back {
-  0% {
-    transform: translateX(-100vw) translateY(150%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0;
-  }
+	0% {
+		transform: translateX(-100vw) translateY(150%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 0;
+	}
 }

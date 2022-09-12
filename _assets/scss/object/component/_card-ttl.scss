@@ -1,10 +1,10 @@
-@use "../../foundation/variable" as v;
+@use '../../foundation/variable' as v;
 
 .c-card-ttl {
-  font-size: v.$font-size--card-ttl;
-  font-weight: v.$font-weight--card-ttl;
-  letter-spacing: 2px;
-  text-indent: 2px;
-  color: v.$font-color--card-ttl;
-  text-shadow: 1px 1px 5px #fff;
+	font-size: v.$font-size--card-ttl;
+	font-weight: v.$font-weight--card-ttl;
+	letter-spacing: 2px;
+	text-indent: 2px;
+	color: v.$font-color--card-ttl;
+	text-shadow: 1px 1px 5px #fff;
 }

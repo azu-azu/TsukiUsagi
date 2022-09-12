@@ -1,11 +1,11 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
-@use "sass:math";
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+@use 'sass:math';
 
 .c-falling-box {
 	margin: auto;
-	transform: translateX(-50%) translate3d(0,0,0);
-	transition: transform .5s;
+	transform: translateX(-50%) translate3d(0, 0, 0);
+	transition: transform 0.5s;
 	-webkit-perspective: 500px;
 	perspective: 500px;
 
@@ -23,15 +23,18 @@
 		@for $s from 1 through $sectors {
 			&:nth-of-type(#{$s}) {
 				transform: rotate(math.div(-360deg, $sectors) * ($s - 1))
-					translateY(7.5em) translate3d(0,0,0);
+					translateY(7.5em)
+					translate3d(0, 0, 0);
 
 				.rotate {
-					transform: rotate(math.div(360deg, $sectors) * ($s - 1)) translate3d(0,0,0);
+					transform: rotate(math.div(360deg, $sectors) * ($s - 1))
+						translate3d(0, 0, 0);
 				}
 
 				.line-box {
 					transform: translateY(-50%)
-						rotate(math.div(-360deg, $sectors) * ($s - 1)) translate3d(0,0,0);
+						rotate(math.div(-360deg, $sectors) * ($s - 1))
+						translate3d(0, 0, 0);
 				}
 
 				.falling,
@@ -41,30 +44,31 @@
 			}
 		}
 		&:last-of-type {
-			transform: rotate(-$last-sector) translateY(-17.5em) translate3d(0,0,0);
+			transform: rotate(-$last-sector) translateY(-17.5em)
+				translate3d(0, 0, 0);
 			.rotate {
-				transform: rotate($last-sector) translate3d(0,0,0);
+				transform: rotate($last-sector) translate3d(0, 0, 0);
 			}
 		}
 
 		&:last-child {
-      .line-box__line {
-        overflow: hidden;
+			.line-box__line {
+				overflow: hidden;
 				&::after {
 					content: '';
 					display: block;
 					width: 60%;
 					height: 100%;
-					background: url("../img/common/rabbit/1.svg");
+					background: url('../img/common/rabbit/1.svg');
 					background-repeat: no-repeat;
-          background-position: right;
+					background-position: right;
 				}
 			}
-    }
+		}
 
 		&:nth-of-type(3n) {
 			.line-box__line {
-				box-shadow: 25px 0 45px rgba(255,255,0, 0.2);
+				box-shadow: 25px 0 45px rgba(255, 255, 0, 0.2);
 			}
 		}
 	}
@@ -94,8 +98,6 @@
 		backface-visibility: hidden;
 	}
 }
-
-
 
 @keyframes fadeRotate {
 	0% {

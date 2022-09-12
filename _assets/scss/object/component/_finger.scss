@@ -1,37 +1,27 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-finger {
-  position: relative;
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    content: '\f0a6';
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-    font-size: 2rem;
-    color: #506b78;
-    animation: hand 1s infinite alternate;
-
-  //   @include m.breakpoint( iphone-normal ) {
-  //     left: 50%;
-  //     transform: translateX(-50%);
-  //   }
-  //   @include m.breakpoint( moon-mini ) {
-  //     bottom: -20%;
-  //     font-size: 2rem;
-  //   }
-  }
+	position: relative;
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '\f0a6';
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
+		font-size: 2rem;
+		color: #506b78;
+		animation: hand 1s infinite alternate;
+	}
 }
 
-
 @keyframes hand {
-  0% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(10px);
-  }
+	0% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(10px);
+	}
 }

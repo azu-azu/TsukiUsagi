@@ -1,18 +1,18 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .p-skills {
-  width: 100%;
-  margin-top: 100px;
-  font-family: 'Noto Sans JP', sans-serif;
+	width: 100%;
+	margin-top: 100px;
+	font-family: 'Noto Sans JP', sans-serif;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 50px;
 
-  span {
-    display: inline-block;
-  }
+	span {
+		display: inline-block;
+	}
 }

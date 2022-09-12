@@ -1,6 +1,5 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
-
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 // .c-works-card::before,
 // .c-works-card::after,
@@ -15,16 +14,15 @@
 //   overflow: inherit;
 // }
 
-
 // .c-works-card {
-	// background: linear-gradient(121.83739606363838deg, 
-  // rgba(123, 190, 219, .9) 17.743055555555557%,
-  // rgba(123, 189, 218, .9) 17.743055555555557%,
-  // rgba(167, 124, 180, .9) 77.46527777777777%);
+// background: linear-gradient(121.83739606363838deg,
+// rgba(123, 190, 219, .9) 17.743055555555557%,
+// rgba(123, 189, 218, .9) 17.743055555555557%,
+// rgba(167, 124, 180, .9) 77.46527777777777%);
 
-  // border-radius: 30px;
-  // transition: .5s ease;
-  // cursor: pointer;
+// border-radius: 30px;
+// transition: .5s ease;
+// cursor: pointer;
 
 //   &::before,
 //   &::after {
@@ -61,7 +59,6 @@
 //   }
 // }
 
-
 // @keyframes rabbit1 {
 // 	0% {
 // 		transform: translateY(0) rotate(-120deg) scale(1.1);
@@ -79,7 +76,6 @@
 // 		opacity: 0;
 // 	}
 // }
-
 
 // @keyframes rabbit2 {
 // 	0% {
@@ -101,7 +97,6 @@
 // 		opacity: 0;
 // 	}
 // }
-
 
 // @keyframes rabbit3 {
 // 	0% {

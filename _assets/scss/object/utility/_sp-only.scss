@@ -1,14 +1,14 @@
-@use "../../foundation/mixin" as m;
+@use '../../foundation/mixin' as m;
 
 .sp-only {
-  display: block;
-  @include m.breakpoint( moon-mini ) {
-    display: none;
+	display: block;
+	@include m.breakpoint(moon-mini) {
+		display: none;
 	}
 }
 .sp-none {
-  display: none;
-  @include m.breakpoint( moon-mini ) {
-    display: block;
+	display: none;
+	@include m.breakpoint(moon-mini) {
+		display: block;
 	}
 }

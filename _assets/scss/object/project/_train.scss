@@ -1,5 +1,5 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .p-train__container {
 	position: absolute;
@@ -11,7 +11,7 @@
 	overflow-x: hidden;
 	z-index: 100;
 
-	@include m.breakpoint( moon-mini ) {
+	@include m.breakpoint(moon-mini) {
 		top: 35%;
 	}
 
@@ -20,7 +20,7 @@
 		position: fixed;
 		top: -5%;
 
-		@include m.breakpoint( moon-mini ) {
+		@include m.breakpoint(moon-mini) {
 			top: -4%;
 		}
 	}
@@ -51,10 +51,10 @@
 			right: -43px;
 			border-radius: 50%;
 			background: #fff7d5;
-			opacity: .4;
+			opacity: 0.4;
 			filter: blur(10px);
 			transform-origin: bottom right;
-			transition: animation .5s ease-in-out;
+			transition: animation 0.5s ease-in-out;
 		}
 
 		&::before {
@@ -73,7 +73,6 @@
 	}
 }
 
-
 .page-thanks {
 	.p-train__container {
 		top: 70%;
@@ -85,37 +84,35 @@
 	.p-train {
 		&__container {
 			top: 15%;
-			@include m.breakpoint( moon-mini ) {
+			@include m.breakpoint(moon-mini) {
 				top: -8%;
 			}
 		}
 		&__running {
-			@include m.breakpoint( moon-mini ) {
+			@include m.breakpoint(moon-mini) {
 				animation: run-short 30s infinite linear;
 			}
 		}
 		&__light {
-			@include m.breakpoint( moon-mini ) {
+			@include m.breakpoint(moon-mini) {
 				animation: turn 30s infinite;
 			}
 		}
 	}
 }
 
-
 @keyframes smoke {
 	0% {
 		transform: scale(0) rotate(-5deg);
 		filter: blur(1px);
-		opacity: .4;
+		opacity: 0.4;
 	}
-  100% { 
+	100% {
 		transform: scale(2) rotate(-60deg);
 		filter: blur(10px);
-		opacity: .1;
-  }
+		opacity: 0.1;
+	}
 }
-
 
 @keyframes run-short {
 	0% {

@@ -1,4 +1,4 @@
-@use "../../foundation/variable" as v;
+@use '../../foundation/variable' as v;
 
 .c-sun {
 	width: 200px;
@@ -8,10 +8,11 @@
 	background: v.$color--sub;
 
 	box-shadow: -1px -1px 20px 6px rgba(v.$color--sub, 0.5),
-	1px 1px 20px 6px rgba(#d00, 0.5), 70px 40px 80px 10px rgba(v.$color--sub, 0.5),
-	-70px -40px 80px 10px rgba(v.$color--sub, 0.5),
-	-40px 70px 80px 10px rgba(v.$color--sub, 0.5),
-	40px -70px 80px 10px rgba(v.$color--sub, 0.5);
+		1px 1px 20px 6px rgba(#d00, 0.5),
+		70px 40px 80px 10px rgba(v.$color--sub, 0.5),
+		-70px -40px 80px 10px rgba(v.$color--sub, 0.5),
+		-40px 70px 80px 10px rgba(v.$color--sub, 0.5),
+		40px -70px 80px 10px rgba(v.$color--sub, 0.5);
 	filter: blur(3px);
 	animation: rise 24s ease forwards;
 }

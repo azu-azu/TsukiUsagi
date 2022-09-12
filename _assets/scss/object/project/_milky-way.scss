@@ -1,33 +1,30 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
-@use "sass:math";
-
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+@use 'sass:math';
 
 .p-milky-way {
-  &__container {
-    position: relative;
-    margin-top: -50vh;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
+	&__container {
+		position: relative;
+		margin-top: -50vh;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
 
-  display: block;
-  position: absolute;
-  width: 130%;
-  height: 300px;
-  top: 40%;
-  left: -15%;
-  transform: rotate(17deg);
-  z-index: 1;
+	display: block;
+	position: absolute;
+	width: 130%;
+	height: 300px;
+	top: 40%;
+	left: -15%;
+	transform: rotate(17deg);
+	z-index: 1;
 
-  .c-shooting-star {
-    position: absolute;
-    top: 0;
-  }
+	.c-shooting-star {
+		position: absolute;
+		top: 0;
+	}
 }
-
-
 
 // ** canvas使う場合 **
 // #canvas-milky-way {
@@ -36,7 +33,6 @@
 // 	margin-top: -150px;
 //   transform: rotate(20deg);
 // }
-
 
 // ** divタグ200個作る場合 **
 // <article class="p-milky-way__container js-milky-way" id="js-milky-way">
@@ -59,14 +55,11 @@
 //   rgba(169, 133, 69, 0.1) 60%,
 //   rgba(169, 133, 69, 0) 100%;
 
-
-
 // .p-milky-way__container,
 // .p-milky-way {
 //   width: 120vw;
 //   height: 300px;
 // }
-
 
 // .p-milky-way {
 //   &__container {
@@ -106,7 +99,7 @@
 //       animation: star-opacity math.div($time--milky-way-anim, 4) linear infinite alternate;
 //     }
 //   }
-  
+
 //   // サイズ・位置・アニメーション設定
 //   @for $i from 1 through 300 {
 //     $left: random(10) + 0.5px;
@@ -122,18 +115,18 @@
 //       .milky-move {
 //         animation: milky-move random(10000) + 10000ms linear infinite;
 //       }
-      
+
 //       .milky-star {
 //         // border-width: 0 $right $bottom $left;//設定すると星が大きくなりすぎる
 //         animation-delay: $delay, $delay;
-        
+
 //         &::before {
 //           left: math.div(-$left + ($left + $right), 2);
 //           width: calc(($left + $right) * $size--milky-way-reflect-ratio);
 //           height: $bottom;
 //           animation-delay: $delay;
 //         }
-        
+
 //         &::after {
 //           top: math.div($bottom, 2);
 //           left: -$left;
@@ -146,12 +139,11 @@
 //   }
 // }
 
-
 // @keyframes milky-star-rotateY {
 //   0% {
 //     transform: rotateY(0deg);
 //   }
-  
+
 //   100% {
 //     transform: rotateY(360deg);
 //   }
@@ -161,7 +153,7 @@
 //   0% {
 //     transform: translateX(0%);
 //   }
-  
+
 //   100% {
 //     transform: translateX(-100%);
 //   }
@@ -171,11 +163,11 @@
 //   0% {
 //     border-color: transparent transparent #fff transparent;
 //   }
-  
+
 //   10% {
 //     border-color: transparent transparent $color--milky-way-main transparent;
 //   }
-  
+
 //   100% {
 //     border-color: transparent transparent #fff transparent;
 //   }
@@ -185,20 +177,15 @@
 //   0% {
 //     opacity: 1;
 //   }
-  
+
 //   10% {
 //     opacity: 0;
 //   }
-  
+
 //   100% {
 //     opacity: 0;
 //   }
 // }
-
-
-
-
-
 
 // $COLOR_WHITE: #fff;
 // $COLOR_SKY_TOP: #060431;
@@ -265,4 +252,3 @@
 //     @include prefixes(box-shadow, 0 0 20px 5px rgba($COLOR_WHITE, 0.3));
 //   }
 // }
-

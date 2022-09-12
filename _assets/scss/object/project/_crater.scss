@@ -1,79 +1,79 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .p-crater {
-  position: relative;
-  width: v.$size--moon-big;
-  height: v.$size--moon-big;
-  top: v.$position--moon-mini-top;
+	position: relative;
+	width: v.$size--moon-big;
+	height: v.$size--moon-big;
+	top: v.$position--moon-mini-top;
 
-  @include m.breakpoint( moon-mini ) {
-    width: v.$size--moon-mini;
-    height: v.$size--moon-mini;
-  }
+	@include m.breakpoint(moon-mini) {
+		width: v.$size--moon-mini;
+		height: v.$size--moon-mini;
+	}
 
-  .c-moon-txt {
-    position: absolute;
-    top: 53%;
-    right: 5%;
-    width: auto;
+	.c-moon-txt {
+		position: absolute;
+		top: 53%;
+		right: 5%;
+		width: auto;
 
-    @include m.breakpoint( moon-mini ) {
-      bottom: 18vmin;
-    }
-  }
+		@include m.breakpoint(moon-mini) {
+			bottom: 18vmin;
+		}
+	}
 
-  .c-crater {
-    position: absolute;
-    z-index: 1;
-    
-    &.c1 {
-      width: 3vmin;
-      height: 3vmin;
-      left: 71%;
-      top: 20%;
-    }
-    
-    &.c2 {
-      width: 2vmin;
-      height: 2vmin;
-      left: 88%;
-      top: 42%;
-    }
-    
-    &.c3 {
-      width: 1vmin;
-      height: 1vmin;
-      left: 80%;
-      top: 70%;
-    }
-    
-    &.c4 {
-      width: 1vmin;
-      height: 1vmin;
-      left: 25%;
-      top: 30%;
-    }
-    
-    &.c5 {
-      width: 1.5vmin;
-      height: 1.5vmin;
-      left: 40%;
-      top: 13%;
-    }
-    
-    &.c6 {
-      width: 1.8vmin;
-      height: 1.8vmin;
-      left: 40%;
-      top: 45%;
-    }
-    
-    &.c7 {
-      width: .5vmin;
-      height: .5vmin;
-      left: 30%;
-      top: 80%;
-    }
-  }
+	.c-crater {
+		position: absolute;
+		z-index: 1;
+
+		&.c1 {
+			width: 3vmin;
+			height: 3vmin;
+			left: 71%;
+			top: 20%;
+		}
+
+		&.c2 {
+			width: 2vmin;
+			height: 2vmin;
+			left: 88%;
+			top: 42%;
+		}
+
+		&.c3 {
+			width: 1vmin;
+			height: 1vmin;
+			left: 80%;
+			top: 70%;
+		}
+
+		&.c4 {
+			width: 1vmin;
+			height: 1vmin;
+			left: 25%;
+			top: 30%;
+		}
+
+		&.c5 {
+			width: 1.5vmin;
+			height: 1.5vmin;
+			left: 40%;
+			top: 13%;
+		}
+
+		&.c6 {
+			width: 1.8vmin;
+			height: 1.8vmin;
+			left: 40%;
+			top: 45%;
+		}
+
+		&.c7 {
+			width: 0.5vmin;
+			height: 0.5vmin;
+			left: 30%;
+			top: 80%;
+		}
+	}
 }

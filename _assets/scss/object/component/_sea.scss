@@ -10,10 +10,14 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: radial-gradient(at 50% 0, rgba(rgb(229, 255, 0), 0.8), transparent);
+		background: radial-gradient(
+			at 50% 0,
+			rgba(rgb(229, 255, 0), 0.8),
+			transparent
+		);
 		opacity: 0.5;
 		z-index: 30;
-		animation: over 15s ease forwards;		
+		animation: over 15s ease forwards;
 	}
 }
 
@@ -26,9 +30,8 @@
 	}
 }
 
-
-	// background: radial-gradient(at 50% 0%, rgb(238, 168, 255), rgb(182, 247, 255));
-	// background: radial-gradient(at 50% 0%, rgba(#ffeda8, .5), rgba(#b6f7ff, .8));
-	// background: radial-gradient(at 50% 0%, rgba(#2c52ff, .5), rgba(#b6f7ff, .8));
-	// background: rgba(#fff5be, .5);
-	// background: radial-gradient(at 50% -140%, pink, transparent);
+// background: radial-gradient(at 50% 0%, rgb(238, 168, 255), rgb(182, 247, 255));
+// background: radial-gradient(at 50% 0%, rgba(#ffeda8, .5), rgba(#b6f7ff, .8));
+// background: radial-gradient(at 50% 0%, rgba(#2c52ff, .5), rgba(#b6f7ff, .8));
+// background: rgba(#fff5be, .5);
+// background: radial-gradient(at 50% -140%, pink, transparent);

@@ -1,117 +1,112 @@
-@use "../../foundation/variable" as v;
+@use '../../foundation/variable' as v;
 
 .p-random-txt {
-  margin: 1em auto;
-  position: absolute;
-  transform-style: preserve-3d;
-  perspective: 400px;
-  text-align: center;
-  max-width: 700px;
-  bottom: 10%;
-  right: 5%;
+	margin: 1em auto;
+	position: absolute;
+	transform-style: preserve-3d;
+	perspective: 400px;
+	text-align: center;
+	max-width: 700px;
+	bottom: 10%;
+	right: 5%;
 
-  .letter,
-  .space {
-    position: relative;
-    display: inline-block;
-    font-size: 1.8rem;
-    font-family: "Titillium Web", sans-serif;
-    font-weight: bold;
-    transform-style: preserve-3d;
-  }
-  .space {
-    width: .5em;
-  }
+	.letter,
+	.space {
+		position: relative;
+		display: inline-block;
+		font-size: 1.8rem;
+		font-family: 'Titillium Web', sans-serif;
+		font-weight: bold;
+		transform-style: preserve-3d;
+	}
+	.space {
+		width: 0.5em;
+	}
 }
 
-
 .p-random-txt--color {
-  @extend .p-random-txt;
-  width: 200px;
-  height: 100px;
-  top: 46%;
-  left: 45.5%;
-  bottom: inherit;
-  right: inherit;
-  animation: fade 1s;
+	@extend .p-random-txt;
+	width: 200px;
+	height: 100px;
+	top: 46%;
+	left: 45.5%;
+	bottom: inherit;
+	right: inherit;
+	animation: fade 1s;
 }
 
 .letter--color {
-  @extend .letter;
+	@extend .letter;
 }
 
 $text-count: 43;
 @for $i from 1 through $text-count {
-  $num: 1;
-  $rand: random(10);
-  @if($rand > 5){
-    $num: -1;
-  }
+	$num: 1;
+	$rand: random(10);
+	@if ($rand > 5) {
+		$num: -1;
+	}
 
-  $x: (random(1000) + 300) * $num +px; 
-  $y: (random(1000) + 300) * $num +px;
-  $color: #fff;
-  $deg: 360 * $num +deg;
+	$x: (random(1000) + 300) * $num + px;
+	$y: (random(1000) + 300) * $num + px;
+	$color: #fff;
+	$deg: 360 * $num + deg;
 
-  @keyframes anim#{$i}{
-    0% {
-      transform: translate3d($x, $y, -1000px) rotate(0deg);
-      opacity: 0;
-    }
-    100% {
-      transform: translate3d(0,0,0) rotate($deg);
-      opacity: .8;
-    }
-  }
-  .letter:nth-child(#{$i}){
-    animation: anim#{$i} 5s;
-    animation-delay: -$i * .2s;
-    color: $color;
-    text-shadow: 2px 2px 5px $color;
-  }
+	@keyframes anim#{$i} {
+		0% {
+			transform: translate3d($x, $y, -1000px) rotate(0deg);
+			opacity: 0;
+		}
+		100% {
+			transform: translate3d(0, 0, 0) rotate($deg);
+			opacity: 0.8;
+		}
+	}
+	.letter:nth-child(#{$i}) {
+		animation: anim#{$i} 5s;
+		animation-delay: -$i * 0.2s;
+		color: $color;
+		text-shadow: 2px 2px 5px $color;
+	}
 }
-
-
 
 $text-count: 11;
 @for $i from 1 through $text-count {
-  $num: 1;
-  $rand: random(10);
-  @if($rand > 5){
-    $num: -1;
-  }
+	$num: 1;
+	$rand: random(10);
+	@if ($rand > 5) {
+		$num: -1;
+	}
 
-  $x: (random(50) + 50) * $num +px;//集まってくる範囲
-  $y: (random(50) + 50) * $num +px;
-  $color: v.$color--moon-waning;
-  // $color: hsl(random(50), 100%, 50%);
-  $deg: 360 * $num +deg;
+	$x: (random(50) + 50) * $num + px; //集まってくる範囲
+	$y: (random(50) + 50) * $num + px;
+	$color: v.$color--moon-waning;
+	// $color: hsl(random(50), 100%, 50%);
+	$deg: 360 * $num + deg;
 
-  @keyframes anim#{$i}{
-    0% {
-      transform: translate3d($x, $y, -100px) rotate(0deg);
-      opacity: 0;
-    }
-    100% {
-      transform: translate3d(0,0,0) rotate($deg);
-      opacity: .8;
-    }
-  }
-  .letter--color:nth-child(#{$i}){
-    animation: anim#{$i} 5s;
-    animation-delay: -$i * .2s;
-    color: $color;
-    text-shadow: 2px 2px 5px transparent;
-  }
+	@keyframes anim#{$i} {
+		0% {
+			transform: translate3d($x, $y, -100px) rotate(0deg);
+			opacity: 0;
+		}
+		100% {
+			transform: translate3d(0, 0, 0) rotate($deg);
+			opacity: 0.8;
+		}
+	}
+	.letter--color:nth-child(#{$i}) {
+		animation: anim#{$i} 5s;
+		animation-delay: -$i * 0.2s;
+		color: $color;
+		text-shadow: 2px 2px 5px transparent;
+	}
 }
 
-
-
 @keyframes fade {
-  0% {
-    display: block;
-  }
-  100% {
-    display: none;
-  }
+	0% {
+		display: block;
+	}
+	100% {
+		display: none;
+	}
 }

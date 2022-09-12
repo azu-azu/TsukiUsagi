@@ -1,8 +1,8 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .c-ham-trigger {
-  display: none;
+	display: none;
 
 	// チェックがついたら
 	&:checked {
@@ -16,64 +16,59 @@
 			.line-bottom {
 				animation: line-bottom v.$time--hamburger-anim linear forwards;
 			}
-      &::before {
-        animation: overlay v.$time--hamburger-anim linear forwards;
-      }
+			&::before {
+				animation: overlay v.$time--hamburger-anim linear forwards;
+			}
 		}
-	
+
 		& ~ .p-header {
-      &::before,
-      .c-header-ttl--totop {
-        transition: none;
-        opacity: 0;
-      }
+			&::before,
+			.c-header-ttl--totop {
+				transition: none;
+				opacity: 0;
+			}
 
 			.c-nav {
-        overflow: inherit;
-        li {
-          animation: list-mini v.$time--hamburger-anim linear forwards;
-          @include m.breakpoint( iphone-normal ) {
-            animation: list v.$time--hamburger-anim linear forwards;
-          }
+				overflow: inherit;
+				li {
+					animation: list-mini v.$time--hamburger-anim linear forwards;
+					@include m.breakpoint(iphone-normal) {
+						animation: list v.$time--hamburger-anim linear forwards;
+					}
 
-          @include m.breakpoint( moon-mini ) {
-            animation: none;
-          }
-        }
-      }
-    }
+					@include m.breakpoint(moon-mini) {
+						animation: none;
+					}
+				}
+			}
+		}
 	}
 }
-
 
 .archive,
 .single-post,
 .single-works {
-  .c-ham-trigger {
-    &:checked {
-      & ~ .p-header {
-        .c-nav {
-          li {
-            animation: list-mini-topic v.$time--hamburger-anim linear forwards;
-            @include m.breakpoint( iphone-normal ) {
-              animation: list-topic v.$time--hamburger-anim linear forwards;
-            }
-          }
-        }
-      }
-    }
-  }
+	.c-ham-trigger {
+		&:checked {
+			& ~ .p-header {
+				.c-nav {
+					li {
+						animation: list-mini-topic v.$time--hamburger-anim
+							linear forwards;
+						@include m.breakpoint(iphone-normal) {
+							animation: list-topic v.$time--hamburger-anim linear
+								forwards;
+						}
+					}
+				}
+			}
+		}
+	}
 }
-
 
 body.is-fix {
-  position: fixed;
+	position: fixed;
 }
-
-
-
-
-
 
 // アニメーション
 
@@ -81,128 +76,124 @@ body.is-fix {
 // ハンバーガーopenのとき
 // **
 @keyframes overlay {
-  70% {
-    transform: scale(20);
-  }
-  100% {
-    transform: scale(30);
-  }
+	70% {
+		transform: scale(20);
+	}
+	100% {
+		transform: scale(30);
+	}
 }
 
 @keyframes list-mini {
-  0% {
-    transform: translateX(-115vw);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-120vw) translateY(150%);
-    opacity: 1;
-  }
+	0% {
+		transform: translateX(-115vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(-120vw) translateY(150%);
+		opacity: 1;
+	}
 }
 @keyframes list {
-  0% {
-    transform: translateX(-95vw);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-100vw) translateY(150%);
-    opacity: 1;
-  }
+	0% {
+		transform: translateX(-95vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(-100vw) translateY(150%);
+		opacity: 1;
+	}
 }
-
 
 @keyframes list-mini-topic {
-  0% {
-    transform: translateX(-115vw);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-85vw) translateY(250%);
-    opacity: 1;
-  }
+	0% {
+		transform: translateX(-115vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(-85vw) translateY(250%);
+		opacity: 1;
+	}
 }
 @keyframes list-topic {
-  0% {
-    transform: translateX(-70vw);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-90vw) translateY(250%);
-    opacity: 1;
-  }
+	0% {
+		transform: translateX(-70vw);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(-90vw) translateY(250%);
+		opacity: 1;
+	}
 }
 
-
-
 @keyframes line-top {
-  40% {
-    transform: scale(2, 2) rotate(405deg);
-  }
-  80% {
-    transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
-  }
-  100% {
-    transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
-  }
+	40% {
+		transform: scale(2, 2) rotate(405deg);
+	}
+	80% {
+		transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
+	}
+	100% {
+		transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
+	}
 }
 
 @keyframes line-middle {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateY(360deg);
-  }
-  100% {
-    transform: translateX(-110vw);
-  }
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateY(360deg);
+	}
+	100% {
+		transform: translateX(-110vw);
+	}
 }
 
 @keyframes line-bottom {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(-135deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
+	0% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate(-135deg);
+	}
+	100% {
+		transform: rotate(45deg);
+	}
 }
-
 
 // **
 // ハンバーガーcloseのとき
 // **
 @keyframes line-top-back {
-  40% {
-    transform: scale(2,2) rotate(45deg) translateY(50px);
-  }
-  100% {
-    transform: scale(1,1) rotate(-180deg) translateY(0);
-  }
+	40% {
+		transform: scale(2, 2) rotate(45deg) translateY(50px);
+	}
+	100% {
+		transform: scale(1, 1) rotate(-180deg) translateY(0);
+	}
 }
 
 @keyframes line-middle-back {
-  0% {
-    transform: translateX(-110vw);
-  }
-  70% {
-    transform: translateX(-50vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
+	0% {
+		transform: translateX(-110vw);
+	}
+	70% {
+		transform: translateX(-50vw);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 @keyframes line-bottom-back {
-  0% {
-    transform: rotateZ(45deg);
-  }
-  50% {
-    transform: rotateZ(90deg);
-  }
-  100% {
-    transform: rotateZ(0);
-  }
+	0% {
+		transform: rotateZ(45deg);
+	}
+	50% {
+		transform: rotateZ(90deg);
+	}
+	100% {
+		transform: rotateZ(0);
+	}
 }

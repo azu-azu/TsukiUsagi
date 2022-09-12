@@ -1,35 +1,37 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 $font-size--circle-text: 1rem;
 
 .c-circle-text {
-  font-size: $font-size--circle-text;
-  font-weight: v.$font-weight--regular;
-  text-align: center;
-  margin: 0;
-  transform: rotate(-10deg); //円の回転
+	font-size: $font-size--circle-text;
+	font-weight: v.$font-weight--regular;
+	text-align: center;
+	margin: 0;
+	transform: rotate(-10deg); //円の回転
 
-  &:last-child {
-    bottom: 0;
-    transform: rotate(180deg);
-  }
+	&:last-child {
+		bottom: 0;
+		transform: rotate(180deg);
+	}
 
-  span {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    left: calc(50% - #{$font-size--circle-text}); //文字サイズ分ずらす
-    width: calc(10px + #{$font-size--circle-text}); //文字サイズより大きくする
-    transform-origin: center bottom; //回転の基準点
+	span {
+		position: absolute;
+		display: inline-block;
+		top: 0;
+		left: calc(50% - #{$font-size--circle-text}); //文字サイズ分ずらす
+		width: calc(
+			10px + #{$font-size--circle-text}
+		); //文字サイズより大きくする
+		transform-origin: center bottom; //回転の基準点
 
-    $count: 10;
-    $deg: 7;
-    @for $i from 1 through $count {
-      &:nth-child(#{$i}) {
-        transform: rotate(#{$deg} +deg);
-      }
-      $deg: $deg + 7;
-    }
-  }
+		$count: 10;
+		$deg: 7;
+		@for $i from 1 through $count {
+			&:nth-child(#{$i}) {
+				transform: rotate(#{$deg} + deg);
+			}
+			$deg: $deg + 7;
+		}
+	}
 }

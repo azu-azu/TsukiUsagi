@@ -1,13 +1,13 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .p-sec-moon {
-  // position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	// position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  width: 100%;
-  height: 100vh;
-  // z-index: 1;
+	width: 100%;
+	height: 100vh;
+	// z-index: 1;
 }

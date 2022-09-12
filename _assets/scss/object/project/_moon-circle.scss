@@ -1,32 +1,32 @@
-@use "../../foundation/variable" as v;
-@use "../../foundation/mixin" as m;
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
 
 .p-moon-circle {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  border-radius: 50%;
-  background: none;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vw;
-  margin-top: 100px;
-  z-index: 1;//背景の星より上にするため
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	border-radius: 50%;
+	background: none;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vw;
+	margin-top: 100px;
+	z-index: 1; //背景の星より上にするため
 
-  @include m.breakpoint(moon-mini) {
-    margin-top: 200px;
-    width: 80vmin;
-    height: 80vmin;
-  }
+	@include m.breakpoint(moon-mini) {
+		margin-top: 200px;
+		width: 80vmin;
+		height: 80vmin;
+	}
 
-  .c-moon {
-    position: absolute;
-    top: v.$position--moon-big-top;
-  }
+	.c-moon {
+		position: absolute;
+		top: v.$position--moon-big-top;
+	}
 
-  .c-rabbit--1a::after {
-    opacity: .5;
-    filter: blur(3px);
-  }
+	.c-rabbit--1a::after {
+		opacity: 0.5;
+		filter: blur(3px);
+	}
 }
