@@ -3,6 +3,8 @@ _assets/img
 _assets/js
 _assets/public
 _assets/.DS_Store
+_assets/scss/.DS_Store
+_assets/scss/foundation/.DS_Store
 
 _gulp
 _static
