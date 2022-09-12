@@ -1,0 +1,1 @@
+<div class="c-playing-box" id="js-sector-play"></div>
