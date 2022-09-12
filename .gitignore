@@ -19,6 +19,8 @@ public/wp-content/languages
 public/wp-content/plugins
 public/wp-content/themes/index.php
 public/wp-content/themes/.DS_Store
+public/wp-content/themes/tsukiusagi/style.css
+public/wp-content/themes/tsukiusagi/style.css.map
 public/wp-content/upgrade
 public/wp-content/uploads
 public/wp-content/index.php
