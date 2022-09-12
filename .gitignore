@@ -42,7 +42,6 @@ public/xmlrpc.php/
 
 sql/
 .eslintrc.js
-.gitignore
 .prettierrc.js
 package-lock.json
 package.json
