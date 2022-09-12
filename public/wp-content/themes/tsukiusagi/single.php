@@ -1,2 +1,2 @@
 <?php
-  get_template_part('components/contents/all');
+get_template_part('components/contents/all');
