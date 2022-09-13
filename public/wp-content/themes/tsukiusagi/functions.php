@@ -186,30 +186,3 @@ include(get_template_directory() . '/plug_in/contact_form.php'); // contact form
 include(get_template_directory() . '/plug_in/usa_meta_ogp.php'); // OGP画像
 include(get_template_directory() . '/plug_in/usa_set_tax_terms_links.php'); //タクソノミーとタームのリンクを取得する
 include(get_template_directory() . '/plug_in/usa_set_textarea_multiple_lines_data.php'); //カスタムフィールドの複数行の値（改行入力）をリストで出力する
-
-
-function my_remove_meta_boxes() {
-    remove_meta_box('authordiv', 'post', 'normal'); // オーサー
-}
-add_action('admin_menu', 'my_remove_meta_boxes');
-
-
-
-//--------------------------------------------
-// 【管理画面】ターム一覧にIDを表示
-//--------------------------------------------
-function add_term_columns($columns) {
-    $index = 4; // IDの表示位置を指定
-    return array_merge(
-        array_slice($columns, 0, $index),
-        array('id' => 'ID'),
-        array_slice($columns, $index)
-    );
-}
-add_filter('manage_edit-product_cat_columns', 'add_term_columns');
-function add_term_custom_fields($deprecated, $column_name, $term_id) {
-    if ($column_name == 'id') {
-        echo $term_id;
-    }
-}
-add_action('manage_product_cat_custom_column', 'add_term_custom_fields', 10, 3);
