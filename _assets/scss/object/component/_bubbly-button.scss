@@ -1,0 +1,129 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-bubbly-button {
+	@include m.breakpoint(moon-mini) {
+		position: relative;
+		display: inline-block;
+		border: none;
+		appearance: none;
+		-webkit-appearance: none;
+		cursor: pointer;
+		// transition: transform ease-out .5s, box-shadow ease-out .5s;
+		// transition: all ease-out .5s;
+		// box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			display: block;
+			width: 140%;
+			height: 100%;
+			left: -20%;
+			z-index: 1000;
+			// transition: all ease-in-out 0.5s;
+			background-repeat: no-repeat;
+		}
+
+		// 泡
+		&::before {
+			display: none;
+			top: -30%;
+			background-size: 20% 20%, 40% 40%, 30% 30%, 40% 40%, 36% 36%,
+				20% 20%, 30% 30%, 20% 20%, 36% 36%;
+			background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%,
+				22% 50%, 50% 50%, 65% 20%, 85% 30%;
+		}
+
+		&::after {
+			display: none;
+			bottom: -30%;
+			background-size: 20% 20%, 40% 40%, 36% 36%, 40% 40%, 30% 30%,
+				20% 20%, 40% 40%;
+			background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%,
+				25% 90%, 40% 90%, 55% 90%, 70% 90%;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+		&:hover {
+			opacity: 0.8;
+			transform: scale(0.9);
+
+			&::before {
+				display: block;
+				animation: topBubbles ease-in-out 0.75s forwards;
+			}
+			&::after {
+				display: block;
+				animation: bottomBubbles ease-in-out 0.75s forwards;
+			}
+		}
+	}
+}
+
+.c-bubbly-button--white {
+	@extend .c-bubbly-button;
+	&::before {
+		background-image: v.$bg-img--bubbly-btn--white-before;
+	}
+	&::after {
+		background-image: v.$bg-img--bubbly-btn--white-after;
+	}
+
+	@include m.breakpoint(moon-mini) {
+		&:hover {
+			color: rgb(161, 159, 159);
+		}
+	}
+}
+
+.c-bubbly-button--yellow {
+	@extend .c-bubbly-button;
+	&::before {
+		background-image: v.$bg-img--bubbly-btn--yellow-before;
+	}
+	&::after {
+		background-image: v.$bg-img--bubbly-btn--yellow-after;
+	}
+
+	@include m.breakpoint(moon-mini) {
+		&:hover {
+			color: v.$color--bubbly-btn-yellow;
+		}
+	}
+}
+
+@keyframes topBubbles {
+	0% {
+		background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+			40% 90%, 55% 90%, 70% 90%;
+	}
+	50% {
+		background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+			50% 50%, 65% 20%, 90% 30%;
+	}
+	100% {
+		background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+			50% 40%, 65% 10%, 90% 20%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}
+
+@keyframes bottomBubbles {
+	0% {
+		background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+			70% -10%, 70% 0%;
+	}
+	50% {
+		background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%,
+			95% 60%, 105% 0%;
+	}
+	100% {
+		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%,
+			95% 70%, 110% 10%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}

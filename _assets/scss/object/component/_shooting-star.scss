@@ -1,0 +1,48 @@
+@use '../../foundation/variable' as v;
+
+.c-shooting-star {
+	width: 80px;
+	height: 80px;
+
+	&--01 {
+		//白ボール
+		@extend .c-shooting-star;
+		animation: shooting-star 12s infinite -2s;
+	}
+
+	&--02 {
+		//黄ボール
+		@extend .c-shooting-star;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: linear-gradient(
+			0deg,
+			rgba(#ff0, 0.5) 20%,
+			rgba(#ff0, 0.3) 100%
+		);
+		box-shadow: 0 0 50px 10px #ff0;
+		animation: shooting-star 10s infinite;
+	}
+
+	&.c-ball {
+		box-shadow: none;
+	}
+}
+
+@keyframes shooting-star {
+	0% {
+		transform: translate(0, 40vh);
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	50% {
+		transform: translate(100vw, 80vh);
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}

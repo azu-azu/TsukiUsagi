@@ -1,0 +1,78 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+@use 'sass:math';
+
+.c-ball {
+	border-radius: 50%;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		border-radius: 50%;
+	}
+
+	&::before {
+		top: 5px;
+		left: 0;
+		width: math.div(100%, 2);
+		height: math.div(100%, 3);
+		background: v.$color--white--opacity20;
+		filter: blur(10px);
+	}
+}
+
+.c-ball__container {
+	.c-ball {
+		position: absolute;
+
+		&:nth-child(1) {
+			top: 0;
+			left: -30%;
+			width: 60px;
+			height: 60px;
+			@include m.breakpoint(contact-col) {
+				left: -10%;
+			}
+		}
+		&:nth-child(2) {
+			top: 0;
+			right: -40%;
+			width: 80px;
+			height: 80px;
+			z-index: 2;
+			@include m.breakpoint(contact-col) {
+				right: -15%;
+			}
+		}
+		&:nth-child(3) {
+			bottom: 50%;
+			left: -50%;
+			width: 120px;
+			height: 120px;
+			z-index: 2;
+			@include m.breakpoint(contact-col) {
+				left: -30%;
+			}
+		}
+		&:nth-child(4) {
+			bottom: 20%;
+			right: -50%;
+			width: 120px;
+			height: 120px;
+			z-index: 2;
+			@include m.breakpoint(contact-col) {
+				right: -30%;
+			}
+		}
+		&:nth-child(5) {
+			bottom: -10%;
+			left: -40%;
+			width: 60px;
+			height: 60px;
+			@include m.breakpoint(contact-col) {
+				left: 20%;
+			}
+		}
+	}
+}

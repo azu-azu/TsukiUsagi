@@ -1,0 +1,88 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/variable' as v;
+
+.l-header {
+	// ブラウザによってはスクロールバーが表示されるため、無しにする
+	& ::-webkit-scrollbar {
+		display: none;
+	}
+
+	position: fixed;
+	width: calc(100% - v.$size--hamburger-container - 10px);
+	margin-top: 5px;
+	padding: 0 v.$gap--header--sp;
+	top: 0;
+	z-index: 2000;
+	transition: all 1s ease-in-out;
+
+	@include m.breakpoint(moon-mini) {
+		width: 100%;
+		margin-top: 10px;
+		padding: 0 v.$gap--header--pc;
+	}
+
+	@include m.breakpoint(header-large) {
+		padding: 0 v.$gap--header--wide;
+	}
+}
+
+.single,
+.single-works,
+.archive {
+	.l-header {
+		position: fixed;
+		z-index: 1400;
+
+		@include m.breakpoint(moon-mini) {
+			position: absolute;
+			width: 100%;
+		}
+
+		.p-header {
+			@include m.breakpoint(moon-mini) {
+				padding: 0 20px;
+			}
+			@include m.breakpoint(wide) {
+				padding: 0 100px;
+			}
+
+			&::before {
+				background: linear-gradient(
+					to right,
+					rgba(0, 0, 0, 0.1) 10%,
+					rgba(255, 255, 255, 0.1) 30%,
+					rgba(255, 255, 255, 0.5) 90%,
+					rgba(0, 0, 0, 0.8) 100%
+				);
+
+				@include m.breakpoint(moon-mini) {
+					width: 100%;
+					left: 0;
+				}
+				@include m.breakpoint(header-large) {
+					width: 100%;
+					left: 0;
+				}
+				@include m.breakpoint(wide) {
+					background: linear-gradient(
+						to right,
+						rgba(0, 0, 0, 0.1) 10%,
+						rgba(255, 255, 255, 0.1) 50%,
+						rgba(255, 255, 255, 0.5) 80%,
+						rgba(0, 0, 0, 0.8) 100%
+					);
+				}
+			}
+
+			.p-gmenu {
+				justify-content: flex-end;
+
+				.c-marker {
+					&::before {
+						background: rgba(255, 255, 0, 0.3);
+					}
+				}
+			}
+		}
+	}
+}

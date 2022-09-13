@@ -1,0 +1,87 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+@use 'sass:math';
+
+.c-offset-title {
+	display: flex;
+	justify-content: center;
+
+	.words {
+		position: relative;
+		width: 600px;
+		height: 70px;
+		font-size: v.$font-size--p-offset-text;
+
+		.word {
+			// position: absolute;
+			width: 100%;
+			height: 100%;
+			letter-spacing: 10px;
+
+			@include m.breakpoint(moon-mini) {
+				letter-spacing: inherit;
+				margin-top: none;
+			}
+
+			.char {
+				position: absolute;
+				animation: horizontal-move-sp 10s linear infinite;
+
+				&:last-child {
+					visibility: hidden;
+					@include m.breakpoint(moon-mini) {
+						visibility: visible;
+					}
+				}
+
+				$char-num: 9;
+				$delay: -4.5s;
+				@for $i from 1 through $char-num {
+					&:nth-of-type(#{$i}) {
+						animation-delay: $delay;
+					}
+					$delay: $delay + 0.5;
+				}
+
+				@include m.breakpoint(moon-mini) {
+					offset-path: path(
+						'M-64.5,28c44.4,0,44.4,26,88.9,26c44.4,0,44.4-26,88.9-26c44.4,0,44.4,26,88.9,26c44.4,0,44.4-26,88.9-26c44.4,0,44.4,26,88.9,26c44.4,0,44.4-26,88.9-26c44.4,0,44.4,26,88.9,26c44.4,0,44.4-26,88.9-26'
+					);
+
+					offset-distance: 100%;
+					opacity: 0;
+					animation: waving 10s linear infinite;
+				}
+			}
+		}
+	}
+}
+
+// offset無し
+@keyframes horizontal-move-sp {
+	0% {
+		transform: translateX(2000%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 0.9;
+	}
+}
+
+// offset用
+@keyframes waving {
+	50% {
+		opacity: 1;
+	}
+	100% {
+		offset-distance: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes up-down {
+	100% {
+		transform: scale(1) translateY(100px) rotateZ(360deg);
+	}
+}

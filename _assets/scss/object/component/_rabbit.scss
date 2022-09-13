@@ -1,0 +1,91 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-rabbit {
+	&--1a,
+	&--1b {
+		overflow: hidden;
+	}
+	&--1a::after,
+	&--1b::before {
+		content: '';
+		display: block;
+		width: 60%;
+		height: 100%;
+	}
+
+	&--1a {
+		&::after {
+			background: url('../img/common/rabbit/1.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+	&--1b {
+		&::before {
+			background: url('../img/common/rabbit/1.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+
+	&--2a {
+		@extend .c-rabbit--1a;
+		&::after {
+			background: url('../img/common/rabbit/2.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+	&--2b {
+		@extend .c-rabbit--1b;
+		&::before {
+			background: url('../img/common/rabbit/2.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+	&--3a {
+		@extend .c-rabbit--1a;
+		&::after {
+			background: url('../img/common/rabbit/3.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+	&--3b {
+		@extend .c-rabbit--1b;
+		&::before {
+			background: url('../img/common/rabbit/3.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+	&--4a {
+		@extend .c-rabbit--1a;
+		&::after {
+			background: url('../img/common/rabbit/4.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+	&--4b {
+		@extend .c-rabbit--1b;
+		&::before {
+			background: url('../img/common/rabbit/4.svg');
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+	}
+}
+
+$rabbit-anim-time: 4s;
+$rabbit-count: 3;
+@for $i from 1 through $rabbit-count {
+	.c-rabbit--#{$i} {
+		background: url('../img/common/rabbit/#{$i}.svg');
+		background-repeat: no-repeat;
+		background-position-x: center;
+		animation: rabbit#{$i} $rabbit-anim-time infinite;
+	}
+}

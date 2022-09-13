@@ -1,0 +1,70 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+// 吹き出し
+$ballon-color: #d5d5d5;
+.smb-balloon {
+	margin-bottom: 20px;
+	&__figure {
+		border: 1px solid $ballon-color;
+	}
+	&__body {
+		width: fit-content;
+		flex: inherit;
+		background-color: $ballon-color;
+		border-color: $ballon-color;
+		box-shadow: 1px 1px 1px $ballon-color;
+		border-radius: 25px;
+	}
+}
+
+.single {
+	.l-topic {
+		.l-topic__container {
+			.smb-balloon {
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			// ハイライティングコードブロック
+			.hcb_wrap.hcb_wrap {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+// ボックス
+.smb-box {
+	margin-bottom: 20px;
+
+	&__background {
+		background: #eee;
+	}
+}
+
+// アコーディオン
+.smb-accordion__item__title {
+	&::before {
+		position: absolute;
+		content: '\f0a4';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 10px;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
+		font-size: 2rem;
+		animation: finger 3s infinite;
+	}
+	span {
+		padding-left: 40px;
+	}
+}
+
+@keyframes finger {
+	100% {
+		transform: translateX(10px);
+	}
+}

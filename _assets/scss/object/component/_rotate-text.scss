@@ -1,0 +1,39 @@
+@use '../../foundation/variable' as v;
+@use 'sass:math';
+
+.c-rotate-text {
+	perspective: 800px;
+	user-select: none; //テキスト選択を可能にするかどうか
+
+	span {
+		display: inline-block;
+		transform-origin: 50% 70%;
+		transform: rotateX(0);
+
+		$count: 9;
+		@for $i from 1 through $count {
+			$time: 12s;
+			$delay: $i - 13.5;
+			.char:nth-child(#{$i}) {
+				animation: StandUp
+					$time
+					cubic-bezier(0.68, -0.55, 0.26, 1.55)
+					$delay +
+					s
+					infinite;
+			}
+		}
+	}
+}
+
+@keyframes StandUp {
+	0% {
+		transform: rotateX(0);
+	}
+	50% {
+		transform: rotateX(-90deg) rotateZ(0);
+	}
+	90% {
+		transform: rotateY(360deg) translateY(5px);
+	}
+}

@@ -1,0 +1,105 @@
+@use '../../foundation/variable' as v;
+
+.c-skills-ball {
+	position: relative;
+	width: min(80vw, 530px);
+	height: 300px;
+
+	&--language {
+		@extend .c-skills-ball;
+
+		.c-ball {
+			&:not(:first-child) {
+				animation: scale 10s linear infinite;
+				animation-delay: calc(-1s * var(--i));
+			}
+
+			&.skill-css {
+				top: 0;
+				left: 25vmin;
+				width: min(17vmin, 100px);
+				height: min(17vmin, 100px);
+			}
+			&.skill-php {
+				top: 0;
+				left: 48vmin;
+				width: min(17vmin, 100px);
+				height: min(17vmin, 100px);
+			}
+			&.skill-react {
+				top: 115px;
+				right: 16vmin;
+				width: min(12vmin, 50px);
+				height: min(12vmin, 50px);
+			}
+			&.skill-js {
+				top: 115px;
+				right: 0;
+				width: min(12vmin, 60px);
+				height: min(12vmin, 60px);
+			}
+			&.skill-gulp {
+				top: 160px;
+				left: 4vmin;
+				width: min(10vmin, 40px);
+				height: min(10vmin, 40px);
+				z-index: 2;
+			}
+			&.skill-git {
+				top: 116px;
+				left: 14vmin;
+				width: min(10vmin, 50px);
+				height: min(10vmin, 50px);
+			}
+		}
+	}
+
+	&--wordpress {
+		@extend .c-skills-ball;
+
+		.c-ball {
+			&:not(:first-child) {
+				animation: scale 10s linear infinite;
+				animation-delay: calc(-1s * var(--i));
+			}
+
+			&.skill-theme {
+				top: 0;
+				left: 30vmin;
+				width: min(17vmin, 100px);
+				height: min(17vmin, 100px);
+			}
+			&.skill-custom {
+				top: 0;
+				right: 2vmin;
+				width: min(17vmin, 90px);
+				height: min(17vmin, 90px);
+			}
+			&.skill-plugin {
+				top: 155px;
+				right: 0;
+				width: min(13vmin, 60px);
+				height: min(13vmin, 60px);
+			}
+			&.skill-block {
+				top: 120px;
+				left: 19vmin;
+				width: min(13vmin, 60px);
+				height: min(13vmin, 60px);
+				z-index: 2;
+			}
+		}
+	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(1) translateY(-40px) rotateY(0);
+	}
+	50% {
+		transform: scale(1.4) translateY(0) rotateY(0);
+	}
+	100% {
+		transform: scale(1) translateY(-40px) rotateY(0);
+	}
+}

@@ -1,0 +1,36 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-crater {
+	border-radius: 50%;
+
+	$count: 7;
+	$delay: 0.2;
+	@for $i from 1 through $count {
+		$delay: $delay + 0.2;
+		&.c#{$i} {
+			animation-delay: $delay + s;
+		}
+	}
+}
+
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6,
+.c7 {
+	pointer-events: none;
+	background: v.$color--crater-waning;
+	animation: crater-twinkle 0.8s alternate infinite;
+}
+
+@keyframes crater-twinkle {
+	0% {
+		opacity: 0.45;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,27 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-sec-ttl,
+.c-sec-ttl--small {
+	font-weight: v.$font-weight--c-sec-ttl;
+	color: #fff;
+	text-shadow: 2px 2px 5px #fff;
+}
+
+$letterSpacing: 8px;
+.c-sec-ttl {
+	&__wrapper {
+		text-align: center;
+	}
+
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	font-size: v.$font-size--sec-ttl;
+	letter-spacing: $letterSpacing;
+	text-indent: $letterSpacing;
+
+	span {
+		display: inline-block;
+	}
+}

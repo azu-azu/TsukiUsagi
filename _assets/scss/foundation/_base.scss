@@ -1,0 +1,37 @@
+@use 'variable' as v;
+@use 'mixin' as m;
+
+html,
+body {
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch; //スマホのカクカク回避
+	touch-action: manipulation; //スマホのタッチを早くする
+	scroll-behavior: smooth; //スムーススクロール
+}
+
+html {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: v.$font-weight--base;
+	font-size: 62.5%;
+
+	@media (min-width: 460px) {
+		font-family: 'M PLUS Rounded 1c', sans-serif;
+	}
+}
+
+h2 {
+	font-weight: v.$font-weight--h2;
+}
+h3 {
+	font-weight: v.$font-weight--h3;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+
+strong {
+	font-weight: bold;
+}

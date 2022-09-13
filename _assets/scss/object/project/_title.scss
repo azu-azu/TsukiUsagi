@@ -1,0 +1,52 @@
+.p-title {
+	text-align: center;
+
+	&.list {
+		.c-pseudo--list-ttl {
+			&::before {
+				opacity: 0.1;
+				animation: none;
+			}
+			&::after {
+				transform: translateX(-100%);
+			}
+		}
+		a:hover {
+			.c-pseudo--list-ttl {
+				&::before,
+				&::after {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+.home {
+	.p-title {
+		margin-bottom: 80px;
+	}
+
+	.p-related-contents--ex__inner {
+		.p-title {
+			margin-bottom: 80px;
+		}
+	}
+}
+
+.archive {
+	.p-title {
+		&.page {
+			padding: 80px;
+		}
+		&.list,
+		&.sec {
+			margin-bottom: 40px;
+		}
+		&.list {
+			position: static;
+			font-size: 2rem;
+			transform: inherit;
+		}
+	}
+}

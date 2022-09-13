@@ -1,0 +1,114 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+$line-height: 1.2;
+.p-skill-list {
+	position: relative;
+
+	&__container {
+		width: 100%;
+		margin-top: 100px;
+		font-family: 'Noto Sans JP', sans-serif;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 50px;
+
+		span {
+			display: inline-block;
+		}
+	}
+
+	.c-rabbit--2a {
+		overflow: inherit;
+		&::after {
+			position: absolute;
+			right: 0;
+			opacity: 0.5;
+		}
+	}
+
+	.c-ball {
+		position: absolute;
+		display: grid;
+		place-content: center;
+		text-align: center;
+		font-size: v.$font-size--p-skills-ball;
+		line-height: $line-height;
+
+		p {
+			@include m.lineHeightCrop-before($line-height);
+		}
+
+		&:first-child {
+			top: 0;
+			left: 0;
+			width: min(18vmin, 100px);
+			height: min(18vmin, 100px);
+			color: v.$font-color--skills--first;
+			text-shadow: v.$text-shadow--skills--first;
+
+			&::after {
+				animation: skill-rabbit-1 5s infinite;
+			}
+		}
+
+		&:nth-child(5) {
+			&::after {
+				animation: skill-rabbit-2 5s infinite;
+			}
+		}
+
+		&:not(:first-child) {
+			color: v.$font-color--skills--child;
+			text-shadow: v.$text-shadow--skills--child;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	.txt-small {
+		font-size: v.$font-size--p-skills-ball--small;
+	}
+}
+
+@keyframes skill-rabbit-1 {
+	0% {
+		transform: scaleX(-1);
+		opacity: 0;
+	}
+	30% {
+		transform: translateX(100px) translateY(-20px) scaleX(-1) rotate(20deg);
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(100px) translateY(-20px) scaleX(-1) rotate(20deg);
+		opacity: 0;
+	}
+}
+
+@keyframes skill-rabbit-2 {
+	0% {
+		transform: translateX(0) rotate(-50deg);
+		opacity: 0;
+	}
+	20% {
+		transform: translateX(0) rotate(-50deg);
+		opacity: 0;
+	}
+	60% {
+		transform: translateX(-100px) translateY(60px) rotate(-50deg) scale(1.5);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-100px) translateY(80px) rotate(-50deg) scale(1.5);
+		opacity: 0;
+	}
+}

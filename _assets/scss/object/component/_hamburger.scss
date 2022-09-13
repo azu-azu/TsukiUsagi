@@ -1,0 +1,179 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-hamburger {
+	position: fixed;
+	top: -2px;
+	right: 0;
+	width: v.$size--hamburger-container;
+	height: v.$size--hamburger-container;
+
+	// background: rgba(0,0,0, 0.5);
+	background: rgba(255, 255, 0, 0.6);
+	border-bottom-left-radius: 100%;
+	// transition: transform 0.75s cubic-bezier(0.39, 1.52, 0.46, 0.92);
+
+	user-select: none; //テキスト選択を可能にするかどうか
+	cursor: pointer;
+	z-index: -1;
+
+	&::before {
+		position: absolute;
+		content: '';
+		display: block;
+		top: 0;
+		right: -5px;
+		width: v.$size--hamburger-container + 10px;
+		height: v.$size--hamburger-container + 10px;
+		background: radial-gradient(#fff, rgba(v.$color--sub, 0.5));
+		background: -webkit-radial-gradient(#fff, rgba(v.$color--sub, 0.5));
+		background: -moz-radial-gradient(#fff, rgba(v.$color--sub, 0.5));
+		border-bottom-left-radius: 100%;
+		filter: blur(5px);
+		animation: overlay-back v.$time--hamburger-anim linear forwards;
+	}
+
+	span {
+		position: absolute;
+		right: 12px;
+		width: 30px;
+		height: 4px;
+		background: #444;
+		border-radius: 4px;
+
+		&.line-top {
+			top: 16px;
+			animation: line-top-back v.$time--hamburger-anim linear forwards;
+		}
+
+		&.line-middle {
+			top: 26px;
+			animation: line-middle-back v.$time--hamburger-anim linear forwards;
+		}
+
+		&.line-bottom {
+			top: 36px;
+			transform-origin: 100% 100%;
+			animation: line-bottom-back v.$time--hamburger-anim linear forwards;
+		}
+	}
+}
+
+@keyframes overlay-back {
+	0% {
+		transform: scale(30);
+	}
+	90% {
+		transform: scale(20);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+// **
+// is-openのとき
+// **
+// body.is-open {
+//   .l-header.back::before {
+//     opacity: 0;
+//   }
+
+//   .p-header,
+//   .p-header--back {
+//     transform: translateY(-250px);
+//   }
+
+//   .c-nav {
+//     width: 100%;
+//     top: 300px;
+//     z-index: 950;
+
+//     li {
+//       animation: list .6s linear forwards;
+//     }
+//   }
+// }
+
+// .c-hamburger.is-open {
+//   .line-top {
+//     animation: line-top .6s linear forwards;
+//   }
+
+//   .line-middle {
+//     animation: line-middle .6s linear forwards;
+//   }
+
+//   .line-bottom {
+//     animation: line-bottom .6s linear forwards;
+//   }
+
+//   & ~ .c-overlay {
+//     will-change: transform;
+//     border-right: none;
+//     border-bottom: none;
+//     top: 22px;
+//     animation: overlay .6s linear forwards;
+//   }
+// }
+
+// // **
+// // is-closeのとき
+// // **
+// body.is-close {
+//   .c-nav {
+//     width: 0;
+//     transform: translateX(20px);
+//     @include m.breakpoint( moon-mini ) {
+//       width: auto;
+//       transform: inherit;
+//     }
+
+//     li {
+//       animation: list-back .6s linear forwards;
+//       @include m.breakpoint( moon-mini ) {
+//         animation: none;
+//       }
+//     }
+//   }
+// }
+
+// .c-hamburger.is-close {
+//   .line-top {
+//     animation: line-top-back .6s linear forwards;
+//   }
+//   .line-middle {
+//     animation: line-middle-back .6s linear forwards;
+//   }
+//   .line-bottom {
+//     animation: line-bottom-back .6s linear forwards;
+//   }
+//   & ~ .c-overlay {
+//     // transition: transform .8s cubic-bezier(1, 0, 0, 1);
+//     animation: overlay-back .6s linear forwards;
+//   }
+// }
+
+// @keyframes list {
+//   0% {
+//     transform: translateX(0) rotate(-360deg);
+//   }
+//   70% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+
+// @keyframes list-back {
+//   0% {
+//     transform: translateX(-250px) rotate(360deg);
+//   }
+//   70% {
+//     transform: translateX(-250px);
+//   }
+//   100% {
+//     transform: translateX(100px);
+//   }
+// }

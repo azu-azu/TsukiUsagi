@@ -1,0 +1,20 @@
+.p-night-sky {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+	background: radial-gradient(ellipse at center, #1b2735 40%, #090a0f 100%);
+	overflow: hidden;
+}
+
+.p-night-sky--only {
+	@extend .p-night-sky;
+	// background: linear-gradient( #121821 5%, #22349b 30%, #fff 90%);
+	// background: linear-gradient(180deg, rgb(19, 25, 35) 5%, rgb(103, 6, 101) 40%, #fff 90%);
+	// background: linear-gradient(180deg, rgb(19, 25, 35), rgb(248, 194, 131));
+	background: linear-gradient(
+		180deg,
+		rgb(19, 25, 35) 50%,
+		rgb(248, 194, 131) 80%
+	);
+	// background: linear-gradient(180deg, rgb(19, 25, 35), rgb(251, 181, 141));
+}

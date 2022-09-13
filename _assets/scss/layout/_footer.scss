@@ -1,0 +1,15 @@
+@use '../foundation/mixin' as m;
+@use '../foundation/variable' as v;
+
+.l-footer {
+	width: 100%;
+	height: 50vh;
+
+	.c-copyright {
+		bottom: 5%;
+		z-index: 30;
+		@include m.breakpoint(moon-mini) {
+			bottom: 10%;
+		}
+	}
+}

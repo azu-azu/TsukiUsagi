@@ -1,0 +1,50 @@
+@use '../../foundation/mixin' as m;
+@use '../../object/component/bubbly-button';
+
+.p-sidebar {
+	position: absolute;
+	width: 100%;
+	margin-top: -100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 30;
+
+	@include m.breakpoint(wide) {
+		position: fixed;
+		display: block;
+		width: inherit;
+		margin-top: 0;
+		top: 25%;
+		right: 40px;
+		z-index: 20;
+	}
+
+	.side-title {
+		padding: 10px 0;
+	}
+
+	.side-title,
+	.menu-category-nav-container ul li a {
+		color: #fff;
+		text-shadow: 1px 1px 3px #000630;
+	}
+
+	.menu-category-nav-container {
+		.menu {
+			li {
+				padding: 5px 0;
+				a {
+					@extend .c-bubbly-button--yellow;
+					font-size: 1.5rem;
+					font-weight: 500;
+				}
+			}
+			.sub-menu li a {
+				margin-left: 20px;
+				font-size: 1rem;
+			}
+		}
+	}
+}

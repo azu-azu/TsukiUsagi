@@ -1,0 +1,13 @@
+@use '../../foundation/mixin' as m;
+
+.p-sec-works {
+	.p-cards {
+		display: grid;
+		gap: 40px;
+		place-content: center;
+
+		@include m.breakpoint(tablet) {
+			grid-template-columns: auto auto;
+		}
+	}
+}

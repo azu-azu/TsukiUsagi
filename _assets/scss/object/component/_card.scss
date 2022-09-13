@@ -1,0 +1,14 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-card {
+	margin: auto;
+	width: v.$width--card--single;
+	height: v.$height--card--single;
+	box-shadow: 1px 1px 14px -5px #fff;
+
+	&--single,
+	&--works {
+		@extend .c-card;
+	}
+}

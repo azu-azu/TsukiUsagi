@@ -1,0 +1,42 @@
+@use '../../foundation/variable' as v;
+
+.c-header-ttl,
+.c-header-ttl--totop {
+	font-size: v.$font-size--header-nav;
+	color: #fff;
+	cursor: pointer;
+	user-select: none;
+}
+
+// タイトル付ける場合
+.page-template-default,
+.error404 {
+	.p-header--top {
+		.c-header-ttl {
+			display: block;
+			font-weight: v.$font-weight--h1;
+			user-select: none;
+			animation: text-animation 5s linear infinite alternate;
+
+			a {
+				display: block;
+				padding: 10px;
+			}
+
+			@keyframes text-animation {
+				from {
+					color: white;
+					text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+						0 0 40px #ffdd1b, 0 0 70px #ffdd1b, 0 0 80px #ffdd1b,
+						0 0 100px #ffdd1b, 0 0 150px #ffdd1b;
+				}
+				to {
+					color: white;
+					text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080,
+						0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080,
+						0 0 75px #ff0080;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+@use '../../foundation/variable' as v;
+
+.p-card {
+	position: relative;
+	width: v.$width--p-card;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+	z-index: 2;
+
+	&__container {
+		background-color: #fff;
+	}
+
+	.c-card-header {
+		position: absolute;
+		z-index: 2;
+	}
+	.c-card-img--hover {
+		position: absolute;
+		top: 0;
+	}
+
+	&__inner {
+		padding: 24px;
+	}
+}
+
+// **
+// ホバー時
+// **
+.p-card:hover {
+	transform: scale(1.1, 1.1);
+
+	.p-scroll-anim::before {
+		display: none;
+	}
+	.c-card-img--hover {
+		transform: scale(1.5, 1.5) translateY(15%);
+		opacity: 0.3;
+	}
+	.p-card__inner {
+		position: relative;
+		background: rgba(#fff, 0.8);
+	}
+}

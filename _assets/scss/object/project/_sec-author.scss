@@ -1,0 +1,147 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+$base-padding: 0.75rem;
+.p-sec-author {
+	max-width: 500px;
+	margin: auto;
+
+	.c-author-card {
+		font-size: 1.5rem;
+		display: grid;
+		grid-template-rows: min-content 1fr;
+		grid-template-columns: min-content 1fr;
+		grid-template-areas:
+			'avatar author'
+			'description description';
+		padding: 20px;
+		column-gap: 40px;
+		row-gap: 20px;
+
+		background: #eee;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+
+		@include m.breakpoint(topic-inner) {
+			grid-template-columns: min-content 1fr;
+			grid-template-areas:
+				'avatar description'
+				'author description';
+			row-gap: 0;
+		}
+
+		.c-rabbit {
+			&--2b {
+				position: relative;
+				overflow: inherit;
+			}
+
+			&--2b::before {
+				position: absolute;
+				opacity: 0.5;
+				top: 0;
+				left: 50%;
+				animation: author-rabbit2 6s infinite;
+				@include m.breakpoint(topic-inner) {
+					animation: author-rabbit2-pc 6s infinite;
+				}
+			}
+		}
+	}
+
+	$avatar-size: 100px;
+	.c-avatar {
+		grid-area: avatar;
+		position: relative;
+		border-radius: 50%;
+		height: $avatar-size;
+
+		img {
+			width: $avatar-size;
+		}
+	}
+
+	.c-author {
+		grid-area: author;
+		text-align: left;
+		@include m.breakpoint(topic-inner) {
+			text-align: center;
+			align-self: flex-end;
+		}
+
+		small {
+			padding-right: 10px;
+			@include m.breakpoint(topic-inner) {
+				padding-right: 0;
+			}
+		}
+
+		.sp-none {
+			display: none;
+			@include m.breakpoint(topic-inner) {
+				display: block;
+			}
+		}
+	}
+
+	.c-description {
+		grid-area: description;
+		line-height: 1.7;
+		padding: 0 $base-padding;
+		align-self: flex-end;
+		@include m.breakpoint(topic-inner) {
+			padding: 0;
+			line-height: inherit;
+		}
+	}
+
+	.c-post-date {
+		grid-area: description;
+		text-align: right;
+	}
+}
+
+.single .l-topic .l-topic__container {
+	.p-sec-author {
+		p,
+		.c-avatar {
+			margin-bottom: 0;
+			line-height: 1.5;
+		}
+	}
+}
+
+@keyframes author-rabbit2 {
+	0% {
+		transform: rotate(0) translateX(0) scaleX(-1);
+		opacity: 0;
+	}
+	50% {
+		transform: rotate(0) translateX(30px) scaleX(-1);
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(10deg) translateX(300px) scaleX(-1);
+		opacity: 0;
+	}
+}
+@keyframes author-rabbit2-pc {
+	0% {
+		transform: rotate(-2deg) translateX(0) scaleX(-1);
+		opacity: 0;
+	}
+	50% {
+		transform: rotate(2deg) translateX(40px) translateY(-5px) scaleX(-1);
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-5deg) translateX(300px) scaleX(-1);
+		opacity: 0;
+	}
+}

@@ -1,0 +1,74 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+
+.archive {
+	.l-topic {
+		margin-top: 50px;
+	}
+
+	.c-title {
+		&--section {
+			font-size: 4vw;
+			@include m.breakpoint(moon-mini) {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.p-svg-cosmos {
+		&--ornament {
+			width: 2%;
+			top: 13%;
+			left: 20%;
+			opacity: 0.5;
+
+			@include m.breakpoint(moon-mini) {
+				left: 35%;
+			}
+		}
+
+		&--earth {
+			top: 30%;
+		}
+	}
+
+	.c-falling-box {
+		position: absolute;
+		left: 50%;
+	}
+
+	.after {
+		width: 100%;
+		min-height: 70vh;
+
+		&__inner {
+			width: 50%;
+			margin: auto;
+
+			p {
+				color: #fff;
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+.archive {
+	.wp-post-image__container {
+		&::after {
+			display: none;
+		}
+	}
+}
+
+@keyframes linear-after {
+	100% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes linear-after {
+	100% {
+		transform: scale(1.4);
+	}
+}

@@ -1,0 +1,254 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+@use 'sass:math';
+
+.p-milky-way {
+	&__container {
+		position: relative;
+		margin-top: -50vh;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	display: block;
+	position: absolute;
+	width: 130%;
+	height: 300px;
+	top: 40%;
+	left: -15%;
+	transform: rotate(17deg);
+	z-index: 1;
+
+	.c-shooting-star {
+		position: absolute;
+		top: 0;
+	}
+}
+
+// ** canvas使う場合 **
+// #canvas-milky-way {
+//   display: block;
+//   width: 100%;
+// 	margin-top: -150px;
+//   transform: rotate(20deg);
+// }
+
+// ** divタグ200個作る場合 **
+// <article class="p-milky-way__container js-milky-way" id="js-milky-way">
+//   <div class="p-milky-way">
+//     <div class="milky-move">
+//       <div class="milky-star"></div>
+//     </div>
+//   </div>
+// </article>
+
+// **css**
+// $goldColor: rgb(169, 133, 69);
+// $color--milky-way-main: yellow;
+// $size--milky-way-reflect-ratio: 12;
+// $time--milky-way-anim: 10s;
+// $color--milky-way-reflect:
+//   rgba(169, 133, 69, 0) 0%,
+//   rgba(169, 133, 69, 0.1) 40%,
+//   rgba(169, 133, 69, 0.4) 50%,
+//   rgba(169, 133, 69, 0.1) 60%,
+//   rgba(169, 133, 69, 0) 100%;
+
+// .p-milky-way__container,
+// .p-milky-way {
+//   width: 120vw;
+//   height: 300px;
+// }
+
+// .p-milky-way {
+//   &__container {
+//     position: relative;
+//     // transform: rotate3d(1, 4, 1, -45deg);//3dにすると重いかも
+//     transform: rotate(-24deg);
+//     top: -33vh;
+//   }
+
+//   position: absolute;
+
+//   .milky-star {
+//     width: 0;
+//     height: 0;
+//     border-radius: 50%;
+//     border-style: ridge;
+//     border-color: transparent transparent $color--milky-way-main transparent;
+//     animation:
+//       milky-star-rotateY $time--milky-way-anim linear infinite,
+//       milky-border-color math.div($time--milky-way-anim, 4) linear infinite alternate;
+
+//     // 光の筋
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       top: 0;
+//       background: linear-gradient(90deg, $color--milky-way-reflect);
+//       transform: translateX(-50%);
+//       animation: star-opacity math.div($time--milky-way-anim, 4) linear infinite alternate;
+//     }
+
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       background: linear-gradient(0deg, $color--milky-way-reflect);
+//       transform: translateY(-50%);
+//       animation: star-opacity math.div($time--milky-way-anim, 4) linear infinite alternate;
+//     }
+//   }
+
+//   // サイズ・位置・アニメーション設定
+//   @for $i from 1 through 300 {
+//     $left: random(10) + 0.5px;
+//     $right: random(10) + 0.5px;
+//     $bottom: random(10) + 0.5px;
+//     $delay: random(10000) * -3ms;
+
+//     &:nth-child(#{$i}) {
+//       top: calc(50% + #{random(200) - 100px});
+//       left: random(100) + 0%;
+//       // transform: rotateZ(random(360) + 0deg);
+
+//       .milky-move {
+//         animation: milky-move random(10000) + 10000ms linear infinite;
+//       }
+
+//       .milky-star {
+//         // border-width: 0 $right $bottom $left;//設定すると星が大きくなりすぎる
+//         animation-delay: $delay, $delay;
+
+//         &::before {
+//           left: math.div(-$left + ($left + $right), 2);
+//           width: calc(($left + $right) * $size--milky-way-reflect-ratio);
+//           height: $bottom;
+//           animation-delay: $delay;
+//         }
+
+//         &::after {
+//           top: math.div($bottom, 2);
+//           left: -$left;
+//           width: calc($left + $right);
+//           height: calc($bottom * $size--milky-way-reflect-ratio);
+//           animation-delay: $delay;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @keyframes milky-star-rotateY {
+//   0% {
+//     transform: rotateY(0deg);
+//   }
+
+//   100% {
+//     transform: rotateY(360deg);
+//   }
+// }
+
+// @keyframes milky-move {
+//   0% {
+//     transform: translateX(0%);
+//   }
+
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// }
+
+// @keyframes milky-border-color {
+//   0% {
+//     border-color: transparent transparent #fff transparent;
+//   }
+
+//   10% {
+//     border-color: transparent transparent $color--milky-way-main transparent;
+//   }
+
+//   100% {
+//     border-color: transparent transparent #fff transparent;
+//   }
+// }
+
+// @keyframes star-opacity {
+//   0% {
+//     opacity: 1;
+//   }
+
+//   10% {
+//     opacity: 0;
+//   }
+
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+// $COLOR_WHITE: #fff;
+// $COLOR_SKY_TOP: #060431;
+// $COLOR_SKY_BOTTOM: #406178;
+
+// .p-milky-way {
+//   position: absolute;
+//   top: 80px;
+//   left: 0;
+//   width: 100%;
+//   height: 200px;
+//   opacity: .6;
+//   @include prefixes(transform, rotate(20deg));
+
+//   .js-make-star {
+//     @for $i from 1 through 300 {
+//       &:nth-child(#{$i}) {
+//         $size: random(3);
+//         $shadowSize: calc(#{random(10) + 2px});
+//         top: calc(50% - #{random(200) - 100px});
+//         left: calc(50% - #{random(1500) - 750px});//半分の数値を引く
+//         @include prefixes(box-shadow, 0 0 20px $shadowSize rgba(random(255), random(140), 255, 0.8));
+//         width: $size + px;
+//         height: $size + px;
+//         @if $i > 125 {
+//           @include prefixes(box-shadow, 0 0 20px 5px rgba($COLOR_SKY_TOP, 0.2));
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .js-make-star {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   background: $COLOR_WHITE;
+//   border-radius: 50%;
+//   opacity: .6;
+//   @for $i from 1 through 500 {
+//     &:nth-child(#{$i}) {
+//       $size: random(1);
+//       top: calc(50% - #{random(1000) - 250px});
+//       left: calc(50% - #{random(2000) - 1000px});//半分の数値を引く
+//       @include prefixes(box-shadow, 0 0 20px 10px rgba($COLOR_SKY_TOP, 0.3));
+//       width: $size + px;
+//       height: $size + px;
+//       @if $i > 250 {
+//         @include prefixes(box-shadow, 0 0 20px 5px rgba($COLOR_SKY_BOTTOM, 0.3));
+//       }
+//       @if $i % 10 == 0 {
+//         @include animation(star #{random(3)}s #{random(3)}s alternate infinite);
+//         @include prefixes(box-shadow, 0 0 10px 5px rgba($COLOR_WHITE, 0.3));
+//       }
+//     }
+//   }
+// }
+
+// @include keyframes(star) {
+//   0% {
+//     @include prefixes(box-shadow, 0 0 10px 5px rgba($COLOR_WHITE, 0.3));
+//   }
+//   100% {
+//     @include prefixes(box-shadow, 0 0 20px 5px rgba($COLOR_WHITE, 0.3));
+//   }
+// }
