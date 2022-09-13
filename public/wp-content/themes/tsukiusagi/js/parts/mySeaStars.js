@@ -1,7 +1,7 @@
 particlesJS('js-sea-stars', {
 	particles: {
 		number: {
-			value: 200,
+			value: 250,
 			density: { enable: true, value_area: 700 },
 		},
 		// color: { value: '#fff98e' },
