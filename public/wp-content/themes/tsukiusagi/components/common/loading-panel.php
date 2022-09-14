@@ -1,6 +1,6 @@
 <div class="p-loading-panel">
   <div class="p-loading-panel__clouds">
-    <div class="c-flowing-clouds--loading"></div>
+    <div class="c-loading-clouds"></div>
   </div>
 
   <div class="p-loading-panel__curtain">
