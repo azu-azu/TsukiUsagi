@@ -1,6 +1,6 @@
 @use '../../foundation/variable' as v;
 
-.c-up-down-anim {
+.c-anim-up-down {
 	animation: square 5s linear infinite;
 	animation-delay: calc(-1s * var(--i));
 }
