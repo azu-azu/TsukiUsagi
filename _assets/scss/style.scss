@@ -24,7 +24,10 @@
 // Component
 // -----------------------------------------------------------------
 @forward './object/component/_anim-box';
-@forward './object/component/_back-shadow';
+@forward './object/component/_ba';
+@forward './object/component/_ba-spread-light';
+@forward './object/component/_ba-shining';
+@forward './object/component/_ba-static-star';
 @forward './object/component/_back-to-moon';
 @forward './object/component/_ball';
 @forward './object/component/_bg';
@@ -86,9 +89,11 @@
 @forward './object/project/_crater';
 @forward './object/project/_cstmreba';
 @forward './object/project/_first-view';
+@forward './object/project/_flowing-clouds';
 @forward './object/project/_footer';
 @forward './object/project/_gmenu';
 @forward './object/project/_header';
+@forward './object/project/_loading-panel';
 @forward './object/project/_milky-way';
 @forward './object/project/_moon-circle';
 @forward './object/project/_jump-button';

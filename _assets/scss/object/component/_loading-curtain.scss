@@ -6,16 +6,16 @@ $radius--start: 20%;
 $deg--last: 20;
 
 .c-loading-curtain {
-	&__wrapper {
-		// wrapperの幅・高さは無しにしないとヘッダーがクリックできない
-		position: fixed;
-		display: flex;
-		top: 0;
-		left: 0;
-		overflow: hidden;
-		opacity: 0.8;
-		z-index: 1500;
-	}
+	// &__wrapper {
+	// 	// wrapperの幅・高さは無しにしないとヘッダーがクリックできない
+	// 	position: fixed;
+	// 	display: flex;
+	// 	top: 0;
+	// 	left: 0;
+	// 	overflow: hidden;
+	// 	opacity: 0.8;
+	// 	z-index: 1500;
+	// }
 
 	position: fixed; //fixedじゃないと表示されない
 	width: 60%;

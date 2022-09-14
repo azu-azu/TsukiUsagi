@@ -1,0 +1,8 @@
+.p-flowing-clouds {
+	position: fixed; //前面に出すため
+	z-index: 1500;
+
+	.c-flowing-clouds {
+		position: absolute;
+	}
+}

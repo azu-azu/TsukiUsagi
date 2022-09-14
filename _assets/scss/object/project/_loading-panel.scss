@@ -1,0 +1,17 @@
+.p-loading-panel {
+	&__clouds {
+		position: fixed; //前面に出すため
+		z-index: 1500;
+	}
+
+	// 幅・高さを無しにしないとヘッダーがクリックできない
+	&__curtain {
+		position: fixed;
+		display: flex;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		opacity: 0.8;
+		z-index: 1500;
+	}
+}
