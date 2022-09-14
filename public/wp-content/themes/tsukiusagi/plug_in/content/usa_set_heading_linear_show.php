@@ -26,11 +26,11 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
 
     switch ($type) {
         case 'single':
-            $pseudo = 'c-title--page c-pseudo--page-ttl';
+            $pseudo = 'c-title--page';
             break;
 
         case 'page':
-            $pseudo = 'c-title--page c-pseudo--page-ttl';
+            $pseudo = 'c-title--page';
             break;
 
         case 'sec':

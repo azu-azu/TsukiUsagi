@@ -1,12 +1,11 @@
 @use '../../foundation/variable' as v;
 @use '../../foundation/mixin' as m;
+@use './ba';
 
 .c-anim-train-smoke {
+	@extend .c-ba;
 	&::before,
 	&::after {
-		position: absolute;
-		content: '';
-		display: block;
 		width: 10px;
 		height: 30px;
 		top: -30px;
