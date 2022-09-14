@@ -15,7 +15,7 @@ $bg_class = 'c-bg--before-footer';
 
     <?php if (is_single()) : ?>
       <article class="<?php echo $main_inner_class; ?>">
-        <?php get_template_part('components/parts/ball'); ?>
+        <?php get_template_part('components/bg/cosmos/crystal'); ?>
         <?php get_template_part('components/text/list-ttl'); ?>
         <?php get_template_part('components/template/loop/sub'); ?>
 
