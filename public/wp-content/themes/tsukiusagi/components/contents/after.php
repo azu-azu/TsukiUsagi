@@ -20,10 +20,10 @@ if (is_single()) {
   echo '<article class="' . $main_inner_class . '">';
   get_template_part('components/bg/cosmos/crystal');
 
-  if (get_post_type() === 'works') {
-    get_template_part('components/parts/ball');
-  }
-
+  // if (get_post_type() === 'works') {
+  //   get_template_part('components/parts/ball');
+  // }
+  get_template_part('components/parts/ball');
   get_template_part('components/text/list-ttl');
   get_template_part('components/template/loop/sub');
 
