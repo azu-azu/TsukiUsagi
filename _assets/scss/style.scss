@@ -24,6 +24,9 @@
 // Component
 // -----------------------------------------------------------------
 @forward './object/component/_anim-box';
+@forward './object/component/_anim-train-running';
+@forward './object/component/_anim-train-smoke';
+@forward './object/component/_anim-train-turn';
 @forward './object/component/_ba';
 @forward './object/component/_ba-spread-light';
 @forward './object/component/_ba-shining';
@@ -76,6 +79,7 @@
 @forward './object/component/_sky';
 @forward './object/component/_sun';
 @forward './object/component/_title';
+@forward './object/component/_train-light';
 @forward './object/component/_up-down-anim';
 @forward './object/component/_wave';
 
