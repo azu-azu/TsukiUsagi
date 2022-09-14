@@ -6,17 +6,6 @@ $radius--start: 20%;
 $deg--last: 20;
 
 .c-loading-curtain {
-	// &__wrapper {
-	// 	// wrapperの幅・高さは無しにしないとヘッダーがクリックできない
-	// 	position: fixed;
-	// 	display: flex;
-	// 	top: 0;
-	// 	left: 0;
-	// 	overflow: hidden;
-	// 	opacity: 0.8;
-	// 	z-index: 1500;
-	// }
-
 	position: fixed; //fixedじゃないと表示されない
 	width: 60%;
 	height: 100vh;
@@ -41,6 +30,17 @@ $deg--last: 20;
 	&--right::before {
 		right: 0;
 		border-bottom-left-radius: 100%;
+	}
+
+	&--left::before,
+	&--right::before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		opacity: 0.11;
+		background: url('../img/top/loading.jpeg') repeat center center;
 	}
 
 	&--left {
@@ -73,17 +73,6 @@ $deg--last: 20;
 		&::before {
 			animation: loading-right-before $duration ease-out forwards;
 		}
-	}
-
-	&--left::before,
-	&--right::before {
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 100%;
-		top: 0;
-		opacity: 0.11;
-		background: url('../img/top/loading.jpeg') repeat center center;
 	}
 }
 
