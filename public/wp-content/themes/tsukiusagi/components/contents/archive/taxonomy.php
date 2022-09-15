@@ -1,15 +1,13 @@
 <?php
 $main_class = 'l-topic';
 
-if (is_category()) {
-    $cat = get_the_category();
-    $name = $cat[0]->name;
-} elseif (is_tag()) {
-    $tags = get_the_tags();
-    $name = $tags[0]->name;
-} elseif (is_tax()) {
-    $labels = get_taxonomy($taxonomy);
-    $name = $labels->name;
+$obj = get_queried_object();
+
+if ($obj &&  get_post_type() === 'post' && !is_tag() && $obj->parent === 0) {
+    // postで親カテゴリの場合
+    $name = $obj->cat_name;
+} else {
+    $name = $obj->name;
 }
 
 $tag = 'h2';
