@@ -3,6 +3,7 @@
 @use 'sass:math';
 @use './ba';
 
+// 背景色はc-glass--yellow,white,brightで付ける
 .c-ball {
 	@extend .c-ba;
 	border-radius: 50%;

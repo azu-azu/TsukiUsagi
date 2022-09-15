@@ -18,7 +18,7 @@
 
 	.c-sun {
 		left: 50%;
-		transform: translateX(-50%);
+		transform: translateY(90px) translateX(-50%);
 		z-index: 1;
 	}
 
@@ -58,25 +58,24 @@
 
 	.c-ba-shining {
 		&::before {
-			animation: over 2s ease infinite alternate;
+			background: radial-gradient(
+				at 50% 0,
+				rgba(rgb(229, 255, 0), 0.8),
+				transparent
+			);
 		}
 		&::after {
-			height: 120%;
-			top: -20%;
 			background: radial-gradient(
 				at 50% 0,
 				rgba(0, 200, 255, 0.8),
 				transparent
 			);
-			filter: blur(20px);
-			animation: sea_after 3s infinite alternate;
 		}
 	}
 
 	.c-wave {
 		&--color {
 			background: #ad9afe;
-			// background: #191236;
 			filter: blur(30px);
 		}
 	}
@@ -84,18 +83,5 @@
 	.c-sky,
 	.c-sun {
 		display: none;
-	}
-
-	@keyframes sea_after {
-		0% {
-			transform: translateY(60px);
-		}
-		50% {
-			opacity: 0.5;
-		}
-		100% {
-			opacity: 0;
-			transform: translateY(-20px);
-		}
 	}
 }

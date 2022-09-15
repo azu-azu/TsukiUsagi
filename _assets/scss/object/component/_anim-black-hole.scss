@@ -6,9 +6,6 @@
 	&::after {
 		width: 50%;
 		height: 20%;
-		top: 50%;
-		left: 10%;
-		transform: rotate(30deg);
 		border-radius: 50%;
 		filter: blur(50px);
 		opacity: 0.4;
@@ -27,7 +24,7 @@
 	&::after {
 		background: radial-gradient(
 			at 50% 0,
-			rgba(255, 251, 0, 0.8),
+			rgba(255, 255, 0, 0.5),
 			transparent
 		);
 		animation: anim_black_hole 5s 2.5s ease-in infinite alternate-reverse;
@@ -36,14 +33,14 @@
 
 @keyframes anim_black_hole {
 	0% {
+		transform: rotate(30deg);
 		opacity: 0;
-		transform: scale(0) rotate(30deg);
 	}
 	50% {
 		opacity: 0.4;
 	}
 	100% {
+		transform: rotate(-30deg);
 		opacity: 0;
-		transform: scale(2) rotate(-30deg);
 	}
 }
