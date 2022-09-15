@@ -23,12 +23,7 @@ $title = '「' . $cat_name . '」の記事';
                     <?php endwhile; ?>
                 </ul>
             </article>
-            <?php the_posts_pagination(array(
-                'mid_size' => 1,
-                'prev_text' => '',
-                'next_text' => '',
-                'screen_reader_text' => ''
-            )); ?>
+            <?php get_template_part('components/parts/pagination'); ?>
         </section>
     <?php endif; ?>
     <?php get_template_part('components/contents/after'); ?>
