@@ -1,11 +1,19 @@
 <?php
 $main_class = 'l-topic';
 
-$cat = get_the_category();
-$cat_name = $cat[0]->cat_name;
+if (is_category()) {
+    $cat = get_the_category();
+    $name = $cat[0]->name;
+} elseif (is_tag()) {
+    $tags = get_the_tags();
+    $name = $tags[0]->name;
+} elseif (is_tax()) {
+    $labels = get_taxonomy($taxonomy);
+    $name = $labels->name;
+}
 
 $tag = 'h2';
-$title = '「' . $cat_name . '」の記事';
+$title = '「' . $name . '」の記事一覧';
 ?>
 
 <main class="<?php echo $main_class; ?> list-contents">
