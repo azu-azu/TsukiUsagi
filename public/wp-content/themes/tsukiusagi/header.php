@@ -13,6 +13,6 @@
       if (is_single() || is_archive() || is_page()) {
         body_class('c-bg--gradient-main');
       } else {
-        body_class();
+        body_class('');
       }
       ?>>

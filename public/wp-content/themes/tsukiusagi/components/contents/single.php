@@ -30,5 +30,14 @@ $main_inner_class = $main_class . '__inner';
             <?php get_template_part('components/parts/falling-box'); ?>
         </section>
     <?php endif; ?>
+
+    <section class="p-related-contents">
+        <article class="p-related-contents__inner">
+            <?php get_template_part('components/bg/cosmos/crystal'); ?>
+            <?php get_template_part('components/text/list-ttl'); ?>
+            <?php get_template_part('components/template/loop/sub'); ?>
+        </article>
+    </section>
+
     <?php get_template_part('components/contents/after'); ?>
 </main>

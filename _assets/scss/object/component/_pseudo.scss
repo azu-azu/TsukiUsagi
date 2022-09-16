@@ -2,39 +2,13 @@
 @use '../../foundation/mixin' as m;
 
 .c-pseudo {
-	&--page-ttl {
-		&::before,
-		&::after {
-			width: 100%;
-			height: 120%;
-			left: 0;
-		}
-
-		&::before {
-			background: #cfc0c0;
-			border-radius: 20px;
-			border-top: 1px solid rgba(#fff, 0.3);
-			box-shadow: inset 2px 2px 30px #6f7b8d;
-			z-index: -1;
-		}
-
-		&::after {
-			border-radius: 50%;
-			background: rgba(0, 0, 0, 0.2);
-			transform: scale(1);
-			filter: blur(10px);
-			z-index: -2;
-			// animation: linear-after 2s infinite alternate;
-		}
-	}
-
 	&--sec-ttl {
 		&::before {
 			width: 100%;
 			height: 3px;
 			background: v.$bg-linear-light-before;
 			border-radius: 50%;
-			animation: line 7s infinite;
+			animation: ttl_line 7s infinite;
 		}
 	}
 
@@ -56,7 +30,7 @@
 				rgba(255, 255, 255, 0.4) 0%,
 				rgba(255, 255, 255, 0.1) 85%
 			);
-			animation: line 7s infinite;
+			animation: ttl_line 7s infinite;
 		}
 		&::after {
 			left: 0;
@@ -64,13 +38,38 @@
 			filter: blur(2px);
 			transform-origin: 0 0;
 			transform: translateX(100%);
-			animation: list-after 7s infinite alternate ease-in-out;
+			animation: ttl_after 7s infinite alternate ease-in-out;
 			transition: 0.5s ease;
 		}
 	}
+	// &--page-ttl {
+	// 	&::before,
+	// 	&::after {
+	// 		width: 100%;
+	// 		height: 120%;
+	// 		left: 0;
+	// 	}
+
+	// 	&::before {
+	// 		background: #cfc0c0;
+	// 		border-radius: 20px;
+	// 		border-top: 1px solid rgba(#fff, 0.3);
+	// 		box-shadow: inset 2px 2px 30px #6f7b8d;
+	// 		z-index: -1;
+	// 	}
+
+	// 	&::after {
+	// 		border-radius: 50%;
+	// 		background: rgba(0, 0, 0, 0.2);
+	// 		transform: scale(1);
+	// 		filter: blur(10px);
+	// 		z-index: -2;
+	// 		// animation: linear-after 2s infinite alternate;
+	// 	}
+	// }
 }
 
-@keyframes line {
+@keyframes ttl_line {
 	0% {
 		transform: scaleX(0);
 		opacity: 0.5;
@@ -85,19 +84,19 @@
 	}
 }
 
-@keyframes light {
-	0% {
-		transform: scale(0, 0) translateX(52px);
-		opacity: 1;
-	}
-	100% {
-		transform: scale(2, 2) translateX(52px);
-		opacity: 0;
-	}
-}
-
-@keyframes list-after {
+@keyframes ttl_after {
 	100% {
 		transform: translateX(0);
 	}
 }
+
+// @keyframes light {
+// 	0% {
+// 		transform: scale(0, 0) translateX(52px);
+// 		opacity: 1;
+// 	}
+// 	100% {
+// 		transform: scale(2, 2) translateX(52px);
+// 		opacity: 0;
+// 	}
+// }

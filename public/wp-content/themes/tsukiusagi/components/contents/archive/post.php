@@ -18,9 +18,12 @@ foreach ($categories as $category) :
         'posts_per_page' => 8,
     );
 ?>
+
     <section class="p-related-contents">
         <article class="p-related-contents__inner">
             <?php usa_set_extra_sub_loop($args); ?>
         </article>
     </section>
-<?php endforeach; ?>
+
+<?php
+endforeach;

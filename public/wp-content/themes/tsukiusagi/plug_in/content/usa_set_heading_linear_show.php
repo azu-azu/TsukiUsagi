@@ -21,16 +21,16 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
     echo '<section class="p-title ' . $type . '">';
 
     if (!$url == "") {
-        echo '<a class="c-back-shadow--white" href="' . $url . '">';
+        echo '<a class="c-ba-spread-light--white" href="' . $url . '">';
     }
 
     switch ($type) {
         case 'single':
-            $pseudo = 'c-title--page c-pseudo--page-ttl';
+            $pseudo = 'c-title--page';
             break;
 
         case 'page':
-            $pseudo = 'c-title--page c-pseudo--page-ttl';
+            $pseudo = 'c-title--page';
             break;
 
         case 'sec':

@@ -5,18 +5,7 @@ $duration: 4s;
 $radius--start: 20%;
 $deg--last: 20;
 
-.c-loading-curtain {
-	&__wrapper {
-		// wrapperの幅・高さは無しにしないとヘッダーがクリックできない
-		position: fixed;
-		display: flex;
-		top: 0;
-		left: 0;
-		overflow: hidden;
-		opacity: 0.8;
-		z-index: 1500;
-	}
-
+.p-loading-curtain {
 	position: fixed; //fixedじゃないと表示されない
 	width: 60%;
 	height: 100vh;
@@ -43,8 +32,19 @@ $deg--last: 20;
 		border-bottom-left-radius: 100%;
 	}
 
+	&--left::before,
+	&--right::before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0;
+		opacity: 0.11;
+		background: url('../img/top/loading.jpeg') repeat center center;
+	}
+
 	&--left {
-		@extend .c-loading-curtain;
+		@extend .p-loading-curtain;
 		border-right: 4px solid v.$color--accent;
 		box-shadow: inset -40px 0 50px rgba(v.$color--sub, 0.2),
 			inset -90px 0 120px rgba(v.$color--sub, 0.2);
@@ -60,7 +60,7 @@ $deg--last: 20;
 	}
 
 	&--right {
-		@extend .c-loading-curtain;
+		@extend .p-loading-curtain;
 		border-left: 4px solid v.$color--accent;
 		box-shadow: inset 40px 0 50px rgba(v.$color--sub, 0.2),
 			inset 90px 0 120px rgba(v.$color--sub, 0.2);
@@ -73,17 +73,6 @@ $deg--last: 20;
 		&::before {
 			animation: loading-right-before $duration ease-out forwards;
 		}
-	}
-
-	&--left::before,
-	&--right::before {
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 100%;
-		top: 0;
-		opacity: 0.11;
-		background: url('../img/top/loading.jpeg') repeat center center;
 	}
 }
 

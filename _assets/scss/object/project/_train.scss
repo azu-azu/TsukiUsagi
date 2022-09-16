@@ -1,7 +1,7 @@
 @use '../../foundation/variable' as v;
 @use '../../foundation/mixin' as m;
 
-.p-train__container {
+.p-train {
 	position: absolute;
 	top: 37%;
 	width: 100%;
@@ -10,71 +10,32 @@
 	align-items: center;
 	overflow-x: hidden;
 	z-index: 100;
-
 	@include m.breakpoint(moon-mini) {
 		top: 35%;
 	}
 
-	// fixedがついたら固定
 	&.fixed {
 		position: fixed;
 		top: -5%;
-
 		@include m.breakpoint(moon-mini) {
 			top: -4%;
 		}
 	}
-}
 
-.p-train {
-	position: relative;
+	&__img-container {
+		position: relative;
 
-	&__running {
-		position: absolute;
-		animation: run 100s infinite linear;
-	}
-
-	&__light {
-		animation: turn 100s infinite;
-		height: 0;
-		width: 100px;
-		box-shadow: 5px 5px 32px 7px v.$color--sub;
-
-		&::before,
-		&::after {
-			position: absolute;
-			content: '';
+		img {
+			width: 150px;
+			max-width: none;
 			display: block;
-			width: 10px;
-			height: 30px;
-			top: -30px;
-			right: -43px;
-			border-radius: 50%;
-			background: #fff7d5;
-			opacity: 0.4;
-			filter: blur(10px);
-			transform-origin: bottom right;
-			transition: animation 0.5s ease-in-out;
+			transform: scale(-1, 1);
 		}
-
-		&::before {
-			animation: 2s smoke infinite both;
-		}
-		&::after {
-			animation: 2s smoke infinite both 1s;
-		}
-	}
-
-	img {
-		width: 150px;
-		max-width: none;
-		display: block;
-		transform: scale(-1, 1);
 	}
 }
 
 .page-thanks {
-	.p-train__container {
+	.p-train {
 		top: 70%;
 	}
 }
@@ -82,76 +43,9 @@
 .single,
 .archive {
 	.p-train {
-		&__container {
-			top: 15%;
-			@include m.breakpoint(moon-mini) {
-				top: -8%;
-			}
+		top: 15%;
+		@include m.breakpoint(moon-mini) {
+			top: -8%;
 		}
-		&__running {
-			@include m.breakpoint(moon-mini) {
-				animation: run-short 30s infinite linear;
-			}
-		}
-		&__light {
-			@include m.breakpoint(moon-mini) {
-				animation: turn 30s infinite;
-			}
-		}
-	}
-}
-
-@keyframes smoke {
-	0% {
-		transform: scale(0) rotate(-5deg);
-		filter: blur(1px);
-		opacity: 0.4;
-	}
-	100% {
-		transform: scale(2) rotate(-60deg);
-		filter: blur(10px);
-		opacity: 0.1;
-	}
-}
-
-@keyframes run-short {
-	0% {
-		transform: translateX(60vw);
-	}
-	50% {
-		transform: translateX(90vw);
-	}
-	100% {
-		transform: translateX(60vw);
-	}
-}
-
-@keyframes run {
-	0% {
-		transform: translateX(-100%);
-	}
-	50% {
-		transform: translateX(100vw);
-	}
-	100% {
-		transform: translateX(-200px);
-	}
-}
-
-@keyframes turn {
-	0% {
-		transform: scaleX(1);
-	}
-	45% {
-		transform: scaleX(1);
-	}
-	50% {
-		transform: scaleX(-1);
-	}
-	95% {
-		transform: scaleX(-1);
-	}
-	100% {
-		transform: scaleX(1);
 	}
 }

@@ -5,7 +5,7 @@ $type = 'page';
 if (is_archive()) {
   switch (get_post_type()) {
     case 'post':
-      $title = "Blog list";
+      $title = "月うさぎBlog";
       break;
 
     case 'works':

@@ -5,7 +5,7 @@
 	background: transparent;
 	border-radius: 50%;
 
-	&--01 {
+	&--down {
 		@extend .c-floating-star;
 		width: 1px;
 		height: 1px;
@@ -17,7 +17,7 @@
 		}
 	}
 
-	&--02 {
+	&--up-tiny {
 		@extend .c-floating-star;
 		width: 2px;
 		height: 2px;
@@ -29,7 +29,7 @@
 		}
 	}
 
-	&--03 {
+	&--up {
 		@extend .c-floating-star;
 		width: 3px;
 		height: 3px;
@@ -40,9 +40,9 @@
 			box-shadow: v.$box-shadow--floating-star-03;
 		}
 	}
-	&--01::after,
-	&--02::after,
-	&--03::after {
+	&--down::after,
+	&--up-tiny::after,
+	&--up::after {
 		content: '';
 		position: absolute;
 		width: 100%;

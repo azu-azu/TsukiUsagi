@@ -1,11 +1,17 @@
 <?php
 $main_class = 'l-topic';
 
-$cat = get_the_category();
-$cat_name = $cat[0]->cat_name;
+$obj = get_queried_object();
 
-$tag = 'h2';
-$title = '「' . $cat_name . '」の記事';
+if ($obj &&  get_post_type() === 'post' && !is_tag() && $obj->parent === 0) {
+    // postで親カテゴリの場合
+    $name = $obj->cat_name;
+} else {
+    $name = $obj->name;
+}
+
+$tag = 'h1';
+$title = '「' . $name . '」の記事一覧';
 ?>
 
 <main class="<?php echo $main_class; ?> list-contents">
@@ -23,12 +29,7 @@ $title = '「' . $cat_name . '」の記事';
                     <?php endwhile; ?>
                 </ul>
             </article>
-            <?php the_posts_pagination(array(
-                'mid_size' => 1,
-                'prev_text' => '',
-                'next_text' => '',
-                'screen_reader_text' => ''
-            )); ?>
+            <?php get_template_part('components/parts/pagination'); ?>
         </section>
     <?php endif; ?>
     <?php get_template_part('components/contents/after'); ?>

@@ -15,24 +15,4 @@
 			font-size: v.$font-size--profile-slide--txt--pc;
 		}
 	}
-
-	// 背景で静止している星
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 3px;
-		height: 3px;
-		border-radius: 50%;
-	}
-	&::before {
-		box-shadow: v.$box-shadow--star-purple;
-	}
-
-	&::after {
-		box-shadow: v.$box-shadow--star-green;
-	}
 }

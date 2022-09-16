@@ -13,7 +13,7 @@ if (is_front_page() || is_home() || is_page('home')) {
 <footer class="l-footer <?php echo $footer_class; ?>">
   <div class="c-sky"></div>
   <div class="c-sun"></div>
-  <div class="c-sea"></div>
+  <div class="c-sea c-ba-shining"></div>
   <div class="c-fin"></div>
 
   <svg class="c-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
