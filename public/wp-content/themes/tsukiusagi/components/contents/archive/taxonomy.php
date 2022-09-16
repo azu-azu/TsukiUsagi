@@ -10,7 +10,7 @@ if ($obj &&  get_post_type() === 'post' && !is_tag() && $obj->parent === 0) {
     $name = $obj->name;
 }
 
-$tag = 'h2';
+$tag = 'h1';
 $title = '「' . $name . '」の記事一覧';
 ?>
 

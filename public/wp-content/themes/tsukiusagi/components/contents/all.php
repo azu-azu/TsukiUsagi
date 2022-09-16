@@ -18,5 +18,4 @@ get_template_part('components/header/lower');
 <?php endif; ?>
 
 <?php
-if (get_post_type() !== 'works') get_sidebar();
 get_footer();

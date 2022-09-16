@@ -1,0 +1,11 @@
+.p-after-contents {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	min-height: 400px;
+
+	.c-offset-title {
+		position: absolute;
+		bottom: 0;
+	}
+}

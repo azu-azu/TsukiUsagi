@@ -183,3 +183,16 @@ include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.p
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_original_block_categories.php'); // ブロックエディタにブロックカテゴリーを追加
 include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); //投稿のタグを選択式にする
+
+
+// メニューに投稿数を追加する場合
+// add_filter('wp_nav_menu_objects', 'my_nav_count');
+// function my_nav_count($items) {
+//     foreach ($items as $item) {
+//         if ($item->object == 'category') {
+//             $item->title .= " (" . get_term($item->object_id, 'category')->count . ")";
+//             $args[] = $item;
+//         }
+//     }
+//     return $args;
+// }
