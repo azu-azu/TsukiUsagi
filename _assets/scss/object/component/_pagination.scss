@@ -54,10 +54,13 @@
 		}
 	}
 
+	&--pre,
 	&--next {
 		position: absolute;
 		right: 0;
+		font-size: 2rem;
 		color: v.$color--white--opacity50;
+		z-index: 1;
 		@include m.breakpoint(moon-mini) {
 			position: static;
 		}
