@@ -28,8 +28,8 @@ $title = '「' . $name . '」の記事一覧';
                         <?php $delay += 150; ?>
                     <?php endwhile; ?>
                 </ul>
+                <?php get_template_part('components/parts/pagination'); ?>
             </article>
-            <?php get_template_part('components/parts/pagination'); ?>
         </section>
     <?php endif; ?>
     <?php get_template_part('components/contents/after'); ?>
