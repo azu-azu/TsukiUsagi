@@ -10,7 +10,7 @@
 </head>
 
 <body <?php
-      if (is_single() || is_archive() || is_page()) {
+      if (is_single() || is_archive() || is_page() || is_search()) {
         body_class('c-bg--gradient-main');
       } else {
         body_class('');

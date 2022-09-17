@@ -1,4 +1,4 @@
-<div class="p-searchform">
+<article class="p-searchform">
     <form class="c-searchform" id="searchform" method="get" action="<?php echo esc_url(home_url('/')); ?>">
         <label class="screen-reader-text" for="s">検索:</label>
         <input type="text" placeholder="" id="s" name="s" size="20" placeholder="
@@ -7,4 +7,4 @@
             <i class="c-searchform__icon fas fa-search"></i>
         </button>
     </form>
-</div>
+</article>
