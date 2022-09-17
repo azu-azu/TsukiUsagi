@@ -1,22 +1,13 @@
 <?php
-// archive
-if (is_archive()) {
+// works_archive
+if (is_archive() && is_post_type_archive('works')) {
   $args = array(
+    'post_type' => 'works',
     'post_status' => 'publish',
     "posts_per_page" => -1,
     "orderby" => "rand",
     "post__not_in" => "", //現在のページを除外する場合：しない場合は空にする
   );
-
-  if (is_post_type_archive('post')) {
-    $args = array_merge($args, array(
-      'post_type' => 'post',
-    ));
-  } elseif (is_post_type_archive('works')) {
-    $args = array_merge($args, array(
-      'post_type' => 'works',
-    ));
-  };
 
   // single
 } elseif (is_single()) {
