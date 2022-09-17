@@ -22,6 +22,7 @@ function usa_set_pagination($pages = '', $range = 2) {
 
     <?php if ($pages != 1) { ?>
         <article class="p-pagination">
+            <h3 class="screen-reader-text">投稿ナビゲーション</h3>
             <!-- <span class="c-pagination__page">page<?php echo $paged; ?>/<?php echo $pages; ?></span> -->
             <?php if ($paged > 1) { ?>
                 <a class="c-pagination--pre c-bubbly-button--white" href="<?php echo get_pagenum_link($paged - 1); ?>">
