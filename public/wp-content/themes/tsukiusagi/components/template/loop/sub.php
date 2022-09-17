@@ -1,5 +1,5 @@
 <?php
-// ver archive
+// archive
 if (is_archive()) {
   $args = array(
     'post_status' => 'publish',
@@ -17,9 +17,8 @@ if (is_archive()) {
       'post_type' => 'works',
     ));
   };
-  echo usa_set_extra_sub_loop($args);
 
-  // ver single
+  // single
 } elseif (is_single()) {
   $args = array(
     'post_status' => 'publish',
@@ -40,26 +39,6 @@ if (is_archive()) {
       'post_type' => 'works',
     ));
   };
-
-  $my_query = new WP_Query($args);
-  if ($my_query->have_posts()) {
-    $delay = 0;
-?>
-
-    <ul class="post-sub-loop">
-      <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-        <li class="c-anim-box--down js-scroll-show" data-js_delay="<?php echo $delay; ?>">
-          <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>
-        </li>
-        <?php $delay += 150; ?>
-      <?php endwhile; ?>
-    </ul>
-
-<?php
-  } else {
-    echo '<p>Coming soon</p>';
-  };
-
-  wp_reset_postdata();
-  wp_reset_query();
 };
+
+echo usa_set_extra_sub_loop($args);
