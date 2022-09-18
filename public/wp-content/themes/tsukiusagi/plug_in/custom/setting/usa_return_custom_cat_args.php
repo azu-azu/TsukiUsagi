@@ -3,7 +3,7 @@
 /**
  * Plugin Name: custom_post
  * Plugin URI:
- * Description: カスタムタクソノミー追加
+ * Description: カスタム投稿にカテゴリ追加
  * Version: 1.0
  * Author: tsukiusagi.biz
  * Author URI: https://tsukiusagi.biz

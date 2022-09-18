@@ -3,7 +3,7 @@
 /**
  * Plugin Name: custom_post
  * Plugin URI:
- * Description: カスタム投稿作成
+ * Description: カスタム投稿の作成
  * Version: 1.0
  * Author: tsukiusagi.biz
  * Author URI: https://tsukiusagi.biz
