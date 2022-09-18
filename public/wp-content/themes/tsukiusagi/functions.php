@@ -176,10 +176,10 @@ include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_l
 include(get_template_directory() . '/plug_in/content/usa_post_has_archive.php'); // 投稿のアーカイブページを作成する
 include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); // 投稿のサムネイル自動設定
 include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 別ページの一覧を表示する
-include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
-include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
 include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与：既存関数を使う場合
 include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
+include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
+include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
 
 // 管理
 include(get_template_directory() . '/plug_in/manage/contact_form.php'); // contact form 7
