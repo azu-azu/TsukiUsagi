@@ -162,9 +162,7 @@ add_action('wp_footer', 'file_load_scripts_styles'); // wp_footerに処理を登
 include(get_template_directory() . '/plug_in/custom/setting/usa_return_custom_post_args.php');
 include(get_template_directory() . '/plug_in/custom/setting/usa_return_custom_cat_args.php');
 include(get_template_directory() . '/plug_in/custom/setting/usa_return_custom_tag_args.php');
-
-// カスタム投稿｜作成
-include(get_template_directory() . '/plug_in/custom/post/works.php');
+include(get_template_directory() . '/plug_in/custom/setting/usa_create_custom_post.php'); // ※必ず上記３つより下に記述する
 
 // カスタムフィールド
 include(get_template_directory() . '/plug_in/custom/field/eyecatch_text.php');
@@ -173,14 +171,14 @@ include(get_template_directory() . '/plug_in/custom/field/works_desc.php');
 include(get_template_directory() . '/plug_in/custom/field/works_environment.php');
 
 // コンテンツ関連
-include(get_template_directory() . '/plug_in/content/usa_set_tax_terms_links.php'); //タクソノミーとタームのリンクを取得する
-include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_lines_data.php'); //カスタムフィールドの複数行の値（改行入力）をリストで出力する
+include(get_template_directory() . '/plug_in/content/usa_set_tax_terms_links.php'); // タクソノミーとタームのリンクを取得する
+include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_lines_data.php'); // カスタムフィールドの複数行の値（改行入力）をリストで出力する
 include(get_template_directory() . '/plug_in/content/usa_post_has_archive.php'); // 投稿のアーカイブページを作成する
-include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); //投稿のサムネイル自動設定
-include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); //別ページの一覧を表示する
-include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); //タイトル表示
-include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); //ジャンプボタンの中身
-include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ※ページネーションにクラス付与：既存関数を使う場合
+include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); // 投稿のサムネイル自動設定
+include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 別ページの一覧を表示する
+include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
+include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
+include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与：既存関数を使う場合
 include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
 
 // 管理
@@ -191,7 +189,7 @@ include(get_template_directory() . '/plug_in/manage/usa_theme_widgets_init.php')
 include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_original_block_categories.php'); // ブロックエディタにブロックカテゴリーを追加
-include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); //投稿のタグを選択式にする
+include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); // 投稿のタグを選択式にする
 
 
 // メニューに投稿数を追加する場合

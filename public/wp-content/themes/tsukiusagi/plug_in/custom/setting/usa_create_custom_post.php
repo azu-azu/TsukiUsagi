@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: custom_post
+ * Plugin Name: create_custom_post
  * Plugin URI:
  * Description: カスタムタクソノミー追加
  * Version: 1.0
@@ -13,14 +13,15 @@
  *
  */
 
-//  引数
+// カスタム投稿の数だけarrayを用意する
 $post_works_array = array(
     'post_type' => 'works',
     'name'      => 'works',
     'icon'      => 'dashicons-editor-paste-word',
 );
 
-function create_post_works($array) {
+// ↓ここから共通↓
+function usa_create_custom_post($array) {
     $post_args = usa_return_custom_post_args($array);
     $category_args = usa_return_custom_cat_args($array);
     $tag_args = usa_return_custom_tag_args($array);
@@ -45,5 +46,8 @@ function create_post_works($array) {
         $tag_args,
     );
 }
-add_action('hook_create_post_works', 'create_post_works', 10, 1);
-do_action('hook_create_post_works', $post_works_array);
+add_action('hook_create_custom_post', 'usa_create_custom_post', 10, 1);
+// ↑ここまで共通
+
+// カスタム投稿の数だけdo_actionを用意する
+do_action('hook_create_custom_post', $post_works_array);

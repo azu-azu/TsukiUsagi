@@ -19,10 +19,10 @@ function usa_return_custom_post_args($array) {
     $icon = $array['icon'];
 
     $supports = array(
-        'title',      //タイトルフォーム
-        'editor',     //エディター(内容の編集)
-        'thumbnail',  //アイキャッチ画像
-        'revisions',  //リビジョンを保存
+        'title',      // タイトルフォーム
+        'editor',     // エディター(内容の編集)
+        'thumbnail',  // アイキャッチ画像
+        'revisions',  // リビジョンを保存
     );
     $args = array(
         'labels' => [
