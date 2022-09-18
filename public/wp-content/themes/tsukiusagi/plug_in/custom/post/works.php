@@ -12,9 +12,8 @@
  * @param array $array：スラッグ、名前
  *
  */
-//--------------------------------------------
-// カスタム投稿・タクソノミー
-//--------------------------------------------
+
+//  引数
 $post_works_array = array(
     'post_type' => 'works',
     'name'      => 'works',
@@ -29,21 +28,21 @@ function create_post_works($array) {
     // カスタム投稿の設定
     register_post_type(
         $array['post_type'],
-        $post_args
+        $post_args,
     );
 
     // カスタムタクソノミー（カテゴリー）の登録
     register_taxonomy(
         $array['post_type'] . '-category',  // 1.スラッグ：$term->slug
         $array['post_type'],                // 2.利用する投稿タイプ
-        $category_args                      // 3.オプション
+        $category_args,                     // 3.オプション
     );
 
     // カスタムタクソノミー（タグ）の設定
     register_taxonomy(
         $array['post_type'] . '-tag',
         $array['post_type'],
-        $tag_args
+        $tag_args,
     );
 }
 add_action('hook_create_post_works', 'create_post_works', 10, 1);
