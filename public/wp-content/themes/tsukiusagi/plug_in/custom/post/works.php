@@ -35,8 +35,8 @@ function create_post_works($array) {
     // カスタムタクソノミー（カテゴリー）の登録
     register_taxonomy(
         $array['post_type'] . '-category',  // 1.スラッグ：$term->slug
-        $array['post_type'],              // 2.利用する投稿タイプ
-        $category_args                    // 3.オプション
+        $array['post_type'],                // 2.利用する投稿タイプ
+        $category_args                      // 3.オプション
     );
 
     // カスタムタクソノミー（タグ）の設定

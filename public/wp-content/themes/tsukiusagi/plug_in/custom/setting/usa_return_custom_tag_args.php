@@ -18,7 +18,7 @@ function usa_return_custom_tag_args($array) {
         'hierarchical' => true,
         'label' => $name . 'のタグ',
         'public' => true,
-        'show_in_rest' => true //管理画面に追加
+        'show_in_rest' => true,   //管理画面に追加
     );
     return $args;
 }
