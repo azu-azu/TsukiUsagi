@@ -26,7 +26,7 @@ function usa_return_custom_post_args($array) {
     );
     $args = array(
         'labels' => [
-            'name'          => $name . 'の一覧',
+            'name'          => $name,
             'singular_name' => $post_type,
             'add_new'       => $name . 'の新規追加', // 日本語表記にする
             'edit_item'     => '投稿を編集',
