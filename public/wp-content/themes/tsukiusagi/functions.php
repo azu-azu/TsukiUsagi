@@ -182,6 +182,7 @@ include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show
 include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
 
 // 管理
+include(get_template_directory() . '/plug_in/manage/usa_remove_emoji.php'); // WordPress初期設定の絵文字を読み込む設定を停止
 include(get_template_directory() . '/plug_in/manage/contact_form.php'); // contact form 7
 include(get_template_directory() . '/plug_in/manage/usa_meta_ogp.php'); // OGP画像
 include(get_template_directory() . '/plug_in/manage/no_self_ping.php'); // セルフピンバックを除外する（内部リンクを貼ったときのコメント自動送信を防ぐ）
