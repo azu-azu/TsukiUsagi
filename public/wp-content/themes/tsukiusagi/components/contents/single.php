@@ -4,7 +4,6 @@ $main_container_class = $main_class . '__container';
 $main_inner_class = $main_class . '__inner';
 ?>
 
-
 <?php get_template_part('components/bg/cosmos/ornament'); ?>
 
 <?php if (get_post_type() === 'post') : ?>
@@ -12,8 +11,9 @@ $main_inner_class = $main_class . '__inner';
         <?php get_template_part('components/parts/separator'); ?>
     </div>
 
-    <section class="<?php echo $main_inner_class; ?> c-bg--post-container">';
+    <section class="<?php echo $main_inner_class; ?> c-bg--post-container">
         <article class="<?php echo $main_container_class; ?>">
+            <?php echo usa_set_breadcrumb(); ?>
             <?php get_template_part('components/template/loop/main'); ?>
             <?php get_template_part('components/parts/author'); ?>
         </article>

@@ -44,15 +44,7 @@
 .single-post {
 	.text-contents {
 		.l-topic__container {
-			padding: 20px;
-
-			@include m.breakpoint(moon-mini) {
-				padding: 20px 50px;
-			}
-
-			@include m.breakpoint(topic-inner) {
-				padding: 20px 0;
-			}
+			padding: 0 20px;
 		}
 	}
 }

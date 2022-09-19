@@ -180,6 +180,7 @@ include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.ph
 include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
 include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
 include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
+include(get_template_directory() . '/plug_in/content/usa_set_breadcrumb.php'); // パンくずリスト
 
 // 管理
 include(get_template_directory() . '/plug_in/manage/usa_remove_emoji.php'); // WordPress初期設定の絵文字を読み込む設定を停止
