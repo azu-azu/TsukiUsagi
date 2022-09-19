@@ -17,14 +17,14 @@ if (!function_exists('usa_set_breadcrumb')) {
         $home = esc_url(home_url('/')) . '/blog';
         $str = '<nav class="c-breadcrumb"><ul itemscope itemtype="http://schema.org/BreadcrumbList">';
         $str .= usa_bread_item("月うさぎblog", $home, "1"); // ホームは共通して表示
-        if (is_category()) {
+        if (is_single()) {
+            $str .= usa_get_bread_single();
+        } elseif (is_category()) {
             $str .= usa_get_bread_category();
         } elseif (is_tag()) {
             $str .= '<li><i class="fa fa-tag"></i> タグ</li>';
         } elseif (is_page()) {
             $str .= usa_get_bread_page();
-        } elseif (is_single()) {
-            $str .= usa_get_bread_single();
             // } elseif (is_date()) {
             //     $str .= usa_get_bread_date();
             // } elseif (is_author()) {
