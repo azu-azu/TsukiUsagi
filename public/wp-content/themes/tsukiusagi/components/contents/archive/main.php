@@ -4,7 +4,7 @@ $main_container_class = $main_class . '__container';
 $main_inner_class = $main_class . '__inner';
 ?>
 
-<?php if (is_category()) : ?>
+<?php if (is_category() || is_tag()) : ?>
     <?php get_template_part('components/contents/archive/taxonomy'); ?>
 <?php else : ?>
     <?php get_template_part('components/text/page-ttl'); ?>
