@@ -88,7 +88,7 @@ if (!function_exists('usa_get_bread_category')) {
     }
 }
 
-// 固定ページのパンくず用リストを生成する
+// 固定ページ用リスト
 if (!function_exists('usa_get_bread_page')) {
     function usa_get_bread_page() {
         global $post;
