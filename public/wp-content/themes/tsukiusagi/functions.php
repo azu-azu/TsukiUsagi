@@ -136,6 +136,14 @@ function file_load_scripts_styles() {
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
+    if (is_search()) {
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
+        wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
+        wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
+        wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
+        wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
+        wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
+    }
     if (is_404()) {
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
@@ -154,9 +162,7 @@ add_action('wp_footer', 'file_load_scripts_styles'); // wp_footerに処理を登
 include(get_template_directory() . '/plug_in/custom/setting/usa_return_custom_post_args.php');
 include(get_template_directory() . '/plug_in/custom/setting/usa_return_custom_cat_args.php');
 include(get_template_directory() . '/plug_in/custom/setting/usa_return_custom_tag_args.php');
-
-// カスタム投稿｜作成
-include(get_template_directory() . '/plug_in/custom/post/works.php');
+include(get_template_directory() . '/plug_in/custom/setting/usa_create_custom_post.php'); // ※必ず上記３つより下に記述する
 
 // カスタムフィールド
 include(get_template_directory() . '/plug_in/custom/field/eyecatch_text.php');
@@ -165,16 +171,19 @@ include(get_template_directory() . '/plug_in/custom/field/works_desc.php');
 include(get_template_directory() . '/plug_in/custom/field/works_environment.php');
 
 // コンテンツ関連
-include(get_template_directory() . '/plug_in/content/usa_set_tax_terms_links.php'); //タクソノミーとタームのリンクを取得する
-include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_lines_data.php'); //カスタムフィールドの複数行の値（改行入力）をリストで出力する
-include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与
+include(get_template_directory() . '/plug_in/content/usa_set_tax_terms_links.php'); // タクソノミーとタームのリンクを取得する
+include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_lines_data.php'); // カスタムフィールドの複数行の値（改行入力）をリストで出力する
 include(get_template_directory() . '/plug_in/content/usa_post_has_archive.php'); // 投稿のアーカイブページを作成する
-include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); //投稿のサムネイル自動設定
-include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); //別ページの一覧を表示する
-include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); //タイトル表示
-include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); //ジャンプボタンの中身
+include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); // 投稿のサムネイル自動設定
+include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 別ページの一覧を表示する
+include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与：既存関数を使う場合
+include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
+include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
+include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
+include(get_template_directory() . '/plug_in/content/usa_set_breadcrumb.php'); // パンくずリスト
 
 // 管理
+include(get_template_directory() . '/plug_in/manage/usa_remove_emoji.php'); // WordPress初期設定の絵文字を読み込む設定を停止
 include(get_template_directory() . '/plug_in/manage/contact_form.php'); // contact form 7
 include(get_template_directory() . '/plug_in/manage/usa_meta_ogp.php'); // OGP画像
 include(get_template_directory() . '/plug_in/manage/no_self_ping.php'); // セルフピンバックを除外する（内部リンクを貼ったときのコメント自動送信を防ぐ）
@@ -182,7 +191,7 @@ include(get_template_directory() . '/plug_in/manage/usa_theme_widgets_init.php')
 include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_original_block_categories.php'); // ブロックエディタにブロックカテゴリーを追加
-include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); //投稿のタグを選択式にする
+include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); // 投稿のタグを選択式にする
 
 
 // メニューに投稿数を追加する場合

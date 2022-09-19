@@ -1,25 +1,17 @@
+@use '../../foundation/mixin' as m;
 @use '../../object/component/bubbly-button';
 
 .p-pagination {
 	position: relative;
+	width: 100%;
 	display: flex;
 	justify-content: center;
+	gap: 20px;
+	white-space: nowrap;
+	align-items: center;
+	text-decoration: none;
 
-	&__container {
-		display: flex;
-		align-items: baseline;
-		gap: 20px;
-
-		.screen-reader-text {
-			padding: 0;
-		}
-
-		a {
-			@extend .c-bubbly-button--yellow;
-			width: 20px;
-			font-size: 2rem;
-			color: #fff;
-			text-align: center;
-		}
+	@include m.breakpoint(moon-mini) {
+		position: static;
 	}
 }

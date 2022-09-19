@@ -3,11 +3,6 @@
 
 .single {
 	.l-topic {
-		margin-top: 0;
-		@include m.breakpoint(moon-mini) {
-			margin-top: 100px;
-		}
-
 		.p-svg-cosmos {
 			&--ornament {
 				width: 2%;

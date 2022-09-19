@@ -37,7 +37,7 @@
 .archive {
 	.p-title {
 		&.page {
-			padding: 80px;
+			padding: 40px;
 		}
 		&.list,
 		&.sec {
@@ -47,6 +47,14 @@
 			position: static;
 			font-size: 2rem;
 			transform: inherit;
+		}
+	}
+
+	&.category {
+		.p-title {
+			&.page {
+				padding: 80px;
+			}
 		}
 	}
 }

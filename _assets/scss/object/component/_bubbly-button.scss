@@ -4,7 +4,7 @@
 .c-bubbly-button {
 	@include m.breakpoint(moon-mini) {
 		position: relative;
-		display: inline-block;
+		// display: inline-block;
 		border: none;
 		appearance: none;
 		-webkit-appearance: none;

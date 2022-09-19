@@ -1,7 +1,3 @@
 <?php
-the_posts_pagination(array(
-    'mid_size' => 1, // 現在ページの両隣の数
-    'prev_text' => '',
-    'next_text' => '',
-    'screen_reader_text' => ''
-));
+// 関数が定義されていたら
+if (function_exists('usa_set_pagination')) usa_set_pagination();

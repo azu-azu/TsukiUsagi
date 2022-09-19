@@ -1,0 +1,32 @@
+.c-breadcrumb {
+	padding: 10px 0;
+
+	ul {
+		display: flex;
+		list-style: none;
+
+		li {
+			display: flex;
+			a {
+				color: #9e9c9c;
+			}
+
+			&::before,
+			&::after {
+				padding: 0 6px;
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.2);
+			}
+
+			&:first-child::before {
+				content: '\f5da';
+			}
+
+			&:not(:last-child)::after {
+				content: '\f0da';
+			}
+		}
+	}
+}

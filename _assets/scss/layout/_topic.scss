@@ -4,6 +4,7 @@
 .l-topic {
 	width: 100vw;
 	min-height: 100vh;
+	margin-top: 50px;
 	color: #fff;
 	overflow: hidden;
 
@@ -43,15 +44,7 @@
 .single-post {
 	.text-contents {
 		.l-topic__container {
-			padding: 20px;
-
-			@include m.breakpoint(moon-mini) {
-				padding: 20px 50px;
-			}
-
-			@include m.breakpoint(topic-inner) {
-				padding: 20px 0;
-			}
+			padding: 0 20px;
 		}
 	}
 }
@@ -90,11 +83,5 @@
 		.p-title {
 			margin: auto;
 		}
-	}
-}
-
-.category {
-	.l-topic {
-		padding-top: 20px;
 	}
 }
