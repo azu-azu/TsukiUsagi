@@ -155,6 +155,8 @@ function file_load_scripts_styles() {
 add_action('wp_footer', 'file_load_scripts_styles'); // wp_footerに処理を登録
 
 
+// カスタマイザー
+include(get_template_directory() . '/customizer/customizer.php');
 
 /**
  * プラグイン
@@ -192,6 +194,7 @@ include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.p
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_original_block_categories.php'); // ブロックエディタにブロックカテゴリーを追加
 include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); // 投稿のタグを選択式にする
+
 
 
 // メニューに投稿数を追加する場合
