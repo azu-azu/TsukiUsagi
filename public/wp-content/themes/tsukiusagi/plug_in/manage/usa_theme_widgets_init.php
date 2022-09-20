@@ -16,7 +16,7 @@ function usa_theme_widgets_init() {
         'id' => 'category-nav',
         'before_widget' => '<section class="p-sidebar">',
         'after_widget' => '</section>',
-        'before_title' => '<h3 class="side-title">',
+        'before_title' => '<h3 class="side-title c-bg--cosmos">',
         'after_title'  => '</h3>',
     ));
 }

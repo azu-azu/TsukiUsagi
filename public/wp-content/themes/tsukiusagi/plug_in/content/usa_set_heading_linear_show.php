@@ -38,7 +38,7 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
             break;
 
         case 'list':
-            $pseudo = 'c-title--section c-pseudo--list-ttl';
+            $pseudo = 'c-title--section c-pseudo--list-ttl c-text-shadow--black';
             break;
     }
 
