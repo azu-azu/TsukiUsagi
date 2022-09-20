@@ -1,3 +1,3 @@
-<aside class="p-after-contents c-bg--before-footer">
+<aside class="p-after-contents">
   <?php if (get_post_type() !== 'works') get_sidebar(); ?>
 </aside>

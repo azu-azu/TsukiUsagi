@@ -11,7 +11,7 @@
 
 <body <?php
       if (is_single() || is_archive() || is_page() || is_search()) {
-        body_class('c-bg--gradient-main');
+        body_class('c-bg--night');
       } else {
         body_class('');
       }

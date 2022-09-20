@@ -1,6 +1,6 @@
 <?php
 if (is_front_page() || is_home() || is_page('home')) {
-  $footer_class = 'p-footer';
+  $footer_class = 'p-footer--morning';
   $wave_color1 = 'rgba(204,218,213,0.5)';
   $wave_color4 = 'rgba(255,190,246,0.1)';
 } else {
@@ -11,6 +11,14 @@ if (is_front_page() || is_home() || is_page('home')) {
 ?>
 
 <footer class="l-footer <?php echo $footer_class; ?>">
+
+  <?php
+  if (!(is_front_page() || is_home() || is_page('home'))) {
+    echo '<p class="p-go-home">トップページへ戻る</p>';
+    get_search_form();
+  }
+  ?>
+
   <div class="c-sky"></div>
   <div class="c-sun"></div>
   <div class="c-sea c-ba-shining"></div>

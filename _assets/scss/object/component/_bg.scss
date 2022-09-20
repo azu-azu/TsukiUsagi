@@ -63,4 +63,14 @@
 	&--cosmos {
 		background: v.$color--cosmos;
 	}
+
+	&--night {
+		background: linear-gradient(
+			to bottom,
+			#090a0f 20%,
+			#1b2735 40%,
+			#1b2d42 80%,
+			#2d2b42 90%
+		);
+	}
 }
