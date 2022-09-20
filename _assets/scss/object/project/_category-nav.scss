@@ -1,7 +1,7 @@
 @use '../../foundation/mixin' as m;
 @use '../../object/component/bubbly-button';
 
-.p-sidebar {
+.p-category-nav {
 	width: 200px;
 	z-index: 30;
 
@@ -15,7 +15,7 @@
 	}
 
 	.side-title {
-		height: 30px;
+		height: 20px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
