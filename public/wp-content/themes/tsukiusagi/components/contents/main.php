@@ -21,6 +21,5 @@ if (is_single()) {
     get_template_part('components/contents/search');
   }
   ?>
-
-  <?php get_template_part('components/contents/after'); ?>
 </main>
+<?php get_template_part('components/contents/after'); ?>
