@@ -21,7 +21,7 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
     echo '<section class="p-title ' . $type . '">';
 
     if (!$url == "") {
-        echo '<a class="c-ba-spread-light--white" href="' . $url . '">';
+        echo '<a class="" href="' . $url . '">';
     }
 
     switch ($type) {
