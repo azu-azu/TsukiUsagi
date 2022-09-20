@@ -10,7 +10,7 @@ get_template_part('components/header/lower');
 
 <?php else : ?>
   <?php if (get_post_type() === 'post' && !is_archive() && !is_search()) : ?>
-    <div class="p-flowing-clouds sp-none"></div>
+    <!-- <div class="p-flowing-clouds sp-none"></div> -->
   <?php endif; ?>
 
   <?php get_template_part('components/contents/main'); ?>

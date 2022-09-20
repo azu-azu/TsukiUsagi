@@ -50,7 +50,7 @@ if (!function_exists('usa_get_bread_single')) {
         global $post;
         $categories = get_the_category($post->ID);
         if (!$categories) return '';
-
+        $result = '';
         $cat = $categories[0];
         if ($cat->parent != 0) {
             $ancestors = array_reverse(get_ancestors($cat->cat_ID, 'category'));
