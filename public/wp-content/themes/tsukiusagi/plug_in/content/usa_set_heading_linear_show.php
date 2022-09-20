@@ -34,7 +34,7 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
             break;
 
         case 'sec':
-            $pseudo = 'c-title--section c-pseudo--sec-ttl';
+            $pseudo = 'c-title--section c-text-shadow--white c-pseudo--sec-ttl';
             break;
 
         case 'list':

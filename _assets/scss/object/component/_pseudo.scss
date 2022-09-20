@@ -37,9 +37,16 @@
 			background: rgba(255, 255, 255, 0.2);
 			filter: blur(2px);
 			transform-origin: 0 0;
-			transform: translateX(100%);
-			animation: ttl_after 7s infinite alternate ease-in-out;
+			transform: translateX(0);
+			// transform: translateX(100%);
+			// animation: ttl_after 7s infinite alternate ease-in-out;
 			transition: 0.5s ease;
+		}
+
+		&:hover {
+			&::after {
+				transform: translateX(100%);
+			}
 		}
 	}
 	// &--page-ttl {
