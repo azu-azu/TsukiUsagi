@@ -1,4 +1,4 @@
-<main class="l-main special-contents u-border--sec-bottom">
+<main class="l-main p-contents--fullscreen u-border--sec-bottom">
   <canvas id="js-star-orbit"></canvas>
   <section class="l-main__container">
 

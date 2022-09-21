@@ -13,7 +13,6 @@
 @forward './layout/_grid';
 @forward './layout/_header';
 @forward './layout/_main';
-@forward './layout/_topic';
 @forward './layout/_footer';
 
 // ==========================================================================
@@ -92,11 +91,13 @@
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
+@forward './object/project/_about';
 @forward './object/project/_after-contents';
 @forward './object/project/_ball-box';
 @forward './object/project/_card';
 @forward './object/project/_cards';
 @forward './object/project/_category-nav';
+@forward './object/project/_contents';
 @forward './object/project/_crater';
 @forward './object/project/_cstmreba';
 @forward './object/project/_first-view';

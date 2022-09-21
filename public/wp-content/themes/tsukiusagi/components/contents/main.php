@@ -3,9 +3,9 @@
 $main_class = 'l-main';
 
 if (is_single()) {
-  $sub_class = "text-contents";
+  $sub_class = "p-contents";
 } elseif (is_archive() || is_search()) {
-  $sub_class = "list-contents";
+  $sub_class = "p-contents--archive";
 }
 ?>
 
