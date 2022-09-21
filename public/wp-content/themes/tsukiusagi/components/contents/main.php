@@ -1,6 +1,6 @@
 <?php
 
-$main_class = 'l-topic';
+$main_class = 'l-main';
 
 if (is_single()) {
   $sub_class = "text-contents";

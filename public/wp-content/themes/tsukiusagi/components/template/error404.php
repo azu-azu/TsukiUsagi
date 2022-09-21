@@ -1,6 +1,6 @@
-<main class="l-topic special-contents u-border--sec-bottom">
+<main class="l-main special-contents u-border--sec-bottom">
   <canvas id="js-star-orbit"></canvas>
-  <section class="l-topic__container">
+  <section class="l-main__container">
 
     <?php get_template_part('components/text/sec-ttl'); ?>
 

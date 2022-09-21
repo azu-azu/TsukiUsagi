@@ -2,7 +2,7 @@
 @use '../../foundation/variable' as v;
 
 .single {
-	.l-topic {
+	.l-main {
 		.p-svg-cosmos {
 			&--ornament {
 				width: 2%;
@@ -14,7 +14,7 @@
 			}
 		}
 
-		.l-topic__container {
+		.l-main__container {
 			.c-title--section {
 				text-align: left;
 				text-indent: 0;
@@ -68,7 +68,7 @@
 
 // コンテンツ内枠
 .single {
-	.l-topic .l-topic__container,
+	.l-main .l-main__container,
 	.p-related-contents__inner {
 		position: relative;
 		display: block;
@@ -91,7 +91,7 @@
 }
 
 // 見出し
-.single .l-topic {
+.single .l-main {
 	h2 {
 		position: relative;
 		display: inline-block;

@@ -2,7 +2,7 @@
 @use '../../foundation/variable' as v;
 
 .single-works {
-	.l-topic {
+	.l-main {
 		.p-svg-cosmos {
 			&--earth {
 				top: 30%;
@@ -14,7 +14,7 @@
 			}
 		}
 
-		.l-topic__container {
+		.l-main__container {
 			margin-bottom: 300px;
 			padding: 0 20px;
 			@include m.breakpoint(topic-inner) {
