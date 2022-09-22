@@ -18,23 +18,23 @@
 }
 
 // 短距離にする場合
-// .single,
-// .archive {
-// 	.c-anim-train-running {
-// 		@include m.breakpoint(moon-mini) {
-// 			animation: short_run 30s infinite linear;
-// 		}
-// 	}
-// }
+.single,
+.archive {
+	.c-anim-train-running {
+		@include m.breakpoint(moon-mini) {
+			animation: short_run 30s infinite linear;
+		}
+	}
+}
 
-// @keyframes short_run {
-// 	0% {
-// 		transform: translateX(60vw);
-// 	}
-// 	50% {
-// 		transform: translateX(90vw);
-// 	}
-// 	100% {
-// 		transform: translateX(60vw);
-// 	}
-// }
+@keyframes short_run {
+	0% {
+		transform: translateX(28vw);
+	}
+	50% {
+		transform: translateX(65vw);
+	}
+	100% {
+		transform: translateX(28vw);
+	}
+}

@@ -24,11 +24,11 @@
 }
 
 // 短距離にする場合
-// .single,
-// .archive {
-// 	.c-anim-turn {
-// 		@include m.breakpoint(moon-mini) {
-// 			animation: anim_turn 30s infinite;
-// 		}
-// 	}
-// }
+.single,
+.archive {
+	.c-anim-turn {
+		@include m.breakpoint(moon-mini) {
+			animation: anim_turn 30s infinite;
+		}
+	}
+}
