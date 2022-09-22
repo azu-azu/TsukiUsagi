@@ -100,7 +100,7 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 
 // ページごとに読み込みファイルを変える
 function file_load_scripts_styles() {
-    if (is_front_page() || is_home() || is_page('home')) {
+    if (is_page('about')) {
         wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
         wp_enqueue_script('bundle', get_template_directory_uri() . '/js/bundle.js', array(), date("YmdHi"), true);
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
@@ -128,7 +128,7 @@ function file_load_scripts_styles() {
     if (is_page('policy')) {
         wp_enqueue_script('canvas-shooting-stars', get_template_directory_uri() . '/js/parts/myCanvasShootingStars.js', array(), '', true);
     }
-    if (is_archive()) {
+    if (is_front_page() || is_home() || is_page('home') || is_archive()) {
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
@@ -156,7 +156,7 @@ add_action('wp_footer', 'file_load_scripts_styles'); // wp_footerに処理を登
 
 
 // カスタマイザー
-include(get_template_directory() . '/customizer/customizer.php');
+// include(get_template_directory() . '/customizer/customizer.php');
 
 /**
  * プラグイン

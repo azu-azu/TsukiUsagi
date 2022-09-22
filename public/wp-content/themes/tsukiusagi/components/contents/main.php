@@ -4,7 +4,7 @@ $main_class = 'l-main';
 
 if (is_single()) {
   $sub_class = "p-contents";
-} elseif (is_archive() || is_search()) {
+} elseif (is_front_page() || is_home() || is_page('home') || is_archive() || is_search()) {
   $sub_class = "p-contents--archive";
 }
 ?>
@@ -15,7 +15,7 @@ if (is_single()) {
   if (is_single()) {
     get_template_part('components/text/page-ttl');
     get_template_part('components/contents/single');
-  } elseif (is_archive()) {
+  } elseif (is_front_page() || is_home() || is_page('home') || is_archive()) {
     get_template_part('components/contents/archive/main');
   } elseif (is_search()) {
     get_template_part('components/contents/search');

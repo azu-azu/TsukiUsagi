@@ -1,10 +1,10 @@
 <?php
-if (get_post_type() === 'post' && !is_post_type_archive('post')) {
-  $url = esc_url(home_url('/')) . '/blog';
+if (is_page('about')) {
+  $url = esc_url(home_url('/')) . '/about';
   $title = '月うさぎ';
   $html_tag = 'p';
 } else {
-  $url = esc_url(home_url('/'));
+  $url = esc_url(home_url());
   $title = '月うさぎ';
   $html_tag = 'p';
 }

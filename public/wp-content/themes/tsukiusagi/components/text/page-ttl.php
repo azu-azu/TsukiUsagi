@@ -2,16 +2,10 @@
 $tag = 'p';
 $type = 'page';
 
-if (is_archive()) {
-  switch (get_post_type()) {
-    case 'post':
-      $title = "月うさぎBlog";
-      break;
-
-    case 'works':
-      $title = "Works list";
-      break;
-  }
+if (is_front_page() || is_home() || is_page('home')) {
+  $title = "月うさぎBlog";
+} elseif (get_post_type('works')) {
+  $title = "Works list";
 } elseif (is_single()) {
   switch (get_post_type()) {
     case 'post':

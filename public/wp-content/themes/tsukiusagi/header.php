@@ -10,9 +10,9 @@
 </head>
 
 <body <?php
-      if (is_single() || is_archive() || is_page() || is_search()) {
-        body_class('c-bg--night');
+      if (is_page('about')) {
+        body_class('p-about');
       } else {
-        body_class('');
+        body_class('c-bg--night');
       }
       ?>>

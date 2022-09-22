@@ -1,29 +1,9 @@
 @use '../../foundation/mixin' as m;
 
-.c-anim-train-running {
-	position: absolute;
-	animation: train_running 100s infinite linear;
-}
-
-@keyframes train_running {
-	0% {
-		transform: translateX(-100%);
-	}
-	50% {
-		transform: translateX(100vw);
-	}
-	100% {
-		transform: translateX(-200px);
-	}
-}
-
 // 短距離にする場合
-.single,
-.archive {
-	.c-anim-train-running {
-		@include m.breakpoint(moon-mini) {
-			animation: short_run 30s infinite linear;
-		}
+.c-anim-train-running {
+	@include m.breakpoint(moon-mini) {
+		animation: short_run 30s infinite linear;
 	}
 }
 
@@ -36,5 +16,24 @@
 	}
 	100% {
 		transform: translateX(28vw);
+	}
+}
+
+.p-about {
+	.c-anim-train-running {
+		position: absolute;
+		animation: train_running 100s infinite linear;
+	}
+}
+
+@keyframes train_running {
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(100vw);
+	}
+	100% {
+		transform: translateX(-200px);
 	}
 }

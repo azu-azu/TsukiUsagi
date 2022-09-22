@@ -3,7 +3,7 @@
 
 .p-train {
 	position: absolute;
-	top: 37%;
+	top: 22%;
 	width: 100%;
 	height: 100px;
 	display: flex;
@@ -11,15 +11,7 @@
 	overflow-x: hidden;
 	z-index: 100;
 	@include m.breakpoint(moon-mini) {
-		top: 35%;
-	}
-
-	&.fixed {
-		position: fixed;
-		top: -5%;
-		@include m.breakpoint(moon-mini) {
-			top: -4%;
-		}
+		top: -8%;
 	}
 
 	&__img-container {
@@ -40,12 +32,29 @@
 	}
 }
 
-.single,
-.archive {
+// .single,
+// .archive {
+// 	.p-train {
+// 		top: 22%;
+// 		@include m.breakpoint(moon-mini) {
+// 			top: -8%;
+// 		}
+// 	}
+// }
+
+.p-about {
 	.p-train {
-		top: 22%;
+		top: 37%;
 		@include m.breakpoint(moon-mini) {
-			top: -8%;
+			top: 35%;
+		}
+
+		&.fixed {
+			position: fixed;
+			top: -5%;
+			@include m.breakpoint(moon-mini) {
+				top: -4%;
+			}
 		}
 	}
 }
