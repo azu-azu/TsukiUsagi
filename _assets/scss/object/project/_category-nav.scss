@@ -45,3 +45,12 @@
 		}
 	}
 }
+
+.single-post {
+	.p-category-nav {
+		@include m.breakpoint(wide) {
+			position: static;
+			width: 200px;
+		}
+	}
+}
