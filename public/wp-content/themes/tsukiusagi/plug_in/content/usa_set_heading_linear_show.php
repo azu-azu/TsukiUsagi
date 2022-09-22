@@ -41,7 +41,8 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
     }
 ?>
     <section class="p-title <?php echo $type; ?>">
-        <?php if (!$url === "") : ?>
+        <!-- イコール２つじゃないと読み取れない -->
+        <?php if (!$url == "") : ?>
             <a class="" href="<?php echo $url; ?>">
             <?php endif; ?>
 
@@ -49,10 +50,9 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
                 <?php echo $my_title; ?>
             </<?php echo $heading_num; ?>>
 
-            <?php if (!$url === "") : ?>
+            <?php if (!$url == "") : ?>
             </a>
         <?php endif; ?>
     </section>
-
 <?php
 }
