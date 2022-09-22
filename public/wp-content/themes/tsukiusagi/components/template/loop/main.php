@@ -16,9 +16,7 @@
       <?php echo usa_set_tax_terms_links('works-category', false); ?>
     <?php endif; ?>
 
-    <article class="p-title">
-      <h1 class="c-title--section c-pseudo--sec-ttl c-anim-box--down txt js-scroll-show"><?php echo the_title(); ?></h1>
-    </article>
+    <?php echo usa_set_heading_linear_show('h1', get_the_title(), 'post'); ?>
 
     <?php if (is_single()) : ?>
       <p class="c-post-date">記事更新日：<?php echo the_time(get_option('date_format')); ?></p>
@@ -27,7 +25,7 @@
     <?php echo usa_set_the_post_thumbnail('large', 'main'); ?>
 
     <?php if (get_post_type() === 'works') : ?>
-      <?php echo  get_template_part('components/parts/works-field'); ?>
+      <?php echo get_template_part('components/parts/works-field'); ?>
     <?php endif; ?>
 
     <article class="wp-post-article-part">

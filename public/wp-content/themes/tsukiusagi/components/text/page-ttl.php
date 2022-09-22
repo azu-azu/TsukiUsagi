@@ -1,6 +1,6 @@
 <?php
 $tag = 'p';
-$type = 'page';
+$type = 'main';
 
 if (is_front_page() || is_home() || is_page('home')) {
   $title = "月うさぎBlog";
@@ -10,7 +10,6 @@ if (is_front_page() || is_home() || is_page('home')) {
   switch (get_post_type()) {
     case 'post':
       $title = "月うさぎBlog";
-      $type = "single";
       break;
 
     case 'works':

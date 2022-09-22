@@ -11,7 +11,7 @@ $tag = 'h1';
 $title = '「' . $name . '」の記事一覧';
 ?>
 
-<?php echo usa_set_heading_linear_show($tag, $title, 'page'); ?>
+<?php echo usa_set_heading_linear_show($tag, $title, 'main'); ?>
 <?php if (have_posts()) : ?>
     <section class="p-related-contents">
         <article class="p-related-contents__inner">

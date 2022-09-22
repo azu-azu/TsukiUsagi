@@ -31,8 +31,9 @@
 }
 
 .c-title {
+	&--main,
+	&--post,
 	&--section,
-	&--page,
 	&--small {
 		@extend .c-title;
 	}
@@ -41,7 +42,12 @@
 		color: #fff;
 	}
 
-	&--page {
+	&--main {
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
 		font-size: 2rem;
 		font-weight: 400;
 		color: rgba(200, 200, 200, 0.5);
@@ -63,6 +69,17 @@
 		}
 	}
 
+	&--post {
+		text-align: left;
+		text-indent: 0;
+
+		&--black {
+			@extend .c-title--post;
+			color: #555;
+			text-shadow: 1px 1px 4px #666;
+		}
+	}
+
 	&--small {
 		color: #fff;
 		text-shadow: 2px 2px 5px #111;
@@ -73,19 +90,5 @@
 	.c-title--section,
 	.c-title--section::before {
 		width: v.$width--linear-light--home;
-	}
-}
-
-.single {
-	.c-title {
-		&--page {
-			height: 100px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			// @include m.breakpoint(moon-mini) {
-			// 	margin-top: 110px;
-			// }
-		}
 	}
 }

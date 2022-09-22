@@ -18,19 +18,17 @@
  *
  */
 function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") {
-    echo '<section class="p-title ' . $type . '">';
-
-    if (!$url == "") {
-        echo '<a class="" href="' . $url . '">';
-    }
-
     switch ($type) {
-        case 'single':
-            $pseudo = 'c-title--page';
+        case 'main':
+            $pseudo = 'c-title--main';
             break;
 
-        case 'page':
-            $pseudo = 'c-title--page';
+        case 'post':
+            if (get_post_type() === 'post') {
+                $pseudo = 'c-title--post--black c-pseudo--sec-ttl';
+            } else {
+                $pseudo = 'c-title--post c-text-shadow--white c-pseudo--sec-ttl';
+            }
             break;
 
         case 'sec':
@@ -41,14 +39,20 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
             $pseudo = 'c-title--section c-text-shadow--black c-pseudo--list-ttl';
             break;
     }
+?>
+    <section class="p-title <?php echo $type; ?>">
+        <?php if (!$url === "") : ?>
+            <a class="" href="<?php echo $url; ?>">
+            <?php endif; ?>
 
-    echo '<' . $heading_num . ' class="' . $pseudo . ' c-anim-box--down txt js-scroll-show">';
-    echo $my_title;
-    echo '</' . $heading_num . '>';
+            <<?php echo $heading_num; ?> class="<?php echo $pseudo; ?> c-anim-box--down txt js-scroll-show">
+                <?php echo $my_title; ?>
+            </<?php echo $heading_num; ?>>
 
-    if (!$url == "") {
-        echo '</a>';
-    }
+            <?php if (!$url === "") : ?>
+            </a>
+        <?php endif; ?>
+    </section>
 
-    echo '</section>';
+<?php
 }
