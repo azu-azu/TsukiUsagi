@@ -13,7 +13,6 @@
 @forward './layout/_grid';
 @forward './layout/_header';
 @forward './layout/_main';
-@forward './layout/_topic';
 @forward './layout/_footer';
 
 // ==========================================================================
@@ -84,6 +83,7 @@
 @forward './object/component/_skills-ball';
 @forward './object/component/_sky';
 @forward './object/component/_sun';
+@forward './object/component/text-shadow';
 @forward './object/component/_title';
 @forward './object/component/_train-light';
 @forward './object/component/_wave';
@@ -91,16 +91,19 @@
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
-@forward './object/project/_after-contents';
+@forward './object/project/_about';
 @forward './object/project/_ball-box';
 @forward './object/project/_card';
 @forward './object/project/_cards';
+@forward './object/project/_category-nav';
+@forward './object/project/_contents';
 @forward './object/project/_crater';
 @forward './object/project/_cstmreba';
 @forward './object/project/_first-view';
 @forward './object/project/_flowing-clouds';
 @forward './object/project/_footer';
 @forward './object/project/_gmenu';
+@forward './object/project/_go-home';
 @forward './object/project/_header';
 @forward './object/project/_loading-panel';
 @forward './object/project/_loading-clouds';
@@ -119,7 +122,7 @@
 @forward './object/project/_sec-moon';
 @forward './object/project/_sec-profile';
 @forward './object/project/_sec-works';
-@forward './object/project/_sidebar';
+@forward './object/project/_side';
 @forward './object/project/_skills';
 @forward './object/project/_skill-list';
 @forward './object/project/_svg-cosmos';
@@ -143,4 +146,3 @@
 // -----------------------------------------------------------------
 @forward './object/utility/_sp-only';
 @forward './object/utility/_split-gap';
-@forward './object/utility/_border';

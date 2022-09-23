@@ -2,7 +2,7 @@
 @use '../../foundation/variable' as v;
 
 .single {
-	.l-topic {
+	.l-main {
 		.p-svg-cosmos {
 			&--ornament {
 				width: 2%;
@@ -14,11 +14,7 @@
 			}
 		}
 
-		.l-topic__container {
-			.c-title--section {
-				text-align: left;
-				text-indent: 0;
-			}
+		.l-main__container {
 			.c-post-date {
 				font-size: 1rem;
 				margin-bottom: 10px;
@@ -68,7 +64,7 @@
 
 // コンテンツ内枠
 .single {
-	.l-topic .l-topic__container,
+	.l-main .l-main__container,
 	.p-related-contents__inner {
 		position: relative;
 		display: block;
@@ -91,8 +87,7 @@
 }
 
 // 見出し
-.single .l-topic,
-.p-related-contents {
+.single .l-main {
 	h2 {
 		position: relative;
 		display: inline-block;
@@ -126,7 +121,6 @@
 		height: 100%;
 
 		&__inner {
-			min-height: 700px;
 			padding: 0 20px;
 			@include m.breakpoint(topic-inner) {
 				padding: 0;

@@ -2,7 +2,7 @@
 @use '../../foundation/mixin' as m;
 
 .c-anim-turn {
-	animation: anim_turn 100s infinite;
+	animation: anim_turn 30s infinite;
 }
 
 @keyframes anim_turn {
@@ -23,11 +23,11 @@
 	}
 }
 
-.single,
-.archive {
+// 短距離にする場合
+.p-about {
 	.c-anim-turn {
 		@include m.breakpoint(moon-mini) {
-			animation: anim_turn 30s infinite;
+			animation: anim_turn 100s infinite;
 		}
 	}
 }

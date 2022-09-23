@@ -1,5 +1,5 @@
 <?php
-$main_class = 'l-topic';
+$main_class = 'l-main';
 $main_container_class = $main_class . '__container';
 $main_inner_class = $main_class . '__inner';
 ?>

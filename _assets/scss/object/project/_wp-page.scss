@@ -6,7 +6,7 @@
 		min-height: 100vh;
 	}
 
-	.l-topic__container {
+	.l-main__container {
 		display: block;
 		margin-bottom: 40px;
 
@@ -32,8 +32,8 @@
 
 .error404 {
 	background: #000;
-	.special-contents {
-		.l-topic__container {
+	.p-contents--fullscreen {
+		.l-main__container {
 			height: 70vh;
 			gap: 0;
 

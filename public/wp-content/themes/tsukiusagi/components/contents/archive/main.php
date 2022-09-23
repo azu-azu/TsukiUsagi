@@ -1,10 +1,12 @@
 <?php
-$main_class = 'l-topic';
+$main_class = 'l-main';
 $main_container_class = $main_class . '__container';
 $main_inner_class = $main_class . '__inner';
+
 ?>
 
-<?php if (is_category()) : ?>
+<?php if (is_category() || is_tag()) : ?>
+    <?php echo usa_set_breadcrumb(); ?>
     <?php get_template_part('components/contents/archive/taxonomy'); ?>
 <?php else : ?>
     <?php get_template_part('components/text/page-ttl'); ?>

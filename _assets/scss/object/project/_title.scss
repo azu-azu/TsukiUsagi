@@ -7,9 +7,6 @@
 				opacity: 0.1;
 				animation: none;
 			}
-			&::after {
-				transform: translateX(-100%);
-			}
 		}
 		a:hover {
 			.c-pseudo--list-ttl {
@@ -22,7 +19,7 @@
 	}
 }
 
-.home {
+.page {
 	.p-title {
 		margin-bottom: 80px;
 	}
@@ -34,6 +31,7 @@
 	}
 }
 
+.home,
 .archive {
 	.p-title {
 		&.page {

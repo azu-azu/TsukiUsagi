@@ -1,4 +1,4 @@
-<article class="l-topic__container">
+<article class="l-main__container">
     <?php if (have_posts()) { ?>
         <?php if (isset($_GET['s']) && empty($_GET['s'])) {; ?>
             <h2>もういちど検索してください</h2>
