@@ -2,10 +2,12 @@
 @use '../../foundation/variable' as v;
 
 .p-header {
+	display: none;
 	padding: 0 10px;
 	transition: 1s ease-in;
 
 	@include m.breakpoint(moon-mini) {
+		display: block;
 		padding: 0 v.$gap--p-header-side--pc;
 	}
 
@@ -43,6 +45,7 @@
 // トップ画面
 // **
 .p-header--top {
+	display: block;
 	opacity: 1;
 
 	// タイトル表示するならflexかける

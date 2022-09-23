@@ -7,7 +7,6 @@
 		display: none;
 	}
 
-	position: fixed;
 	width: calc(100% - v.$size--hamburger-container - 10px);
 	margin-top: 5px;
 	padding: 0 v.$gap--header--sp;
@@ -16,6 +15,7 @@
 	transition: all 1s ease-in-out;
 
 	@include m.breakpoint(moon-mini) {
+		position: fixed;
 		width: 100%;
 		margin-top: 10px;
 		padding: 0 v.$gap--header--pc;
@@ -70,5 +70,11 @@
 				}
 			}
 		}
+	}
+}
+
+.p-about {
+	.l-header {
+		position: fixed;
 	}
 }
