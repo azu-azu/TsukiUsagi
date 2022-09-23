@@ -5,14 +5,14 @@
 	width: 200px;
 	z-index: 30;
 
-	@include m.breakpoint(wide) {
-		position: fixed;
-		display: block;
-		width: inherit;
-		top: 25%;
-		right: 40px;
-		z-index: 20;
-	}
+	// @include m.breakpoint(wide) {
+	// 	position: fixed;
+	// 	display: block;
+	// 	width: inherit;
+	// 	top: 25%;
+	// 	right: 40px;
+	// 	z-index: 20;
+	// }
 
 	.side-title {
 		height: 20px;
@@ -46,11 +46,11 @@
 	}
 }
 
-.single-post {
-	.p-category-nav {
-		@include m.breakpoint(wide) {
-			position: static;
-			width: 200px;
-		}
-	}
-}
+// .single-post {
+// 	.p-category-nav {
+// 		@include m.breakpoint(wide) {
+// 			position: static;
+// 			width: 200px;
+// 		}
+// 	}
+// }

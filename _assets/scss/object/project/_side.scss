@@ -7,8 +7,38 @@
 	justify-content: center;
 	margin-bottom: 40px;
 
+	@include m.breakpoint(wide) {
+		position: fixed;
+		display: block;
+		width: inherit;
+		top: 25%;
+		right: 40px;
+		z-index: 20;
+	}
+
 	.c-offset-title {
 		position: absolute;
 		bottom: 0;
+	}
+}
+
+.p-contents {
+	&--top {
+		~ .p-side {
+			position: fixed;
+			display: block;
+			width: inherit;
+			top: 25%;
+			right: 40px;
+			z-index: 20;
+		}
+	}
+	&--post {
+		~ .p-side {
+			@include m.breakpoint(wide) {
+				position: static;
+				display: flex;
+			}
+		}
 	}
 }
