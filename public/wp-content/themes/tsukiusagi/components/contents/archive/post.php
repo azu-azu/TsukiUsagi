@@ -11,6 +11,7 @@ foreach ($categories as $category) :
     $title = $category->name;
     $id = $category->term_id;
     $url = get_category_link($id);
+    $count = $category->count;
 
     $args = array(
         'cat' => $id,
@@ -20,9 +21,14 @@ foreach ($categories as $category) :
 
     <section class="p-frame">
         <article class="p-loop">
-            <?php echo usa_set_heading_linear_show('h2', $title, 'list', $url); ?>
-            <?php usa_set_extra_sub_loop($args); ?>
-            <?php echo usa_make_link_button('一覧へ', '', $url); ?>
+            <?php
+            echo usa_set_heading_linear_show('h2', $title, 'list', $url);
+            usa_set_extra_sub_loop($args);
+
+            if ($count > 4) {
+                echo usa_make_link_button('» もっと見る', '', $url);
+            }
+            ?>
         </article>
     </section>
 
