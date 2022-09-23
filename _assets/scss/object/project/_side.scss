@@ -11,7 +11,7 @@
 		position: fixed;
 		display: block;
 		width: inherit;
-		top: 25%;
+		top: 27%;
 		right: 40px;
 		z-index: 20;
 	}
@@ -23,16 +23,16 @@
 }
 
 .p-contents {
-	&--top {
-		~ .p-side {
-			position: fixed;
-			display: block;
-			width: inherit;
-			top: 25%;
-			right: 40px;
-			z-index: 20;
-		}
-	}
+	// &--top {
+	// 	~ .p-side {
+	// 		position: fixed;
+	// 		display: block;
+	// 		width: inherit;
+	// 		top: 27%;
+	// 		right: 40px;
+	// 		z-index: 20;
+	// 	}
+	// }
 	&--post {
 		~ .p-side {
 			@include m.breakpoint(wide) {

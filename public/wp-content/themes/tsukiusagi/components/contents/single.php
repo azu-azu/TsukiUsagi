@@ -30,8 +30,8 @@ $main_inner_class = $main_class . '__inner';
     </section>
 <?php endif; ?>
 
-<section class="p-related-contents">
-    <article class="p-related-contents__inner">
+<section class="p-frame">
+    <article class="p-loop">
         <?php get_template_part('components/bg/cosmos/crystal'); ?>
         <?php get_template_part('components/text/list-ttl'); ?>
         <?php get_template_part('components/template/loop/sub'); ?>

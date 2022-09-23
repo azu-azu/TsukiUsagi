@@ -64,8 +64,14 @@
 
 // コンテンツ内枠
 .single {
+	.p-loop {
+		padding: 20px;
+	}
+}
+
+.single {
 	.l-main .l-main__container,
-	.p-related-contents__inner {
+	.p-loop {
 		position: relative;
 		display: block;
 		width: 100%;
@@ -110,42 +116,6 @@
 
 		&::after {
 			filter: blur(2px);
-		}
-	}
-}
-
-// 関連記事
-.single {
-	.p-related-contents {
-		width: 100%;
-		height: 100%;
-
-		&__inner {
-			padding: 0 20px;
-			@include m.breakpoint(topic-inner) {
-				padding: 0;
-			}
-
-			.p-svg-cosmos--crystal {
-				position: absolute;
-				top: -5%;
-				left: 0;
-			}
-
-			.p-ball-box {
-				position: absolute;
-				top: 10%;
-				left: 10%;
-				width: 80%;
-				height: 100%;
-
-				.c-ball {
-					&:nth-child(5) {
-						left: 0;
-						bottom: 20%;
-					}
-				}
-			}
 		}
 	}
 }

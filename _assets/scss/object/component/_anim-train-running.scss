@@ -2,9 +2,9 @@
 
 // 短距離にする場合
 .c-anim-train-running {
-	@include m.breakpoint(moon-mini) {
-		animation: short_run 30s infinite linear;
-	}
+	// @include m.breakpoint(moon-mini) {
+	animation: short_run 30s infinite linear;
+	// }
 }
 
 @keyframes short_run {

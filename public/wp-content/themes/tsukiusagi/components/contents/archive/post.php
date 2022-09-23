@@ -18,8 +18,8 @@ foreach ($categories as $category) :
     );
 ?>
 
-    <section class="p-related-contents">
-        <article class="p-related-contents__inner">
+    <section class="p-frame">
+        <article class="p-loop">
             <?php echo usa_set_heading_linear_show('h2', $title, 'list', $url); ?>
             <?php usa_set_extra_sub_loop($args); ?>
         </article>

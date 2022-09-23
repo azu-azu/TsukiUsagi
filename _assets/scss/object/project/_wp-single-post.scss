@@ -22,12 +22,6 @@
 		}
 	}
 
-	.p-contents {
-		.l-main__container {
-			padding: 0 20px;
-		}
-	}
-
 	.l-main {
 		font-family: sans-serif;
 
@@ -68,6 +62,12 @@
 			@include m.breakpoint(moon-mini) {
 				width: 100%;
 			}
+		}
+	}
+
+	.p-contents--post {
+		.l-main__container {
+			padding: 0 20px;
 		}
 	}
 }

@@ -1,0 +1,44 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+@use '../project/loop';
+
+.p-frame {
+	display: flex;
+	justify-content: center;
+
+	.p-title,
+	.related-title {
+		margin-bottom: 20px;
+	}
+
+	.related-title {
+		font-size: 1.5rem;
+	}
+
+	&--ex {
+		@extend .p-frame;
+		min-height: 50vh;
+
+		.p-loop {
+			@extend .p-loop;
+			flex-direction: column;
+			align-items: center;
+
+			.post-sub-loop {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+.single {
+	.p-frame {
+		.p-loop {
+			height: 100%;
+
+			.post-sub-loop {
+				width: 100%;
+			}
+		}
+	}
+}

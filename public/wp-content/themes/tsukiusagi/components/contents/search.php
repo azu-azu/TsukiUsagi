@@ -8,8 +8,8 @@
         <?php }; ?>
 </article>
 
-<section class="p-related-contents">
-    <article class="p-related-contents__inner">
+<section class="p-frame">
+    <article class="p-loop">
         <ul class="post-sub-loop">
             <?php while (have_posts()) : the_post(); ?>
                 <li class="c-anim-box--down js-scroll-show show">
