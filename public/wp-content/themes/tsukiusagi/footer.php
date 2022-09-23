@@ -12,12 +12,10 @@ if (is_page('about')) {
 
 <footer class="l-footer <?php echo $footer_class; ?>">
 
-  <?php
-  if (!(is_page('about'))) {
-    echo '<p class="p-go-home">トップページへ戻る</p>';
-    get_search_form();
-  }
-  ?>
+  <?php if (!(is_page('about'))) { ?>
+    <p class="p-go-home"><a href="<?php echo esc_url(home_url()); ?>">トップページへ戻る</a></p>
+    <?php get_search_form();; ?>
+  <?php } ?>
 
   <div class="c-sky"></div>
   <div class="c-sun"></div>
@@ -35,7 +33,6 @@ if (is_page('about')) {
       <use xlink:href="#gentle-wave" x="48" y="7" fill="<?php echo $wave_color4; ?>" />
     </g>
   </svg>
-  <div></div>
   <?php get_template_part('components/parts/sea-stars'); ?>
   <div class="c-wave--color"></div>
 
