@@ -1,10 +1,10 @@
 <?php
 if (is_page('about')) {
-  $url = esc_url(home_url('/')) . '/about';
+  $url = esc_url(home_url('/')) . 'about';
   $title = '月うさぎ';
   $html_tag = 'p';
 } else {
-  $url = esc_url(home_url());
+  $url = esc_url(home_url('/'));
   $title = '月うさぎ';
   $html_tag = 'p';
 }

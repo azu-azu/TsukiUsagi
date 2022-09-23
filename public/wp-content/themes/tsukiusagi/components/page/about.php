@@ -1,4 +1,3 @@
-<?php get_template_part('components/header/front'); ?>
 <?php get_template_part('components/common/train'); ?>
 <?php get_template_part('components/parts/floating-stars'); ?>
 

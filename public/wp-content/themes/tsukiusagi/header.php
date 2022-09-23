@@ -16,3 +16,10 @@
         body_class('c-bg--night');
       }
       ?>>
+
+  <?php
+  if (is_page('about')) {
+    get_template_part('components/header/about');
+  } else {
+    get_template_part('components/header/main');
+  }

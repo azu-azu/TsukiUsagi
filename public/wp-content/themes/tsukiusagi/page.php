@@ -1,10 +1,6 @@
 <?php
 get_header();
 
-if (!is_page('about')) {
-  get_template_part('components/common/to-top');
-}
-
 // is_page(ページのスラッグ)
 if (is_page('about')) {
   get_template_part('components/page/about');

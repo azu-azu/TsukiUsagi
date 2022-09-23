@@ -1,4 +1,4 @@
-<main class="l-main p-contents--fullscreen u-border--sec-bottom">
+<main class="l-main p-contents--fullscreen">
   <canvas id="js-star-orbit"></canvas>
   <section class="l-main__container">
 
@@ -8,7 +8,6 @@
       <p class="c-gravity-text--main c-gradient-text">Sorry</p>
     </article>
 
-    <?php get_template_part('components/common/to-top'); ?>
     <?php get_template_part('components/text/click-text'); ?>
   </section>
 </main>
