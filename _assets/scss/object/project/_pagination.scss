@@ -10,6 +10,7 @@
 	white-space: nowrap;
 	align-items: center;
 	text-decoration: none;
+	margin-bottom: 20px;
 
 	@include m.breakpoint(moon-mini) {
 		position: static;
