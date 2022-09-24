@@ -24,6 +24,14 @@
 			transform: scale(-1, 1);
 		}
 	}
+
+	&.fixed {
+		position: fixed;
+		top: -5%;
+		@include m.breakpoint(moon-mini) {
+			top: -4%;
+		}
+	}
 }
 
 .page-thanks {
@@ -31,16 +39,6 @@
 		top: 70%;
 	}
 }
-
-// .single,
-// .archive {
-// 	.p-train {
-// 		top: 22%;
-// 		@include m.breakpoint(moon-mini) {
-// 			top: -8%;
-// 		}
-// 	}
-// }
 
 .p-about {
 	.p-train {
@@ -50,7 +48,6 @@
 		}
 
 		&.fixed {
-			position: fixed;
 			top: -5%;
 			@include m.breakpoint(moon-mini) {
 				top: -4%;

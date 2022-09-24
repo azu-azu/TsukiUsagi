@@ -13,7 +13,7 @@
       if (is_page('about')) {
         body_class('p-about');
       } else {
-        body_class('c-bg--night');
+        body_class('');
       }
       ?>>
 

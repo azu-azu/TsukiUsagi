@@ -5,7 +5,7 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 40px;
+	padding-bottom: 40px;
 
 	@include m.breakpoint(wide) {
 		position: fixed;
@@ -23,16 +23,6 @@
 }
 
 .p-contents {
-	// &--top {
-	// 	~ .p-side {
-	// 		position: fixed;
-	// 		display: block;
-	// 		width: inherit;
-	// 		top: 27%;
-	// 		right: 40px;
-	// 		z-index: 20;
-	// 	}
-	// }
 	&--post {
 		~ .p-side {
 			@include m.breakpoint(wide) {

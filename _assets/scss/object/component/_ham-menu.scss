@@ -1,0 +1,19 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+
+.c-ham-menu {
+	transition: 0.2s;
+	position: absolute;
+	top: 0;
+	right: -110%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.9);
+	z-index: 90;
+
+	@include m.breakpoint(moon-mini) {
+		position: static;
+		width: inherit;
+		height: inherit;
+		background: none;
+	}
+}

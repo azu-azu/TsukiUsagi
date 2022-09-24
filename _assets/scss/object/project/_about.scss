@@ -2,7 +2,9 @@
 @use '../../foundation/variable' as v;
 
 .p-about {
-	margin: -100px 0 0 0;
+	.l-main {
+		margin-top: -50px;
+	}
 
 	.text {
 		transform: translateX(-50%, -50%);

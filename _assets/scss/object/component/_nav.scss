@@ -2,27 +2,11 @@
 @use '../../foundation/variable' as v;
 
 .c-nav {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 103vw;
-	height: 103vh;
 	text-align: left;
 	padding: 150px 60px;
-	transition: 0.5s;
-	z-index: 90;
-
-	// 横から出現にする場合
-	// top: 0;
-	// left: -100%;
-	top: -110vh;
-	left: -25px;
-
-	background: rgba(0, 0, 0, 0.9);
 
 	@include m.breakpoint(moon-mini) {
-		position: static;
+		display: flex;
 		flex-direction: row;
 		width: auto;
 		height: auto;
@@ -56,12 +40,6 @@
 				font-weight: 100;
 			}
 		}
-	}
-}
-
-.p-about {
-	.c-nav {
-		padding: 80px 60px;
 	}
 }
 

@@ -2,12 +2,8 @@
 @use '../../foundation/variable' as v;
 
 .p-header {
-	// display: none;
-	padding: 0 10px;
-	transition: 1s ease-in;
-
 	@include m.breakpoint(moon-mini) {
-		display: block;
+		transition: 1s ease-in;
 		padding: 0 v.$gap--p-header-side--pc;
 	}
 
@@ -41,9 +37,7 @@
 	}
 }
 
-// **
-// トップ画面
-// **
+// トップでデザイン変える場合
 .p-header--top {
 	display: block;
 	opacity: 1;
@@ -69,9 +63,7 @@
 	}
 }
 
-// **
-// スクロール途中からp-header--back
-// **
+// スクロール途中でp-header--back
 .p-header--back {
 	&::before {
 		opacity: 1;

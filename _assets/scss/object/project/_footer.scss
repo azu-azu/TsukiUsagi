@@ -2,89 +2,40 @@
 @use '../../foundation/variable' as v;
 
 .p-footer {
-	position: relative;
-	overflow: hidden;
-
-	.c-sun,
-	.c-sky,
-	.c-sea,
-	.c-fin,
-	.c-wave,
-	.c-wave--color,
-	.c-copyright {
-		position: absolute;
+	&--morning {
+		background: #f3bf7c;
 	}
 
-	.c-sun {
-		left: 50%;
-		transform: translateY(90px) translateX(-50%);
-		z-index: 1;
-	}
+	&--night {
+		background: #2d2b42;
 
-	.c-sky {
-		top: 0;
-		z-index: 10;
-	}
-
-	.c-sea {
-		top: 45%;
-		z-index: 20;
-	}
-
-	.c-wave {
-		top: 36%;
-		z-index: 10;
-
-		&--color {
-			top: 56%;
-			left: -5%;
-			z-index: 10;
-			@include m.breakpoint(moon-mini) {
-				top: 55%;
+		.c-ba-shining {
+			&::before {
+				background: radial-gradient(
+					at 50% 0,
+					rgba(rgb(229, 255, 0), 0.8),
+					transparent
+				);
+			}
+			&::after {
+				background: radial-gradient(
+					at 50% 0,
+					rgba(0, 200, 255, 0.8),
+					transparent
+				);
 			}
 		}
-	}
 
-	.c-fin {
-		top: 70%;
-		z-index: 30;
-	}
-}
-
-.p-footer--morning {
-	@extend .p-footer;
-	background: #f3bf7c;
-}
-
-.p-footer--night {
-	@extend .p-footer;
-
-	.c-ba-shining {
-		&::before {
-			background: radial-gradient(
-				at 50% 0,
-				rgba(rgb(229, 255, 0), 0.8),
-				transparent
-			);
+		.c-wave {
+			&--color {
+				background: #ad9afe;
+				filter: blur(30px);
+			}
 		}
-		&::after {
-			background: radial-gradient(
-				at 50% 0,
-				rgba(0, 200, 255, 0.8),
-				transparent
-			);
-		}
-	}
 
-	.c-wave {
-		&--color {
-			background: #ad9afe;
-			filter: blur(30px);
+		.c-sky,
+		.c-sun {
+			display: none;
 		}
-	}
-
-	.c-sky,
-	.c-sun {
-		display: none;
 	}
 }
