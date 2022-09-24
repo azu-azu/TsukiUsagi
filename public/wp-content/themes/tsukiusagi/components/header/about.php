@@ -1,5 +1,5 @@
 <?php get_template_part('components/common/loading-panel'); ?>
-<header class="l-header" id="js-l-header">
+<header class="l-header--about" id="js-l-header">
   <?php get_template_part('components/common/hamburger'); ?>
 
   <article class="p-header p-header--top" id="js-p-header">

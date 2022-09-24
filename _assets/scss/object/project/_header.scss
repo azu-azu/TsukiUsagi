@@ -8,27 +8,26 @@
 	}
 
 	&::before {
+		display: none;
 		position: absolute;
-		display: block;
 		content: '';
+		width: 100%;
 		height: 100%;
 		top: 0;
-		background: rgba(#333, 0.5);
+		left: 0;
 		border-radius: 10px;
 		transition: all 0.5s ease-in-out;
 		overflow: hidden;
-
 		opacity: 0;
-		width: calc(100% - v.$gap--header--sp * 2);
-		left: v.$gap--header--sp;
 
 		@include m.breakpoint(moon-mini) {
-			width: calc(100% - v.$gap--header--pc * 2);
-			left: v.$gap--header--pc;
-		}
-		@include m.breakpoint(header-large) {
-			width: calc(100% - v.$gap--header--wide * 2);
-			left: v.$gap--header--wide;
+			display: block;
+			background: linear-gradient(
+				to right,
+				rgba(0, 0, 0, 0.1) 10%,
+				rgba(255, 255, 255, 0.3) 50%,
+				rgba(0, 0, 0, 0.1) 100%
+			);
 		}
 	}
 
@@ -63,7 +62,7 @@
 	}
 }
 
-// スクロール途中でp-header--back
+// 途中から（またはtopがないときは最初から）p-header--back
 .p-header--back {
 	&::before {
 		opacity: 1;

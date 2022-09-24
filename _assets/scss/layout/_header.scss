@@ -2,71 +2,54 @@
 @use '../foundation/variable' as v;
 
 .l-header {
-	// ブラウザによってはスクロールバーが表示されるため、無しにする
+	// sp はハンバーガーメニューのため設定無し
+
+	// ブラウザによってはスクロールバーが表示されるため、非表示にする
 	& ::-webkit-scrollbar {
 		display: none;
 	}
-
-	padding: 0;
-
-	// width: calc(100% - v.$size--hamburger-container - 10px);
-	// padding: 0 v.$gap--header--sp;
-	// top: 0;
-
 	@include m.breakpoint(moon-mini) {
-		position: fixed;
+		position: absolute;
 		width: 100%;
 		margin-top: 10px;
 		padding: 0 v.$gap--header--pc;
 		transition: all 1s ease-in-out;
 		z-index: 2000;
 	}
+}
+
+.l-header--about {
+	@extend .l-header;
+
+	@include m.breakpoint(moon-mini) {
+		position: fixed;
+	}
 
 	@include m.breakpoint(header-large) {
 		padding: 0 v.$gap--header--wide;
 	}
-}
 
-.l-header--normal {
-	@extend .l-header;
-
-	@include m.breakpoint(moon-mini) {
-		position: absolute;
-		z-index: 1400;
-	}
-
+	// aboutページで色を変える
 	.p-header {
 		@include m.breakpoint(wide) {
 			padding: 0 100px;
 		}
 
 		&::before {
-			display: none;
+			background: rgba(#333, 0.5);
+
 			@include m.breakpoint(moon-mini) {
-				display: block;
-				width: 100%;
-				left: 0;
-				background: linear-gradient(
-					to right,
-					rgba(0, 0, 0, 0.1) 10%,
-					rgba(255, 255, 255, 0.1) 30%,
-					rgba(255, 255, 255, 0.5) 90%,
-					rgba(0, 0, 0, 0.8) 100%
-				);
+				width: calc(100% - v.$gap--header--pc * 2);
+				left: v.$gap--header--pc;
 			}
-			@include m.breakpoint(wide) {
-				background: linear-gradient(
-					to right,
-					rgba(0, 0, 0, 0.1) 10%,
-					rgba(255, 255, 255, 0.1) 50%,
-					rgba(255, 255, 255, 0.5) 80%,
-					rgba(0, 0, 0, 0.8) 100%
-				);
+			@include m.breakpoint(header-large) {
+				width: calc(100% - v.$gap--header--wide * 2);
+				left: v.$gap--header--wide;
 			}
 		}
 
 		.p-gmenu {
-			justify-content: center;
+			justify-content: space-between;
 
 			.c-marker {
 				&::before {

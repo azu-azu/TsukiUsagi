@@ -1,4 +1,4 @@
-<header class="l-header--normal" id="js-l-header">
+<header class="l-header" id="js-l-header">
   <?php get_template_part('components/common/hamburger'); ?>
   <article class="p-header p-header--back">
     <nav class="p-gmenu">
