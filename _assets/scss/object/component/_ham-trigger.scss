@@ -17,7 +17,7 @@
 				animation: line-bottom v.$time--hamburger-anim linear forwards;
 			}
 			&::before {
-				animation: overlay v.$time--hamburger-anim linear forwards;
+				content: 'close';
 			}
 		}
 
@@ -29,42 +29,32 @@
 			}
 
 			.c-nav {
-				overflow: inherit;
-				li {
-					animation: list-mini v.$time--hamburger-anim linear forwards;
-					@include m.breakpoint(iphone-normal) {
-						animation: list v.$time--hamburger-anim linear forwards;
-					}
-
-					@include m.breakpoint(moon-mini) {
-						animation: none;
-					}
-				}
+				top: -10px;
 			}
 		}
 	}
 }
 
-.archive,
-.single-post,
-.single-works {
-	.c-ham-trigger {
-		&:checked {
-			& ~ .p-header {
-				.c-nav {
-					li {
-						animation: list-mini-topic v.$time--hamburger-anim
-							linear forwards;
-						@include m.breakpoint(iphone-normal) {
-							animation: list-topic v.$time--hamburger-anim linear
-								forwards;
-						}
-					}
-				}
-			}
-		}
-	}
-}
+// .archive,
+// .single-post,
+// .single-works {
+// 	.c-ham-trigger {
+// 		&:checked {
+// 			& ~ .p-header {
+// 				.c-nav {
+// 					li {
+// 						animation: list-mini-topic v.$time--hamburger-anim
+// 							linear forwards;
+// 						@include m.breakpoint(iphone-normal) {
+// 							animation: list-topic v.$time--hamburger-anim linear
+// 								forwards;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 body.is-fix {
 	position: fixed;
@@ -134,7 +124,8 @@ body.is-fix {
 		transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
 	}
 	100% {
-		transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
+		// transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
+		transform: scale(1, 1) rotate(495deg) translate(7px, -7px);
 	}
 }
 
@@ -158,7 +149,7 @@ body.is-fix {
 		transform: rotate(-135deg);
 	}
 	100% {
-		transform: rotate(45deg);
+		transform: rotate(45deg) translate(-4px, 4px);
 	}
 }
 

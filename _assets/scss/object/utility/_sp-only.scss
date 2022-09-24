@@ -5,7 +5,15 @@
 	@include m.breakpoint(moon-mini) {
 		display: none;
 	}
+
+	&--flex {
+		display: flex;
+		@include m.breakpoint(moon-mini) {
+			display: none;
+		}
+	}
 }
+
 .sp-none {
 	display: none;
 	@include m.breakpoint(moon-mini) {

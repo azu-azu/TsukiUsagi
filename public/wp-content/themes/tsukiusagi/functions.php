@@ -101,9 +101,14 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 // ページごとに読み込みファイルを変える
 function file_load_scripts_styles() {
     if (is_page('about')) {
-        wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
-        wp_enqueue_script('bundle', get_template_directory_uri() . '/js/bundle.js', array(), date("YmdHi"), true);
+        wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
+        wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
+        wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
+        wp_enqueue_script('milky-way', get_template_directory_uri() . '/js/common/myMilkyWay.js', array(), 'particles-min', true);
+        wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
+        wp_enqueue_script('swiper', get_template_directory_uri() . '/js/common/mySwiper.js', array(), 'swiper-bundle', true);
+
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true); //スクロールしたらふわっと動くjs
@@ -122,6 +127,8 @@ function file_load_scripts_styles() {
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
+    }
+    if (!is_page('about') && is_page()) {
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }

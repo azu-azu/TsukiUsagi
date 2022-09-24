@@ -9,7 +9,7 @@ $gap--sec-bottom: 200px;
 // *
 $font-size--sec-ttl: 2.4rem;
 $font-size--header-nav: 1.6rem; // ナビゲーションの文字
-$font-size--hamburger-nav: 2.5rem; // ハンバーガーメニューの文字
+$font-size--hamburger-nav: 2rem; // ハンバーガーメニューの文字
 $font-size--moon--sp: 2.5rem; // 月の中の文字
 $font-size--moon--pc: min(3.5vmin, 2.5rem); // 月の中の文字
 
@@ -165,7 +165,7 @@ $position--moon-mini-top: 15vmin;
 $position--moon-big-top: 15vmin;
 
 // ハンバーガー
-$size--hamburger-container: 60px; // ボタン全体
+$size--hamburger-container: 40px; // ボタン全体の１辺の長さ
 $position--hamburger-nav-top: 50px; //メニューのトップ位置
 $gap--hamburger-nav: 80px; //メニューの縦gap
 

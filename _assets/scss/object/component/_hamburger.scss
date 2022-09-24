@@ -3,42 +3,30 @@
 
 .c-hamburger {
 	position: fixed;
+	justify-content: center;
 	top: -2px;
 	right: 0;
 	width: v.$size--hamburger-container;
-	height: v.$size--hamburger-container;
-
-	// background: rgba(0,0,0, 0.5);
-	background: rgba(255, 255, 0, 0.6);
+	height: calc(v.$size--hamburger-container + 10px);
 	border-bottom-left-radius: 100%;
-	// transition: transform 0.75s cubic-bezier(0.39, 1.52, 0.46, 0.92);
 
 	user-select: none; //テキスト選択を可能にするかどうか
 	cursor: pointer;
-	z-index: -1;
+	z-index: 100;
 
 	&::before {
 		position: absolute;
-		content: '';
+		content: 'menu';
 		display: block;
-		top: 0;
-		right: -5px;
-		width: v.$size--hamburger-container + 10px;
-		height: v.$size--hamburger-container + 10px;
-		background: radial-gradient(#fff, rgba(v.$color--sub, 0.5));
-		background: -webkit-radial-gradient(#fff, rgba(v.$color--sub, 0.5));
-		background: -moz-radial-gradient(#fff, rgba(v.$color--sub, 0.5));
-		border-bottom-left-radius: 100%;
-		filter: blur(5px);
-		animation: overlay-back v.$time--hamburger-anim linear forwards;
+		bottom: 0;
+		color: #fff;
 	}
 
 	span {
 		position: absolute;
-		right: 12px;
 		width: 30px;
-		height: 4px;
-		background: #444;
+		height: 2px;
+		background: rgba(#fff, 0.5);
 		border-radius: 4px;
 
 		&.line-top {
