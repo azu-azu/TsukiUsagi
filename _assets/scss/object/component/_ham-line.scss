@@ -36,7 +36,7 @@
 
 		&.line-middle {
 			top: 26px;
-			animation: line-middle-back v.$time--hamburger-anim linear forwards;
+			opacity: 1;
 		}
 
 		&.line-bottom {
@@ -47,121 +47,36 @@
 	}
 }
 
-@keyframes overlay-back {
-	0% {
-		transform: scale(30);
-	}
-	90% {
-		transform: scale(20);
+// ハンバーガーcloseのとき
+@keyframes line-top-back {
+	40% {
+		transform: scale(2, 2) rotate(45deg) translateY(50px);
 	}
 	100% {
-		transform: scale(1);
+		transform: scale(1, 1) rotate(-180deg) translateY(0);
 	}
 }
 
-// **
-// is-openのとき
-// **
-// body.is-open {
-//   .l-header.back::before {
-//     opacity: 0;
-//   }
+@keyframes line-bottom-back {
+	0% {
+		transform: rotateZ(45deg);
+	}
+	50% {
+		transform: rotateZ(90deg);
+	}
+	100% {
+		transform: rotateZ(0);
+	}
+}
 
-//   .p-header,
-//   .p-header--back {
-//     transform: translateY(-250px);
-//   }
-
-//   .c-nav {
-//     width: 100%;
-//     top: 300px;
-//     z-index: 950;
-
-//     li {
-//       animation: list .6s linear forwards;
-//     }
-//   }
-// }
-
-// .c-hamburger.is-open {
-//   .line-top {
-//     animation: line-top .6s linear forwards;
-//   }
-
-//   .line-middle {
-//     animation: line-middle .6s linear forwards;
-//   }
-
-//   .line-bottom {
-//     animation: line-bottom .6s linear forwards;
-//   }
-
-//   & ~ .c-overlay {
-//     will-change: transform;
-//     border-right: none;
-//     border-bottom: none;
-//     top: 22px;
-//     animation: overlay .6s linear forwards;
-//   }
-// }
-
-// // **
-// // is-closeのとき
-// // **
-// body.is-close {
-//   .c-nav {
-//     width: 0;
-//     transform: translateX(20px);
-//     @include m.breakpoint( moon-mini ) {
-//       width: auto;
-//       transform: inherit;
-//     }
-
-//     li {
-//       animation: list-back .6s linear forwards;
-//       @include m.breakpoint( moon-mini ) {
-//         animation: none;
-//       }
-//     }
-//   }
-// }
-
-// .c-hamburger.is-close {
-//   .line-top {
-//     animation: line-top-back .6s linear forwards;
-//   }
-//   .line-middle {
-//     animation: line-middle-back .6s linear forwards;
-//   }
-//   .line-bottom {
-//     animation: line-bottom-back .6s linear forwards;
-//   }
-//   & ~ .c-overlay {
-//     // transition: transform .8s cubic-bezier(1, 0, 0, 1);
-//     animation: overlay-back .6s linear forwards;
-//   }
-// }
-
-// @keyframes list {
-//   0% {
-//     transform: translateX(0) rotate(-360deg);
-//   }
-//   70% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(0);
-//   }
-// }
-
-// @keyframes list-back {
-//   0% {
-//     transform: translateX(-250px) rotate(360deg);
-//   }
-//   70% {
-//     transform: translateX(-250px);
-//   }
-//   100% {
-//     transform: translateX(100px);
-//   }
+// @keyframes line-middle-back {
+// 	0% {
+// 		transform: translateX(-110vw);
+// 	}
+// 	70% {
+// 		transform: translateX(-50vw);
+// 	}
+// 	100% {
+// 		transform: translateX(0);
+// 	}
 // }
