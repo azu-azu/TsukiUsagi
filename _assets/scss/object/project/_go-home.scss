@@ -10,6 +10,13 @@
 		font-size: 1.5rem;
 		color: #fff;
 		line-height: 2;
+		transition: 0.5s;
+
+		&:hover {
+			&::before {
+				transform: rotate(-5deg);
+			}
+		}
 
 		&::before {
 			position: absolute;
