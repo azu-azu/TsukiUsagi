@@ -38,9 +38,13 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
         case 'list':
             $pseudo = 'c-title--section c-text-shadow--black c-pseudo--list-ttl';
             break;
+
+        case 'inline':
+            $pseudo = 'c-title--section--' . $type . ' c-text-shadow--white c-pseudo--sec-ttl';
+            break;
     }
 ?>
-    <section class="p-title <?php echo $type; ?>">
+    <section class="p-title--<?php echo $type; ?>">
         <?php if (!$url == "") : ?>
             <a class="" href="<?php echo $url; ?>">
             <?php endif; ?>

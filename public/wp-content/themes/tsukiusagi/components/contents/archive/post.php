@@ -22,7 +22,7 @@ foreach ($categories as $category) :
     <section class="p-frame">
         <article class="p-loop">
             <?php
-            echo usa_set_heading_linear_show('h2', $title, 'list', $url);
+            echo usa_set_heading_linear_show('h2', $title, 'inline', $url);
             usa_set_extra_sub_loop($args);
 
             if ($count > 4) {
