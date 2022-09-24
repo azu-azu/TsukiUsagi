@@ -2,12 +2,12 @@
 @use '../foundation/variable' as v;
 
 .l-header {
-	// sp はハンバーガーメニューのため設定無し
-
 	// ブラウザによってはスクロールバーが表示されるため、非表示にする
 	& ::-webkit-scrollbar {
 		display: none;
 	}
+
+	// sp はハンバーガーメニューのため設定無し
 	@include m.breakpoint(moon-mini) {
 		position: absolute;
 		width: 100%;
@@ -29,7 +29,7 @@
 		padding: 0 v.$gap--header--wide;
 	}
 
-	// aboutページで色を変える
+	// aboutページは色を変える
 	.p-header {
 		@include m.breakpoint(wide) {
 			padding: 0 100px;
