@@ -6,7 +6,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100vw;
+	width: 103vw;
 	height: 100vh;
 	text-align: left;
 	padding: 80px 60px;
@@ -19,8 +19,7 @@
 	top: -110vh;
 	left: -25px;
 
-	background: rgba(0, 0, 0, 0.6);
-	filter: drop-shadow(2px 4px 6px);
+	background: rgba(0, 0, 0, 0.9);
 
 	@include m.breakpoint(moon-mini) {
 		position: static;
@@ -28,7 +27,6 @@
 		width: auto;
 		height: auto;
 		background: none;
-		filter: none;
 		padding: inherit;
 		gap: v.$gap--c-nav;
 		transform: inherit;
@@ -51,9 +49,11 @@
 			display: block;
 			padding: 10px;
 			font-size: v.$font-size--hamburger-nav;
+			font-weight: 600;
 
 			@include m.breakpoint(moon-mini) {
 				font-size: v.$font-size--header-nav;
+				font-weight: 100;
 			}
 		}
 	}
