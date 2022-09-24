@@ -9,7 +9,7 @@
         <li class="js-ham-close" style="--i:0;"><a class="c-bubbly-button--white" href="#works">Works</a></li>
         <li class="js-ham-close" style="--i:1;"><a class="c-bubbly-button--white" href="#profile">Profile</a></li>
         <li class="js-ham-close" style="--i:2;"><a class="c-bubbly-button--yellow" href="#contact">Contact</a></li>
-        <li class="js-ham-close" style="--i:3;"><a class="c-bubbly-button--yellow" href="<?php echo esc_url(home_url()); ?>">Blog</a></li>
+        <li class="js-ham-close" style="--i:3;"><a class="c-bubbly-button--yellow" href="<?php echo esc_url(home_url('/')); ?>">Blog</a></li>
         <div class="c-marker"></div>
       </ul>
     </nav>
