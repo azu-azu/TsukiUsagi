@@ -1,31 +1,44 @@
 @use '../../foundation/variable' as v;
+@use '../component/ba';
 
 .c-overlay {
-	position: fixed;
-	top: -5px;
-	right: -5px;
-	width: v.$size--hamburger-container + 10px;
-	height: v.$size--hamburger-container + 10px;
-
-	background: radial-gradient(#fff, rgba(v.$color--sub, 0.8));
-	background: -webkit-radial-gradient(#fff, rgba(v.$color--sub, 0.8));
-	background: -moz-radial-gradient(#fff, rgba(v.$color--sub, 0.8));
-	border-bottom-left-radius: 100%;
-	filter: blur(5px);
-	// transition: transform v.$time--hamburger-anim cubic-bezier(1, 0, 0, 1);
-	z-index: -1;
-
-	animation: overlay-back v.$time--hamburger-anim linear forwards;
-}
-
-@keyframes overlay-back {
-	0% {
-		transform: scale(30);
-	}
-	90% {
-		transform: scale(20);
-	}
-	100% {
-		transform: scale(1);
+	@extend .c-ba;
+	&.is-fix {
+		&::before {
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(#000, rgba(255, 254, 181, 0.5));
+			z-index: 80;
+		}
 	}
 }
+
+// .c-overlay {
+// 	position: fixed;
+// 	top: -5px;
+// 	right: -5px;
+// 	width: v.$size--hamburger-container + 10px;
+// 	height: v.$size--hamburger-container + 10px;
+
+// 	background: radial-gradient(#fff, rgba(v.$color--sub, 0.8));
+// 	background: -webkit-radial-gradient(#fff, rgba(v.$color--sub, 0.8));
+// 	background: -moz-radial-gradient(#fff, rgba(v.$color--sub, 0.8));
+// 	border-bottom-left-radius: 100%;
+// 	filter: blur(5px);
+// 	// transition: transform v.$time--hamburger-anim cubic-bezier(1, 0, 0, 1);
+// 	z-index: -1;
+
+// 	animation: overlay-back v.$time--hamburger-anim linear forwards;
+// }
+
+// @keyframes overlay-back {
+// 	0% {
+// 		transform: scale(30);
+// 	}
+// 	90% {
+// 		transform: scale(20);
+// 	}
+// 	100% {
+// 		transform: scale(1);
+// 	}
+// }

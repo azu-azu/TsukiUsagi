@@ -11,9 +11,9 @@
 
 <body <?php
       if (is_page('about')) {
-        body_class('p-about');
+        body_class('p-about c-overlay');
       } else {
-        body_class('');
+        body_class('c-overlay');
       }
       ?>>
 
