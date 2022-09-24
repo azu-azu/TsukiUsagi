@@ -30,7 +30,19 @@
 			}
 
 			.c-nav {
-				top: 95px;
+				top: -5px;
+			}
+		}
+	}
+}
+
+.p-about {
+	.c-ham-trigger {
+		&:checked {
+			& ~ .p-header {
+				.c-nav {
+					top: 95px;
+				}
 			}
 		}
 	}

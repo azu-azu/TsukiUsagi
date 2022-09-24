@@ -27,6 +27,10 @@
 }
 
 .l-header--lower {
+	& ::-webkit-scrollbar {
+		display: none;
+	}
+
 	z-index: 1400;
 	@include m.breakpoint(moon-mini) {
 		position: absolute;
@@ -38,17 +42,18 @@
 		}
 
 		&::before {
-			background: linear-gradient(
-				to right,
-				rgba(0, 0, 0, 0.1) 10%,
-				rgba(255, 255, 255, 0.1) 30%,
-				rgba(255, 255, 255, 0.5) 90%,
-				rgba(0, 0, 0, 0.8) 100%
-			);
+			display: none;
 
 			@include m.breakpoint(moon-mini) {
 				width: 100%;
 				left: 0;
+				background: linear-gradient(
+					to right,
+					rgba(0, 0, 0, 0.1) 10%,
+					rgba(255, 255, 255, 0.1) 30%,
+					rgba(255, 255, 255, 0.5) 90%,
+					rgba(0, 0, 0, 0.8) 100%
+				);
 			}
 			@include m.breakpoint(wide) {
 				background: linear-gradient(
