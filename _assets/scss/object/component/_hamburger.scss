@@ -2,7 +2,7 @@
 @use '../../foundation/mixin' as m;
 
 .c-hamburger {
-	position: fixed;
+	position: absolute;
 	justify-content: center;
 	top: -2px;
 	right: 0;
