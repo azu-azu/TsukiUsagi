@@ -1,9 +1,25 @@
+@use '../component/ba';
+
 .p-go-home {
 	text-align: center;
 
 	a {
+		@extend .c-ba;
+		position: relative;
+		padding-left: 30px;
 		font-size: 1.5rem;
 		color: #fff;
 		line-height: 2;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 150%;
+			height: 150%;
+			background: url('../img/common/rabbit/1.svg');
+			background-repeat: no-repeat;
+			filter: invert(1);
+		}
 	}
 }

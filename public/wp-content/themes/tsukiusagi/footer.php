@@ -13,7 +13,7 @@ if (is_page('about')) {
 <footer class="l-footer <?php echo $footer_class; ?>">
 
   <?php if (!(is_page('about'))) { ?>
-    <p class="p-go-home"><a href="<?php echo esc_url(home_url()); ?>">トップページへ戻る</a></p>
+    <p class="p-go-home"><a href="<?php echo esc_url(home_url()); ?>">ホームへ戻る</a></p>
     <?php get_search_form();; ?>
   <?php } ?>
 
