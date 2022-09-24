@@ -2,12 +2,13 @@
 @use '../../foundation/variable' as v;
 
 .c-ham-menu {
-	transition: 0.2s;
 	position: absolute;
 	top: 0;
 	right: -110%;
 	height: 100vh;
+	text-align: left;
 	background: rgba(0, 0, 0, 0.9);
+	transition: 0.2s;
 	z-index: 90;
 
 	@include m.breakpoint(moon-mini) {
@@ -15,5 +16,6 @@
 		width: inherit;
 		height: inherit;
 		background: none;
+		text-align: center;
 	}
 }

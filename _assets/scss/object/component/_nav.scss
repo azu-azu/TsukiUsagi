@@ -2,7 +2,6 @@
 @use '../../foundation/variable' as v;
 
 .c-nav {
-	text-align: left;
 	padding: 150px 60px;
 
 	@include m.breakpoint(moon-mini) {
