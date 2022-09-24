@@ -6,7 +6,7 @@
 
 	// チェックがついたら
 	&:checked {
-		& ~ .c-hamburger {
+		& ~ .c-ham-line {
 			position: fixed;
 			.line-top {
 				animation: line-top v.$time--hamburger-anim linear forwards;
