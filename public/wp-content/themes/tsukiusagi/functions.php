@@ -201,11 +201,12 @@ include(get_template_directory() . '/plug_in/manage/contact_form.php'); // conta
 include(get_template_directory() . '/plug_in/manage/usa_meta_ogp.php'); // OGP画像
 include(get_template_directory() . '/plug_in/manage/no_self_ping.php'); // セルフピンバックを除外する（内部リンクを貼ったときのコメント自動送信を防ぐ）
 include(get_template_directory() . '/plug_in/manage/usa_theme_widgets_init.php'); // ウィジェットを表示する
-include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
-include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_original_block_categories.php'); // ブロックエディタにブロックカテゴリーを追加
 include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); // 投稿のタグを選択式にする
-
+include(get_template_directory() . '/plug_in/manage/usa_add_tax_upload_image.php'); // カテゴリ画面に画像追加
+include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
+include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
+include(get_template_directory() . '/plug_in/manage/usa_add_tax_columns.php'); // カテゴリ一覧にカラム追加
 
 
 // メニューに投稿数を追加する場合

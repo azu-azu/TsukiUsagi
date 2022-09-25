@@ -14,9 +14,21 @@
  */
 function usa_set_the_post_thumbnail($size, $type) {
   global $post;
-  $default_img = '<img src="' . do_shortcode('[uri]') . '/img/thumbnail/default.png" alt="うさぎの背景画像"></figure>';
   $class_container_main = "'wp-post-image__container c-glass c-anim-box--scaledown js-scroll-show'";
   $class_container_sub = "'wp-post-image__container c-glass'";
+
+  $default_img = '<img src="' . do_shortcode('[uri]') . '/img/thumbnail/default.png" alt="うさぎの背景画像"></figure>';
+
+  $cat = get_the_category($post->ID);
+  $cat = $cat[0];
+  $cat_data = get_option('cat_' . intval($cat->term_id));
+
+  // 子カテゴリに画像がない場合は親カテゴリの画像を取得する
+  if ($cat_data == false && $cat->parent != 0) {
+    $parent_id = $cat->category_parent;
+    $parent = get_category($parent_id);
+    $cat_data = get_option('cat_' . intval($parent->term_id));;
+  }
 
   switch (get_post_type()) {
       // 投稿ページの場合
@@ -36,10 +48,12 @@ function usa_set_the_post_thumbnail($size, $type) {
       // サムネイル追加
       if (has_post_thumbnail()) {
         the_post_thumbnail($size);
-        echo eyecatch_text_used();
+      } elseif (!has_post_thumbnail() && $cat_data !== false) {
+        echo '<img src="' . esc_html($cat_data['img']) . '">';
       } else {
-        echo usa_auto_thumbnail();
+        echo $default_img;
       };
+      echo eyecatch_text_used();
 
       // 終了タグ追加
       switch ($type) {
