@@ -19,7 +19,8 @@ function usa_set_the_post_thumbnail($size, $type) {
   $class_container_sub = "'wp-post-image__container c-glass'";
 
   switch (get_post_type()) {
-    case 'post': // 投稿ページの場合
+      // 投稿ページの場合
+    case 'post':
 
       // コンテナ追加
       switch ($type) {
@@ -35,30 +36,10 @@ function usa_set_the_post_thumbnail($size, $type) {
       // サムネイル追加
       if (has_post_thumbnail()) {
         the_post_thumbnail($size);
+        echo eyecatch_text_used();
       } else {
-        $class = "wp-post-image";
-        if (has_category('wordpress')) {
-          $png = "wordpress";
-        } elseif (has_category('css')) {
-          $png = "css";
-        } elseif (has_category('php')) {
-          $png = "php";
-        } elseif (has_category('javascript')) {
-          $png = "js";
-        } elseif (has_category('vba')) {
-          $png = "vba";
-        } elseif (has_category('learn')) {
-          $png = "learn";
-        } elseif (has_category('git')) {
-          $png = "git";
-        } else {
-          $class = "";
-          $png = "default";
-        }
-        echo '<img class=' . $class . ' ' . 'src="' . do_shortcode('[uri]') . '/img/thumbnail/' . $png . '.png">';
+        echo usa_auto_thumbnail();
       };
-
-      echo eyecatch_text_used();
 
       // 終了タグ追加
       switch ($type) {
@@ -73,7 +54,8 @@ function usa_set_the_post_thumbnail($size, $type) {
       }
       break;
 
-    case 'works': // カスタム投稿（works）の場合
+      // カスタム投稿（works）の場合
+    case 'works':
       switch ($type) {
 
           // メインループの場合
