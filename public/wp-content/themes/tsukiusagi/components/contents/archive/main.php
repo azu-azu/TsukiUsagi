@@ -1,7 +1,5 @@
 <?php
-$main_class = 'l-main';
-$main_container_class = $main_class . '__container';
-$main_inner_class = $main_class . '__inner';
+$main_container_class = 'l-main__container';
 ?>
 
 <?php if (is_category() || is_tag()) : ?>

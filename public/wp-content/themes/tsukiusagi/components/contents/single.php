@@ -1,7 +1,6 @@
 <?php
-$main_class = 'l-main';
-$main_container_class = $main_class . '__container';
-$main_inner_class = $main_class . '__inner';
+$main_container_class = 'l-main__container';
+$main_inner_class = 'l-main__inner';
 ?>
 
 <?php get_template_part('components/bg/cosmos/ornament'); ?>
