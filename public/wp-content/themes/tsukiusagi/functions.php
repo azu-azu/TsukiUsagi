@@ -207,16 +207,3 @@ include(get_template_directory() . '/plug_in/manage/usa_add_tax_upload_image.php
 include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_add_tax_columns.php'); // カテゴリ一覧にカラム追加
-
-
-// メニューに投稿数を追加する場合
-// add_filter('wp_nav_menu_objects', 'my_nav_count');
-// function my_nav_count($items) {
-//     foreach ($items as $item) {
-//         if ($item->object == 'category') {
-//             $item->title .= " (" . get_term($item->object_id, 'category')->count . ")";
-//             $args[] = $item;
-//         }
-//     }
-//     return $args;
-// }

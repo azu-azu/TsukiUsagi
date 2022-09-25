@@ -3,24 +3,17 @@ $tag = 'p';
 $type = 'main';
 $url = '';
 
-if (is_front_page() || is_home() || is_page('home')) {
-  $title = "月うさぎBlog";
-  $url = home_url('/');
-} elseif (is_archive() && get_post_type() === 'works') {
-  $title = "Works list";
-  $url = home_url('/') . 'works';
-} elseif (is_single()) {
-  switch (get_post_type()) {
-    case 'post':
-      $title = "月うさぎBlog";
-      $url = home_url('/');
-      break;
 
-    case 'works':
-      $title = "Works";
-      $url = home_url('/') . 'works';
-      break;
+if (get_post_type() === 'works') {
+  $url = home_url('/') . 'works';
+  if (is_archive()) {
+    $title = "Works list";
+  } elseif (is_single()) {
+    $title = "Works";
   }
-};
+} else {
+  $url = home_url('/');
+  $title = "月うさぎBlog";
+}
 
 echo usa_set_heading_linear_show($tag, $title, $type, $url);

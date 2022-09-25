@@ -14,8 +14,8 @@ if (is_front_page() || is_home() || is_page('home')) {
 <main class="<?php echo $main_class; ?> <?php echo $sub_class; ?>">
   <?php get_search_form(); ?>
   <?php
+  if (!is_category()) get_template_part('components/text/page-ttl');
   if (is_single()) {
-    get_template_part('components/text/page-ttl');
     get_template_part('components/contents/single');
   } elseif (is_front_page() || is_home() || is_page('home') || is_archive()) {
     get_template_part('components/contents/archive/main');
