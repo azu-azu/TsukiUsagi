@@ -25,10 +25,10 @@ function usa_set_the_post_thumbnail($size, $type) {
     $cat_data = get_option('cat_' . intval($cat->term_id));
 
     // 子カテゴリに画像がない場合は親カテゴリの画像を取得する
-    if ($cat_data == false && $cat->parent != 0) {
+    if ($cat_data == false && $cat->parent !== 0) {
       $parent_id = $cat->category_parent;
       $parent = get_category($parent_id);
-      $cat_data = get_option('cat_' . intval($parent->term_id));;
+      $cat_data = get_option('cat_' . intval($parent->term_id));
     }
   }
 

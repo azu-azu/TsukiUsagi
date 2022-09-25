@@ -7,10 +7,10 @@ $args = array(
     //'include' > '4,8,12' // 含めたいカテゴリ
 );
 $categories = get_categories($args);
-// 説明順に並べ替え
-// usort($categories, function ($a, $b) {
-//     return $a->description - $b->description;
-// });
+// 説明順の数値で並べ替え
+usort($categories, function ($a, $b) {
+    return $a->description - $b->description;
+});
 
 foreach ($categories as $category) :
     $title = $category->name;

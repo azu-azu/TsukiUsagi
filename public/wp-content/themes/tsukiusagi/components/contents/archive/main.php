@@ -6,7 +6,9 @@ $main_container_class = 'l-main__container';
     <?php get_template_part('components/contents/archive/taxonomy'); ?>
 <?php else : ?>
     <article class="<?php echo $main_container_class; ?>">
-        <?php if (get_post_type() === 'post') : ?>
+        <?php if (is_front_page() || is_home() || is_page('home')) : ?>
+            <?php get_template_part('components/contents/archive/front'); ?>
+        <?php elseif (get_post_type() === 'post') : ?>
             <?php get_template_part('components/contents/archive/post'); ?>
         <?php elseif (get_post_type() === 'works') : ?>
             <?php get_template_part('components/contents/archive/works'); ?>
