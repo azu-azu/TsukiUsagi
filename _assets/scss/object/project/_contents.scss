@@ -3,7 +3,6 @@
 
 .p-contents {
 	&--top,
-	&--post,
 	&--archive {
 		.l-main__container {
 			display: flex;
@@ -14,7 +13,7 @@
 
 	&--top {
 		.l-main__container {
-			@media (min-width: 890px) {
+			@include m.breakpoint(pc_mini) {
 				max-width: 800px;
 			}
 		}
@@ -25,20 +24,26 @@
 			width: 100%;
 			padding-bottom: 100px;
 
-			@media (min-width: 890px) {
+			@include m.breakpoint(pc_mini) {
 				width: 80%;
 			}
 		}
 	}
 
+	// postもworksも共通
 	&--post {
 		.l-main__container {
-			width: 50%;
-			padding: 200px 0 100px 0;
+			width: 100%;
+			margin-bottom: 0;
 
-			@media (min-width: 890px) {
-				padding: 100px 0 100px 0;
+			@include m.breakpoint(pc_mini) {
 				max-width: 800px;
+				padding: 0;
+			}
+
+			.c-post-date {
+				font-size: 1rem;
+				margin-bottom: 10px;
 			}
 		}
 	}

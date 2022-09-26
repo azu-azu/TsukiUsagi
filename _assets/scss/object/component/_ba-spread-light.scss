@@ -16,7 +16,7 @@
 		z-index: 1;
 	}
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		&:hover {
 			&::after {
 				opacity: 1;

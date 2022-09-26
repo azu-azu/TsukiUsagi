@@ -1,22 +1,23 @@
 @use '../../foundation/mixin' as m;
 @use '../../foundation/variable' as v;
 
+// worksには反映させない場合
 .single-post {
 	.p-svg-cosmos {
 		width: 200%;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			width: 100%;
 		}
 		&--earth {
 			top: 15%;
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				top: 10%;
 			}
 		}
 		&--ornament {
 			top: 350px;
 			z-index: 10;
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				top: 350px;
 			}
 		}
@@ -30,14 +31,17 @@
 			padding-bottom: 50px;
 			margin: -5px 0;
 
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				margin: -10px 0;
 			}
 		}
 
 		&__container {
-			color: #000;
-			margin-bottom: 0;
+			color: #000; // worksは白なので、postだけ黒に
+
+			@include m.breakpoint(moon_mini) {
+				width: 70%;
+			}
 
 			li {
 				list-style: inherit;
@@ -59,15 +63,9 @@
 		.c-separator-cloud__container,
 		.c-separator-cloud--bottom {
 			width: 200%;
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				width: 100%;
 			}
-		}
-	}
-
-	.p-contents--post {
-		.l-main__container {
-			padding: 0 20px;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 @use '../../foundation/mixin' as m;
 
 .c-marker {
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		display: none;
 		width: 100%;
 

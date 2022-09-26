@@ -13,7 +13,7 @@
 	transform: scale(3);
 	animation: parallax_loading-sp linear 4s forwards;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		width: 100%;
 		filter: blur(20px);
 		animation: parallax_loading linear 8s forwards;

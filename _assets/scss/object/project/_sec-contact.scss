@@ -18,7 +18,7 @@
 		width: 300px;
 		border-radius: 10px;
 
-		@include m.breakpoint(contact-col) {
+		@include m.breakpoint(sec_contact) {
 			width: 400px;
 		}
 	}

@@ -16,7 +16,7 @@
 		position: relative;
 		left: 35%;
 
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			left: 45%;
 		}
 	}

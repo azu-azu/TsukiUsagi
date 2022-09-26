@@ -60,7 +60,7 @@
 		font-weight: 400;
 		color: rgba(200, 200, 200, 0.6);
 
-		@include m.breakpoint(topic-inner) {
+		@include m.breakpoint(pc) {
 			font-size: 2.4rem;
 		}
 

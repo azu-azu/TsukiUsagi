@@ -8,7 +8,7 @@
 	font-family: 'xmas', cursive;
 	font-size: 5vw;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		font-size: 2rem;
 	}
 }

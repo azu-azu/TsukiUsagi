@@ -41,7 +41,7 @@
 			top: 56%;
 			left: -5%;
 			z-index: 10;
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				top: 55%;
 			}
 		}
@@ -55,7 +55,7 @@
 	.c-copyright {
 		bottom: 5%;
 		z-index: 30;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			bottom: 10%;
 		}
 	}

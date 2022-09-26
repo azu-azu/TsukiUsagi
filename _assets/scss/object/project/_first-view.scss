@@ -5,7 +5,7 @@
 	position: fixed;
 	width: 100%;
 	height: v.$height--first-view--sp;
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		height: v.$height--first-view--pc;
 	}
 

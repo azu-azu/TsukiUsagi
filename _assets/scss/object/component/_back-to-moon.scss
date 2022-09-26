@@ -13,7 +13,7 @@ $radius--back-to-moon--pc: 35px;
 	cursor: pointer;
 	z-index: 1500;
 
-	@include m.breakpoint(back-to-moon-large) {
+	@include m.breakpoint(back_to_moon_large) {
 		position: fixed;
 		width: $radius--back-to-moon--pc * 2;
 		height: $radius--back-to-moon--pc * 2;
@@ -35,7 +35,7 @@ $radius--back-to-moon--pc: 35px;
 		transition: 0.5s ease;
 	}
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		&:hover {
 			opacity: 1;
 			&::before {
@@ -53,14 +53,14 @@ $radius--back-to-moon--pc: 35px;
 		height: $radius--back-to-moon--sp;
 		z-index: 110;
 
-		@include m.breakpoint(back-to-moon-large) {
+		@include m.breakpoint(back_to_moon_large) {
 			width: $radius--back-to-moon--pc;
 			height: $radius--back-to-moon--pc;
 		}
 
 		span {
 			height: $radius--back-to-moon--sp;
-			@include m.breakpoint(back-to-moon-large) {
+			@include m.breakpoint(back_to_moon_large) {
 				height: $radius--back-to-moon--pc;
 			}
 		}
@@ -75,7 +75,7 @@ $radius--back-to-moon--pc: 35px;
 		color: yellow;
 		z-index: 110;
 
-		@include m.breakpoint(back-to-moon-large) {
+		@include m.breakpoint(back_to_moon_large) {
 			font-size: 1rem;
 		}
 	}

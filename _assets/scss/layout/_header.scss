@@ -8,7 +8,7 @@
 	}
 
 	// sp はハンバーガーメニューのため設定無し
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		position: absolute;
 		width: 100%;
 		margin-top: 10px;
@@ -21,11 +21,11 @@
 .l-header--about {
 	@extend .l-header;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		position: fixed;
 	}
 
-	@include m.breakpoint(header-large) {
+	@include m.breakpoint(header_large) {
 		padding: 0 v.$gap--header--wide;
 	}
 
@@ -38,11 +38,11 @@
 		&::before {
 			background: rgba(#333, 0.5);
 
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				width: calc(100% - v.$gap--header--pc * 2);
 				left: v.$gap--header--pc;
 			}
-			@include m.breakpoint(header-large) {
+			@include m.breakpoint(header_large) {
 				width: calc(100% - v.$gap--header--wide * 2);
 				left: v.$gap--header--wide;
 			}

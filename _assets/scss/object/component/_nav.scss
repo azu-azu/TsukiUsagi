@@ -4,7 +4,7 @@
 .c-nav {
 	padding: 150px 60px;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		display: flex;
 		flex-direction: row;
 		width: auto;
@@ -21,7 +21,7 @@
 		cursor: pointer;
 		user-select: none;
 
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			padding: 0;
 			width: v.$width--nav-li;
 			transform: inherit;
@@ -34,7 +34,7 @@
 			font-size: v.$font-size--hamburger-nav;
 			font-weight: 600;
 
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				font-size: v.$font-size--header-nav;
 				font-weight: 100;
 			}

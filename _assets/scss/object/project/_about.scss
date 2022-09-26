@@ -10,7 +10,7 @@
 		transform: translateX(-50%, -50%);
 		font-size: v.$font-size--profile-slide--txt--sp;
 		line-height: 1.5;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			font-size: v.$font-size--profile-slide--txt--pc;
 		}
 	}

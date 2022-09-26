@@ -19,7 +19,7 @@
 
 .p-header--back {
 	.p-gmenu {
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			li {
 				&:first-child:hover ~ .c-marker::before {
 					transform: scale(1);

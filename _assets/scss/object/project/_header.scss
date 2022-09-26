@@ -2,7 +2,7 @@
 @use '../../foundation/variable' as v;
 
 .p-header {
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		transition: 1s ease-in;
 		padding: 0 v.$gap--p-header-side--pc;
 	}
@@ -20,7 +20,7 @@
 		overflow: hidden;
 		opacity: 0;
 
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			display: block;
 			background: linear-gradient(
 				to right,
@@ -56,7 +56,7 @@
 
 	//下スクロールでフェード
 	&.is-fade {
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			opacity: 0;
 		}
 	}
@@ -78,7 +78,7 @@
 	}
 
 	a {
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			backdrop-filter: blur(15px);
 		}
 	}

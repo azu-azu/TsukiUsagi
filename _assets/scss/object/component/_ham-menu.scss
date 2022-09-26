@@ -11,7 +11,7 @@
 	transition: 0.2s;
 	z-index: 90;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		position: static;
 		width: inherit;
 		height: inherit;
