@@ -1,12 +1,16 @@
 <?php
+$num = 4;
+
 $args = array(
     'parent' => '0', // 親カテゴリのみ
     'orderby' => 'term_order',
     'order' => 'ASC',
-    //'exclude' => '3,6,9', // 含めたくないカテゴリ
-    //'include' > '4,8,12' // 含めたいカテゴリ
+    //'exclude' => '1,2,3', // 含めたくないカテゴリ
+    //'include' => '4,5,6' // 含めたいカテゴリ
 );
+
 $categories = get_categories($args);
+
 // 説明順の数値で並べ替え
 usort($categories, function ($a, $b) {
     return $a->description - $b->description;
@@ -20,7 +24,7 @@ foreach ($categories as $category) :
 
     $args = array(
         'cat' => $id,
-        'posts_per_page' => 4,
+        'posts_per_page' => $num,
     );
 ?>
 
@@ -30,7 +34,7 @@ foreach ($categories as $category) :
             echo usa_set_heading_linear_show('h2', $title, 'inline', $url);
             usa_set_extra_sub_loop($args);
 
-            if ($count > 4) {
+            if ($count > $num) {
                 echo usa_make_link_button('» もっと見る', '', $url);
             }
             ?>
