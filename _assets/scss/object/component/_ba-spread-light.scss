@@ -16,6 +16,13 @@
 		z-index: 1;
 	}
 
+	&:focus {
+		&::after {
+			opacity: 1;
+			transform: scale(2);
+			filter: blur(100px);
+		}
+	}
 	@include m.breakpoint(moon_mini) {
 		&:hover {
 			&::after {
