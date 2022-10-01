@@ -15,19 +15,19 @@
 		gap: 40px;
 
 		li {
-			.wp-post-image {
-				margin: auto;
-				padding-top: 3px;
-				width: calc(100vw - 40px - 10px);
-				height: 100%;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
+			// .wp-post-image {
+			// 	margin: auto;
+			// 	padding-top: 3px;
+			// 	width: calc(100vw - 40px - 10px);
+			// 	height: 100%;
+			// 	border-top-left-radius: 20px;
+			// 	border-top-right-radius: 20px;
 
-				@include m.breakpoint(iphone-normal) {
-					width: 98%;
-					height: 98%;
-				}
-			}
+			// 	@include m.breakpoint(iphone-normal) {
+			// 		width: 98%;
+			// 		height: 98%;
+			// 	}
+			// }
 
 			.wp-post-image__container {
 				height: 100%;
