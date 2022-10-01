@@ -52,7 +52,7 @@
 			left: -100%;
 			font-size: 4vw;
 
-			@include m.breakpoint(iphone-normal) {
+			@include m.breakpoint(iphone_normal) {
 				top: 30%;
 			}
 			@include m.breakpoint(moon_mini) {

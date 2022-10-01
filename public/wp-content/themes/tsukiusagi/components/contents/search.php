@@ -10,9 +10,9 @@
 
 <section class="p-frame">
     <article class="p-loop">
-        <ul class="post-sub-loop">
+        <ul class="p-posts-list post-sub-loop">
             <?php while (have_posts()) : the_post(); ?>
-                <li class="c-anim-box--down js-scroll-show show">
+                <li class="p-posts-list__item c-anim-box--down js-scroll-show show">
                     <a href="<?php the_permalink(); ?>">
                         <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>
                     </a>

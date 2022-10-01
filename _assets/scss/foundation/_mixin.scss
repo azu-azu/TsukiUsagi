@@ -1,5 +1,5 @@
 @mixin breakpoint($point) {
-	@if $point == iphone-normal {
+	@if $point == iphone_normal {
 		@media (min-width: 374px) {
 			@content;
 		}

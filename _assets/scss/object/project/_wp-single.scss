@@ -41,31 +41,28 @@
 			}
 		}
 
-		.l-main__container {
-			.wp-post-image {
+		&__container {
+			.c-thumbnail {
 				opacity: 0.7;
+				margin-bottom: 40px;
 
-				&__container {
-					margin-bottom: 40px;
+				.svg-inline--fa,
+				.fa-external-link-alt {
+					position: absolute;
+					bottom: 5px;
+					left: 5px;
+					font-size: 3rem;
+					color: #9999;
+					opacity: 0.8;
+					z-index: 2;
+				}
 
-					.svg-inline--fa,
-					.fa-external-link-alt {
-						position: absolute;
-						bottom: 5px;
-						left: 5px;
+				.c-eye-catch-text {
+					font-size: 6vw;
+					margin-bottom: 0;
+					@include m.breakpoint(moon_mini) {
 						font-size: 3rem;
-						color: #9999;
-						opacity: 0.8;
-						z-index: 2;
-					}
-
-					.eye-catch-text {
-						font-size: 6vw;
-						margin-bottom: 0;
-						@include m.breakpoint(moon_mini) {
-							font-size: 3rem;
-							line-height: 2;
-						}
+						line-height: 2;
 					}
 				}
 			}

@@ -50,14 +50,6 @@
 	}
 }
 
-.archive {
-	.wp-post-image__container {
-		&::after {
-			display: none;
-		}
-	}
-}
-
 @keyframes linear-after {
 	100% {
 		opacity: 0.5;

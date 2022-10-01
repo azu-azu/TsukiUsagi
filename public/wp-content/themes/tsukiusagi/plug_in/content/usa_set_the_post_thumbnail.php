@@ -14,8 +14,8 @@
  */
 function usa_set_the_post_thumbnail($size, $type) {
   global $post;
-  $class_container_main = "'wp-post-image__container c-glass c-anim-box--scaledown js-scroll-show'";
-  $class_container_sub = "'wp-post-image__container c-glass'";
+  $class_container_main = "'c-thumbnail c-anim-box--scaledown js-scroll-show'";
+  $class_container_sub = "'p-posts-list__figure c-thumbnail'";
 
   $default_img = '<img src="' . do_shortcode('[uri]') . '/img/thumbnail/default.png" alt="うさぎの背景画像"></figure>';
 
@@ -43,7 +43,8 @@ function usa_set_the_post_thumbnail($size, $type) {
           break;
 
         case 'sub': // サブループの場合
-          echo '<a class=' . $class_container_sub . ' href="' . esc_url(get_permalink()) . '">';
+          echo '<a href="' . esc_url(get_permalink()) . '">
+          <figure class=' . $class_container_sub . '>';
           break;
       }
 
@@ -56,19 +57,16 @@ function usa_set_the_post_thumbnail($size, $type) {
         echo $default_img;
       };
       echo eyecatch_text_used();
+      echo '</figure>';
 
-      // 終了タグ追加
-      switch ($type) {
-        case 'main': // メインループの場合
-          echo '</figure>';
-          break;
-        case 'sub': // サブループの場合
-          echo '<p class="post-title">';
-          the_title();
-          echo '</p></a>';
-          break;
+      // サブループの場合の終了タグ
+      if ($type === 'sub') {
+        echo '<div class="p-posts-list__body"><p class="post-title">';
+        the_title();
+        echo '</p></div></a>';
       }
       break;
+
 
       // カスタム投稿（works）の場合
     case 'works':
@@ -80,7 +78,8 @@ function usa_set_the_post_thumbnail($size, $type) {
 
           // URLがある場合
           if ($product_url !== '') {
-            echo '<a href="' . esc_html($product_url) . '" class=' . $class_container_main . ' target="_blank">
+            echo '<a href="' . esc_html($product_url) . '"target="_blank">
+            <figure class=' . $class_container_main . '>
               <i class="fas fa-external-link-alt"></i>';
 
             if (has_post_thumbnail()) {
@@ -89,7 +88,7 @@ function usa_set_the_post_thumbnail($size, $type) {
               echo $default_img;
             }
 
-            echo '</a>';
+            echo '</figure></a>';
 
             // URLがない場合
           } elseif ($product_url == '') {
@@ -107,16 +106,21 @@ function usa_set_the_post_thumbnail($size, $type) {
 
           // サブループの場合
         case 'sub':
-          echo '<a class=' . $class_container_sub . ' href="' . esc_url(get_permalink()) . '">';
+          echo '<a href="' . esc_url(get_permalink()) . '">
+          <figure class=' . $class_container_sub . '>';
+
           if (has_post_thumbnail()) {
             the_post_thumbnail($size);
           } else {
             echo $default_img;
           }
 
+          echo '</figure>';
+          echo '<div class="p-posts-list__body">';
           echo '<p class="post-title">';
           the_title();
-          echo '</p></a>';
+          echo '</p>';
+          echo '</div></a>';
           break;
       }
       break;
