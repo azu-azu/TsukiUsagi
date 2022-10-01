@@ -16,6 +16,7 @@ function usa_set_the_post_thumbnail($size, $type) {
   global $post;
   $class_container_main = "'c-thumbnail c-anim-box--scaledown js-scroll-show'";
   $class_container_sub = "'p-posts-list__figure c-thumbnail'";
+  $class_link = "c-bg--white--opacity";
 
   $default_img = '<img src="' . do_shortcode('[uri]') . '/img/thumbnail/default.png" alt="うさぎの背景画像"></figure>';
 
@@ -43,7 +44,7 @@ function usa_set_the_post_thumbnail($size, $type) {
           break;
 
         case 'sub': // サブループの場合
-          echo '<a href="' . esc_url(get_permalink()) . '">
+          echo '<a class="' . $class_link . '" href="' . esc_url(get_permalink()) . '">
           <figure class=' . $class_container_sub . '>';
           break;
       }
@@ -61,9 +62,9 @@ function usa_set_the_post_thumbnail($size, $type) {
 
       // サブループの場合の終了タグ
       if ($type === 'sub') {
-        echo '<div class="p-posts-list__body"><p class="post-title">';
+        echo '<div class="p-posts-list__body"><div class="p-posts-list__title">';
         the_title();
-        echo '</p></div></a>';
+        echo '</div></div></a>';
       }
       break;
 
@@ -78,7 +79,7 @@ function usa_set_the_post_thumbnail($size, $type) {
 
           // URLがある場合
           if ($product_url !== '') {
-            echo '<a href="' . esc_html($product_url) . '"target="_blank">
+            echo '<a class="' . $class_link . '" href="' . esc_html($product_url) . '"target="_blank">
             <figure class=' . $class_container_main . '>
               <i class="fas fa-external-link-alt"></i>';
 
@@ -106,7 +107,7 @@ function usa_set_the_post_thumbnail($size, $type) {
 
           // サブループの場合
         case 'sub':
-          echo '<a href="' . esc_url(get_permalink()) . '">
+          echo '<a class="' . $class_link . '" href="' . esc_url(get_permalink()) . '">
           <figure class=' . $class_container_sub . '>';
 
           if (has_post_thumbnail()) {
@@ -117,9 +118,9 @@ function usa_set_the_post_thumbnail($size, $type) {
 
           echo '</figure>';
           echo '<div class="p-posts-list__body">';
-          echo '<p class="post-title">';
+          echo '<div class="p-posts-list__title">';
           the_title();
-          echo '</p>';
+          echo '</div>';
           echo '</div></a>';
           break;
       }

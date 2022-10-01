@@ -10,7 +10,7 @@ $main_inner_class = 'l-main__inner';
         <?php get_template_part('components/parts/separator'); ?>
     </div>
 
-    <section class="<?php echo $main_inner_class; ?> c-bg--post-container">
+    <section class="<?php echo $main_inner_class; ?> c-bg--white">
         <article class="<?php echo $main_container_class; ?>">
             <?php echo usa_set_breadcrumb(); ?>
             <?php get_template_part('components/template/loop/main'); ?>
