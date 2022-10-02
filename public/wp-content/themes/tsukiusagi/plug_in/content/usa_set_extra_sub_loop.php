@@ -26,7 +26,7 @@ function usa_set_extra_sub_loop($args) {
         <li class="p-posts-list__item c-anim-box--down js-scroll-show" data-js_delay="<?php echo $delay; ?>">
           <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>
         </li>
-        <?php $delay += 150; ?>
+        <?php $delay += 100; ?>
       <?php endwhile; ?>
     </ul>
 
