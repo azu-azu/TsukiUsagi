@@ -17,7 +17,7 @@
  */
 function usa_make_link_button($my_title, $type, $url = "") {
 ?>
-    <article class="c-read-more c-anim-box--down txt js-scroll-show">
+    <article class="c-read-more c-anim-box--down js-scroll-show">
         <a class="" href="<?php echo $url; ?>">
             <?php echo $my_title; ?>
         </a>

@@ -44,18 +44,18 @@ function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") 
             break;
     }
 ?>
-    <section class="p-title--<?php echo $type; ?>">
+    <div class="p-title--<?php echo $type; ?>">
         <?php if (!$url == "") : ?>
             <a class="" href="<?php echo $url; ?>">
             <?php endif; ?>
 
-            <<?php echo $heading_num; ?> class="<?php echo $pseudo; ?> c-anim-box--down txt js-scroll-show">
+            <<?php echo $heading_num; ?> class="<?php echo $pseudo; ?> c-anim-box--down js-scroll-show">
                 <?php echo $my_title; ?>
             </<?php echo $heading_num; ?>>
 
             <?php if (!$url == "") : ?>
             </a>
         <?php endif; ?>
-    </section>
+    </div>
 <?php
 }

@@ -23,9 +23,9 @@
 	&--rl {
 		transform: translate(200px, 0);
 	}
-	&--down {
-		transform: translate(0, -200px);
-	}
+	// &--down {
+	// 	transform: translate(0, -200px);
+	// }
 	&--scaleup {
 		transform: scale(0.5);
 	}
@@ -41,21 +41,21 @@
 }
 
 // テキストアニメ
-.c-anim-box--up.txt.is-show {
-	animation: move-up 2s both;
+// .c-anim-box--up.txt.show {
+// 	animation: move-up 2s both;
 
-	&:nth-child(2) {
-		animation-delay: 0.6s;
-	}
-}
+// 	&:nth-child(2) {
+// 		animation-delay: 0.6s;
+// 	}
+// }
 
-.c-anim-box--lr.txt.show {
-	animation: move-lr 1s both;
+// .c-anim-box--lr.txt.show {
+// 	animation: move-lr 1s both;
 
-	&:nth-child(2) {
-		animation-delay: 0.6s;
-	}
-}
+// 	&:nth-child(2) {
+// 		animation-delay: 0.6s;
+// 	}
+// }
 
 // ボックスアニメ
 .c-anim-box--up.show {
