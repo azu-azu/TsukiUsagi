@@ -22,11 +22,9 @@ function usa_set_extra_sub_loop($args) {
   <?php if ($my_query->have_posts()) : ?>
     <ul class="p-posts-list post-sub-loop">
       <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-        <?php $delay = 0; ?>
-        <li class="p-posts-list__item c-anim-box--down js-scroll-show" data-js_delay="<?php echo $delay; ?>">
+        <li class="p-posts-list__item">
           <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>
         </li>
-        <?php $delay += 100; ?>
       <?php endwhile; ?>
     </ul>
 

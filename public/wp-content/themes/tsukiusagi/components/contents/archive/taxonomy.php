@@ -17,11 +17,9 @@ $title = '「' . $name . '」の記事一覧';
         <article class="p-loop">
             <ul class="p-posts-list post-sub-loop">
                 <?php while (have_posts()) : the_post(); ?>
-                    <?php $delay = 0; ?>
-                    <li class="p-posts-list__item c-anim-box--down js-scroll-show" data-js_delay="<?php echo $delay; ?>">
+                    <li class="p-posts-list__item">
                         <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>
                     </li>
-                    <?php $delay += 100; ?>
                 <?php endwhile; ?>
             </ul>
             <?php get_template_part('components/parts/pagination'); ?>

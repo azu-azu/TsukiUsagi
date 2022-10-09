@@ -14,7 +14,7 @@
  */
 function usa_set_the_post_thumbnail($size, $type) {
   global $post;
-  $class_container_main = "'c-thumbnail c-anim-box--scaledown js-scroll-show'";
+  $class_container_main = "'c-thumbnail'";
   $class_container_sub = "'p-posts-list__figure c-thumbnail'";
   $class_link = "c-bg--white--opacity";
 

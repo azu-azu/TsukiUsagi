@@ -18,7 +18,9 @@ $args = array(
 <section class="<?php echo $ex_class . ' ' . $bg_class; ?>" id="blog">
   <article class="<?php echo $ex_inner_class; ?>">
     <?php echo usa_set_heading_linear_show('h2', $title, 'sec'); ?>
-    <?php usa_set_extra_sub_loop($args); ?>
+    <div class="c-anim-box--down js-scroll-show">
+      <?php usa_set_extra_sub_loop($args); ?>
+    </div>
     <?php get_template_part('components/common/read-more'); ?>
   </article>
 </section>
