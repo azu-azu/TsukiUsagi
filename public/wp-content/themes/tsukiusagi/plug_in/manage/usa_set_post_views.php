@@ -10,7 +10,8 @@
  * License:
  */
 
-
+// https://white-sesame.jp/archives/blog/1802
+// https://takayakondo.com/wordpress-pv-display/
 
 
 //  投稿の閲覧数を設定する
