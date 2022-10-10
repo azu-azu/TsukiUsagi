@@ -1,17 +1,14 @@
 <?php
-$main_class = 'l-main';
-$main_container_class = $main_class . '__container';
-$main_inner_class = $main_class . '__inner';
-
+$main_container_class = 'l-main__container';
 ?>
 
 <?php if (is_category() || is_tag()) : ?>
-    <?php echo usa_set_breadcrumb(); ?>
     <?php get_template_part('components/contents/archive/taxonomy'); ?>
 <?php else : ?>
-    <?php get_template_part('components/text/page-ttl'); ?>
     <article class="<?php echo $main_container_class; ?>">
-        <?php if (get_post_type() === 'post') : ?>
+        <?php if (is_front_page() || is_home() || is_page('home')) : ?>
+            <?php get_template_part('components/contents/archive/front'); ?>
+        <?php elseif (get_post_type() === 'post') : ?>
             <?php get_template_part('components/contents/archive/post'); ?>
         <?php elseif (get_post_type() === 'works') : ?>
             <?php get_template_part('components/contents/archive/works'); ?>

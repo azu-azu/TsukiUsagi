@@ -1,0 +1,257 @@
+.c-anim-box,
+.c-anim-box--up,
+.c-anim-box--lr,
+.c-anim-box--rl,
+.c-anim-box--down,
+.c-anim-box--scaleup,
+.c-anim-box--scaledown,
+.c-anim-box--rotate-l,
+.c-anim-box--rotate-r {
+	opacity: 0;
+	transition: 2s;
+}
+.c-anim-box--up {
+	transform: translate(0, 50px);
+}
+.c-anim-box--lr {
+	transform: translate(-200px, 0);
+}
+.c-anim-box--rl {
+	transform: translate(200px, 0);
+}
+.c-anim-box--down {
+	transform: translate(0, -200px);
+}
+.c-anim-box--scaleup {
+	transform: scale(0.5);
+}
+.c-anim-box--scaledown {
+	transform: scale(1.5);
+}
+.c-anim-box--rotate-l {
+	transform: rotate(180deg);
+}
+.c-anim-box--rotate-r {
+	transform: rotate(-180deg);
+}
+
+.c-anim-box--up.txt.is-show {
+	-webkit-animation: move-up 2s both;
+	animation: move-up 2s both;
+}
+.c-anim-box--up.txt.is-show:nth-child(2) {
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.c-anim-box--lr.txt.show {
+	-webkit-animation: move-lr 1s both;
+	animation: move-lr 1s both;
+}
+.c-anim-box--lr.txt.show:nth-child(2) {
+	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.c-anim-box--up.show {
+	-webkit-animation: move-up 2s both;
+	animation: move-up 2s both;
+}
+
+.c-anim-box--lr.show {
+	-webkit-animation: move-lr 1s both;
+	animation: move-lr 1s both;
+}
+
+.c-anim-box--rl.show {
+	-webkit-animation: move-rl 1s both;
+	animation: move-rl 1s both;
+}
+
+.c-anim-box--down.show {
+	-webkit-animation: move-down 1s both;
+	animation: move-down 1s both;
+}
+
+.c-anim-box--scaleup.show {
+	-webkit-animation: move-scaleup 1s both;
+	animation: move-scaleup 1s both;
+}
+
+.c-anim-box--scaledown.show {
+	-webkit-animation: move-scaledown 1s both;
+	animation: move-scaledown 1s both;
+}
+
+.c-anim-box--rotate-l.show {
+	-webkit-animation: move-rotate-l 1s both;
+	animation: move-rotate-l 1s both;
+}
+
+.c-anim-box--rotate-r.show {
+	-webkit-animation: move-rotate-r 1s both;
+	animation: move-rotate-r 1s both;
+}
+
+@-webkit-keyframes move-up {
+	0% {
+		opacity: 0;
+		transform: translate(0, 50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes move-up {
+	0% {
+		opacity: 0;
+		transform: translate(0, 50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+@-webkit-keyframes move-lr {
+	0% {
+		opacity: 0;
+		transform: translate(-200px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+@keyframes move-lr {
+	0% {
+		opacity: 0;
+		transform: translate(-200px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+@-webkit-keyframes move-rl {
+	0% {
+		opacity: 0;
+		transform: translate(200px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes move-rl {
+	0% {
+		opacity: 0;
+		transform: translate(200px, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@-webkit-keyframes move-down {
+	0% {
+		opacity: 0;
+		transform: translate(0, -100px);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes move-down {
+	0% {
+		opacity: 0;
+		transform: translate(0, -100px);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@-webkit-keyframes move-scaleup {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes move-scaleup {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@-webkit-keyframes move-scaledown {
+	0% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes move-scaledown {
+	0% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@-webkit-keyframes move-rotate-l {
+	0% {
+		opacity: 0;
+		transform: rotate(180deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes move-rotate-l {
+	0% {
+		opacity: 0;
+		transform: rotate(180deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@-webkit-keyframes move-rotate-r {
+	0% {
+		opacity: 0;
+		transform: rotate(-180deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes move-rotate-r {
+	0% {
+		opacity: 0;
+		transform: rotate(-180deg);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+/*# sourceMappingURL=style.css.map */

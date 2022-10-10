@@ -2,53 +2,41 @@
 @use '../../foundation/variable' as v;
 
 .c-nav {
-	display: flex;
-	flex-direction: column;
-	gap: v.$gap--c-nav;
-	height: 0;
-	transform: translateX(100vw);
-	z-index: 90;
-	overflow-x: hidden;
+	padding: 150px 60px;
 
-	@include m.breakpoint(moon-mini) {
-		position: static;
+	@include m.breakpoint(moon_mini) {
+		display: flex;
+		flex-direction: row;
 		width: auto;
 		height: auto;
-		flex-direction: row;
+		background: none;
+		padding: inherit;
+		gap: v.$gap--c-nav;
 		transform: inherit;
 	}
 
 	li {
 		width: 250px;
-		background: rgba(0, 0, 0, 0.6);
-		border-radius: 50px;
-		filter: drop-shadow(2px 4px 6px);
+		border-bottom: 1px solid rgba(#fff, 0.5);
 		cursor: pointer;
 		user-select: none;
 
-		animation: list-back-mini 0.2s linear forwards;
-
-		@media screen and (min-width: 374px) and (max-width: 569px) {
-			animation: list-back 0.2s linear forwards;
-		}
-
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			padding: 0;
 			width: v.$width--nav-li;
-			background: none;
-			filter: none;
-			border-radius: 0;
 			transform: inherit;
-			animation: none;
+			border-bottom: none;
 		}
 
 		a {
 			display: block;
 			padding: 10px;
 			font-size: v.$font-size--hamburger-nav;
+			font-weight: 600;
 
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				font-size: v.$font-size--header-nav;
+				font-weight: 100;
 			}
 		}
 	}

@@ -1,7 +1,6 @@
 <?php
-$main_class = 'l-main';
-$main_container_class = $main_class . '__container';
-$main_inner_class = $main_class . '__inner';
+$main_container_class = 'l-main__container';
+$main_inner_class = 'l-main__inner';
 ?>
 
 <?php get_template_part('components/bg/cosmos/ornament'); ?>
@@ -11,7 +10,7 @@ $main_inner_class = $main_class . '__inner';
         <?php get_template_part('components/parts/separator'); ?>
     </div>
 
-    <section class="<?php echo $main_inner_class; ?> c-bg--post-container">
+    <section class="<?php echo $main_inner_class; ?> c-bg--white">
         <article class="<?php echo $main_container_class; ?>">
             <?php echo usa_set_breadcrumb(); ?>
             <?php get_template_part('components/template/loop/main'); ?>
@@ -30,8 +29,8 @@ $main_inner_class = $main_class . '__inner';
     </section>
 <?php endif; ?>
 
-<section class="p-related-contents">
-    <article class="p-related-contents__inner">
+<section class="p-frame">
+    <article class="p-loop">
         <?php get_template_part('components/bg/cosmos/crystal'); ?>
         <?php get_template_part('components/text/list-ttl'); ?>
         <?php get_template_part('components/template/loop/sub'); ?>

@@ -10,8 +10,8 @@
 	align-items: center;
 	overflow-x: hidden;
 	z-index: 100;
-	@include m.breakpoint(moon-mini) {
-		top: -8%;
+	@include m.breakpoint(moon_mini) {
+		top: -22%;
 	}
 
 	&__img-container {
@@ -24,6 +24,14 @@
 			transform: scale(-1, 1);
 		}
 	}
+
+	&.fixed {
+		position: fixed;
+		top: -5%;
+		@include m.breakpoint(moon_mini) {
+			top: -4%;
+		}
+	}
 }
 
 .page-thanks {
@@ -32,27 +40,16 @@
 	}
 }
 
-// .single,
-// .archive {
-// 	.p-train {
-// 		top: 22%;
-// 		@include m.breakpoint(moon-mini) {
-// 			top: -8%;
-// 		}
-// 	}
-// }
-
 .p-about {
 	.p-train {
 		top: 37%;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			top: 35%;
 		}
 
 		&.fixed {
-			position: fixed;
 			top: -5%;
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				top: -4%;
 			}
 		}

@@ -5,10 +5,30 @@
 	position: relative;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 40px;
+	padding-bottom: 40px;
+
+	@include m.breakpoint(wide) {
+		position: fixed;
+		display: block;
+		width: inherit;
+		top: 30%;
+		right: 40px;
+		z-index: 20;
+	}
 
 	.c-offset-title {
 		position: absolute;
 		bottom: 0;
+	}
+}
+
+.p-contents {
+	&--post {
+		~ .p-side {
+			@include m.breakpoint(wide) {
+				position: static;
+				display: flex;
+			}
+		}
 	}
 }

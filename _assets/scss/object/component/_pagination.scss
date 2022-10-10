@@ -5,7 +5,7 @@
 .c-pagination {
 	display: none;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		display: flex;
 		align-items: center;
 		justify-content: center;

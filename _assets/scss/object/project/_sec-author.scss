@@ -22,7 +22,7 @@ $base-padding: 0.75rem;
 		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 		border-radius: 10px;
 
-		@include m.breakpoint(topic-inner) {
+		@include m.breakpoint(pc) {
 			grid-template-columns: min-content 1fr;
 			grid-template-areas:
 				'avatar description'
@@ -42,7 +42,7 @@ $base-padding: 0.75rem;
 				top: 0;
 				left: 50%;
 				animation: author-rabbit2 6s infinite;
-				@include m.breakpoint(topic-inner) {
+				@include m.breakpoint(pc) {
 					animation: author-rabbit2-pc 6s infinite;
 				}
 			}
@@ -64,21 +64,21 @@ $base-padding: 0.75rem;
 	.c-author {
 		grid-area: author;
 		text-align: left;
-		@include m.breakpoint(topic-inner) {
+		@include m.breakpoint(pc) {
 			text-align: center;
 			align-self: flex-end;
 		}
 
 		small {
 			padding-right: 10px;
-			@include m.breakpoint(topic-inner) {
+			@include m.breakpoint(pc) {
 				padding-right: 0;
 			}
 		}
 
 		.sp-none {
 			display: none;
-			@include m.breakpoint(topic-inner) {
+			@include m.breakpoint(pc) {
 				display: block;
 			}
 		}
@@ -89,7 +89,7 @@ $base-padding: 0.75rem;
 		line-height: 1.7;
 		padding: 0 $base-padding;
 		align-self: flex-end;
-		@include m.breakpoint(topic-inner) {
+		@include m.breakpoint(pc) {
 			padding: 0;
 			line-height: inherit;
 		}

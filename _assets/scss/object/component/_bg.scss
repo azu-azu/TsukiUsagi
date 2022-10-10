@@ -3,60 +3,23 @@
 @use '../component/ba';
 
 .c-bg {
+	//全体を覆う
 	&--gradient-main {
 		background: radial-gradient(
 			ellipse at center,
 			#1b2735 40%,
 			#090a0f 100%
-		); //全体を覆う
-	}
-	&--gradient-f1 {
-		background: linear-gradient(
-			to bottom,
-			rgba(61, 136, 175, 0),
-			#12577a
-		); //front:works
-	}
-	&--gradient-f2 {
-		background: linear-gradient(
-			to bottom,
-			#12577a,
-			rgba(73, 147, 183, 0.5)
-		); //front:blog
-	}
-	&--gradient-f3 {
-		background: linear-gradient(
-			to bottom,
-			rgba(73, 147, 183, 0.5),
-			#456c82
-		); //front:profile
-	}
-	&--gradient-f4 {
-		background: linear-gradient(
-			to bottom,
-			#456c82,
-			#f3bf7c
-		); //front:contact
-	}
-	&--gradient-transparent {
-		background: linear-gradient(
-			to bottom,
-			transparent 5%,
-			#457185,
-			#f3bf7c
-		); //topic: after
-	}
-	&--post-container {
-		//投稿用コンテナ
-		background: #fff9f0;
+		);
 	}
 
-	&--before-footer {
+	// 全体背景：夜バージョン
+	&--night {
 		background: linear-gradient(
 			to bottom,
-			transparent 5%,
-			#1b2d42,
-			#2e2b42
+			#090a0f 20%,
+			#1b2735 40%,
+			#1b2d42 80%,
+			#2d2b42 100%
 		);
 	}
 
@@ -64,13 +27,40 @@
 		background: v.$color--cosmos;
 	}
 
-	&--night {
+	&--white {
+		background: #fff9f0;
+	}
+
+	&--white--opacity {
+		background: v.$color--white--opacity60;
+	}
+
+	// aboutページ背景
+	//front:works
+	&--gradient-f1 {
+		background: linear-gradient(to bottom, rgba(61, 136, 175, 0), #12577a);
+	}
+
+	//front:blog
+	&--gradient-f2 {
 		background: linear-gradient(
 			to bottom,
-			#090a0f 20%,
-			#1b2735 40%,
-			#1b2d42 80%,
-			#2d2b42 90%
+			#12577a,
+			rgba(73, 147, 183, 0.5)
 		);
+	}
+
+	//front:profile
+	&--gradient-f3 {
+		background: linear-gradient(
+			to bottom,
+			rgba(73, 147, 183, 0.5),
+			#456c82
+		);
+	}
+
+	//front:contact
+	&--gradient-f4 {
+		background: linear-gradient(to bottom, #456c82, #f3bf7c);
 	}
 }

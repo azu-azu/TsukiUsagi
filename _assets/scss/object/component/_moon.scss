@@ -9,11 +9,11 @@
 	filter: blur(4px);
 	transition: all 1s linear;
 
-	@include m.breakpoint(moon-mini) {
-		width: v.$size--moon-mini;
-		height: v.$size--moon-mini;
+	@include m.breakpoint(moon_mini) {
+		width: v.$size--moon_mini;
+		height: v.$size--moon_mini;
 		background: v.$color--moon-main;
-		top: v.$position--moon-mini-top;
+		top: v.$position--moon_mini-top;
 	}
 
 	&::before {
@@ -52,7 +52,7 @@
 			z-index: 1;
 			animation: moon-waning-sp 17s alternate-reverse infinite -1s;
 
-			@include m.breakpoint(moon-mini) {
+			@include m.breakpoint(moon_mini) {
 				animation: moon-waning 17s alternate-reverse infinite -1s;
 			}
 		}

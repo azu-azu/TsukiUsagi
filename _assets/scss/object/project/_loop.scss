@@ -1,0 +1,37 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+
+.p-loop {
+	text-align: center;
+
+	.post-sub-loop {
+		margin-bottom: 20px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(310px, 310px));
+		justify-content: center;
+		justify-items: center;
+		gap: 40px;
+
+		@include m.breakpoint(moon_mini) {
+			width: 80vw;
+			max-width: 1000px;
+		}
+
+		.p-posts-list {
+			&__figure {
+				.c-eye-catch-text {
+					font-size: 5vw;
+					@include m.breakpoint(moon_mini) {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.home {
+	.p-loop {
+		margin-bottom: 60px;
+	}
+}

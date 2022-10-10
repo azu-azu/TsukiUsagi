@@ -2,7 +2,7 @@
 @use '../../foundation/mixin' as m;
 
 .c-bubbly-button {
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		position: relative;
 		// display: inline-block;
 		border: none;
@@ -73,7 +73,7 @@
 		background-image: v.$bg-img--bubbly-btn--white-after;
 	}
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		&:hover {
 			color: rgb(161, 159, 159);
 		}
@@ -89,7 +89,7 @@
 		background-image: v.$bg-img--bubbly-btn--yellow-after;
 	}
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		&:hover {
 			color: v.$color--bubbly-btn-yellow;
 		}

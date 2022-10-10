@@ -100,57 +100,67 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 
 // ページごとに読み込みファイルを変える
 function file_load_scripts_styles() {
-    if (is_page('about')) {
-        wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
-        wp_enqueue_script('bundle', get_template_directory_uri() . '/js/bundle.js', array(), date("YmdHi"), true);
-        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
+    if (is_front_page() || is_home() || is_page('home') || is_archive()) {
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
+        wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
+
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true); //スクロールしたらふわっと動くjs
-        wp_enqueue_script('playing-box', get_template_directory_uri() . '/js/parts/myPlayingBox.js', array(), '', true);
-        wp_enqueue_script('falling-box', get_template_directory_uri() . '/js/parts/myFallingBox.js', array(), '', true);
-    }
-    if (is_single()) {
-        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
-        wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
-        wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
+        // wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
-    if (is_page()) {
+    if (is_single()) {
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
+
+        wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
+        wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
+        // wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
+        wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
+        wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
+    }
+    if (is_page()) { // 固定ページ共通
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
+
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
+    }
+    if (is_page('about')) {
+        wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
+        wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
+
+        wp_enqueue_script('milky-way', get_template_directory_uri() . '/js/parts/myMilkyWay.js', array(), 'particles-min', true);
+        wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
+        wp_enqueue_script('swiper', get_template_directory_uri() . '/js/parts/mySwiper.js', array(), 'swiper-bundle', true);
+        wp_enqueue_script('playing-box', get_template_directory_uri() . '/js/parts/myPlayingBox.js', array(), '', true);
+        wp_enqueue_script('falling-box', get_template_directory_uri() . '/js/parts/myFallingBox.js', array(), '', true);
+    }
+    if (!is_page('about') && is_page()) {
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
     if (is_page('policy')) {
         wp_enqueue_script('canvas-shooting-stars', get_template_directory_uri() . '/js/parts/myCanvasShootingStars.js', array(), '', true);
     }
-    if (is_front_page() || is_home() || is_page('home') || is_archive()) {
-        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
-        wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
-        wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
-        wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
-        wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
-    }
     if (is_search()) {
-        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
+
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
+        // wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
     if (is_404()) {
-        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/parts/myHamburger.js', array(), '', true);
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
+
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('canvas-star-orbit', get_template_directory_uri() . '/js/parts/myStarOrbit.js', array(), '', true);
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
     }
+    // wp_enqueue_style('anim-css', get_template_directory_uri() . '/css/anim.css', array(), date("YmdHi"), '');
 }
 add_action('wp_footer', 'file_load_scripts_styles'); // wp_footerに処理を登録
 
@@ -176,13 +186,15 @@ include(get_template_directory() . '/plug_in/custom/field/works_environment.php'
 include(get_template_directory() . '/plug_in/content/usa_set_tax_terms_links.php'); // タクソノミーとタームのリンクを取得する
 include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_lines_data.php'); // カスタムフィールドの複数行の値（改行入力）をリストで出力する
 include(get_template_directory() . '/plug_in/content/usa_post_has_archive.php'); // 投稿のアーカイブページを作成する
-include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); // 投稿のサムネイル自動設定
+include(get_template_directory() . '/plug_in/content/usa_auto_thumbnail.php'); // カテゴリ別サムネイル登録
+include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); // 投稿のサムネイル設定
 include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 別ページの一覧を表示する
 include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与：既存関数を使う場合
 include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
 include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
 include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身
 include(get_template_directory() . '/plug_in/content/usa_set_breadcrumb.php'); // パンくずリスト
+include(get_template_directory() . '/plug_in/content/usa_make_link_button.php'); // リンクボタン
 
 // 管理
 include(get_template_directory() . '/plug_in/manage/usa_remove_emoji.php'); // WordPress初期設定の絵文字を読み込む設定を停止
@@ -190,21 +202,9 @@ include(get_template_directory() . '/plug_in/manage/contact_form.php'); // conta
 include(get_template_directory() . '/plug_in/manage/usa_meta_ogp.php'); // OGP画像
 include(get_template_directory() . '/plug_in/manage/no_self_ping.php'); // セルフピンバックを除外する（内部リンクを貼ったときのコメント自動送信を防ぐ）
 include(get_template_directory() . '/plug_in/manage/usa_theme_widgets_init.php'); // ウィジェットを表示する
-include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
-include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_original_block_categories.php'); // ブロックエディタにブロックカテゴリーを追加
 include(get_template_directory() . '/plug_in/manage/usa_post_tag_checkbox.php'); // 投稿のタグを選択式にする
-
-
-
-// メニューに投稿数を追加する場合
-// add_filter('wp_nav_menu_objects', 'my_nav_count');
-// function my_nav_count($items) {
-//     foreach ($items as $item) {
-//         if ($item->object == 'category') {
-//             $item->title .= " (" . get_term($item->object_id, 'category')->count . ")";
-//             $args[] = $item;
-//         }
-//     }
-//     return $args;
-// }
+include(get_template_directory() . '/plug_in/manage/usa_add_tax_upload_image.php'); // カテゴリ画面に画像追加
+include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.php'); // 記事一覧にスラッグを表示する
+include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
+include(get_template_directory() . '/plug_in/manage/usa_add_tax_columns.php'); // カテゴリ一覧にカラム追加

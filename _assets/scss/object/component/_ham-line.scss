@@ -1,0 +1,82 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-ham-line {
+	position: absolute;
+	justify-content: center;
+	top: -2px;
+	right: 0;
+	width: v.$size--hamburger-container;
+	height: calc(v.$size--hamburger-container + 10px);
+	border-bottom-left-radius: 100%;
+
+	user-select: none; //テキスト選択を可能にするかどうか
+	cursor: pointer;
+	z-index: 100;
+
+	&::before {
+		position: absolute;
+		content: 'menu';
+		display: block;
+		bottom: 0;
+		color: #fff;
+	}
+
+	span {
+		position: absolute;
+		width: 30px;
+		height: 2px;
+		background: rgba(#fff, 0.5);
+		border-radius: 4px;
+
+		&.line-top {
+			top: 16px;
+			animation: line-top-back v.$time--hamburger-anim linear forwards;
+		}
+
+		&.line-middle {
+			top: 26px;
+			opacity: 1;
+		}
+
+		&.line-bottom {
+			top: 36px;
+			transform-origin: 100% 100%;
+			animation: line-bottom-back v.$time--hamburger-anim linear forwards;
+		}
+	}
+}
+
+// ハンバーガーcloseのとき
+@keyframes line-top-back {
+	40% {
+		transform: scale(2, 2) rotate(45deg) translateY(50px);
+	}
+	100% {
+		transform: scale(1, 1) rotate(-180deg) translateY(0);
+	}
+}
+
+@keyframes line-bottom-back {
+	0% {
+		transform: rotateZ(45deg);
+	}
+	50% {
+		transform: rotateZ(90deg);
+	}
+	100% {
+		transform: rotateZ(0);
+	}
+}
+
+// @keyframes line-middle-back {
+// 	0% {
+// 		transform: translateX(-110vw);
+// 	}
+// 	70% {
+// 		transform: translateX(-50vw);
+// 	}
+// 	100% {
+// 		transform: translateX(0);
+// 	}
+// }

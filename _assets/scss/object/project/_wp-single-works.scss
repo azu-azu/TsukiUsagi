@@ -1,6 +1,7 @@
 @use '../../foundation/mixin' as m;
 @use '../../foundation/variable' as v;
 
+// worksのみの設定
 .single-works {
 	.l-main {
 		.p-svg-cosmos {
@@ -9,7 +10,7 @@
 			}
 			&--ornament {
 				opacity: 0.4;
-				// @include m.breakpoint( moon-mini ) {
+				// @include m.breakpoint( moon_mini ) {
 				// }
 			}
 		}
@@ -17,15 +18,18 @@
 		.l-main__container {
 			margin-bottom: 300px;
 			padding: 0 20px;
-			@include m.breakpoint(topic-inner) {
-				padding: 0;
+
+			@include m.breakpoint(pc_mini) {
+				width: 50%;
 			}
+
 			.works-category-list {
 				margin-bottom: 5px;
 				.text {
 					line-height: 1.4;
 				}
 			}
+
 			.field-part {
 				margin-bottom: 100px;
 				&__contents {

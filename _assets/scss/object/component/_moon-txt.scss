@@ -7,7 +7,7 @@
 	font-size: v.$font-size--moon--sp;
 	letter-spacing: 1px;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		font-size: v.$font-size--moon--pc;
 	}
 }

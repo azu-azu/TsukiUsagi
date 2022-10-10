@@ -6,61 +6,25 @@
 
 	// チェックがついたら
 	&:checked {
-		& ~ .c-hamburger {
+		& ~ .c-ham-line {
+			position: fixed;
 			.line-top {
 				animation: line-top v.$time--hamburger-anim linear forwards;
 			}
 			.line-middle {
-				animation: line-middle v.$time--hamburger-anim linear forwards;
+				opacity: 0;
 			}
 			.line-bottom {
 				animation: line-bottom v.$time--hamburger-anim linear forwards;
 			}
 			&::before {
-				animation: overlay v.$time--hamburger-anim linear forwards;
+				content: 'close';
 			}
 		}
 
 		& ~ .p-header {
-			&::before,
-			.c-header-ttl--totop {
-				transition: none;
-				opacity: 0;
-			}
-
-			.c-nav {
-				overflow: inherit;
-				li {
-					animation: list-mini v.$time--hamburger-anim linear forwards;
-					@include m.breakpoint(iphone-normal) {
-						animation: list v.$time--hamburger-anim linear forwards;
-					}
-
-					@include m.breakpoint(moon-mini) {
-						animation: none;
-					}
-				}
-			}
-		}
-	}
-}
-
-.archive,
-.single-post,
-.single-works {
-	.c-ham-trigger {
-		&:checked {
-			& ~ .p-header {
-				.c-nav {
-					li {
-						animation: list-mini-topic v.$time--hamburger-anim
-							linear forwards;
-						@include m.breakpoint(iphone-normal) {
-							animation: list-topic v.$time--hamburger-anim linear
-								forwards;
-						}
-					}
-				}
+			.c-ham-menu {
+				right: 0;
 			}
 		}
 	}
@@ -68,85 +32,23 @@
 
 body.is-fix {
 	position: fixed;
-}
 
-// アニメーション
-
-// **
-// ハンバーガーopenのとき
-// **
-@keyframes overlay {
-	70% {
-		transform: scale(20);
-	}
-	100% {
-		transform: scale(30);
+	.c-back-to-moon {
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 
-@keyframes list-mini {
-	0% {
-		transform: translateX(-115vw);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(-120vw) translateY(150%);
-		opacity: 1;
-	}
-}
-@keyframes list {
-	0% {
-		transform: translateX(-95vw);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(-100vw) translateY(150%);
-		opacity: 1;
-	}
-}
-
-@keyframes list-mini-topic {
-	0% {
-		transform: translateX(-115vw);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(-85vw) translateY(250%);
-		opacity: 1;
-	}
-}
-@keyframes list-topic {
-	0% {
-		transform: translateX(-70vw);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(-90vw) translateY(250%);
-		opacity: 1;
-	}
-}
-
+// ハンバーガーopen
 @keyframes line-top {
-	40% {
-		transform: scale(2, 2) rotate(405deg);
+	0% {
+		transform: scale(2, 2) rotate(0deg);
 	}
 	80% {
-		transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
+		transform: scale(1, 1) rotate(135deg) translate(3px, -10px);
 	}
 	100% {
-		transform: scale(1, 1) rotate(495deg) translate(3px, -10px);
-	}
-}
-
-@keyframes line-middle {
-	0% {
-		transform: translateX(0);
-	}
-	50% {
-		transform: translateY(360deg);
-	}
-	100% {
-		transform: translateX(-110vw);
+		transform: scale(1, 1) rotate(135deg) translate(7px, -7px);
 	}
 }
 
@@ -154,46 +56,22 @@ body.is-fix {
 	0% {
 		transform: rotate(0);
 	}
-	50% {
-		transform: rotate(-135deg);
+	90% {
+		transform: rotate(0);
 	}
 	100% {
-		transform: rotate(45deg);
+		transform: rotate(45deg) translate(-4px, 4px);
 	}
 }
 
-// **
-// ハンバーガーcloseのとき
-// **
-@keyframes line-top-back {
-	40% {
-		transform: scale(2, 2) rotate(45deg) translateY(50px);
-	}
-	100% {
-		transform: scale(1, 1) rotate(-180deg) translateY(0);
-	}
-}
-
-@keyframes line-middle-back {
-	0% {
-		transform: translateX(-110vw);
-	}
-	70% {
-		transform: translateX(-50vw);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-
-@keyframes line-bottom-back {
-	0% {
-		transform: rotateZ(45deg);
-	}
-	50% {
-		transform: rotateZ(90deg);
-	}
-	100% {
-		transform: rotateZ(0);
-	}
-}
+// @keyframes line-middle {
+// 	0% {
+// 		transform: translateX(0);
+// 	}
+// 	50% {
+// 		transform: translateY(360deg);
+// 	}
+// 	100% {
+// 		transform: translateX(-110vw);
+// 	}
+// }

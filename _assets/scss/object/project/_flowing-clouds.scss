@@ -10,7 +10,7 @@
 	filter: blur(30px);
 	animation: parallax_fg3-sp linear 20s infinite both;
 
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		top: 5%;
 		animation: parallax_fg3 linear 20s infinite both;
 	}
@@ -39,7 +39,7 @@
 		filter: blur(25px);
 		opacity: 0.8;
 		animation: parallax_fg2-sp linear 30s infinite both;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			animation: parallax_fg2 linear 30s infinite both;
 		}
 		@include m.breakpoint(wide) {
@@ -50,7 +50,7 @@
 		filter: blur(35px);
 		opacity: 0.3;
 		animation: parallax_fg1-sp linear 40s infinite both;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			animation: parallax_fg1 linear 40s infinite both;
 		}
 		@include m.breakpoint(wide) {

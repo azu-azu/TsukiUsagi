@@ -4,9 +4,8 @@
 .p-gmenu {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	text-align: center;
 
 	p,
 	a {
@@ -20,7 +19,7 @@
 
 .p-header--back {
 	.p-gmenu {
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			li {
 				&:first-child:hover ~ .c-marker::before {
 					transform: scale(1);

@@ -5,11 +5,11 @@
 	position: relative;
 	width: v.$size--moon-big;
 	height: v.$size--moon-big;
-	top: v.$position--moon-mini-top;
+	top: v.$position--moon_mini-top;
 
-	@include m.breakpoint(moon-mini) {
-		width: v.$size--moon-mini;
-		height: v.$size--moon-mini;
+	@include m.breakpoint(moon_mini) {
+		width: v.$size--moon_mini;
+		height: v.$size--moon_mini;
 	}
 
 	.c-moon-txt {
@@ -18,7 +18,7 @@
 		right: 5%;
 		width: auto;
 
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			bottom: 18vmin;
 		}
 	}

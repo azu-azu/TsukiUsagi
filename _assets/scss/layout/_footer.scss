@@ -4,11 +4,58 @@
 .l-footer {
 	width: 100%;
 	height: 50vh;
+	position: relative;
+	overflow: hidden;
+
+	.c-sun,
+	.c-sky,
+	.c-sea,
+	.c-fin,
+	.c-wave,
+	.c-wave--color,
+	.c-copyright {
+		position: absolute;
+	}
+
+	.c-sun {
+		left: 50%;
+		transform: translateY(90px) translateX(-50%);
+		z-index: 1;
+	}
+
+	.c-sky {
+		top: 0;
+		z-index: 10;
+	}
+
+	.c-sea {
+		top: 45%;
+		z-index: 20;
+	}
+
+	.c-wave {
+		top: 36%;
+		z-index: 10;
+
+		&--color {
+			top: 56%;
+			left: -5%;
+			z-index: 10;
+			@include m.breakpoint(moon_mini) {
+				top: 55%;
+			}
+		}
+	}
+
+	.c-fin {
+		top: 70%;
+		z-index: 30;
+	}
 
 	.c-copyright {
 		bottom: 5%;
 		z-index: 30;
-		@include m.breakpoint(moon-mini) {
+		@include m.breakpoint(moon_mini) {
 			bottom: 10%;
 		}
 	}

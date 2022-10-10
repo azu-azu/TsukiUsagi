@@ -1,15 +1,10 @@
 @mixin breakpoint($point) {
-	@if $point == iphone-normal {
+	@if $point == iphone_normal {
 		@media (min-width: 374px) {
 			@content;
 		}
 	}
-	@if $point == ipad-mini {
-		@media (min-width: 438px) {
-			@content;
-		}
-	}
-	@if $point == moon-mini {
+	@if $point == moon_mini {
 		@media (min-width: 570px) {
 			@content;
 		}
@@ -19,22 +14,27 @@
 			@content;
 		}
 	}
-	@if $point == header-large {
+	@if $point == header_large {
 		@media (min-width: 740px) {
 			@content;
 		}
 	}
-	@if $point == back-to-moon-large {
+	@if $point == back_to_moon_large {
 		@media (min-width: 751px) {
 			@content;
 		}
 	}
-	@if $point == contact-col {
+	@if $point == sec_contact {
 		@media (min-width: 800px) {
 			@content;
 		}
 	}
-	@if $point == topic-inner {
+	@if $point == pc_mini {
+		@media (min-width: 890px) {
+			@content;
+		}
+	}
+	@if $point == pc {
 		@media (min-width: 960px) {
 			@content;
 		}

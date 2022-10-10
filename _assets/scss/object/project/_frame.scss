@@ -1,0 +1,52 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+@use '../project/loop';
+
+.p-frame {
+	display: flex;
+	justify-content: center;
+
+	.p-title,
+	.related-title {
+		margin-bottom: 20px;
+	}
+
+	.related-title {
+		font-size: 1.5rem;
+	}
+
+	&--ex {
+		@extend .p-frame;
+		min-height: 50vh;
+
+		.p-loop {
+			@extend .p-loop;
+			flex-direction: column;
+			align-items: center;
+
+			.post-sub-loop {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+.single {
+	.p-frame {
+		padding: 0 20px; // 関連記事のスマホ用
+		margin-bottom: 80px;
+		.p-loop {
+			width: 100%;
+			height: 100%;
+
+			@include m.breakpoint(pc_mini) {
+				width: 70%;
+				max-width: 800px;
+			}
+
+			.post-sub-loop {
+				width: 100%;
+			}
+		}
+	}
+}

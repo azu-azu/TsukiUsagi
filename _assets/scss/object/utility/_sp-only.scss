@@ -2,13 +2,21 @@
 
 .sp-only {
 	display: block;
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		display: none;
 	}
+
+	&--flex {
+		display: flex;
+		@include m.breakpoint(moon_mini) {
+			display: none;
+		}
+	}
 }
+
 .sp-none {
 	display: none;
-	@include m.breakpoint(moon-mini) {
+	@include m.breakpoint(moon_mini) {
 		display: block;
 	}
 }

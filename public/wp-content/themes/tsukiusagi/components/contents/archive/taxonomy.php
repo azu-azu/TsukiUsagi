@@ -13,15 +13,13 @@ $title = '「' . $name . '」の記事一覧';
 
 <?php echo usa_set_heading_linear_show($tag, $title, 'main'); ?>
 <?php if (have_posts()) : ?>
-    <section class="p-related-contents">
-        <article class="p-related-contents__inner">
-            <ul class="post-sub-loop">
+    <section class="p-frame">
+        <article class="p-loop">
+            <ul class="p-posts-list post-sub-loop">
                 <?php while (have_posts()) : the_post(); ?>
-                    <?php $delay = 0; ?>
-                    <li class="c-anim-box--down js-scroll-show" data-js_delay="<?php echo $delay; ?>">
+                    <li class="p-posts-list__item">
                         <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>
                     </li>
-                    <?php $delay += 150; ?>
                 <?php endwhile; ?>
             </ul>
             <?php get_template_part('components/parts/pagination'); ?>

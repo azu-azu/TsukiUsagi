@@ -98,3 +98,22 @@
 		transform: translateX(200px) scaleX(-1.5) scaleY(1.5);
 	}
 }
+
+.home,
+.archive {
+	.c-read-more {
+		width: 120px;
+		line-height: 3;
+		background: rgba(255, 255, 255, 0.2);
+
+		a {
+			color: #fff;
+			font-size: 1.5rem;
+			transition: 0.5s;
+
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+}

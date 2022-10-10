@@ -1,0 +1,7 @@
+@use '../component/ba';
+
+.c-hover {
+	&:hover {
+		opacity: 0.5;
+	}
+}

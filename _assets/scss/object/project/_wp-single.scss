@@ -1,56 +1,70 @@
 @use '../../foundation/mixin' as m;
 @use '../../foundation/variable' as v;
 
+// postとworks共通
 .single {
 	.l-main {
+		// 関連記事もh2のためl-mainの中で設定
+		h2 {
+			position: relative;
+			display: inline-block;
+			font-size: 2rem;
+			padding: 0 10px;
+			overflow: hidden;
+
+			&::before,
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				content: '';
+				width: 100%;
+				height: 100%;
+				border-radius: 5px;
+				transform-origin: 0 0;
+			}
+
+			&::after {
+				filter: blur(2px);
+			}
+		}
+
 		.p-svg-cosmos {
 			&--ornament {
 				width: 2%;
 				left: 5%;
-				@include m.breakpoint(moon-mini) {
+				@include m.breakpoint(moon_mini) {
 					left: 15%;
 					opacity: 0.3;
 				}
 			}
 		}
 
-		.l-main__container {
-			.c-post-date {
-				font-size: 1rem;
-				margin-bottom: 10px;
-			}
-			.wp-post-image {
+		&__container {
+			.c-thumbnail {
 				opacity: 0.7;
+				margin-bottom: 40px;
 
-				&__container {
-					margin-bottom: 40px;
+				.svg-inline--fa,
+				.fa-external-link-alt {
+					position: absolute;
+					bottom: 5px;
+					left: 5px;
+					font-size: 3rem;
+					color: #9999;
+					opacity: 0.8;
+					z-index: 2;
+				}
 
-					.svg-inline--fa,
-					.fa-external-link-alt {
-						position: absolute;
-						bottom: 5px;
-						left: 5px;
+				.c-eye-catch-text {
+					font-size: 6vw;
+					margin-bottom: 0;
+					@include m.breakpoint(moon_mini) {
 						font-size: 3rem;
-						color: #9999;
-						opacity: 0.8;
-						z-index: 2;
-					}
-
-					.eye-catch-text {
-						font-size: 6vw;
-						margin-bottom: 0;
-						@include m.breakpoint(moon-mini) {
-							font-size: 3rem;
-							line-height: 2;
-						}
+						line-height: 2;
 					}
 				}
-			}
-
-			.c-falling-box {
-				position: absolute;
-				bottom: -10%;
-				left: 45%;
 			}
 		}
 	}
@@ -62,90 +76,12 @@
 	}
 }
 
-// コンテンツ内枠
-.single {
-	.l-main .l-main__container,
-	.p-related-contents__inner {
-		position: relative;
-		display: block;
-		width: 100%;
-
-		@include m.breakpoint(topic-inner) {
-			width: v.$width--topic-inner;
-		}
-	}
-}
-
 // タグリスト
 .single {
 	.c-field-list--white {
 		li {
 			list-style: none;
 			margin: 0;
-		}
-	}
-}
-
-// 見出し
-.single .l-main {
-	h2 {
-		position: relative;
-		display: inline-block;
-		font-size: 2rem;
-		padding: 0 10px;
-		overflow: hidden;
-
-		&::before,
-		&::after {
-			position: absolute;
-			top: 0;
-			left: 0;
-			display: block;
-			content: '';
-			width: 100%;
-			height: 100%;
-			border-radius: 5px;
-			transform-origin: 0 0;
-		}
-
-		&::after {
-			filter: blur(2px);
-		}
-	}
-}
-
-// 関連記事
-.single {
-	.p-related-contents {
-		width: 100%;
-		height: 100%;
-
-		&__inner {
-			padding: 0 20px;
-			@include m.breakpoint(topic-inner) {
-				padding: 0;
-			}
-
-			.p-svg-cosmos--crystal {
-				position: absolute;
-				top: -5%;
-				left: 0;
-			}
-
-			.p-ball-box {
-				position: absolute;
-				top: 10%;
-				left: 10%;
-				width: 80%;
-				height: 100%;
-
-				.c-ball {
-					&:nth-child(5) {
-						left: 0;
-						bottom: 20%;
-					}
-				}
-			}
 		}
 	}
 }
