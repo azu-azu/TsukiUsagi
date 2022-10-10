@@ -102,9 +102,14 @@
 .home,
 .archive {
 	.c-read-more {
-		width: 120px;
-		line-height: 3;
+		width: 20em;
+		line-height: 2.3;
+		border-radius: 10px;
 		background: rgba(255, 255, 255, 0.2);
+
+		&:hover {
+			transform: scale(1.1);
+		}
 
 		a {
 			color: #fff;

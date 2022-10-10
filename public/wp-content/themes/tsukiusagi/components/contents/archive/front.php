@@ -1,5 +1,5 @@
 <?php
-$num = 4;
+$num = 2;
 
 $args = array(
     'parent' => '0', // 親カテゴリのみ
