@@ -26,61 +26,47 @@
 	}
 }
 
-.single,
-.single-works,
-.archive {
-	.l-header {
-		position: fixed;
-		z-index: 1400;
+.l-header--lower {
+	z-index: 1400;
+	@include m.breakpoint(moon-mini) {
+		position: absolute;
+	}
 
-		@include m.breakpoint(moon-mini) {
-			position: absolute;
-			width: 100%;
+	.p-header {
+		@include m.breakpoint(wide) {
+			padding: 0 100px;
 		}
 
-		.p-header {
+		&::before {
+			background: linear-gradient(
+				to right,
+				rgba(0, 0, 0, 0.1) 10%,
+				rgba(255, 255, 255, 0.1) 30%,
+				rgba(255, 255, 255, 0.5) 90%,
+				rgba(0, 0, 0, 0.8) 100%
+			);
+
 			@include m.breakpoint(moon-mini) {
-				padding: 0 20px;
+				width: 100%;
+				left: 0;
 			}
 			@include m.breakpoint(wide) {
-				padding: 0 100px;
-			}
-
-			&::before {
 				background: linear-gradient(
 					to right,
 					rgba(0, 0, 0, 0.1) 10%,
-					rgba(255, 255, 255, 0.1) 30%,
-					rgba(255, 255, 255, 0.5) 90%,
+					rgba(255, 255, 255, 0.1) 50%,
+					rgba(255, 255, 255, 0.5) 80%,
 					rgba(0, 0, 0, 0.8) 100%
 				);
-
-				@include m.breakpoint(moon-mini) {
-					width: 100%;
-					left: 0;
-				}
-				@include m.breakpoint(header-large) {
-					width: 100%;
-					left: 0;
-				}
-				@include m.breakpoint(wide) {
-					background: linear-gradient(
-						to right,
-						rgba(0, 0, 0, 0.1) 10%,
-						rgba(255, 255, 255, 0.1) 50%,
-						rgba(255, 255, 255, 0.5) 80%,
-						rgba(0, 0, 0, 0.8) 100%
-					);
-				}
 			}
+		}
 
-			.p-gmenu {
-				justify-content: flex-end;
+		.p-gmenu {
+			justify-content: center;
 
-				.c-marker {
-					&::before {
-						background: rgba(255, 255, 0, 0.3);
-					}
+			.c-marker {
+				&::before {
+					background: rgba(255, 255, 0, 0.3);
 				}
 			}
 		}

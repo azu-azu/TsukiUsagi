@@ -1,0 +1,15 @@
+@use '../../foundation/mixin' as m;
+@use '../../foundation/variable' as v;
+
+.p-about {
+	margin: -100px 0 0 0;
+
+	.text {
+		transform: translateX(-50%, -50%);
+		font-size: v.$font-size--profile-slide--txt--sp;
+		line-height: 1.5;
+		@include m.breakpoint(moon-mini) {
+			font-size: v.$font-size--profile-slide--txt--pc;
+		}
+	}
+}

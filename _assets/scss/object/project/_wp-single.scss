@@ -2,12 +2,7 @@
 @use '../../foundation/variable' as v;
 
 .single {
-	.l-topic {
-		margin-top: 0;
-		@include m.breakpoint(moon-mini) {
-			margin-top: 100px;
-		}
-
+	.l-main {
 		.p-svg-cosmos {
 			&--ornament {
 				width: 2%;
@@ -19,11 +14,7 @@
 			}
 		}
 
-		.l-topic__container {
-			.c-title--section {
-				text-align: left;
-				text-indent: 0;
-			}
+		.l-main__container {
 			.c-post-date {
 				font-size: 1rem;
 				margin-bottom: 10px;
@@ -34,6 +25,7 @@
 				&__container {
 					margin-bottom: 40px;
 
+					.svg-inline--fa,
 					.fa-external-link-alt {
 						position: absolute;
 						bottom: 5px;
@@ -72,7 +64,7 @@
 
 // コンテンツ内枠
 .single {
-	.l-topic .l-topic__container,
+	.l-main .l-main__container,
 	.p-related-contents__inner {
 		position: relative;
 		display: block;
@@ -86,40 +78,16 @@
 
 // タグリスト
 .single {
-	.field-list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-		padding-left: 0;
-
+	.c-field-list--white {
 		li {
-			position: relative;
-			white-space: nowrap;
 			list-style: none;
 			margin: 0;
-
-			&::after {
-				position: absolute;
-				content: '';
-				display: block;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				border-radius: 20px;
-				opacity: 0.4;
-			}
-
-			.text {
-				line-height: 2;
-				padding: 0 10px;
-			}
 		}
 	}
 }
 
 // 見出し
-.single .l-topic,
-.p-related-contents {
+.single .l-main {
 	h2 {
 		position: relative;
 		display: inline-block;
@@ -153,7 +121,6 @@
 		height: 100%;
 
 		&__inner {
-			min-height: 700px;
 			padding: 0 20px;
 			@include m.breakpoint(topic-inner) {
 				padding: 0;
@@ -165,7 +132,7 @@
 				left: 0;
 			}
 
-			.c-ball__container {
+			.p-ball-box {
 				position: absolute;
 				top: 10%;
 				left: 10%;

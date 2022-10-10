@@ -49,6 +49,8 @@ function usa_set_the_post_thumbnail($size, $type) {
           $png = "vba";
         } elseif (has_category('learn')) {
           $png = "learn";
+        } elseif (has_category('git')) {
+          $png = "git";
         } else {
           $class = "";
           $png = "default";

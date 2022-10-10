@@ -4,11 +4,16 @@
 .p-related-contents {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	color: #fff;
 
 	&__inner {
+		position: relative;
+		width: 80vw;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 
 		.p-title,
 		.related-title {
@@ -102,8 +107,8 @@
 	.p-related-contents,
 	.p-related-contents--ex {
 		.post-sub-loop {
-			width: 80vw;
-			margin-bottom: 80px;
+			width: 100%;
+			margin-bottom: 40px;
 		}
 	}
 

@@ -2,37 +2,24 @@
 @use '../foundation/variable' as v;
 
 .l-main {
-	margin-top: -100px;
 	width: 100vw;
+	margin: 50px 0 80px 0;
 	color: #fff;
 	overflow: hidden;
 
+	&__inner {
+		width: 100%;
+		min-height: 100vh;
+	}
+
+	&__container {
+		max-width: 1000px;
+		margin: auto;
+		justify-content: center;
+		align-items: center;
+	}
+
 	.text {
-		transform: translateX(-50%, -50%);
-		font-size: v.$font-size--profile-slide--txt--sp;
-		line-height: 1.5;
-		@include m.breakpoint(moon-mini) {
-			font-size: v.$font-size--profile-slide--txt--pc;
-		}
-	}
-
-	// 背景で静止している星
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 3px;
-		height: 3px;
-		border-radius: 50%;
-	}
-	&::before {
-		box-shadow: v.$box-shadow--star-purple;
-	}
-
-	&::after {
-		box-shadow: v.$box-shadow--star-green;
+		font-size: 1.5rem;
 	}
 }

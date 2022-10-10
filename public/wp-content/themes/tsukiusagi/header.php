@@ -10,9 +10,16 @@
 </head>
 
 <body <?php
-      if (is_single() || is_archive() || is_page()) {
-        body_class('c-bg--gradient-main');
+      if (is_page('about')) {
+        body_class('p-about');
       } else {
-        body_class();
+        body_class('c-bg--night');
       }
       ?>>
+
+  <?php
+  if (is_page('about')) {
+    get_template_part('components/header/about');
+  } else {
+    get_template_part('components/header/main');
+  }

@@ -1,0 +1,33 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-anim-turn {
+	animation: anim_turn 30s infinite;
+}
+
+@keyframes anim_turn {
+	0% {
+		transform: scaleX(1);
+	}
+	45% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scaleX(-1);
+	}
+	95% {
+		transform: scaleX(-1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+// 短距離にする場合
+.p-about {
+	.c-anim-turn {
+		@include m.breakpoint(moon-mini) {
+			animation: anim_turn 100s infinite;
+		}
+	}
+}

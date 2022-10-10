@@ -93,8 +93,8 @@ $color--moon-waning-shadow: $color--sub;
 $color--moon-shadow-start: rgba(255, 255, 1, 0.5);
 $color--moon-shadow-middle: rgba(255, 140, 140, 0.5);
 
-// ボールの色
-$color--cosmos-ball: linear-gradient(
+// コスモス色
+$color--cosmos: linear-gradient(
 	0deg,
 	rgba(255, 255, 255, 0.1),
 	rgba(255, 255, 255, 0.2),
@@ -188,7 +188,7 @@ $height--p-card--header: 30px;
 // linear-light
 $width--linear-light--home: 300px;
 
-// l-topicの内枠
+// l-mainの内枠
 $width--topic-inner: 50%;
 
 // first-view

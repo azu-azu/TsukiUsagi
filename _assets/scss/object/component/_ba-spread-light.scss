@@ -1,0 +1,45 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+@use './ba';
+
+.c-ba-spread-light {
+	@extend .c-ba;
+	position: relative;
+	display: block;
+
+	&::after {
+		top: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		filter: blur(10px);
+		z-index: 1;
+	}
+
+	@include m.breakpoint(moon-mini) {
+		&:hover {
+			&::after {
+				opacity: 1;
+				transform: scale(2);
+				filter: blur(100px);
+			}
+		}
+	}
+
+	&--yellow {
+		@extend .c-ba-spread-light;
+		&::after {
+			background: v.$color--g-circle;
+			transition: 3s ease;
+		}
+	}
+
+	&--white {
+		@extend .c-ba-spread-light;
+		&::after {
+			background: #fff;
+			transition: 2s ease;
+			opacity: 0.1;
+		}
+	}
+}

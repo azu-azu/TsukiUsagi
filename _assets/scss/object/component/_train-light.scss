@@ -1,0 +1,8 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-train-light {
+	height: 0;
+	width: 100px;
+	box-shadow: 5px 5px 32px 7px v.$color--sub;
+}

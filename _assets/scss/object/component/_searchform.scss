@@ -1,0 +1,65 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.c-searchform {
+	position: relative;
+	width: 230px;
+	height: 40px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 20px;
+	outline: none;
+
+	button {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		top: 0;
+		right: 5%;
+		font-size: 20px;
+
+		&__icon {
+			color: #fff;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+		}
+	}
+
+	input[type='text'] {
+		display: block;
+		width: 100%;
+		height: 100%;
+		font-size: 2rem;
+		line-height: 2;
+		padding: 0 45px 0 20px;
+
+		background: rgba(255, 255, 255, 0.2);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-right: 1px solid rgba(255, 255, 255, 0.2);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 20px;
+		outline: none;
+
+		&::placeholder {
+			font-size: 1.5rem;
+			color: #d7d7d7;
+		}
+
+		&:focus {
+			border: 1px solid #fff;
+		}
+
+		&:not(:placeholder-shown) {
+			color: #fff;
+			font-weight: v.$font-weight--light;
+		}
+
+		&:focus,
+		&:not(:placeholder-shown) {
+			~ .place-holder {
+				display: none;
+			}
+		}
+	}
+}

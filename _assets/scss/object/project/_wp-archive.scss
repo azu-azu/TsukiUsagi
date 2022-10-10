@@ -1,11 +1,8 @@
 @use '../../foundation/mixin' as m;
 @use '../../foundation/variable' as v;
 
+.home,
 .archive {
-	.l-topic {
-		margin-top: 50px;
-	}
-
 	.c-title {
 		&--section {
 			font-size: 4vw;

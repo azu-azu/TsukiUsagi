@@ -1,0 +1,8 @@
+.c-ba {
+	&::before,
+	&::after {
+		position: absolute;
+		display: block;
+		content: '';
+	}
+}
