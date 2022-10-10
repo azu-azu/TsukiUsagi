@@ -1,6 +1,9 @@
 @use '../../foundation/mixin' as m;
 .cstmreba {
 	margin-bottom: 40px;
+	padding: 20px;
+	border: 1px solid #555;
+	border-radius: 10px;
 
 	.booklink {
 		&-box {
@@ -23,7 +26,7 @@
 			height: 100%;
 
 			@include m.breakpoint(tablet) {
-				width: 20%;
+				width: 30%;
 			}
 
 			a {
@@ -46,5 +49,17 @@
 		&-powered-date {
 			display: none;
 		}
+	}
+}
+
+.shoplinkrakuten {
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 10px;
+	background: #f1cafb;
+
+	a {
+		color: #222;
 	}
 }
