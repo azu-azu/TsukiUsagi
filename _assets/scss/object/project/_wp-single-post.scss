@@ -63,8 +63,10 @@
 		.c-separator-cloud__container,
 		.c-separator-cloud--bottom {
 			width: 200%;
+			margin-left: -10px;
 			@include m.breakpoint(moon_mini) {
 				width: 100%;
+				margin-left: 0;
 			}
 		}
 	}
