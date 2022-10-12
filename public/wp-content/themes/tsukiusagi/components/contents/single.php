@@ -18,7 +18,7 @@ $main_inner_class = 'l-main__inner';
         </article>
     </section>
 
-    <div class="c-separator-cloud--bottom">';
+    <div class="c-separator-cloud--bottom">
         <?php get_template_part('components/parts/separator'); ?>
     </div>
 

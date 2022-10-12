@@ -20,10 +20,7 @@
 		.p-posts-list {
 			&__figure {
 				.c-eye-catch-text {
-					font-size: 5vw;
-					@include m.breakpoint(moon_mini) {
-						font-size: 2rem;
-					}
+					font-size: clamp(20px, 20px + 0.24vw, 22px);
 				}
 			}
 		}
