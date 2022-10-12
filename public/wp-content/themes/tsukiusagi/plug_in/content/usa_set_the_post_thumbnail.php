@@ -44,6 +44,7 @@ function usa_set_the_post_thumbnail($size, $type) {
           break;
 
         case 'sub': // サブループの場合
+          var_dump($cat);
           echo '<a class="' . $class_link . '" href="' . esc_url(get_permalink()) . '">
           <figure class=' . $class_container_sub . '>';
           break;

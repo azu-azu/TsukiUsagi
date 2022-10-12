@@ -208,3 +208,11 @@ include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.p
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_add_tax_columns.php'); // カテゴリ一覧にカラム追加
 include(get_template_directory() . '/plug_in/manage/usa_set_post_views.php'); // 閲覧数の表示
+
+
+
+add_filter('jetpack_implode_frontend_css', '__return_false');
+add_action('wp_enqueue_scripts', 'dequeue_devicepx', 20);
+function dequeue_devicepx() {
+    wp_dequeue_script('devicepx');
+}
