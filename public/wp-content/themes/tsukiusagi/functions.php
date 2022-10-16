@@ -86,6 +86,13 @@ function tsukiusagi_script() {
 add_action('wp_enqueue_scripts', 'tsukiusagi_script');
 
 
+function usa_admin_style() {
+    wp_enqueue_style('usa-admin-style', get_template_directory_uri() . '/css/usa-admin-style.css');
+}
+add_action('admin_enqueue_scripts', 'usa_admin_style');
+
+
+
 
 /**
  * jsを読み込む（true:フッターで読み込み/第四引数：キャッシュ自動クリア）
@@ -102,7 +109,7 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 function file_load_scripts_styles() {
     if (is_front_page() || is_home() || is_page('home') || is_archive()) {
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
-        wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
+        // wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
 
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
