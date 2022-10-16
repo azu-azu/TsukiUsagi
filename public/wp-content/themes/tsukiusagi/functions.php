@@ -86,6 +86,13 @@ function tsukiusagi_script() {
 add_action('wp_enqueue_scripts', 'tsukiusagi_script');
 
 
+function usa_admin_style() {
+    wp_enqueue_style('usa-admin-style', get_template_directory_uri() . '/css/usa-admin-style.css');
+}
+add_action('admin_enqueue_scripts', 'usa_admin_style');
+
+
+
 
 /**
  * jsを読み込む（true:フッターで読み込み/第四引数：キャッシュ自動クリア）

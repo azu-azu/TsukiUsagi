@@ -20,13 +20,18 @@ function usa_add_tax_upload_image($tag) {
     <tr class="form-field">
         <th><label for="upload_image">画像URL</label></th>
         <td>
-            <input id="upload_image" type="text" size="36" name="Cat_meta[img]" value="<?php if (isset($cat_meta['img'])) echo esc_html($cat_meta['img']) ?>" /><br />
-            画像を追加: <img src="images/media-button-other.gif" alt="画像を追加" id="upload_image_button" value="Upload Image" style="cursor:pointer;" />
+            <input type="text" name="Cat_meta[img]" value="<?php if (isset($cat_meta['img'])) echo esc_html($cat_meta['img']) ?>" id="upload_image" />
+            <input type="button" name="media-upload" value="画像をアップロード" id="js-media-btn" />
+            <input type="button" name="media-clear" value="画像を削除" id="js-media-remove-btn" />
+            <div id="thumbnail" class="form-field thumbnail">
+                <img class="uploded-thumbnail" src="<?php if (isset($cat_meta['img'])) echo esc_html($cat_meta['img']) ?>" alt="選択中の画像">
+            </div>
         </td>
     </tr>
 <?php
 }
 add_action('edit_category_form_fields', 'usa_add_tax_upload_image');
+
 
 
 // 保存処理
@@ -49,19 +54,9 @@ add_action('edited_term', 'usa_save_extra_category_fileds');
 function usa_admin_scripts() {
     global $taxonomy;
     if ('category' == $taxonomy) {
-        wp_enqueue_script('media-upload');
-        wp_enqueue_script('thickbox');
+        wp_enqueue_media();
         wp_register_script('my-upload', get_template_directory_uri() . '/js/manage/myUpload.js');
         wp_enqueue_script('my-upload');
     }
 }
-function usa_admin_styles() {
-    global $taxonomy;
-    if ('category' == $taxonomy) {
-        wp_enqueue_style('thickbox');
-    }
-}
 add_action('admin_print_scripts', 'usa_admin_scripts');
-add_action('admin_print_styles', 'usa_admin_styles');
-
-// ※get_bloginfo('template_directory')は非推奨
