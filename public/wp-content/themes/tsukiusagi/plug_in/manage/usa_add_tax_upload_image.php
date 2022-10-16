@@ -1,6 +1,9 @@
 <?php
 
-// 参考 https://www.webopixel.net/wordpress/436.html
+// 参考
+// https://www.webopixel.net/wordpress/436.html
+// https://nelog.jp/media-uploader-javascript-api
+// https://www.torat.jp/wordpress-image-uploader/
 
 /**
  * Plugin Name: usa_add_tax_upload_image
