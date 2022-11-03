@@ -34,9 +34,7 @@ foreach ($categories as $category) :
             echo usa_set_heading_linear_show('h2', $title, 'inline', $url);
             usa_set_extra_sub_loop($args);
 
-            if ($count > $num) {
-                echo usa_make_link_button('» もっと見る', '', $url);
-            }
+            if ($count > $num) echo usa_make_link_button('» もっと見る', '', $url);
             ?>
         </article>
     </section>
