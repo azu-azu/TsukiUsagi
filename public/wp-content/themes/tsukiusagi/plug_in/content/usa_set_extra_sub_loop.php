@@ -20,7 +20,7 @@ function usa_set_extra_sub_loop($args) {
 ?>
 
   <?php if ($my_query->have_posts()) : ?>
-    <ul class="p-posts-list post-sub-loop">
+    <ul class="p-posts-list p-post-sub-loop">
       <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
         <li class="p-posts-list__item">
           <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>

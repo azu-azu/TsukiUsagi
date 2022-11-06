@@ -8,6 +8,11 @@ $main_container_class = 'l-main__container';
     <article class="<?php echo $main_container_class; ?>">
         <?php if (is_front_page() || is_home() || is_page('home')) : ?>
             <?php get_template_part('components/contents/archive/front'); ?>
+
+            <?php
+            // できあがるまでは、ここはコメントアウトする
+            get_template_part('components/contents/archive/vba-cat'); ?>
+
         <?php elseif (is_search()) : ?>
             <?php get_template_part('components/contents/archive/search'); ?>
         <?php elseif (get_post_type() === 'post') : ?>

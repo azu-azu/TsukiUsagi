@@ -34,6 +34,7 @@
 	&--main,
 	&--post,
 	&--section,
+	&--tag,
 	&--small {
 		@extend .c-title;
 	}
@@ -78,6 +79,11 @@
 			color: #555;
 			text-shadow: 1px 1px 4px #666;
 		}
+	}
+
+	&--tag {
+		color: #fff;
+		font-size: 1.5rem;
 	}
 
 	&--small {

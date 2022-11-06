@@ -8,7 +8,7 @@
 
     <section class="p-frame">
         <article class="p-loop">
-            <ul class="p-posts-list post-sub-loop">
+            <ul class="p-posts-list p-post-sub-loop">
                 <?php while (have_posts()) : the_post(); ?>
                     <li class="p-posts-list__item">
                         <?php echo usa_set_the_post_thumbnail('medium', 'sub'); ?>

@@ -9,26 +9,7 @@
 	}
 
 	&__item {
-		a {
-			width: 310px;
-			height: 235px;
-
-			display: grid;
-			grid-template-rows: 78% 22%;
-			place-items: center;
-			align-content: flex-start;
-			cursor: pointer;
-
-			border-radius: 20px;
-			opacity: 0.8;
-			transition: 0.7s ease;
-
-			@include m.breakpoint(moon_mini) {
-				&:hover {
-					transform: scale(1.1);
-				}
-			}
-		}
+		width: 100%;
 	}
 
 	&__body {

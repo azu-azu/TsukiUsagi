@@ -1,11 +1,15 @@
 <?php
+// スラッグからID取得
+$vba_cat_id = get_category_by_slug('vba');
+$vba_cat_id = $vba_cat_id->cat_ID;
+
 $num = 2;
 
 $args = array(
     'parent' => '0', // 親カテゴリのみ
     'orderby' => 'term_order',
     'order' => 'ASC',
-    //'exclude' => '1,2,3', // 含めたくないカテゴリ
+    'exclude' => $vba_cat_id, // 含めたくないカテゴリ
     //'include' => '4,5,6' // 含めたいカテゴリ
 );
 
