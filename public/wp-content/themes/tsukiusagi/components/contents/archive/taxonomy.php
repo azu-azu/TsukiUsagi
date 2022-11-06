@@ -3,14 +3,15 @@ $parent_args = get_category_by_slug('vba'); // スラッグからカテゴリ情
 $vba_cat_id = $parent_args->cat_ID;
 
 $obj = get_queried_object();
-$name = $obj->name;
+$obj_name = $obj->name;
+$obj_id = $obj->cat_ID;
 
 // 親カテゴリがVBAかどうか判定
 $vba = false;
-if ($obj->category_parent === $vba_cat_id) $vba = true;
+if ($obj->category_parent === $vba_cat_id || $obj_id === $vba_cat_id) $vba = true;
 
 if ($vba) $title = 'VBA';
-if (!$vba) $title = '「' . $name . '」の記事一覧';
+if (!$vba) $title = '「' . $obj_name . '」の記事一覧';
 $tag = 'h1';
 ?>
 
