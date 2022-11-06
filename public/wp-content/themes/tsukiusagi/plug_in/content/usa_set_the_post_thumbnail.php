@@ -15,14 +15,18 @@
 function usa_set_the_post_thumbnail($size, $type) {
   global $post;
 
+  // クラス名
   if ($type === 'main') {
     $class_container = "c-thumbnail";
   } elseif ($type === 'sub') {
     $class_container = "p-posts-list__figure c-thumbnail";
   }
 
-
   $class_link = "c-bg--white--opacity";
+  $class_body = "p-posts-list__body";
+  $class_title = "p-posts-list__title";
+
+  // サムネイル
   $default_img_url = do_shortcode('[uri]') . '/img/thumbnail/default.png';
   $thumbnail_url = "";
   if (has_post_thumbnail()) {
@@ -78,8 +82,8 @@ function usa_set_the_post_thumbnail($size, $type) {
       </figure>
 
       <?php if ($type === 'sub') { ?>
-        <div class="p-posts-list__body">
-          <div class="p-posts-list__title"><?php the_title(); ?></div>
+        <div class="<?php echo $class_body; ?>">
+          <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
         </div>
       </a>
     <?php }; ?>
@@ -98,8 +102,8 @@ function usa_set_the_post_thumbnail($size, $type) {
       </figure>
 
       <?php if ($type === 'sub') { ?>
-        <div class="p-posts-list__body">
-          <div class="p-posts-list__title"><?php the_title(); ?></div>
+        <div class="<?php echo $class_body; ?>">
+          <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
         </div>
       <?php }; ?>
 
