@@ -17,9 +17,9 @@ $class_body = "p-posts-list__body";
 $class_title = "p-posts-list__title";
 
 // サムネイル
-$cat_data = get_option('cat_' . intval($obj->category_parent));
-$thumbnail_url = esc_html($cat_data['img']);
-$thumbnail = '<img src="' . $thumbnail_url . '" alt="サムネイル">';
+// $cat_data = get_option('cat_' . intval($obj->category_parent));
+// $thumbnail_url = esc_html($cat_data['img']);
+// $thumbnail = '<img src="' . $thumbnail_url . '" alt="サムネイル">';
 ?>
 
 
@@ -68,7 +68,7 @@ $thumbnail = '<img src="' . $thumbnail_url . '" alt="サムネイル">';
 
 
 <?php
-// たぶんこれは不要
+// 親カテゴリかどうかを判定する場合
 // if ($obj &&  get_post_type() === 'post' && !is_tag() && $obj->parent === 0) {
 //     // postで親カテゴリの場合
 //     $name = $obj->cat_name;
