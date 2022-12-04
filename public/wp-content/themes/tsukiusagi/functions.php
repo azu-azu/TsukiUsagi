@@ -215,6 +215,8 @@ include(get_template_directory() . '/plug_in/manage/usa_add_posts_columns_slug.p
 include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.php'); // 固定ページ一覧にスラッグを表示する
 include(get_template_directory() . '/plug_in/manage/usa_add_tax_columns.php'); // カテゴリ一覧にカラム追加
 include(get_template_directory() . '/plug_in/manage/usa_set_post_views.php'); // 閲覧数の表示
+include(get_template_directory() . '/plug_in/manage/usa_column_tags_sortable.php'); // タグを並び替えられる要素にする
+
 
 
 
