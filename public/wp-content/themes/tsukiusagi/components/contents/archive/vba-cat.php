@@ -13,7 +13,9 @@ $url = get_category_link($vba_cat_id);
 $children = get_categories(array(
     'child_of' => $vba_cat_id,
     'orderby' => 'ID', // ソート規則
+    'order' => 'ASC',
 ));
+
 
 // クラス名
 $class_link = "c-bg--white--opacity";
