@@ -51,7 +51,7 @@ $class_title = "p-posts-list__title";
                         $tag_posts = get_posts($tag_args);
                         ?>
                         <?php foreach ($tag_posts as $post) : setup_postdata($post); ?>
-                            <li class="p-posts-list__item">
+                            <li class="p-posts-list__item--list">
                                 <a class="<?php echo $class_link; ?>" href="<?php echo esc_url(get_permalink()); ?>">
                                     <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
                                 </a>

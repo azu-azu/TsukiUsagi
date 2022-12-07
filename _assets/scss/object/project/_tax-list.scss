@@ -13,7 +13,8 @@
 	margin-bottom: 20px;
 
 	.p-posts-list {
-		&__item {
+		&__item,
+		&__item--list {
 			display: flex;
 			justify-content: center;
 
@@ -26,9 +27,9 @@
 		}
 
 		&__title {
-			padding: 0 20px;
+			padding: 10px 20px;
 			text-align: left;
-			line-height: 3;
+			line-height: 1.7;
 		}
 	}
 }
