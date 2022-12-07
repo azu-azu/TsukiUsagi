@@ -3,6 +3,7 @@
 @use '../project/loop';
 
 .p-frame {
+	padding: 0 20px;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 20px;
@@ -34,7 +35,6 @@
 
 .single {
 	.p-frame {
-		padding: 0 20px; // 関連記事のスマホ用
 		margin-bottom: 80px;
 		.p-loop {
 			width: 100%;
