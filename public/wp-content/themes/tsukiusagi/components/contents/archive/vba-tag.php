@@ -8,6 +8,10 @@ $title = $cat_name;
 $post_ids = get_objects_in_term($cat_id, 'category');
 $tags_array = wp_get_object_terms($post_ids, 'post_tag');
 
+// 説明順の数値で並べ替え
+usort($tags_array, function ($a, $b) {
+    return $a->description - $b->description;
+});
 
 // フロント設定
 // クラス名
@@ -16,10 +20,6 @@ $class_container = "p-posts-list__figure c-thumbnail";
 $class_body = "p-posts-list__body";
 $class_title = "p-posts-list__title";
 
-// サムネイル
-// $cat_data = get_option('cat_' . intval($obj->category_parent));
-// $thumbnail_url = esc_html($cat_data['img']);
-// $thumbnail = '<img src="' . $thumbnail_url . '" alt="サムネイル">';
 ?>
 
 
