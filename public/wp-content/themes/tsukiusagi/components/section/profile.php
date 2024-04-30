@@ -37,10 +37,11 @@
 
         <li class="swiper-slide c-rabbit--2a">
           <article class="swiper-slide__content right">
-            <h3>ExcelVBA</h3>
+            <h3>Excel/Access VBA</h3>
             <p class="text">
-              ・自動化ツール作成<br>
-              ・機能設計
+              ・EUCツール作成<br>
+              ・機能,画面,テーブル設計<br>
+              ・SQL
             </p>
           </article>
         </li>
@@ -50,7 +51,7 @@
             <h3>経歴</h3>
             <p class="text">
               ・企業でVBA開発<br>
-              ・2021.5〜 WEB制作
+              ・WEB制作
             </p>
           </article>
         </li>

@@ -4,6 +4,7 @@
 .p-loop {
 	text-align: center;
 	z-index: 10;
+	width: 700px;
 
 	.p-post-sub-loop {
 		.p-posts-list {
@@ -19,5 +20,11 @@
 .home {
 	.p-loop {
 		margin-bottom: 60px;
+	}
+}
+
+.archive {
+	.p-loop {
+		width: inherit;
 	}
 }
