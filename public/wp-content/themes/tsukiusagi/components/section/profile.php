@@ -1,4 +1,4 @@
-<section class="p-sec-profile c-bg--gradient-f3" id="profile">
+<section class="p-sec-profile p-layer--f3 c-bg--gradient-f3" id="profile">
   <?php echo usa_set_heading_linear_show('h2', 'Profile', 'sec'); ?>
 
   <article class="p-sec-profile__cards c-anim-box--scaleup js-scroll-show">

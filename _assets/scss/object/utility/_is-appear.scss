@@ -1,0 +1,6 @@
+@use '../../foundation/mixin' as m;
+
+.is-appear {
+	transition: 0.2s;
+	opacity: 1;
+}

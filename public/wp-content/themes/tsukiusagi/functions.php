@@ -107,13 +107,24 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 
 // ページごとに読み込みファイルを変える
 function file_load_scripts_styles() {
-    if (is_front_page() || is_home() || is_page('home') || is_archive()) {
+    if (is_front_page() || is_home() || is_page('home')) {
+        wp_enqueue_script('scrollAppear', get_template_directory_uri() . '/js/common/myScrollAnimAppear.js', array(), '', true);
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
-        // wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
+        wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
+        wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
 
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        // wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
+        wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
+
+        wp_enqueue_script('milky-way', get_template_directory_uri() . '/js/parts/myMilkyWay.js', array(), 'particles-min', true);
+        wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
+    }
+    if (is_archive()) {
+        wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
+
+        wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
+        wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
@@ -122,23 +133,21 @@ function file_load_scripts_styles() {
 
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        // wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
     if (is_page()) { // 固定ページ共通
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
-
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
     }
-    if (is_page('about')) {
+    if (is_page('about')) { // プロフィール画面
         wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
         wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
-
         wp_enqueue_script('milky-way', get_template_directory_uri() . '/js/parts/myMilkyWay.js', array(), 'particles-min', true);
+
         wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
         wp_enqueue_script('swiper', get_template_directory_uri() . '/js/parts/mySwiper.js', array(), 'swiper-bundle', true);
         wp_enqueue_script('playing-box', get_template_directory_uri() . '/js/parts/myPlayingBox.js', array(), '', true);
@@ -155,7 +164,6 @@ function file_load_scripts_styles() {
 
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
-        // wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
@@ -194,7 +202,9 @@ include(get_template_directory() . '/plug_in/content/usa_set_tax_terms_links.php
 include(get_template_directory() . '/plug_in/content/usa_set_textarea_multiple_lines_data.php'); // カスタムフィールドの複数行の値（改行入力）をリストで出力する
 include(get_template_directory() . '/plug_in/content/usa_post_has_archive.php'); // 投稿のアーカイブページを作成する
 include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.php'); // 投稿のサムネイル設定
-include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 別ページの一覧を表示する
+include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 投稿ループ表示
+include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop_post.php'); // 投稿ループ表示
+include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop_cat.php'); // カテゴリ別の投稿ループ表示
 include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与：既存関数を使う場合
 include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
 include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示

@@ -42,7 +42,7 @@
 
 		&::placeholder {
 			font-size: 1.5rem;
-			color: #d7d7d7;
+			color: #060041;
 		}
 
 		&:focus {
@@ -50,7 +50,7 @@
 		}
 
 		&:not(:placeholder-shown) {
-			color: #fff;
+			color: #070707;
 			font-weight: v.$font-weight--light;
 		}
 

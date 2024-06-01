@@ -1,5 +1,5 @@
 <?php
-if (is_page('about')) {
+if (is_page('about') || is_front_page() || is_home() || is_page('home')) {
   $footer_class = 'p-footer--morning';
   $wave_color1 = 'rgba(204,218,213,0.5)';
   $wave_color4 = 'rgba(255,190,246,0.1)';
@@ -12,9 +12,8 @@ if (is_page('about')) {
 
 <footer class="l-footer <?php echo $footer_class; ?>">
 
-  <?php if (!(is_page('about'))) { ?>
+  <?php if (!(is_page('about') || is_front_page() || is_home() || is_page('home'))) { ?>
     <p class="p-go-home"><a href="<?php echo esc_url(home_url()); ?>">ホームへ戻る</a></p>
-    <?php get_search_form();; ?>
   <?php } ?>
 
   <div class="c-sky"></div>

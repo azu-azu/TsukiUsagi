@@ -2,11 +2,10 @@
 @use '../../object/component/bubbly-button';
 
 .p-category-nav {
-	width: 200px;
-	z-index: 30;
+	width: 230px;
 
 	.side-title {
-		height: 20px;
+		height: 25px;
 		display: flex;
 		align-items: center;
 		justify-content: center;

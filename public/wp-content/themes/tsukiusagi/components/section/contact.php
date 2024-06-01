@@ -1,4 +1,4 @@
-<section class="p-sec-contact c-bg--gradient-f4" id="contact">
+<section class="p-sec-contact p-layer--f4 c-bg--gradient-f4" id="contact">
   <?php echo usa_set_heading_linear_show('h2', 'Contact', 'sec'); ?>
 
   <article class="p-sec-contact__container">

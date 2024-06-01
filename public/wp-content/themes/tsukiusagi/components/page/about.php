@@ -3,6 +3,7 @@
 
 <main class="l-main p-about c-bg--gradient-main">
     <?php get_template_part('components/section/moon'); ?>
+    <?php get_template_part('components/parts/milky-way'); ?>
     <?php get_template_part('components/section/works'); ?>
     <?php get_template_part('components/section/blog'); ?>
     <?php get_template_part('components/section/profile'); ?>

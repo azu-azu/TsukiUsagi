@@ -2,12 +2,6 @@
 @use '../../foundation/mixin' as m;
 
 .p-sec-contact {
-	padding-top: v.$gap--sec-top;
-	padding-bottom: 100px;
-	min-height: 100vh;
-	background-color: transparent;
-	overflow: hidden;
-
 	&__container {
 		display: flex;
 		justify-content: center;
