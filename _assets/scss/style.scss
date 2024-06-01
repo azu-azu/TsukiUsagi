@@ -105,12 +105,14 @@
 @forward './object/project/_crater';
 @forward './object/project/_cstmreba';
 @forward './object/project/_first-view';
+@forward './object/project/_floating-star';
 @forward './object/project/_flowing-clouds';
 @forward './object/project/_footer';
 @forward './object/project/_frame';
 @forward './object/project/_gmenu';
 @forward './object/project/_go-home';
 @forward './object/project/_header';
+@forward './object/project/_layer';
 @forward './object/project/_loading-panel';
 @forward './object/project/_loading-clouds';
 @forward './object/project/_loading-curtain';
@@ -153,5 +155,7 @@
 // -----------------------------------------------------------------
 // Utility
 // -----------------------------------------------------------------
+@forward './object/utility/_is-appear';
+@forward './object/utility/_is-fade';
 @forward './object/utility/_sp-only';
 @forward './object/utility/_split-gap';

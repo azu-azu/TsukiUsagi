@@ -1,0 +1,6 @@
+@use '../../foundation/mixin' as m;
+
+.is-fade {
+	transition: 1s ease-in;
+	opacity: 0;
+}

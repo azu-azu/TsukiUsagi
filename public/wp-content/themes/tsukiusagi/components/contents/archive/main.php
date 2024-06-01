@@ -7,13 +7,16 @@ $main_container_class = 'l-main__container';
 <?php else : ?>
     <article class="<?php echo $main_container_class; ?>">
         <?php if (is_front_page() || is_home() || is_page('home')) : ?>
-            <?php get_template_part('components/contents/archive/front'); ?>
-            <?php get_template_part('components/contents/archive/category-ex'); ?>
+            <?php usa_set_extra_sub_loop_cat(2); ?>
 
         <?php elseif (is_search()) : ?>
             <?php get_template_part('components/contents/archive/search'); ?>
+
+            <!-- /blogページ -->
         <?php elseif (get_post_type() === 'post') : ?>
-            <?php get_template_part('components/contents/archive/post'); ?>
+            <?php usa_set_extra_sub_loop_cat(4); ?>
+            <!-- <?php usa_set_extra_sub_loop_post(10); ?> -->
+
         <?php elseif (get_post_type() === 'works') : ?>
             <?php get_template_part('components/contents/archive/works'); ?>
         <?php endif; ?>

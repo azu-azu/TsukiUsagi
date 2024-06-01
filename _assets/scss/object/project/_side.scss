@@ -1,17 +1,18 @@
 @use '../../foundation/mixin' as m;
 
 .p-side {
-	height: 100%;
-	position: relative;
-	display: flex;
+	display: grid;
 	justify-content: center;
 	padding-bottom: 40px;
+	z-index: 30;
+
+	// first-viewで表示しない
+	opacity: 0;
+	transition: 0.2s;
 
 	@include m.breakpoint(wide) {
 		position: fixed;
-		display: block;
-		width: inherit;
-		top: 30%;
+		top: 10%;
 		right: 40px;
 		z-index: 20;
 	}
@@ -25,10 +26,7 @@
 .p-contents {
 	&--post {
 		~ .p-side {
-			@include m.breakpoint(wide) {
-				position: static;
-				display: flex;
-			}
+			position: static;
 		}
 	}
 }

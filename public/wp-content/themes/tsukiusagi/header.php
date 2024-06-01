@@ -9,14 +9,17 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php
-      if (is_page('about')) {
-        body_class('p-about c-overlay');
-      } else {
-        body_class('c-overlay');
-      }
-      ?>>
+<?php
+if (is_page('about')) {
+  $body_class = 'p-about c-overlay';
+} elseif (is_front_page() || is_home() || is_page('home')) {
+  $body_class = 'c-overlay c-bg--gradient-main';
+} else {
+  $body_class = 'c-overlay';
+}
+?>
 
+<body <?php body_class($body_class); ?>>
   <?php
   if (is_page('about')) {
     get_template_part('components/header/about');

@@ -3,7 +3,6 @@
 
 .p-header {
 	@include m.breakpoint(moon_mini) {
-		transition: 1s ease-in;
 		padding: 0 v.$gap--p-header-side--pc;
 	}
 
@@ -51,13 +50,6 @@
 		&--totop {
 			visibility: hidden;
 			white-space: nowrap;
-		}
-	}
-
-	//下スクロールでフェード
-	&.is-fade {
-		@include m.breakpoint(moon_mini) {
-			opacity: 0;
 		}
 	}
 }

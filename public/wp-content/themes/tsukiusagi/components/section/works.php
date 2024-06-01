@@ -1,4 +1,4 @@
-<section class="p-sec-works c-bg--gradient-f1" id="works">
+<section class="p-sec-works p-layer--f1 c-bg--gradient-f1" id="js-pos">
   <?php echo usa_set_heading_linear_show('h2', 'works', 'sec'); ?>
 
   <article class="c-card--works c-read-more c-rabbit--1b c-rabbit--3a c-anim-box--scaleup js-scroll-show">

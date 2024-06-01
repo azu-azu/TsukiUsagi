@@ -2,14 +2,6 @@
 @use '../../foundation/mixin' as m;
 
 .p-sec-works {
-	padding-top: v.$gap--sec-top;
-	padding-bottom: v.$gap--sec-bottom;
-	background-color: transparent;
-
-	@include m.breakpoint(moon_mini) {
-		margin-top: -150px;
-	}
-
 	.c-card--works {
 		&::before,
 		&::after {

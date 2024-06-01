@@ -1,0 +1,29 @@
+@use '../../foundation/variable' as v;
+@use '../../foundation/mixin' as m;
+
+.p-layer {
+	background-color: transparent;
+	padding-top: v.$gap--sec-top;
+
+	&--f1 {
+		@extend .p-layer;
+		padding-bottom: v.$gap--sec-bottom;
+
+		@include m.breakpoint(moon_mini) {
+			margin-top: -150px;
+		}
+	}
+
+	&--f3 {
+		@extend .p-layer;
+		min-height: 100vh;
+		padding-bottom: v.$gap--sec-bottom;
+	}
+
+	&--f4 {
+		@extend .p-layer;
+		min-height: 100vh;
+		padding-bottom: 100px;
+		overflow: hidden;
+	}
+}

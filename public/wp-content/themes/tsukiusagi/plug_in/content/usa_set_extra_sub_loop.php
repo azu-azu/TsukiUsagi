@@ -9,6 +9,7 @@
  * Author URI: https://tsukiusagi.biz
  * License:
  *
+ * $argsの中身例
  * @param string $post_type：表示させたい一覧の投稿タイプ名
  * @param long $posts_per_page：1ページの表示数
  * @param string $orderby：ソート順

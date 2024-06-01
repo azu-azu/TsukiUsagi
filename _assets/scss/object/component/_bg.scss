@@ -3,15 +3,6 @@
 @use '../component/ba';
 
 .c-bg {
-	//全体を覆う
-	&--gradient-main {
-		background: radial-gradient(
-			ellipse at center,
-			#1b2735 40%,
-			#090a0f 100%
-		);
-	}
-
 	// 全体背景：夜バージョン
 	&--night {
 		background: linear-gradient(
@@ -35,32 +26,54 @@
 		background: v.$color--white--opacity60;
 	}
 
-	// aboutページ背景
-	//front:works
-	&--gradient-f1 {
-		background: linear-gradient(to bottom, rgba(61, 136, 175, 0), #12577a);
-	}
+	&--gradient {
+		//全体を覆う
+		&-main {
+			background: radial-gradient(
+				ellipse at center,
+				#1b2735 40%,
+				#090a0f 100%
+			);
+		}
 
-	//front:blog
-	&--gradient-f2 {
-		background: linear-gradient(
-			to bottom,
-			#12577a,
-			rgba(73, 147, 183, 0.5)
-		);
-	}
+		// footerまでのグラデーション
+		&-sub {
+			background: linear-gradient(
+				to bottom,
+				rgba(61, 136, 175, 0),
+				#12577a,
+				#f3bf7b)
+		}
 
-	//front:profile
-	&--gradient-f3 {
-		background: linear-gradient(
-			to bottom,
-			rgba(73, 147, 183, 0.5),
-			#456c82
-		);
-	}
+		// グラデーション分割の場合
+		&-f1 {
+			background: linear-gradient(
+				to bottom,
+				rgba(61, 136, 175, 0),
+				#12577a);
+		}
 
-	//front:contact
-	&--gradient-f4 {
-		background: linear-gradient(to bottom, #456c82, #f3bf7c);
+		&-f2 {
+			background: linear-gradient(
+				to bottom,
+				#12577a,
+				rgba(73, 147, 183, 0.5)
+			);
+		}
+
+		&-f3 {
+			background: linear-gradient(
+				to bottom,
+				rgba(73, 147, 183, 0.5),
+				#456c82
+			);
+		}
+
+		&-f4 {
+			background: linear-gradient(
+				to bottom,
+				#456c82,
+				#f3bf7c);
+		}
 	}
 }

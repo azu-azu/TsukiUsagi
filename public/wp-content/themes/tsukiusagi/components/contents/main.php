@@ -12,7 +12,6 @@ if (is_front_page() || is_home() || is_page('home')) {
 ?>
 
 <main class="<?php echo $main_class; ?> <?php echo $sub_class; ?>">
-  <?php get_search_form(); ?>
   <?php
   if (!is_category()) get_template_part('components/text/page-ttl');
   if (is_front_page() || is_home() || is_page('home') || is_archive() || is_search()) {
@@ -22,4 +21,3 @@ if (is_front_page() || is_home() || is_page('home')) {
   }
   ?>
 </main>
-<?php get_template_part('components/contents/side'); ?>
