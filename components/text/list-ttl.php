@@ -6,4 +6,3 @@
   }
 
   echo usa_set_heading_linear_show('h2', $title, 'list');
-?>

@@ -1,7 +1,7 @@
 particlesJS('js-sea-stars', {
 	particles: {
 		number: {
-			value: 200,
+			value: 250,
 			density: { enable: true, value_area: 700 },
 		},
 		// color: { value: '#fff98e' },
@@ -39,7 +39,7 @@ particlesJS('js-sea-stars', {
 			straight: false,
 			out_mode: 'bounce',
 			bounce: true,
-			attract: { enable: false, rotateX: 600, rotateY: 1200 },
+			attract: { enable: true, rotateX: 600, rotateY: 1200 },
 		},
 	},
 	interactivity: {

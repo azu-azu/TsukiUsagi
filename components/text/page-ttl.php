@@ -1,28 +1,19 @@
 <?php
 $tag = 'p';
-$type = 'page';
+$type = 'main';
+$url = '';
 
-if (is_archive()) {
-  switch (get_post_type()) {
-    case 'post':
-      $title = "Blog list";
-      break;
 
-    case 'works':
-      $title = "Works list";
-      break;
+if (get_post_type() === 'works') {
+  $url = home_url('/') . 'works';
+  if (is_archive()) {
+    $title = "Works list";
+  } elseif (is_single()) {
+    $title = "Works";
   }
-} elseif (is_single()) {
-  switch (get_post_type()) {
-    case 'post':
-      $title = "月うさぎBlog";
-      $type = "single";
-      break;
+} else {
+  $url = home_url('/');
+  $title = "月うさぎBlog";
+}
 
-    case 'works':
-      $title = "Works";
-      break;
-  }
-};
-
-echo usa_set_heading_linear_show($tag, $title, $type);
+echo usa_set_heading_linear_show($tag, $title, $type, $url);

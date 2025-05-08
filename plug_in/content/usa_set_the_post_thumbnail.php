@@ -14,111 +14,102 @@
  */
 function usa_set_the_post_thumbnail($size, $type) {
   global $post;
-  $default_img = '<img src="' . do_shortcode('[uri]') . '/img/thumbnail/default.png" alt="うさぎの背景画像"></figure>';
-  $class_container_main = "'wp-post-image__container c-glass c-anim-box--scaledown js-scroll-show'";
-  $class_container_sub = "'wp-post-image__container c-glass'";
 
-  switch (get_post_type()) {
-    case 'post': // 投稿ページの場合
-
-      // コンテナ追加
-      switch ($type) {
-        case 'main': // メインループの場合
-          echo '<figure class=' . $class_container_main . '>';
-          break;
-
-        case 'sub': // サブループの場合
-          echo '<a class=' . $class_container_sub . ' href="' . esc_url(get_permalink()) . '">';
-          break;
-      }
-
-      // サムネイル追加
-      if (has_post_thumbnail()) {
-        the_post_thumbnail($size);
-      } else {
-        $class = "wp-post-image";
-        if (has_category('wordpress')) {
-          $png = "wordpress";
-        } elseif (has_category('css')) {
-          $png = "css";
-        } elseif (has_category('php')) {
-          $png = "php";
-        } elseif (has_category('javascript')) {
-          $png = "js";
-        } elseif (has_category('vba')) {
-          $png = "vba";
-        } elseif (has_category('learn')) {
-          $png = "learn";
-        } else {
-          $class = "";
-          $png = "default";
-        }
-        echo '<img class=' . $class . ' ' . 'src="' . do_shortcode('[uri]') . '/img/thumbnail/' . $png . '.png">';
-      };
-
-      echo eyecatch_text_used();
-
-      // 終了タグ追加
-      switch ($type) {
-        case 'main': // メインループの場合
-          echo '</figure>';
-          break;
-        case 'sub': // サブループの場合
-          echo '<p class="post-title">';
-          the_title();
-          echo '</p></a>';
-          break;
-      }
-      break;
-
-    case 'works': // カスタム投稿（works）の場合
-      switch ($type) {
-
-          // メインループの場合
-        case 'main':
-          $product_url = get_post_meta($post->ID, 'my_url', true);
-
-          // URLがある場合
-          if ($product_url !== '') {
-            echo '<a href="' . esc_html($product_url) . '" class=' . $class_container_main . ' target="_blank">
-              <i class="fas fa-external-link-alt"></i>';
-
-            if (has_post_thumbnail()) {
-              the_post_thumbnail($size);
-            } else {
-              echo $default_img;
-            }
-
-            echo '</a>';
-
-            // URLがない場合
-          } elseif ($product_url == '') {
-            echo '<figure class=' . $class_container_main . '>';
-
-            if (has_post_thumbnail()) {
-              the_post_thumbnail($size);
-            } else {
-              echo $default_img;
-            }
-
-            echo '</figure>';
-          }
-          break;
-
-          // サブループの場合
-        case 'sub':
-          echo '<a class=' . $class_container_sub . ' href="' . esc_url(get_permalink()) . '">';
-          if (has_post_thumbnail()) {
-            the_post_thumbnail($size);
-          } else {
-            echo $default_img;
-          }
-
-          echo '<p class="post-title">';
-          the_title();
-          echo '</p></a>';
-          break;
-      }
-      break;
+  // クラス名
+  if ($type === 'main') {
+    $class_container = "c-thumbnail";
+  } elseif ($type === 'sub') {
+    $class_container = "p-posts-list__figure c-thumbnail";
   }
+
+  $class_link = "c-bg--white--opacity";
+  $class_body = "p-posts-list__body";
+  $class_title = "p-posts-list__title";
+
+  // サムネイル
+  $default_img_url = do_shortcode('[uri]') . '/img/thumbnail/default.png';
+  $thumbnail_url = "";
+  if (has_post_thumbnail()) {
+    $thumbnail_url = get_the_post_thumbnail_url();
+  } else {
+    $thumbnail_url = $default_img_url;
+  }
+
+  // works以外
+  if (!(get_post_type() === 'works')) {
+    $cat = get_the_category($post->ID);
+    $cat = $cat[0];
+    $cat_data = get_option('cat_' . intval($cat->term_id));
+
+    // 子カテゴリに画像がない場合は親カテゴリの画像を取得する
+    if ($cat_data == false && $cat->parent !== 0) {
+      $parent_id = $cat->category_parent;
+      $parent = get_category($parent_id);
+      $cat_data = get_option('cat_' . intval($parent->term_id));
+    }
+
+    // サムネイルなし＆カテゴリ画像がある場合
+    if (!has_post_thumbnail() && $cat_data !== false) {
+      $thumbnail_url = esc_html($cat_data['img']);
+    };
+  }
+
+  // worksの場合 : 参照URLがあるかどうか判定
+  if ((get_post_type() === 'works')) {
+    if ($type === 'main') {
+      $works_url = get_post_meta($post->ID, 'my_url', true);
+      $target = 'target="_blank"';
+    } else {
+      $works_url = esc_url(get_permalink());
+      $target = "";
+    }
+  };
+
+  // thumbnailタグ
+  $thumbnail = '<img src="' . $thumbnail_url . '" alt="サムネイル">';
+
+  // 画像テキスト追加
+  if (!(get_post_type() === 'works')) $thumbnail .= eyecatch_text_used();
+?>
+
+  <?php if (get_post_type() === 'post') : ?>
+    <?php if ($type === 'sub') { ?>
+      <a class="<?php echo $class_link; ?>" href="<?php echo esc_url(get_permalink()); ?>">
+      <?php }; ?>
+
+      <figure class="<?php echo $class_container; ?>">
+        <?php echo $thumbnail; ?>
+      </figure>
+
+      <?php if ($type === 'sub') { ?>
+        <div class="<?php echo $class_body; ?>">
+          <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
+        </div>
+      </a>
+    <?php }; ?>
+
+
+  <?php elseif (get_post_type() === 'works') : ?>
+    <?php if ($works_url !== "") { ?>
+      <a class="<?php echo $class_link; ?>" href="<?php echo $works_url; ?>" <?php echo $target; ?>>
+      <?php }; ?>
+
+      <figure class="<?php echo $class_container; ?>">
+        <?php echo $thumbnail; ?>
+        <?php if ($type === 'main' && $works_url !== "") { ?>
+          <i class="fas fa-external-link-alt"></i>
+        <?php }; ?>
+      </figure>
+
+      <?php if ($type === 'sub') { ?>
+        <div class="<?php echo $class_body; ?>">
+          <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
+        </div>
+      <?php }; ?>
+
+      <?php if ($works_url !== '') { ?>
+      </a>
+    <?php }; ?>
+  <?php endif; ?>
+<?php
 }

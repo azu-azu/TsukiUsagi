@@ -1,10 +1,8 @@
-<?php get_template_part('components/bg/shooting-star');?>
+<?php get_template_part('components/bg/shooting-star'); ?>
 
-<main class="l-topic text-contents u-border--sec-bottom">
-
-  <section class="l-topic__container">
-    <?php get_template_part('components/template/loop/main');?>
+<main class="l-main p-contents">
+  <section class="l-main__container">
+    <?php get_template_part('components/template/loop/main'); ?>
   </section>
-
-  <?php get_template_part('components/text/offset-title');?>
+  <?php get_template_part('components/text/offset-title'); ?>
 </main>

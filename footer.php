@@ -1,6 +1,6 @@
 <?php
-if (is_front_page() || is_home() || is_page('home')) {
-  $footer_class = 'p-footer';
+if (is_page('about') || is_front_page() || is_home() || is_page('home')) {
+  $footer_class = 'p-footer--morning';
   $wave_color1 = 'rgba(204,218,213,0.5)';
   $wave_color4 = 'rgba(255,190,246,0.1)';
 } else {
@@ -11,9 +11,14 @@ if (is_front_page() || is_home() || is_page('home')) {
 ?>
 
 <footer class="l-footer <?php echo $footer_class; ?>">
+
+  <?php if (!(is_page('about') || is_front_page() || is_home() || is_page('home'))) { ?>
+    <p class="p-go-home"><a href="<?php echo esc_url(home_url()); ?>">ホームへ戻る</a></p>
+  <?php } ?>
+
   <div class="c-sky"></div>
   <div class="c-sun"></div>
-  <div class="c-sea"></div>
+  <div class="c-sea c-ba-shining"></div>
   <div class="c-fin"></div>
 
   <svg class="c-wave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -27,7 +32,6 @@ if (is_front_page() || is_home() || is_page('home')) {
       <use xlink:href="#gentle-wave" x="48" y="7" fill="<?php echo $wave_color4; ?>" />
     </g>
   </svg>
-  <div></div>
   <?php get_template_part('components/parts/sea-stars'); ?>
   <div class="c-wave--color"></div>
 

@@ -1,5 +1,5 @@
 <?php
-$ex_class = 'p-related-contents--ex';
+$ex_class = 'p-frame--ex';
 $ex_inner_class = $ex_class . '__inner';
 $bg_class = 'c-bg--gradient-f1';
 

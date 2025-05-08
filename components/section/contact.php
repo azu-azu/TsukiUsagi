@@ -1,5 +1,12 @@
-<section class="p-sec-contact c-bg--gradient-f4" id="contact">
-  <?php echo usa_set_heading_linear_show('h2', 'Contact', 'sec'); ?>
+<?php
+$sec_class = 'p-sec-contact';
+$bg_class = 'p-layer--f4 c-bg--gradient-f4';
+
+$title = 'Contact';
+?>
+
+<section class="<?php echo $sec_class . ' ' . $bg_class; ?>" id="contact">
+  <?php echo usa_set_heading_linear_show('h2', $title, 'sec'); ?>
 
   <article class="p-sec-contact__container">
     <article class="p-sec-contact__inner">

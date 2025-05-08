@@ -14,9 +14,9 @@ function usa_theme_widgets_init() {
     register_sidebar(array(
         'name' => 'side-bar',
         'id' => 'category-nav',
-        'before_widget' => '<aside class="p-sidebar">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="side-title">',
+        'before_widget' => '<nav class="p-category-nav">',
+        'after_widget' => '</nav>',
+        'before_title' => '<h3 class="side-title c-bg--cosmos">',
         'after_title'  => '</h3>',
     ));
 }
