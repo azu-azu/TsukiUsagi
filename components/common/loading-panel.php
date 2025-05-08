@@ -1,8 +1,10 @@
-<div class="c-flowing-clouds--loading__container">
-  <div class="c-flowing-clouds--loading"></div>
-</div>
+<div class="p-loading-panel">
+  <div class="p-loading-panel__clouds">
+    <div class="p-loading-clouds"></div>
+  </div>
 
-<div class="c-loading-curtain__wrapper">
-  <div class="c-loading-curtain--left"></div>
-  <div class="c-loading-curtain--right"></div>
+  <div class="p-loading-panel__curtain">
+    <div class="p-loading-curtain--left"></div>
+    <div class="p-loading-curtain--right"></div>
+  </div>
 </div>

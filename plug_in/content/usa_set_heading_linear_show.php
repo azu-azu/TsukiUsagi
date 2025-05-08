@@ -18,37 +18,44 @@
  *
  */
 function usa_set_heading_linear_show($heading_num, $my_title, $type, $url = "") {
-    echo '<section class="p-title ' . $type . '">';
-
-    if (!$url == "") {
-        echo '<a class="c-back-shadow--white" href="' . $url . '">';
-    }
-
     switch ($type) {
-        case 'single':
-            $pseudo = 'c-title--page c-pseudo--page-ttl';
+        case 'main':
+            $pseudo = 'c-title--main';
             break;
 
-        case 'page':
-            $pseudo = 'c-title--page c-pseudo--page-ttl';
+        case 'post':
+            if (get_post_type() === 'post') {
+                $pseudo = 'c-title--post--black c-pseudo--sec-ttl';
+            } else {
+                $pseudo = 'c-title--post c-text-shadow--white c-pseudo--sec-ttl';
+            }
             break;
 
         case 'sec':
-            $pseudo = 'c-title--section c-pseudo--sec-ttl';
+            $pseudo = 'c-title--section c-text-shadow--white c-pseudo--sec-ttl c-anim-box--down js-scroll-show';
             break;
 
         case 'list':
-            $pseudo = 'c-title--section c-pseudo--list-ttl';
+            $pseudo = 'c-title--section c-text-shadow--black c-pseudo--list-ttl';
+            break;
+
+        case 'inline':
+            $pseudo = 'c-title--section--' . $type . ' c-text-shadow--white c-pseudo--sec-ttl';
             break;
     }
+?>
+    <div class="p-title--<?php echo $type; ?>">
+        <?php if (!$url == "") : ?>
+            <a class="" href="<?php echo $url; ?>">
+            <?php endif; ?>
 
-    echo '<' . $heading_num . ' class="' . $pseudo . ' c-anim-box--down txt js-scroll-show">';
-    echo $my_title;
-    echo '</' . $heading_num . '>';
+            <<?php echo $heading_num; ?> class="<?php echo $pseudo; ?>">
+                <?php echo $my_title; ?>
+            </<?php echo $heading_num; ?>>
 
-    if (!$url == "") {
-        echo '</a>';
-    }
-
-    echo '</section>';
+            <?php if (!$url == "") : ?>
+            </a>
+        <?php endif; ?>
+    </div>
+<?php
 }

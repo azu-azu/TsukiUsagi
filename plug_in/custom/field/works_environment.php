@@ -1,13 +1,14 @@
 <?php
+
 /**
-* Plugin Name: custom_field_works_environment
-* Plugin URI: 
-* Description: チェックボックスのカスタムフィールド
-* Version: 1.0
-* Author: tsukiusagi.biz
-* Author URI: https://tsukiusagi.biz
-* License: 
-*/
+ * Plugin Name: custom_field_works_environment
+ * Plugin URI:
+ * Description: チェックボックスのカスタムフィールド
+ * Version: 1.0
+ * Author: tsukiusagi.biz
+ * Author URI: https://tsukiusagi.biz
+ * License:
+ */
 //･････････････････････････････････････････････････････
 // 作成
 //･････････････････････････････････････････････････････
@@ -20,7 +21,7 @@ function create_custom_fields_works_environment() {
         'normal' //表示位置 normal(左下), advanced(左下優先順位), side
     );
 }
-add_action( 'admin_menu', 'create_custom_fields_works_environment' );
+add_action('admin_menu', 'create_custom_fields_works_environment');
 
 
 //･････････････････････････････････････････････････････
@@ -29,12 +30,12 @@ add_action( 'admin_menu', 'create_custom_fields_works_environment' );
 function insert_custom_fields_works_environment() {
     $keyname = 'my_environment';
     global $post;
-    $get_vals = get_post_meta( $post->ID, $keyname, true );// 保存されているカスタムフィールドの値を取得
+    $get_vals = get_post_meta($post->ID, $keyname, true); // 保存されているカスタムフィールドの値を取得
     $get_value = $get_vals ? $get_vals : array();
 
     // radioの値
     $data = [
-        'HTML', 
+        'HTML',
         'CSS',
         'PHP',
         'JavaScript',
@@ -47,12 +48,12 @@ function insert_custom_fields_works_environment() {
         'Adobe Illustrator',
     ];
 
-    wp_nonce_field( 'action-' . $keyname, 'nonce-' . $keyname );// nonceの追加
+    wp_nonce_field('action-' . $keyname, 'nonce-' . $keyname); // nonceの追加
 
     // HTML出力
-    foreach( $data as $d ) {
+    foreach ($data as $d) {
         $checked = '';
-        if( in_array( $d, $get_value ) ) $checked = ' checked';
+        if (in_array($d, $get_value)) $checked = ' checked';
         echo '
         <label style="display:inline-block;margin-bottom:20px;padding-right:10px">
             <input type="checkbox" style="width:20px;height:20px" name="' . $keyname . '[]" value="' . $d . '"' . $checked . '>' . $d . '
@@ -64,23 +65,23 @@ function insert_custom_fields_works_environment() {
 //･････････････････････････････････････････････････････
 // 保存
 //･････････････････････････････････････････････････････
-function save_custom_field( $post_id ) {
+function save_custom_field($post_id) {
     $custom_fields = ['my_environment'];
 
-    foreach( $custom_fields as $d ) {
-        if ( isset( $_POST['nonce-' . $d] ) && $_POST['nonce-' . $d] ) {
-            if( check_admin_referer( 'action-' . $d, 'nonce-' . $d ) ) {
+    foreach ($custom_fields as $d) {
+        if (isset($_POST['nonce-' . $d]) && $_POST['nonce-' . $d]) {
+            if (check_admin_referer('action-' . $d, 'nonce-' . $d)) {
 
-                if( isset( $_POST[$d] ) && $_POST[$d] ) {
-                    update_post_meta( $post_id, $d, $_POST[$d] );
+                if (isset($_POST[$d]) && $_POST[$d]) {
+                    update_post_meta($post_id, $d, $_POST[$d]);
                 } else {
-                    delete_post_meta( $post_id, $d, get_post_meta( $post_id, $d, true ) );
+                    delete_post_meta($post_id, $d, get_post_meta($post_id, $d, true));
                 }
             }
         }
     }
 }
-add_action( 'save_post', 'save_custom_field' );
+add_action('save_post', 'save_custom_field');
 
 
 //･････････････････････････････････････････････････････
@@ -91,14 +92,14 @@ function product_environment_used() {
         global $post;
         $html   = '';
         $items  = '';
-        $items  = get_post_meta( $post->ID, "my_environment", true );
+        $items  = get_post_meta($post->ID, "my_environment", true);
 
-        if ( is_array($items) ) {
+        if (is_array($items)) {
             $html  = '<article class="field-part__contents"><h2>制作環境</h2>';
-            $html .= '<ul class="field-list">';
+            $html .= '<ul class="c-field-list--black">';
 
-            foreach ( $items as $value ) {
-                if ( !$value == '') {
+            foreach ($items as $value) {
+                if (!$value == '') {
                     $html .= '<li><p class="text">' . esc_html($value) . '</p></li>';
                 }
             }

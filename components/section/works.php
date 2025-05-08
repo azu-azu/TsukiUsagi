@@ -1,5 +1,12 @@
-<section class="p-sec-works c-bg--gradient-f1" id="works">
-  <?php echo usa_set_heading_linear_show('h2', 'works', 'sec'); ?>
+<?php
+$sec_class = 'p-sec-works';
+$bg_class = 'p-layer--f3 c-bg--gradient-f3';
+
+$title = 'works';
+?>
+
+<section class="<?php echo $sec_class . ' ' . $bg_class; ?>" id="works">
+  <?php echo usa_set_heading_linear_show('h2', $title, 'sec'); ?>
 
   <article class="c-card--works c-read-more c-rabbit--1b c-rabbit--3a c-anim-box--scaleup js-scroll-show">
     <a href="<?php echo get_post_type_archive_link('works'); ?>">
@@ -11,5 +18,4 @@
 
     </a>
   </article>
-  <?php get_template_part('components/parts/playing-box'); ?>
 </section>

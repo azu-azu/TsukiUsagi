@@ -1,5 +1,12 @@
-<section class="p-sec-profile c-bg--gradient-f3" id="profile">
-  <?php echo usa_set_heading_linear_show('h2', 'Profile', 'sec'); ?>
+<?php
+$sec_class = 'p-sec-profile';
+$bg_class = 'c-bg--gradient-f2';
+
+$title = 'Profile';
+?>
+
+<section class="<?php echo $sec_class . ' ' . $bg_class; ?>" id="profile">
+  <?php echo usa_set_heading_linear_show('h2', $title, 'sec'); ?>
 
   <article class="p-sec-profile__cards c-anim-box--scaleup js-scroll-show">
     <section class="swiper js-swiper c-card--single">
@@ -16,8 +23,8 @@
 
         <li class="swiper-slide c-rabbit--3a">
           <article class="swiper-slide__content right">
-          <h3>月うさぎWeb</h3>
-          <p class="text">
+            <h3>月うさぎWeb</h3>
+            <p class="text">
               管理人：月うさぎ<br>
               所在地：東京
             </p>
@@ -26,7 +33,7 @@
 
         <li class="swiper-slide c-rabbit--1a">
           <article class="swiper-slide__content">
-          <h3>WordPress</h3>
+            <h3>WordPress</h3>
             <p class="text">
               ・テーマ開発<br>
               ・プラグイン開発<br>
@@ -37,10 +44,11 @@
 
         <li class="swiper-slide c-rabbit--2a">
           <article class="swiper-slide__content right">
-            <h3>ExcelVBA</h3>
+            <h3>Excel/Access VBA</h3>
             <p class="text">
-              ・自動化ツール作成<br>
-              ・機能設計
+              ・EUCツール作成<br>
+              ・機能,画面,テーブル設計<br>
+              ・SQL
             </p>
           </article>
         </li>
@@ -50,7 +58,7 @@
             <h3>経歴</h3>
             <p class="text">
               ・企業でVBA開発<br>
-              ・2021.5〜 WEB制作
+              ・WEB制作
             </p>
           </article>
         </li>
@@ -64,6 +72,6 @@
     </article>
   </article>
 
-  <?php get_template_part('components/parts/skills');?>
-  <?php get_template_part('components/parts/falling-box');?>
+  <?php get_template_part('components/parts/skills'); ?>
+  <?php get_template_part('components/parts/falling-box'); ?>
 </section>
