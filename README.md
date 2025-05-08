@@ -1,18 +1,18 @@
 # TsukiUsagi
 
-Personal portfolio site
+Personal portfolio site 🐇
 👉 https://tsukiusagi.biz
 
 ---
 
-## 📌 Overview
+## 🌌 Overview
 
 **TsukiUsagi** is a personal portfolio website developed and maintained by myself.
 All aspects of the site — from design and WordPress theme development to SCSS structure, Gulp workflow, and custom plugin creation — are built entirely in-house.
 
 ---
 
-## 🔧 Tech Stack
+## 🚀 Tech Stack
 
 -   **WordPress** (Custom theme with post types and fields)
 -   **SCSS / Gulp (Dart Sass)** – Automated build workflow using a custom Gulp setup
@@ -21,7 +21,7 @@ All aspects of the site — from design and WordPress theme development to SCSS 
 
 ---
 
-## 📁 Project Structure
+## 💃 Project Structure
 
 ```plaintext
 components/        // Template parts
@@ -32,11 +32,11 @@ plug_in/           // Original admin utility plugins
 *.php              // WordPress template files
 ```
 
-💡 This repository includes only the theme directory (tsukiusagi/) under wp-content/themes/.
+✨ This repository includes only the theme directory (tsukiusagi/) under wp-content/themes/.
 
 ---
 
-## ✨ Features
+## 🌟 Features
 
 -   Optimized frontend workflow with Gulp
 -   Modular plugin system for reusable admin logic
@@ -45,7 +45,7 @@ plug_in/           // Original admin utility plugins
 
 ---
 
-## 📜 License
+## 🐾 License
 
 All rights reserved.
 This code is for personal demonstration purposes only.
