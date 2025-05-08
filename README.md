@@ -24,12 +24,15 @@ All aspects of the site — from design and WordPress theme development to SCSS 
 ## 📁 Project Structure
 
 ```plaintext
-_assets/                // SCSS（開発素材）
-public/                 // WordPress公開ディレクトリ
-└── wp-content/
-    └── themes/
-        └── tsukiusagi/ // ビルド成果物＋テーマ本体
+components/        // Template parts
+css/               // Compiled CSS files
+customizer/        // Theme Customizer settings and sanitizers
+js/                // Theme-specific JS modules
+plug_in/           // Original admin utility plugins
+*.php              // WordPress template files
 ```
+
+💡 This repository includes only the theme directory (tsukiusagi/) under wp-content/themes/.
 
 ---
 
