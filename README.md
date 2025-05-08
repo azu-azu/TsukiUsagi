@@ -1,6 +1,6 @@
-# TsukiUsagi
+# TsukiUsagi 🐇
 
-Personal portfolio site 🐇
+Personal portfolio site
 👉 https://tsukiusagi.biz
 
 ---
