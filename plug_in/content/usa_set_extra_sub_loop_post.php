@@ -16,6 +16,7 @@ function usa_set_extra_sub_loop_post($num) {
   $args = array(
     'post_type' => 'post', // 投稿タイプを指定（カスタム投稿の場合はその投稿名を記述）
     'posts_per_page' => $num,
+    'orderby' => 'modified', // ← ここ追加！
     'order' => 'DESC' // 降順
   );
 ?>
