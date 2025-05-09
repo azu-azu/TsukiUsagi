@@ -12,10 +12,9 @@ $main_container_class = 'l-main__container';
         <?php elseif (is_search()) : ?>
             <?php get_template_part('components/contents/archive/search'); ?>
 
-            <!-- /blogページ -->
         <?php elseif (get_post_type() === 'post') : ?>
-            <!-- <?php usa_set_extra_sub_loop_cat(4); ?> -->
-            <?php usa_set_extra_sub_loop_post(10); ?>
+            <!-- https://tsukiusagi.biz/blog/ -->
+            <?php usa_set_extra_sub_loop_cat(4); ?>
 
         <?php elseif (get_post_type() === 'works') : ?>
             <?php get_template_part('components/contents/archive/works'); ?>
