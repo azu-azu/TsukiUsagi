@@ -109,6 +109,7 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 function file_load_scripts_styles() {
     if (is_front_page() || is_home() || is_page('home')) { // ブログフロント
         wp_enqueue_script('scrollAppear', get_template_directory_uri() . '/js/common/myScrollAnimAppear.js', array(), '', true);
+        wp_enqueue_script('scrollToContentIfPaged', get_template_directory_uri() . '/js/parts/myScrollToContentIfPaged.js', array(), '', true);
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
@@ -208,7 +209,6 @@ include(get_template_directory() . '/plug_in/content/usa_set_the_post_thumbnail.
 include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop.php'); // 投稿ループ表示
 include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop_post.php'); // 投稿ループ表示
 include(get_template_directory() . '/plug_in/content/usa_set_extra_sub_loop_cat.php'); // カテゴリ別の投稿ループ表示
-include(get_template_directory() . '/plug_in/content/usa_the_posts_pagination.php'); // ページネーションにクラス付与：既存関数を使う場合
 include(get_template_directory() . '/plug_in/content/usa_set_pagination.php'); // 自作ページネーション
 include(get_template_directory() . '/plug_in/content/usa_set_heading_linear_show.php'); // タイトル表示
 include(get_template_directory() . '/plug_in/content/usa_set_jump_btn_contents.php'); // ジャンプボタンの中身

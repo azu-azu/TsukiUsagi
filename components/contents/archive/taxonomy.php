@@ -33,7 +33,7 @@ $tag = 'h1';
     <?php if ($vba || $pq) : ?>
         <?php get_template_part('components/contents/archive/tag'); ?>
     <?php else : ?>
-        <section class="p-frame">
+        <section class="p-frame" id="js-content-start">
             <article class="p-loop">
                 <ul class="p-posts-list p-post-sub-loop">
                     <?php while (have_posts()) : the_post(); ?>
