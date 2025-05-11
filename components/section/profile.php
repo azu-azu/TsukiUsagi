@@ -23,21 +23,10 @@ $title = 'Profile';
 
         <li class="swiper-slide c-rabbit--3a">
           <article class="swiper-slide__content right">
-            <h3>月うさぎWeb</h3>
+            <h3>月うさぎBiz</h3>
             <p class="text">
               管理人：月うさぎ<br>
               所在地：東京
-            </p>
-          </article>
-        </li>
-
-        <li class="swiper-slide c-rabbit--1a">
-          <article class="swiper-slide__content">
-            <h3>WordPress</h3>
-            <p class="text">
-              ・テーマ開発<br>
-              ・プラグイン開発<br>
-              ・FLOCSSでのCSS設計
             </p>
           </article>
         </li>
@@ -49,6 +38,17 @@ $title = 'Profile';
               ・EUCツール作成<br>
               ・機能,画面,テーブル設計<br>
               ・SQL
+            </p>
+          </article>
+        </li>
+
+        <li class="swiper-slide c-rabbit--1a">
+          <article class="swiper-slide__content">
+            <h3>WordPress</h3>
+            <p class="text">
+              ・テーマ開発<br>
+              ・プラグイン開発<br>
+              ・FLOCSSでのCSS設計
             </p>
           </article>
         </li>
