@@ -15,7 +15,7 @@ if (is_front_page() || is_home() || is_page('home')) {
   <?php
   if (!is_category()) get_template_part('components/text/page-ttl');
   if (is_front_page() || is_home() || is_page('home') || is_archive() || is_search()) {
-    get_template_part('components/contents/archive/main');
+    get_template_part('components/archive/main');
   } elseif (is_single()) {
     get_template_part('components/contents/single');
   }
