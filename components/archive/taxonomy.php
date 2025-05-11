@@ -31,7 +31,7 @@ $tag = 'h1';
 <?php echo usa_set_heading_linear_show($tag, $title, 'main'); ?>
 <?php if (have_posts()) : ?>
     <?php if ($vba || $pq) : ?>
-        <?php get_template_part('components/contents/archive/tag'); ?>
+        <?php get_template_part('components/archive/tag'); ?>
     <?php else : ?>
         <section class="p-frame" id="js-content-start">
             <article class="p-loop">

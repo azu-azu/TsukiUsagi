@@ -1,4 +1,5 @@
 <?php
+// 記事下の一覧表示 single or works
 // works_archive
 if (is_archive() && is_post_type_archive('works')) {
   $args = array(
