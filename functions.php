@@ -126,6 +126,7 @@ function file_load_scripts_styles() {
     if (is_page('about')) { // プロフィール画面
         wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
         wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
+        wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
         wp_enqueue_script('milky-way', get_template_directory_uri() . '/js/parts/myMilkyWay.js', array(), 'particles-min', true);
 
         wp_enqueue_script('swiper-bundle', '//unpkg.com/swiper/swiper-bundle.min.js', array(), '', true);
