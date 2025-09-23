@@ -13,31 +13,20 @@ $title = 'Profile';
       <ul class="swiper-wrapper">
         <li class="swiper-slide c-rabbit--1a">
           <article class="swiper-slide__content">
-            <h3>好きなこと</h3>
+            <h3>What I Love</h3>
             <p class="text">
-              CSSとJavaScriptの<br>
-              アニメーション
+              CSS & JavaScript<br>
+              Animations
             </p>
           </article>
         </li>
 
         <li class="swiper-slide c-rabbit--3a">
           <article class="swiper-slide__content right">
-            <h3>月うさぎBiz</h3>
+            <h3>TsukiUsagiBiz</h3>
             <p class="text">
-              管理人：月うさぎ<br>
-              所在地：東京
-            </p>
-          </article>
-        </li>
-
-        <li class="swiper-slide c-rabbit--2a">
-          <article class="swiper-slide__content right">
-            <h3>Excel/Access VBA</h3>
-            <p class="text">
-              ・EUCツール作成<br>
-              ・機能,画面,テーブル設計<br>
-              ・SQL
+            Administrator: TsukiUsagi<br>
+            Location: Tokyo, Japan
             </p>
           </article>
         </li>
@@ -46,19 +35,31 @@ $title = 'Profile';
           <article class="swiper-slide__content">
             <h3>WordPress</h3>
             <p class="text">
-              ・テーマ開発<br>
-              ・プラグイン開発<br>
-              ・FLOCSSでのCSS設計
+            - Theme Development<br>
+            - Plugin Development<br>
+            - CSS Architecture with FLOCSS
+            </p>
+          </article>
+        </li>
+
+        <li class="swiper-slide c-rabbit--2a">
+          <article class="swiper-slide__content right">
+            <h3>Excel / Access VBA</h3>
+            <p class="text">
+            - EUC Tool Development<br>
+            - Function, UI<br>
+            - Table Design<br>
+            - SQL
             </p>
           </article>
         </li>
 
         <li class="swiper-slide c-rabbit--4a">
           <article class="swiper-slide__content">
-            <h3>経歴</h3>
+            <h3>Background</h3>
             <p class="text">
-              ・企業でVBA開発<br>
-              ・WEB制作
+              - VBA Development<br>
+              - Web Production
             </p>
           </article>
         </li>

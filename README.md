@@ -5,7 +5,7 @@ Personal portfolio site
 
 ---
 
-## 🌌 Overview
+## 🌠 Overview
 
 **TsukiUsagi** is a personal portfolio website developed and maintained by myself.
 All aspects of the site — from design and WordPress theme development to SCSS structure, Gulp workflow, and custom plugin creation — are built entirely in-house.
@@ -21,7 +21,7 @@ All aspects of the site — from design and WordPress theme development to SCSS 
 
 ---
 
-## 💃 Project Structure
+## 🌙 Project Structure
 
 ```plaintext
 components/        // Template parts

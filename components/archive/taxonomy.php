@@ -24,7 +24,7 @@ if ($obj->category_parent === $pq_cat_id || $obj_id === $pq_cat_id) $pq = true;
 // タイトル
 if ($vba) $title = 'VBA';
 if ($pq) $title = 'PowerQuery';
-if (!$vba || !$pq) $title = '「' . $obj_name . '」の記事一覧';
+if (!$vba || !$pq) $title = $obj_name;
 $tag = 'h1';
 ?>
 
