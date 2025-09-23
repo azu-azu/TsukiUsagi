@@ -18,7 +18,8 @@ foreach ($categories as $category) :
         'post_type'      => 'works',
         'post_status'    => 'publish',
         'posts_per_page' => $num,
-        'orderby'        => 'rand',
+        'orderby' => 'date',
+        'order'   => 'ASC',
         'post__not_in'   => array(), // 除外する投稿ID。ないなら空配列でOK
 
         'tax_query' => array(

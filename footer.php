@@ -35,7 +35,7 @@ if (is_page('about') || is_front_page() || is_home() || is_page('home')) {
   <?php get_template_part('components/parts/sea-stars'); ?>
   <div class="c-wave--color"></div>
 
-  <p data-splitting class="c-copyright c-glitter-text">&copy;2021 TsukiUsagi.biz</p>
+  <p data-splitting class="c-copyright c-glitter-text">&copy;2021 tsukiusagi.biz</p>
 </footer>
 <?php wp_footer(); ?>
 </body>

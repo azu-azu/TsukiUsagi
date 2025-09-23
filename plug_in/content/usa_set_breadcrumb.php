@@ -16,7 +16,7 @@ if (!function_exists('usa_set_breadcrumb')) {
         if (is_home() || is_admin()) return; // トップページ、管理画面では表示しない
         $home = esc_url(home_url('/')) . '/blog';
         $str = '<nav class="c-breadcrumb"><ul itemscope itemtype="http://schema.org/BreadcrumbList">';
-        $str .= usa_bread_item("月うさぎblog", $home, "1"); // ホームは共通して表示
+        $str .= usa_bread_item("TsukiUsagiBlog", $home, "1"); // ホームは共通して表示
         if (is_single()) {
             $str .= usa_get_bread_single();
         } elseif (is_category()) {

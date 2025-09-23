@@ -13,7 +13,7 @@ if (get_post_type() === 'works') {
   }
 } else {
   $url = home_url('/');
-  $title = "月うさぎBlog";
+  $title = "TsukiUsagiBlog";
 }
 
 echo usa_set_heading_linear_show($tag, $title, $type, $url);
