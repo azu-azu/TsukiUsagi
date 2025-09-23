@@ -84,3 +84,4 @@ usort($tags_array, function ($a, $b) {
 // } else {
 //     $name = $obj->name;
 // }
+?>

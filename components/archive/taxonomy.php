@@ -1,36 +1,32 @@
 <?php
-// vba
-$parent_vba = get_category_by_slug('vba'); // スラッグからカテゴリ情報取得
-$vba_cat_id = $parent_vba->cat_ID;
-
-// power_query
-$parent_pq = get_category_by_slug('powerquery'); // スラッグからカテゴリ情報取得
-$pq_cat_id = $parent_pq->cat_ID;
+// 特殊表示が必要なカテゴリのスラッグ配列
+$special_categories = ['vba', 'powerquery'];
 
 // オブジェクト取得
 $obj = get_queried_object();
 $obj_name = $obj->name;
 $obj_id = $obj->cat_ID;
+$current_cat_slug = get_category($obj_id)->slug;
 
+// 特殊表示が必要かどうかを判定
+$is_special_category = false;
+$display_title = $obj_name;
 
-// 指定の親カテゴリか判定
-$vba = false;
-if ($obj->category_parent === $vba_cat_id || $obj_id === $vba_cat_id) $vba = true;
+foreach ($special_categories as $special_slug) {
+    $parent_cat = get_category_by_slug($special_slug);
+    if ($parent_cat && ($obj->category_parent === $parent_cat->cat_ID || $obj_id === $parent_cat->cat_ID)) {
+        $is_special_category = true;
+        $display_title = ucfirst($special_slug); // VBA, PowerQuery
+        break;
+    }
+}
 
-$pq = false;
-if ($obj->category_parent === $pq_cat_id || $obj_id === $pq_cat_id) $pq = true;
-
-
-// タイトル
-if ($vba) $title = 'VBA';
-if ($pq) $title = 'PowerQuery';
-if (!$vba || !$pq) $title = $obj_name;
 $tag = 'h1';
 ?>
 
-<?php echo usa_set_heading_linear_show($tag, $title, 'main'); ?>
+<?php echo usa_set_heading_linear_show($tag, $display_title, 'main'); ?>
 <?php if (have_posts()) : ?>
-    <?php if ($vba || $pq) : ?>
+    <?php if ($is_special_category) : ?>
         <?php get_template_part('components/archive/tag'); ?>
     <?php else : ?>
         <section class="p-frame" id="js-content-start">
