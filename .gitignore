@@ -15,4 +15,4 @@ node_modules/
 # 開発者用ログ・不要な残留
 *.log
 
-.git-rules.md
+.cursor/
