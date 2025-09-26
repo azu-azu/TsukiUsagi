@@ -2,7 +2,7 @@
   <canvas id="js-star-orbit"></canvas>
   <section class="l-main__container">
 
-    <?php get_template_part('components/text/sec-ttl'); ?>
+    <?php get_template_part('components/text/sec-title'); ?>
 
     <article class="c-gravity-text__wrapper">
       <p class="c-gravity-text--main c-gradient-text">Sorry</p>

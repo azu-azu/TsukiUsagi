@@ -1,6 +1,6 @@
 <?php
 $sec_class = 'p-sec-profile';
-$bg_class = 'c-bg--gradient-f2';
+$bg_class = 'p-layer--f3 c-bg--gradient-f3';
 
 $title = 'Profile';
 ?>

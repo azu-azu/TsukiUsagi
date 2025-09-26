@@ -21,8 +21,9 @@ if (is_page('about')) {
 
 <body <?php body_class($body_class); ?>>
   <?php
-  if (is_page('about')) {
-    get_template_part('components/header/about');
+  if (is_front_page() || is_home() || is_page('home')) {
+    get_template_part('components/header/front');
   } else {
     get_template_part('components/header/main');
   }
+  ?>

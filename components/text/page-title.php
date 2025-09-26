@@ -12,7 +12,7 @@ if (get_post_type() === 'works') {
     $title = "Works";
   }
 } else {
-  $url = home_url('/');
+  $url = home_url('/') . 'blog';
   $title = "TsukiUsagiBlog";
 }
 
