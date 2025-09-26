@@ -1,7 +1,7 @@
 <?php
 $ex_class = 'p-frame--ex';
 $ex_inner_class = 'p-loop';
-$bg_class = 'p-layer--f1 c-bg--gradient-f1';
+$bg_class = 'c-bg--gradient-f2';
 
 $title = 'Blog';
 

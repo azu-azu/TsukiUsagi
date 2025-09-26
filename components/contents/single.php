@@ -32,7 +32,7 @@ $main_inner_class = 'l-main__inner';
 <section class="p-frame">
     <article class="p-loop">
         <?php get_template_part('components/bg/cosmos/crystal'); ?>
-        <?php get_template_part('components/text/list-ttl'); ?>
+        <?php get_template_part('components/text/list-title'); ?>
         <?php get_template_part('components/template/loop/sub'); ?>
     </article>
 </section>
