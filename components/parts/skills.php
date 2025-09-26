@@ -6,10 +6,10 @@
       <p>VBA</p>
     </li>
     <li class="c-ball c-glass--yellow pos-middle skill-01" style="--i:1;">
-      <p>Access<br>VBA</p>
+      <p>Python</p>
     </li>
     <li class="c-ball c-glass--yellow pos-right skill-01" style="--i:2;">
-      <p>Excel<br>VBA</p>
+      <p>Swift</p>
     </li>
     <li class="c-ball c-glass--yellow pos-01 skill-03" style="--i:3;">
       <p>Power<span>Query</p>
@@ -19,9 +19,6 @@
     </li>
     <li class="c-ball c-glass--yellow pos-02 skill-03" style="--i:5;">
       <p>Power<span>Shell</p>
-    </li>
-    <li class="c-ball c-glass--yellow c-rabbit--2a pos-04 skill-01" style="--i:6;">
-      <p>Word<br>VBA</br></p>
     </li>
   </ul>
 
@@ -54,16 +51,16 @@
       <p><span>Word</span>Press</p>
     </li>
     <li class="c-ball c-glass--yellow pos-middle skill-01" style="--i:1;">
-      <p>テーマ<br>開発</p>
+      <p>Theme</p>
     </li>
     <li class="c-ball c-glass--yellow pos-right skill-02" style="--i:2;">
-      <p>カスタム<span>投稿</span></p>
+      <p>Custom<span>Post</span></p>
     </li>
     <li class="c-ball c-glass--yellow pos-02 skill-03 txt-small" style="--i:3;">
-      <p>プラグ<span>イン</span></p>
+      <p>Plugin</p>
     </li>
     <li class="c-ball c-glass--yellow pos-04 skill-03 txt-small" style="--i:4;">
-      <p>ブロック<span>エディタ</span></p>
+      <p>Block<span>Editor</span></p>
     </li>
   </ul>
 

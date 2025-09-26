@@ -107,7 +107,7 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 
 // ページごとに読み込みファイルを変える
 function file_load_scripts_styles() {
-    if (is_front_page() || is_home() || is_page('home')) { // ブログフロント
+    if (is_front_page() || is_home() || is_page('home')) {
         wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
         wp_enqueue_script('scrollAppear', get_template_directory_uri() . '/js/common/myScrollAnimAppear.js', array(), '', true);
         wp_enqueue_script('scrollToContentIfPaged', get_template_directory_uri() . '/js/parts/myScrollToContentIfPaged.js', array(), '', true);
@@ -127,7 +127,7 @@ function file_load_scripts_styles() {
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
         wp_enqueue_script('sea-stars', get_template_directory_uri() . '/js/parts/mySeaStars.js', array(), 'particles-min', true); // 海の星
     }
-    // if (is_page('about')) { // プロフィール画面
+    // if (is_page('about')) { // 旧プロフィール画面
     //     wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
     //     wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
     //     wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
@@ -234,8 +234,6 @@ include(get_template_directory() . '/plug_in/manage/usa_add_page_columns_slug.ph
 include(get_template_directory() . '/plug_in/manage/usa_add_tax_columns.php'); // カテゴリ一覧にカラム追加
 include(get_template_directory() . '/plug_in/manage/usa_set_post_views.php'); // 閲覧数の表示
 include(get_template_directory() . '/plug_in/manage/usa_column_tags_sortable.php'); // タグを並び替えられる要素にする
-
-
 
 
 add_filter('jetpack_implode_frontend_css', '__return_false');
