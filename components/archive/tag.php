@@ -25,7 +25,7 @@ usort($tags_array, function ($a, $b) {
 ?>
 
 
-<?php if (have_posts($cat_id)) : ?>
+<?php if (have_posts()) : ?>
     <?php
     $cat_args = array(
         'category' => $cat_id,
@@ -68,6 +68,35 @@ usort($tags_array, function ($a, $b) {
                         <?php endforeach; ?>
                     </ul>
                 <?php endforeach; ?>
+            <?php else : ?>
+                <?php
+                // タグが存在しない場合は、カテゴリ全体の記事を表示
+                $cat_posts_args = array(
+                    'category' => $cat_id,
+                    'posts_per_page' => -1,
+                    'post_status' => 'publish'
+                );
+                $cat_posts = get_posts($cat_posts_args);
+                ?>
+
+                <?php if ($cat_posts) : ?>
+                    <ul class="p-posts-list p-tax-list">
+                        <li>
+                            <h2><?php echo $cat_name; ?>の記事一覧</h2>
+                        </li>
+                        <?php foreach ($cat_posts as $post) : setup_postdata($post); ?>
+                            <li class="p-posts-list__item--list">
+                                <a class="<?php echo $class_link; ?>" href="<?php echo esc_url(get_permalink()); ?>">
+                                    <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php else : ?>
+                    <div class="p-posts-list">
+                        <p>このカテゴリにはまだ記事がありません。</p>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
 
         </article>
