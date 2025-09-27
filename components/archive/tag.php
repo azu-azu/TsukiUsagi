@@ -81,9 +81,6 @@ usort($tags_array, function ($a, $b) {
 
                 <?php if ($cat_posts) : ?>
                     <ul class="p-posts-list p-tax-list">
-                        <li>
-                            <h2><?php echo $cat_name; ?>の記事一覧</h2>
-                        </li>
                         <?php foreach ($cat_posts as $post) : setup_postdata($post); ?>
                             <li class="p-posts-list__item--list">
                                 <a class="<?php echo $class_link; ?>" href="<?php echo esc_url(get_permalink()); ?>">
