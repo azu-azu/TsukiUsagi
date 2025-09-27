@@ -1,26 +1,26 @@
 // 条件分岐の判断に利用するメディアクエリを指定
-const mq = window.matchMedia('(min-width: 570px)');
+const mqm = window.matchMedia('(min-width: 570px)');
 
 // スクロールしたら関数呼び出し
 window.addEventListener('scroll', () => {
-	function mqCheck(mq) {
-		if (mq.matches) {
+	function mqCheck(mqm) {
+		if (mqm.matches) {
 			// ビューポートの幅が 指定ピクセル以上の場合
 			myAppear();
 		}
 	}
-	mqCheck(mq);
+	mqCheck(mqm);
 });
 
 // ロードしたら関数呼び出し
 window.addEventListener('load', () => {
-	function mqCheck(mq) {
-		if (mq.matches) {
+	function mqCheck(mqm) {
+		if (mqm.matches) {
 			// ビューポートの幅が 指定ピクセル以上の場合
 			myAppear();
 		}
 	}
-	mqCheck(mq);
+	mqCheck(mqm);
 });
 
 // ----------------------------------------------------

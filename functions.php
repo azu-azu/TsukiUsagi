@@ -109,8 +109,6 @@ wp_enqueue_script('jquery360', get_template_directory_uri() . '/js/lib/jquery-3.
 function file_load_scripts_styles() {
     if (is_front_page() || is_home() || is_page('home')) {
         wp_enqueue_script('header', get_template_directory_uri() . '/js/common/myHeader.js', array(), '', true);
-        wp_enqueue_script('scrollAppear', get_template_directory_uri() . '/js/common/myScrollAnimAppear.js', array(), '', true);
-        wp_enqueue_script('scrollToContentIfPaged', get_template_directory_uri() . '/js/parts/myScrollToContentIfPaged.js', array(), '', true);
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
         wp_enqueue_script('scroll-show', get_template_directory_uri() . '/js/parts/myScrollShow.js', array(), '', true);
         wp_enqueue_script('train', get_template_directory_uri() . '/js/common/myTrainFix.js', array(), '', true);
@@ -141,6 +139,7 @@ function file_load_scripts_styles() {
     if (is_archive()) {
         wp_enqueue_script('hamburger', get_template_directory_uri() . '/js/common/myHamburger.js', array(), '', true);
 
+        wp_enqueue_script('scrollToContentIfPaged', get_template_directory_uri() . '/js/parts/myScrollToContentIfPaged.js', array(), '', true); // ページネーション時のスクロール制御
         wp_enqueue_script('splitting-min', 'https://unpkg.com/splitting@1.0.6/dist/splitting.min.js', array(), '', true); //data-splitting
         wp_enqueue_script('data-splitting', get_template_directory_uri() . '/js/lib/data-splitting.js', array(), 'splitting-min', true);
         wp_enqueue_script('particles-min', get_template_directory_uri() . '/js/lib/particles.min.js', array(), '', true);
