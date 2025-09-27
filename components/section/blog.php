@@ -14,16 +14,19 @@ $base_args = array(
   'post__not_in'   => array(), // 除外なし
 );
 
-// sqlカテゴリ（2件）
+// デバイス別の表示数設定
+$posts_per_page = wp_is_mobile() ? 1 : 2; // スマホ:1件、PC:2件
+
+// sqlカテゴリ
 $args_sql = array_merge($base_args, array(
   'category_name'  => 'sql',
-  'posts_per_page' => 2,
+  'posts_per_page' => $posts_per_page,
 ));
 
-// aiカテゴリ（2件）
+// aiカテゴリ
 $args_ai = array_merge($base_args, array(
   'category_name'  => 'ai',
-  'posts_per_page' => 2,
+  'posts_per_page' => $posts_per_page,
 ));
 ?>
 
