@@ -35,7 +35,7 @@ $args_ai = array_merge($base_args, array(
     <?php echo usa_set_heading_linear_show('h2', $title, 'sec'); ?>
     <div class="c-anim-box--down js-scroll-show">
       <?php
-      usa_set_extra_sub_loop($args_sql);
+      // usa_set_extra_sub_loop($args_sql);
       usa_set_extra_sub_loop($args_ai);
       ?>
     </div>

@@ -1,3 +1,4 @@
+<!-- 20250928現在、非使用 -->
 <?php
 $ex_class = 'p-frame--ex';
 $ex_inner_class = $ex_class . '__inner';
