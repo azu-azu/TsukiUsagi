@@ -52,10 +52,11 @@ usort($tags_array, function ($a, $b) {
                         </li>
 
                         <?php
-                        // 記事一覧取得
+                        // 記事一覧取得（カテゴリとタグの両方の条件を含める）
                         $tag_args = array(
                             'posts_per_page' => -1, // これを設定しないと5つまでしか表示されない 22/12/18
-                            'tag_id' => $tag->term_id
+                            'tag_id' => $tag->term_id,
+                            'category' => $cat_id // カテゴリの条件を追加
                         );
                         $tag_posts = get_posts($tag_args);
                         ?>

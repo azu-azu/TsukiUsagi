@@ -12,7 +12,7 @@ $title = get_query_var('title') ?: 'カテゴリ';
     <main class="l-main p-contents--archive">
         <?php echo usa_set_heading_linear_show('h1', $title, 'main'); ?>
 
-        <?php get_template_part('components/archive/tag'); ?>
+        <?php get_template_part('components/archive/category-tag'); ?>
     </main>
 
     <?php get_template_part('components/contents/side'); ?>
