@@ -18,9 +18,13 @@ $post_ids = get_objects_in_term($cat_id, 'category');
 $tags_array = wp_get_object_terms($post_ids, 'post_tag');
 
 // 説明順の数値で並べ替え
-usort($tags_array, function ($a, $b) {
-    return $a->description - $b->description;
-});
+if ($tags_array && is_array($tags_array)) {
+    usort($tags_array, function ($a, $b) {
+        $desc_a = isset($a->description) ? (int)$a->description : 0;
+        $desc_b = isset($b->description) ? (int)$b->description : 0;
+        return $desc_a - $desc_b;
+    });
+}
 
 ?>
 
@@ -69,9 +73,41 @@ usort($tags_array, function ($a, $b) {
                         <?php endforeach; ?>
                     </ul>
                 <?php endforeach; ?>
+
+                <?php
+                // タグがない投稿を表示
+                $no_tag_args = array(
+                    'posts_per_page' => -1,
+                    'category' => $cat_id,
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'post_tag',
+                            'operator' => 'NOT EXISTS'
+                        )
+                    )
+                );
+                $no_tag_posts = get_posts($no_tag_args);
+                ?>
+
+                <?php if ($no_tag_posts) : ?>
+                    <ul class="p-posts-list p-tax-list">
+                        <li>
+                            <h2>
+                                <span class="c-title--tag">Others</span>
+                            </h2>
+                        </li>
+                        <?php foreach ($no_tag_posts as $post) : setup_postdata($post); ?>
+                            <li class="p-posts-list__item--list">
+                                <a class="<?php echo $class_link; ?>" href="<?php echo esc_url(get_permalink()); ?>">
+                                    <div class="<?php echo $class_title; ?>"><?php the_title(); ?></div>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
             <?php else : ?>
                 <?php
-                // タグが存在しない場合は、カテゴリ全体の記事を表示
+                // タグが１つも存在しない場合は、カテゴリ全体の記事を表示
                 $cat_posts_args = array(
                     'category' => $cat_id,
                     'posts_per_page' => -1,

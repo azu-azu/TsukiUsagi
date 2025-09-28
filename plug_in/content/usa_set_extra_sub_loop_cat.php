@@ -49,7 +49,7 @@ function usa_set_extra_sub_loop_cat($num) {
       <article class="p-loop">
         <?php echo usa_set_heading_linear_show('h2', $title, 'inline', $url); ?>
         <?php usa_set_extra_sub_loop($args); ?>
-        <?php if ($count > $num) echo usa_make_link_button('» もっと見る', '', $url); ?>
+        <?php if ($count > $num) echo usa_make_link_button('» more', '', $url); ?>
       </article>
     </section>
 
