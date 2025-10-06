@@ -240,3 +240,14 @@ add_action('wp_enqueue_scripts', 'dequeue_devicepx', 20);
 function dequeue_devicepx() {
     wp_dequeue_script('devicepx');
 }
+
+
+// 投稿画面のタグ一覧をABC順に並べ替える
+function sort_tags_alphabetically( $args ) {
+    if ( isset( $args['taxonomy'] ) && $args['taxonomy'] === 'post_tag' ) {
+        $args['orderby'] = 'name';
+        $args['order'] = 'ASC';
+    }
+    return $args;
+}
+add_filter( 'get_terms_args', 'sort_tags_alphabetically' );
