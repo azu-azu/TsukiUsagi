@@ -17,12 +17,26 @@ $title = $cat_name;
 $post_ids = get_objects_in_term($cat_id, 'category');
 $tags_array = wp_get_object_terms($post_ids, 'post_tag');
 
-// 説明順の数値で並べ替え
+// ABC順（アルファベット順）で並べ替え
+// 説明にアルファベットがあればそれを使用、なければタグ名を使用
 if ($tags_array && is_array($tags_array)) {
     usort($tags_array, function ($a, $b) {
-        $desc_a = isset($a->description) ? (int)$a->description : 0;
-        $desc_b = isset($b->description) ? (int)$b->description : 0;
-        return $desc_a - $desc_b;
+        // 説明からアルファベットを抽出
+        $extractAlphabet = function($str) {
+            if (empty($str)) return '';
+            // アルファベットのみを抽出（大文字小文字問わず）
+            preg_match('/[a-zA-Z]+/', $str, $matches);
+            return isset($matches[0]) ? strtoupper($matches[0]) : '';
+        };
+
+        $sort_a = $extractAlphabet($a->description);
+        $sort_b = $extractAlphabet($b->description);
+
+        // 説明にアルファベットがない場合はタグ名を使用
+        if (empty($sort_a)) $sort_a = strtoupper($a->name);
+        if (empty($sort_b)) $sort_b = strtoupper($b->name);
+
+        return strcmp($sort_a, $sort_b);
     });
 }
 
