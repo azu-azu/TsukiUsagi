@@ -251,3 +251,15 @@ function sort_tags_alphabetically( $args ) {
     return $args;
 }
 add_filter( 'get_terms_args', 'sort_tags_alphabetically' );
+
+// エディターの色パレットを置換する
+add_action( 'after_setup_theme', function () {
+    // 既存パレットを置き換える仕様なので、
+    // Snow Monkey 側のパレットを使っていないなら、必要な色だけ定義。
+    add_theme_support( 'editor-color-palette', [
+        [ 'name' => 'Yellow Highlight', 'slug' => 'yellow-highlight', 'color' => '#ffff00' ],
+    ] );
+
+    // 既存色も使いたい場合は、上に必要な色を“全部”列挙する（置換式のため）。
+    // もし既存色セットを保ちたいなら、EditorsKitで「最近使った色」を使う運用にするのが現実的。
+});
