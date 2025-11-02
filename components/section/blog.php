@@ -28,6 +28,12 @@ $args_ai = array_merge($base_args, array(
   'category_name'  => 'ai',
   'posts_per_page' => $posts_per_page,
 ));
+
+// pythonカテゴリ
+$args_python = array_merge($base_args, array(
+  'category_name'  => 'python',
+  'posts_per_page' => $posts_per_page,
+));
 ?>
 
 <section class="<?php echo $ex_class . ' ' . $bg_class; ?>" id="blog">
@@ -36,7 +42,7 @@ $args_ai = array_merge($base_args, array(
     <div class="c-anim-box--down js-scroll-show">
       <?php
       // usa_set_extra_sub_loop($args_sql);
-      usa_set_extra_sub_loop($args_ai);
+      usa_set_extra_sub_loop($args_python);
       ?>
     </div>
     <?php get_template_part('components/common/read-more'); ?>
